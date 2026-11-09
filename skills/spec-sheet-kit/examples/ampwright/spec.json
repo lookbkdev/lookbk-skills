@@ -1,0 +1,1353 @@
+{
+  "lang": "en",
+  "theme": {
+    "mode": "dark",
+    "paper": "#0e1113",
+    "sheet": "#13171a",
+    "ink": "#e7e4dc",
+    "accent": "#f0a33a",
+    "onAccent": "#14100a",
+    "turn": "#f0a33a",
+    "display": "archivo",
+    "text": "archivo",
+    "mono": "jetbrains-mono",
+    "radius": 0
+  },
+  "brand": "Ampwright",
+  "head": {
+    "eyebrow": [
+      "07",
+      "Technical data",
+      "PK series"
+    ],
+    "headline": "Three capacities.\n_One rail._",
+    "lede": "The PK packs share a rail, a key and a charger. Only the length changes, and the drawing shows you by how much."
+  },
+  "models": [
+    {
+      "id": "PK-500",
+      "name": "PK-500",
+      "sub": "500 Wh"
+    },
+    {
+      "id": "PK-625",
+      "name": "PK-625",
+      "sub": "625 Wh"
+    },
+    {
+      "id": "PK-750",
+      "name": "PK-750",
+      "sub": "750 Wh"
+    }
+  ],
+  "drawn": "PK-625",
+  "start": {
+    "model": "PK-625",
+    "compare": true
+  },
+  "units": {
+    "length": {
+      "primary": "mm",
+      "step": {
+        "mm": 1,
+        "in": 0.01
+      }
+    },
+    "mass": {
+      "primary": "kg",
+      "step": {
+        "kg": 0.1,
+        "lb": 0.1
+      }
+    }
+  },
+  "drawing": {
+    "number": "AW-PK-210",
+    "rev": "F",
+    "scale": "1:2",
+    "projection": "third",
+    "tolerance": 0.5,
+    "toleranceNote": "Length ±0.5 mm.",
+    "notes_at": [
+      20,
+      248
+    ],
+    "title_block": [
+      262,
+      236,
+      148,
+      51,
+      [
+        46,
+        80,
+        110
+      ]
+    ],
+    "tab": [
+      292,
+      22
+    ],
+    "parts": [
+      {
+        "id": "shell",
+        "no": 1,
+        "name": "Shell"
+      },
+      {
+        "id": "caps",
+        "no": 2,
+        "name": "End caps"
+      },
+      {
+        "id": "rail",
+        "no": 3,
+        "name": "Rail and bolts"
+      },
+      {
+        "id": "cells",
+        "no": 4,
+        "name": "Cells"
+      },
+      {
+        "id": "lock",
+        "no": 5,
+        "name": "Lock"
+      },
+      {
+        "id": "port",
+        "no": 6,
+        "name": "Charge port"
+      },
+      {
+        "id": "gauge",
+        "no": 7,
+        "name": "Fuel gauge"
+      }
+    ],
+    "views": [
+      {
+        "id": "plan",
+        "label": "Plan",
+        "short": "Plan",
+        "origin": [
+          40,
+          72
+        ],
+        "scale": 0.5,
+        "axes": [
+          "x",
+          "z"
+        ],
+        "label_at": [
+          150,
+          112,
+          "middle"
+        ],
+        "crop": [
+          20,
+          30,
+          276,
+          104
+        ],
+        "tags": true,
+        "shapes": [
+          {
+            "part": "shell",
+            "rect": [
+              34,
+              -46,
+              324,
+              92
+            ]
+          },
+          {
+            "part": "caps",
+            "d": "M34 -46H16Q0 -46 0 -30V30Q0 46 16 46H34Z"
+          },
+          {
+            "part": "caps",
+            "d": "M358 -46H376Q392 -46 392 -30V30Q392 46 376 46H358Z"
+          },
+          {
+            "part": "lock",
+            "rect": [
+              392,
+              -8,
+              6,
+              16
+            ]
+          },
+          {
+            "part": "gauge",
+            "rect": [
+              268,
+              -4,
+              10,
+              8
+            ],
+            "r": 1.5
+          },
+          {
+            "part": "gauge",
+            "rect": [
+              283,
+              -4,
+              10,
+              8
+            ],
+            "r": 1.5
+          },
+          {
+            "part": "gauge",
+            "rect": [
+              298,
+              -4,
+              10,
+              8
+            ],
+            "r": 1.5
+          },
+          {
+            "part": "gauge",
+            "rect": [
+              313,
+              -4,
+              10,
+              8
+            ],
+            "r": 1.5
+          },
+          {
+            "part": "gauge",
+            "rect": [
+              328,
+              -4,
+              10,
+              8
+            ],
+            "r": 1.5
+          }
+        ],
+        "outline": {
+          "d": "M16 -46H376Q392 -46 392 -30V-8H398V8H392V30Q392 46 376 46H16Q0 46 0 30V-30Q0 -46 16 -46Z"
+        },
+        "balloons": [
+          {
+            "part": "gauge",
+            "at": [
+              298,
+              4
+            ],
+            "offset": [
+              8,
+              -22
+            ]
+          },
+          {
+            "part": "caps",
+            "at": [
+              12,
+              38
+            ],
+            "offset": [
+              -14,
+              -14
+            ]
+          }
+        ],
+        "models": {
+          "PK-500": {
+            "shapes": [
+              {
+                "part": "shell",
+                "rect": [
+                  34,
+                  -46,
+                  278,
+                  92
+                ]
+              },
+              {
+                "part": "caps",
+                "d": "M34 -46H16Q0 -46 0 -30V30Q0 46 16 46H34Z"
+              },
+              {
+                "part": "caps",
+                "d": "M312 -46H330Q346 -46 346 -30V30Q346 46 330 46H312Z"
+              },
+              {
+                "part": "lock",
+                "rect": [
+                  346,
+                  -8,
+                  6,
+                  16
+                ]
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  222,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  237,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  252,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  267,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  282,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              }
+            ],
+            "outline": {
+              "d": "M16 -46H330Q346 -46 346 -30V-8H352V8H346V30Q346 46 330 46H16Q0 46 0 30V-30Q0 -46 16 -46Z"
+            },
+            "balloons": [
+              {
+                "part": "gauge",
+                "at": [
+                  252,
+                  4
+                ],
+                "offset": [
+                  8,
+                  -22
+                ]
+              },
+              {
+                "part": "caps",
+                "at": [
+                  12,
+                  38
+                ],
+                "offset": [
+                  -14,
+                  -14
+                ]
+              }
+            ]
+          },
+          "PK-750": {
+            "shapes": [
+              {
+                "part": "shell",
+                "rect": [
+                  34,
+                  -46,
+                  372,
+                  92
+                ]
+              },
+              {
+                "part": "caps",
+                "d": "M34 -46H16Q0 -46 0 -30V30Q0 46 16 46H34Z"
+              },
+              {
+                "part": "caps",
+                "d": "M406 -46H424Q440 -46 440 -30V30Q440 46 424 46H406Z"
+              },
+              {
+                "part": "lock",
+                "rect": [
+                  440,
+                  -8,
+                  6,
+                  16
+                ]
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  316,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  331,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  346,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  361,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              },
+              {
+                "part": "gauge",
+                "rect": [
+                  376,
+                  -4,
+                  10,
+                  8
+                ],
+                "r": 1.5
+              }
+            ],
+            "outline": {
+              "d": "M16 -46H424Q440 -46 440 -30V-8H446V8H440V30Q440 46 424 46H16Q0 46 0 30V-30Q0 -46 16 -46Z"
+            },
+            "balloons": [
+              {
+                "part": "gauge",
+                "at": [
+                  346,
+                  4
+                ],
+                "offset": [
+                  8,
+                  -22
+                ]
+              },
+              {
+                "part": "caps",
+                "at": [
+                  12,
+                  38
+                ],
+                "offset": [
+                  -14,
+                  -14
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "front",
+        "label": "Front elevation",
+        "short": "Front",
+        "origin": [
+          40,
+          190
+        ],
+        "scale": 0.5,
+        "axes": [
+          "x",
+          "y"
+        ],
+        "label_at": [
+          150,
+          230,
+          "middle"
+        ],
+        "crop": [
+          20,
+          116,
+          276,
+          226
+        ],
+        "shapes": [
+          {
+            "part": "rail",
+            "rect": [
+              60,
+              -10,
+              272,
+              10
+            ]
+          },
+          {
+            "part": "rail",
+            "circle": [
+              132,
+              -5,
+              2.6
+            ]
+          },
+          {
+            "part": "rail",
+            "circle": [
+              260,
+              -5,
+              2.6
+            ]
+          },
+          {
+            "part": "shell",
+            "rect": [
+              34,
+              0,
+              324,
+              72
+            ]
+          },
+          {
+            "part": "caps",
+            "d": "M34 0H14Q0 0 0 14V58Q0 72 14 72H34Z"
+          },
+          {
+            "part": "caps",
+            "d": "M358 0H378Q392 0 392 14V58Q392 72 378 72H358Z"
+          },
+          {
+            "part": "lock",
+            "rect": [
+              392,
+              28,
+              6,
+              16
+            ]
+          },
+          {
+            "part": "port",
+            "rect": [
+              46,
+              24,
+              20,
+              24
+            ],
+            "r": 4
+          }
+        ],
+        "outline": {
+          "d": "M14 0H378Q392 0 392 14V28H398V44H392V58Q392 72 378 72H14Q0 72 0 58V14Q0 0 14 0Z"
+        },
+        "cut": {
+          "x": 226,
+          "from": 84,
+          "to": -16,
+          "letter": "B"
+        },
+        "balloons": [
+          {
+            "part": "port",
+            "at": [
+              56,
+              42
+            ],
+            "offset": [
+              -6,
+              -24
+            ]
+          },
+          {
+            "part": "shell",
+            "at": [
+              140,
+              62
+            ],
+            "offset": [
+              0,
+              -24
+            ]
+          },
+          {
+            "part": "lock",
+            "at": [
+              396,
+              40
+            ],
+            "offset": [
+              -2,
+              -30
+            ]
+          },
+          {
+            "part": "rail",
+            "at": [
+              65,
+              -5
+            ],
+            "offset": [
+              -20,
+              4
+            ]
+          }
+        ],
+        "models": {
+          "PK-500": {
+            "shapes": [
+              {
+                "part": "rail",
+                "rect": [
+                  60,
+                  -10,
+                  226,
+                  10
+                ]
+              },
+              {
+                "part": "rail",
+                "circle": [
+                  109,
+                  -5,
+                  2.6
+                ]
+              },
+              {
+                "part": "rail",
+                "circle": [
+                  237,
+                  -5,
+                  2.6
+                ]
+              },
+              {
+                "part": "shell",
+                "rect": [
+                  34,
+                  0,
+                  278,
+                  72
+                ]
+              },
+              {
+                "part": "caps",
+                "d": "M34 0H14Q0 0 0 14V58Q0 72 14 72H34Z"
+              },
+              {
+                "part": "caps",
+                "d": "M312 0H332Q346 0 346 14V58Q346 72 332 72H312Z"
+              },
+              {
+                "part": "lock",
+                "rect": [
+                  346,
+                  28,
+                  6,
+                  16
+                ]
+              },
+              {
+                "part": "port",
+                "rect": [
+                  46,
+                  24,
+                  20,
+                  24
+                ],
+                "r": 4
+              }
+            ],
+            "outline": {
+              "d": "M14 0H332Q346 0 346 14V28H352V44H346V58Q346 72 332 72H14Q0 72 0 58V14Q0 0 14 0Z"
+            },
+            "cut": {
+              "x": 203,
+              "from": 84,
+              "to": -16,
+              "letter": "B"
+            },
+            "balloons": [
+              {
+                "part": "port",
+                "at": [
+                  56,
+                  42
+                ],
+                "offset": [
+                  -6,
+                  -24
+                ]
+              },
+              {
+                "part": "shell",
+                "at": [
+                  140,
+                  62
+                ],
+                "offset": [
+                  0,
+                  -24
+                ]
+              },
+              {
+                "part": "lock",
+                "at": [
+                  350,
+                  40
+                ],
+                "offset": [
+                  -2,
+                  -30
+                ]
+              },
+              {
+                "part": "rail",
+                "at": [
+                  65,
+                  -5
+                ],
+                "offset": [
+                  -20,
+                  4
+                ]
+              }
+            ]
+          },
+          "PK-750": {
+            "shapes": [
+              {
+                "part": "rail",
+                "rect": [
+                  60,
+                  -10,
+                  320,
+                  10
+                ]
+              },
+              {
+                "part": "rail",
+                "circle": [
+                  156,
+                  -5,
+                  2.6
+                ]
+              },
+              {
+                "part": "rail",
+                "circle": [
+                  284,
+                  -5,
+                  2.6
+                ]
+              },
+              {
+                "part": "shell",
+                "rect": [
+                  34,
+                  0,
+                  372,
+                  72
+                ]
+              },
+              {
+                "part": "caps",
+                "d": "M34 0H14Q0 0 0 14V58Q0 72 14 72H34Z"
+              },
+              {
+                "part": "caps",
+                "d": "M406 0H426Q440 0 440 14V58Q440 72 426 72H406Z"
+              },
+              {
+                "part": "lock",
+                "rect": [
+                  440,
+                  28,
+                  6,
+                  16
+                ]
+              },
+              {
+                "part": "port",
+                "rect": [
+                  46,
+                  24,
+                  20,
+                  24
+                ],
+                "r": 4
+              }
+            ],
+            "outline": {
+              "d": "M14 0H426Q440 0 440 14V28H446V44H440V58Q440 72 426 72H14Q0 72 0 58V14Q0 0 14 0Z"
+            },
+            "cut": {
+              "x": 250,
+              "from": 84,
+              "to": -16,
+              "letter": "B"
+            },
+            "balloons": [
+              {
+                "part": "port",
+                "at": [
+                  56,
+                  42
+                ],
+                "offset": [
+                  -6,
+                  -24
+                ]
+              },
+              {
+                "part": "shell",
+                "at": [
+                  140,
+                  62
+                ],
+                "offset": [
+                  0,
+                  -24
+                ]
+              },
+              {
+                "part": "lock",
+                "at": [
+                  444,
+                  40
+                ],
+                "offset": [
+                  -2,
+                  -30
+                ]
+              },
+              {
+                "part": "rail",
+                "at": [
+                  65,
+                  -5
+                ],
+                "offset": [
+                  -20,
+                  4
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "section",
+        "label": "Section B-B",
+        "sub": "Scale 1:1",
+        "short": "Section B-B",
+        "origin": [
+          335,
+          194
+        ],
+        "scale": 1,
+        "axes": [
+          "z",
+          "y"
+        ],
+        "label_at": [
+          335,
+          214,
+          "middle"
+        ],
+        "crop": [
+          266,
+          104,
+          406,
+          212
+        ],
+        "shapes": [
+          {
+            "part": "rail",
+            "rect": [
+              -15,
+              -10,
+              30,
+              10
+            ]
+          },
+          {
+            "part": "shell",
+            "d": "M-42 0H42L46 4V58Q46 72 32 72H-32Q-46 72 -46 58V4Z M-43.5 2.5V57.5Q-43.5 69.5 -31.5 69.5H31.5Q43.5 69.5 43.5 57.5V2.5Z",
+            "section": true
+          },
+          {
+            "part": "cells",
+            "circle": [
+              -31.5,
+              13.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              -31.5,
+              34.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              -31.5,
+              55.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              -10.5,
+              13.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              -10.5,
+              34.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              -10.5,
+              55.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              10.5,
+              13.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              10.5,
+              34.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              10.5,
+              55.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              31.5,
+              13.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              31.5,
+              34.5,
+              10.5
+            ]
+          },
+          {
+            "part": "cells",
+            "circle": [
+              31.5,
+              55.5,
+              10.5
+            ]
+          }
+        ],
+        "balloons": [
+          {
+            "part": "cells",
+            "at": [
+              -42,
+              34.5
+            ],
+            "offset": [
+              -14,
+              -16
+            ]
+          }
+        ]
+      }
+    ],
+    "dims": [
+      {
+        "view": "front",
+        "row": "len",
+        "kind": "h",
+        "a": [
+          0,
+          -10
+        ],
+        "b": [
+          398,
+          -10
+        ],
+        "offset": 24,
+        "symbol": "L",
+        "models": {
+          "PK-500": {
+            "b": [
+              352,
+              -10
+            ]
+          },
+          "PK-625": {
+            "b": [
+              398,
+              -10
+            ]
+          },
+          "PK-750": {
+            "b": [
+              446,
+              -10
+            ]
+          }
+        }
+      },
+      {
+        "view": "front",
+        "row": "pitch",
+        "kind": "h",
+        "a": [
+          132,
+          -5
+        ],
+        "b": [
+          260,
+          -5
+        ],
+        "offset": 13,
+        "models": {
+          "PK-500": {
+            "a": [
+              109,
+              -5
+            ],
+            "b": [
+              237,
+              -5
+            ]
+          },
+          "PK-625": {
+            "a": [
+              132,
+              -5
+            ],
+            "b": [
+              260,
+              -5
+            ]
+          },
+          "PK-750": {
+            "a": [
+              156,
+              -5
+            ],
+            "b": [
+              284,
+              -5
+            ]
+          }
+        }
+      },
+      {
+        "view": "section",
+        "row": "wid",
+        "kind": "h",
+        "a": [
+          -46,
+          72
+        ],
+        "b": [
+          46,
+          72
+        ],
+        "offset": -8
+      },
+      {
+        "view": "section",
+        "row": "ht",
+        "kind": "v",
+        "a": [
+          46,
+          0
+        ],
+        "b": [
+          46,
+          72
+        ],
+        "offset": 9
+      }
+    ],
+    "cells": {
+      "view": "section",
+      "part": "cells",
+      "diameter": 21,
+      "length": 70,
+      "wall": 8,
+      "bodyView": "front",
+      "bodyParts": [
+        "caps",
+        "shell"
+      ],
+      "row": "cfg",
+      "voltRow": "v",
+      "ahRow": "ah",
+      "cellV": 3.6,
+      "cellAh": 3.5
+    }
+  },
+  "groups": [
+    {
+      "title": "Dimensions",
+      "rows": [
+        {
+          "key": "len",
+          "label": "Length",
+          "note": "Over the lock",
+          "length": {
+            "PK-500": 352,
+            "PK-625": 398,
+            "PK-750": 446
+          }
+        },
+        {
+          "key": "wid",
+          "label": "Width",
+          "length": 92
+        },
+        {
+          "key": "ht",
+          "label": "Height",
+          "note": "Without rail",
+          "length": 72
+        },
+        {
+          "key": "pitch",
+          "label": "Rail bolt pitch",
+          "note": "M5 bolts",
+          "length": 128,
+          "parts": [
+            "rail"
+          ]
+        },
+        {
+          "key": "mass",
+          "label": "Weight",
+          "mass": {
+            "PK-500": 2.9,
+            "PK-625": 3.4,
+            "PK-750": 3.9
+          }
+        }
+      ]
+    },
+    {
+      "title": "Electrical",
+      "rows": [
+        {
+          "key": "wh",
+          "label": "Energy",
+          "number": {
+            "PK-500": 500,
+            "PK-625": 625,
+            "PK-750": 750
+          },
+          "unit": "Wh"
+        },
+        {
+          "key": "v",
+          "label": "Nominal voltage",
+          "number": 36,
+          "unit": "V"
+        },
+        {
+          "key": "ah",
+          "label": "Capacity",
+          "number": {
+            "PK-500": 13.9,
+            "PK-625": 17.4,
+            "PK-750": 20.8
+          },
+          "unit": "Ah"
+        },
+        {
+          "key": "cfg",
+          "label": "Cells",
+          "note": "21700 format",
+          "text": {
+            "PK-500": "10S4P",
+            "PK-625": "10S5P",
+            "PK-750": "10S6P"
+          },
+          "parts": [
+            "cells"
+          ]
+        },
+        {
+          "key": "a",
+          "label": "Continuous discharge",
+          "number": 20,
+          "unit": "A"
+        },
+        {
+          "key": "chg",
+          "label": "Charge time",
+          "note": "0 to 100%",
+          "number": {
+            "PK-500": 4.2,
+            "PK-625": 5.2,
+            "PK-750": 6.1
+          },
+          "unit": "h",
+          "parts": [
+            "port"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Parts and materials",
+      "rows": [
+        {
+          "key": "p1",
+          "label": "Shell",
+          "text": "Glass-filled PA66",
+          "parts": [
+            "shell"
+          ]
+        },
+        {
+          "key": "p2",
+          "label": "End caps",
+          "text": "Die-cast aluminium",
+          "parts": [
+            "caps"
+          ]
+        },
+        {
+          "key": "p3",
+          "label": "Rail and bolts",
+          "text": "6061-T6, stainless M5",
+          "parts": [
+            "rail"
+          ]
+        },
+        {
+          "key": "p5",
+          "label": "Lock",
+          "text": "Two keys, coded pair",
+          "parts": [
+            "lock"
+          ]
+        },
+        {
+          "key": "p7",
+          "label": "Fuel gauge",
+          "text": "5 LEDs, press to read",
+          "parts": [
+            "gauge"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "In the box",
+      "list": [
+        "Battery pack",
+        "Two keys",
+        "4 A charger, 1.5 m lead",
+        "Rail with 4 M5 bolts"
+      ]
+    },
+    {
+      "title": "Compliance",
+      "marks": [
+        "UN 38.3",
+        "EN 50604-1",
+        "IEC 62133-2",
+        "IP65",
+        "2-year warranty, 800 cycles"
+      ]
+    }
+  ],
+  "checks": {
+    "product": [
+      {
+        "of": [
+          "v",
+          "ah"
+        ],
+        "is": "wh",
+        "within": 0.01
+      }
+    ]
+  },
+  "tour": [
+    {
+      "row": "len"
+    },
+    {
+      "row": "cfg"
+    },
+    {
+      "part": "port"
+    },
+    {
+      "set": {
+        "len": "in",
+        "mass": "lb"
+      }
+    },
+    {
+      "set": {
+        "compare": false,
+        "model": "PK-750"
+      }
+    }
+  ],
+  "print": {
+    "paper": "Letter"
+  }
+}

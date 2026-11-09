@@ -1,0 +1,771 @@
+{
+  "brand": "Bayline",
+  "lang": "en",
+  "mark": {
+    "shape": "square",
+    "cut": "chev",
+    "color": "#f4c430",
+    "ink": "#14110a"
+  },
+  "eyebrow": "Bayline WMS · Integrations",
+  "headline": "Know what moves _between the dock and everything else._",
+  "lede": "Pick an integration to see every record it carries, which way, on what event, how often, and what never leaves the warehouse floor. Below: all {count} of them, and the ones we do not do.",
+  "theme": {
+    "display": "archivo",
+    "page": "#0d1012",
+    "surface": "#14181b",
+    "ink": "#e9ece8",
+    "accent": "#f4c430",
+    "onAccent": "#14110a",
+    "packet": "#f4c430",
+    "status": {
+      "native": "#6fd59a",
+      "webhook": "#f4c430",
+      "community": "#8fc3ff",
+      "coming": "#a3aaa7"
+    }
+  },
+  "categories": [
+    "Carriers",
+    "Storefronts",
+    "EDI and ERP",
+    "Accounting",
+    "Floor devices",
+    "Returns"
+  ],
+  "featured": [
+    "parcelhaus",
+    "cartwheel",
+    "northdock",
+    "palletpost",
+    "tallyroll",
+    "kestrel"
+  ],
+  "selected": "parcelhaus",
+  "apps": [
+    {
+      "id": "parcelhaus",
+      "name": "Parcelhaus",
+      "category": "Carriers",
+      "status": "native",
+      "mark": {
+        "shape": "square",
+        "cut": "cross",
+        "color": "#e8eae6",
+        "ink": "#0d1012"
+      },
+      "summary": "Labels print at the pack bench before the tape is cut.",
+      "by": "Built and supported by Bayline",
+      "plans": "Floor and Network plans",
+      "conflict": "Weights: the bench scale wins",
+      "log": "Every label call kept 30 days",
+      "flows": [
+        {
+          "record": "Packed shipments",
+          "dir": "out",
+          "trigger": "When a box is closed",
+          "cadence": "instant",
+          "theirs": "Label requests",
+          "ours": "Pack bench"
+        },
+        {
+          "record": "Labels",
+          "dir": "in",
+          "trigger": "After each request",
+          "cadence": "within 4 s",
+          "theirs": "Label and number",
+          "ours": "Bench printer"
+        },
+        {
+          "record": "Tracking scans",
+          "dir": "in",
+          "cadence": "every 10 min",
+          "theirs": "Scan events",
+          "ours": "Order timeline"
+        },
+        {
+          "record": "Carrier charges",
+          "dir": "in",
+          "cadence": "daily 02:00",
+          "theirs": "Invoice lines",
+          "ours": "Cost per order"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Return labels",
+          "why": "made in Parcelhaus itself"
+        },
+        {
+          "record": "Other carriers’ rates",
+          "why": "use the Bayline rate table"
+        },
+        {
+          "record": "Customer phone numbers",
+          "why": "sent only if a service needs one"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Paste your Parcelhaus account number",
+          "minutes": 2,
+          "who": "you"
+        },
+        {
+          "step": "Map your box sizes to their package types",
+          "minutes": 6,
+          "who": "you"
+        },
+        {
+          "step": "Print one test label at every pack bench",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Parcelhaus checks the test labels",
+          "minutes": 15,
+          "who": "us"
+        }
+      ]
+    },
+    {
+      "id": "cartwheel",
+      "name": "Cartwheel",
+      "category": "Storefronts",
+      "status": "native",
+      "mark": {
+        "shape": "circle",
+        "cut": "ring",
+        "color": "#8fc3ff",
+        "ink": "#0d1012"
+      },
+      "summary": "Orders in within a minute, stock levels out every 5 min.",
+      "by": "Built and supported by Bayline",
+      "plans": "All plans",
+      "conflict": "Stock: Bayline wins",
+      "log": "Every sync kept 30 days",
+      "flows": [
+        {
+          "record": "Orders",
+          "dir": "in",
+          "trigger": "When an order is paid",
+          "cadence": "within 1 min",
+          "theirs": "Orders",
+          "ours": "Pick queue"
+        },
+        {
+          "record": "Stock levels",
+          "dir": "out",
+          "cadence": "every 5 min",
+          "theirs": "Available to sell",
+          "ours": "Free stock"
+        },
+        {
+          "record": "Shipped",
+          "dir": "out",
+          "trigger": "When a box is dispatched",
+          "cadence": "instant",
+          "theirs": "Fulfilment",
+          "ours": "Dispatch"
+        },
+        {
+          "record": "Cancellations",
+          "dir": "in",
+          "trigger": "When a customer cancels",
+          "cadence": "within 1 min",
+          "theirs": "Cancellations",
+          "ours": "Pick holds"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Gift messages",
+          "why": "printed on the slip only"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Install the Bayline app in Cartwheel",
+          "minutes": 2,
+          "who": "you"
+        },
+        {
+          "step": "Match product codes to bin items",
+          "minutes": 3,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "northdock",
+      "name": "Northdock EDI",
+      "category": "EDI and ERP",
+      "status": "native",
+      "mark": {
+        "shape": "hex",
+        "cut": "bars",
+        "color": "#6fd59a",
+        "ink": "#0d1012"
+      },
+      "summary": "Advance ship notices and purchase orders for retail buyers.",
+      "by": "Built and supported by Bayline",
+      "plans": "Network plan",
+      "conflict": "Quantities: the buyer’s order wins",
+      "log": "Every message kept 2 years",
+      "flows": [
+        {
+          "record": "Retail orders",
+          "dir": "in",
+          "cadence": "every 15 min",
+          "theirs": "Purchase orders",
+          "ours": "Pick queue"
+        },
+        {
+          "record": "Ship notices",
+          "dir": "out",
+          "trigger": "When a trailer is sealed",
+          "cadence": "instant",
+          "theirs": "Advance notices",
+          "ours": "Trailer manifest"
+        },
+        {
+          "record": "Invoices",
+          "dir": "out",
+          "cadence": "daily 01:00",
+          "theirs": "Invoices",
+          "ours": "Dispatched orders"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Buyer price lists",
+          "why": "stay with your sales team"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Send Northdock your trading partner IDs",
+          "minutes": 10,
+          "who": "you"
+        },
+        {
+          "step": "Map buyer item codes to bins",
+          "minutes": 20,
+          "who": "you"
+        },
+        {
+          "step": "Northdock runs the test cycle",
+          "minutes": 120,
+          "who": "us"
+        }
+      ]
+    },
+    {
+      "id": "palletpost",
+      "name": "Pallet Post",
+      "category": "Carriers",
+      "status": "native",
+      "mark": {
+        "shape": "pill",
+        "cut": "bar",
+        "color": "#f4c430",
+        "ink": "#14110a"
+      },
+      "summary": "Pallet bookings for the evening trunk run.",
+      "by": "Built and supported by Bayline",
+      "plans": "Floor and Network plans",
+      "conflict": "Pallet count: the dock wins",
+      "log": "Every booking kept 30 days",
+      "flows": [
+        {
+          "record": "Pallet bookings",
+          "dir": "out",
+          "trigger": "When a pallet is wrapped",
+          "cadence": "instant",
+          "theirs": "Bookings",
+          "ours": "Dock door"
+        },
+        {
+          "record": "Collection slots",
+          "dir": "in",
+          "trigger": "After each booking",
+          "cadence": "within 1 min",
+          "theirs": "Slot",
+          "ours": "Dock schedule"
+        },
+        {
+          "record": "Proof of delivery",
+          "dir": "in",
+          "cadence": "every 1 h",
+          "theirs": "Delivery photos",
+          "ours": "Order timeline"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Driver phone numbers",
+          "why": "stay with Pallet Post"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Paste your depot account number",
+          "minutes": 2,
+          "who": "you"
+        },
+        {
+          "step": "Name each dock door",
+          "minutes": 3,
+          "who": "you"
+        },
+        {
+          "step": "Book one test pallet",
+          "minutes": 3,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "tallyroll",
+      "name": "Tallyroll",
+      "category": "Accounting",
+      "status": "native",
+      "mark": {
+        "shape": "diamond",
+        "cut": "dot",
+        "color": "#d6b4ff",
+        "ink": "#0d1012"
+      },
+      "summary": "Stock value and landed cost, posted nightly.",
+      "by": "Built and supported by Bayline",
+      "plans": "All plans",
+      "conflict": "Costs: Tallyroll wins",
+      "log": "Every posting kept 7 years",
+      "flows": [
+        {
+          "record": "Stock value",
+          "dir": "out",
+          "cadence": "daily 03:00",
+          "theirs": "Journal",
+          "ours": "Stock on hand"
+        },
+        {
+          "record": "Landed cost",
+          "dir": "in",
+          "trigger": "When a bill is posted",
+          "cadence": "every 1 h",
+          "theirs": "Freight and duty bills",
+          "ours": "Item cost"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Bin moves",
+          "why": "only the value crosses"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Sign in to Tallyroll and allow access",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Pick the stock and cost accounts",
+          "minutes": 5,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "kestrel",
+      "name": "Kestrel Freight",
+      "category": "Carriers",
+      "status": "webhook",
+      "mark": {
+        "shape": "tri",
+        "cut": "dot",
+        "color": "#ff9b73",
+        "ink": "#0d1012"
+      },
+      "summary": "Part loads booked by webhook; you host the endpoint.",
+      "by": "Your webhook, documented by Bayline",
+      "plans": "Network plan",
+      "conflict": "Weights: the dock wins",
+      "log": "Every delivery kept 14 days",
+      "flows": [
+        {
+          "record": "Part loads",
+          "dir": "out",
+          "trigger": "When a load is staged",
+          "cadence": "instant",
+          "theirs": "Load requests",
+          "ours": "Staging lane"
+        },
+        {
+          "record": "Booking replies",
+          "dir": "in",
+          "trigger": "After each request",
+          "cadence": "within 1 h",
+          "theirs": "Confirmations",
+          "ours": "Dock schedule"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Rate quotes",
+          "why": "agreed by phone"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Host the endpoint and paste its address",
+          "minutes": 12,
+          "who": "you"
+        },
+        {
+          "step": "Send a test load",
+          "minutes": 8,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "gantry",
+      "name": "Gantry ERP",
+      "category": "EDI and ERP",
+      "status": "webhook",
+      "mark": {
+        "shape": "square",
+        "cut": "half",
+        "color": "#9aa29f",
+        "ink": "#0d1012"
+      },
+      "summary": "Item master in, goods received out.",
+      "by": "Gantry webhook, documented by Bayline",
+      "plans": "Network plan",
+      "conflict": "Item data: Gantry wins",
+      "log": "Every delivery kept 14 days",
+      "flows": [
+        {
+          "record": "Item master",
+          "dir": "in",
+          "trigger": "When an item changes",
+          "cadence": "every 15 min",
+          "theirs": "Items",
+          "ours": "Bin items"
+        },
+        {
+          "record": "Goods received",
+          "dir": "out",
+          "trigger": "When a delivery is booked in",
+          "cadence": "instant",
+          "theirs": "Receipts",
+          "ours": "Goods in"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Purchase prices",
+          "why": "stay in Gantry"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Create two webhooks in Gantry",
+          "minutes": 10,
+          "who": "you"
+        },
+        {
+          "step": "Match units of measure",
+          "minutes": 15,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "scanwell",
+      "name": "Scanwell",
+      "category": "Floor devices",
+      "status": "native",
+      "mark": {
+        "shape": "circle",
+        "cut": "bar",
+        "color": "#6fd59a",
+        "ink": "#0d1012"
+      },
+      "summary": "Handheld scanners run Bayline picks offline for a shift.",
+      "by": "Built and supported by Bayline",
+      "plans": "All plans",
+      "conflict": "The last scan wins",
+      "log": "Every scan kept 90 days",
+      "flows": [
+        {
+          "record": "Pick lists",
+          "dir": "out",
+          "trigger": "When a wave is released",
+          "cadence": "instant",
+          "theirs": "Device tasks",
+          "ours": "Pick waves"
+        },
+        {
+          "record": "Scans",
+          "dir": "in",
+          "trigger": "As each item is scanned",
+          "cadence": "within 4 s",
+          "theirs": "Scans",
+          "ours": "Pick progress"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Device location",
+          "why": "not tracked"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Scan the pairing code on each device",
+          "minutes": 3,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "shelfmark",
+      "name": "Shelfmark",
+      "category": "Storefronts",
+      "status": "community",
+      "mark": {
+        "shape": "hex",
+        "cut": "slash",
+        "color": "#8fc3ff",
+        "ink": "#0d1012"
+      },
+      "summary": "Marketplace orders in, kept up by other Bayline users.",
+      "by": "Kept up by Bayline users, not Bayline",
+      "plans": "All plans",
+      "conflict": "Stock: Bayline wins",
+      "log": "Kept by the connector",
+      "flows": [
+        {
+          "record": "Orders",
+          "dir": "in",
+          "cadence": "every 15 min",
+          "theirs": "Orders",
+          "ours": "Pick queue"
+        },
+        {
+          "record": "Stock levels",
+          "dir": "out",
+          "cadence": "every 1 h",
+          "theirs": "Listings",
+          "ours": "Free stock"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Seller messages",
+          "why": "stay on the marketplace"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Install the community connector",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Match listing codes to bin items",
+          "minutes": 6,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "brightlane",
+      "name": "Brightlane",
+      "category": "Returns",
+      "status": "community",
+      "mark": {
+        "shape": "pill",
+        "cut": "dot",
+        "color": "#ff9b73",
+        "ink": "#0d1012"
+      },
+      "summary": "Returns announced before they reach the dock.",
+      "by": "Kept up by Bayline users, not Bayline",
+      "plans": "All plans",
+      "conflict": "Condition: the dock wins",
+      "log": "Kept by the connector",
+      "flows": [
+        {
+          "record": "Expected returns",
+          "dir": "in",
+          "trigger": "When a return is booked",
+          "cadence": "every 15 min",
+          "theirs": "Returns",
+          "ours": "Goods in"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Refunds",
+          "why": "issued by the store"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Install the community connector",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Name the returns dock door",
+          "minutes": 2,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "forklore",
+      "name": "Forklore",
+      "category": "Floor devices",
+      "status": "coming",
+      "eta": "Planned for spring 2027",
+      "mark": {
+        "shape": "diamond",
+        "cut": "cross",
+        "color": "#6b767c",
+        "ink": "#0d1012"
+      },
+      "summary": "Truck hours and impacts on the floor map.",
+      "by": "Being built by Bayline",
+      "plans": "Floor and Network plans",
+      "conflict": "Truck data: Forklore wins",
+      "log": "Every event kept 90 days",
+      "flows": [
+        {
+          "record": "Impacts",
+          "dir": "in",
+          "trigger": "When a truck hits something",
+          "cadence": "within 1 min",
+          "theirs": "Impact events",
+          "ours": "Floor map"
+        },
+        {
+          "record": "Truck hours",
+          "dir": "in",
+          "cadence": "daily 04:00",
+          "theirs": "Hour meters",
+          "ours": "Equipment log"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Driver logins",
+          "why": "stay on the truck"
+        }
+      ]
+    },
+    {
+      "id": "quayside",
+      "name": "Quayside Customs",
+      "category": "EDI and ERP",
+      "status": "coming",
+      "eta": "In testing",
+      "mark": {
+        "shape": "tri",
+        "cut": "bar",
+        "color": "#6b767c",
+        "ink": "#0d1012"
+      },
+      "summary": "Export declarations from packed shipments.",
+      "by": "Being built by Bayline",
+      "plans": "Network plan",
+      "conflict": "Codes: Quayside wins",
+      "log": "Every declaration kept 6 years",
+      "flows": [
+        {
+          "record": "Declarations",
+          "dir": "out",
+          "trigger": "When an export box is closed",
+          "cadence": "instant",
+          "theirs": "Declarations",
+          "ours": "Pack bench"
+        },
+        {
+          "record": "Clearance",
+          "dir": "in",
+          "cadence": "every 15 min",
+          "theirs": "Clearance status",
+          "ours": "Order timeline"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Duty payments",
+          "why": "paid through your broker"
+        }
+      ]
+    }
+  ],
+  "unsupported": [
+    {
+      "what": "Driving picking robots",
+      "why": "We send pick lists to the cell’s controller; we do not move the arms.",
+      "instead": "Your robot vendor reads the Bayline pick queue.",
+      "keywords": [
+        "robot",
+        "automation",
+        "arm"
+      ]
+    },
+    {
+      "what": "Cold-chain sensors",
+      "why": "Temperature data needs alarms we do not run.",
+      "instead": "Keep it in the sensor app and link the pallet ID.",
+      "keywords": [
+        "temperature",
+        "cold",
+        "sensor",
+        "fridge"
+      ]
+    },
+    {
+      "what": "Live stock from dropship suppliers",
+      "why": "Their systems do not report in real time.",
+      "instead": "Hourly file import, with the age shown on every line.",
+      "keywords": [
+        "dropship",
+        "supplier"
+      ]
+    },
+    {
+      "what": "Landed cost in several currencies",
+      "why": "We hold one base currency per warehouse.",
+      "instead": "Post landed cost from Tallyroll.",
+      "keywords": [
+        "currency",
+        "fx",
+        "exchange"
+      ]
+    }
+  ],
+  "cta": {
+    "label": "Connect {app}",
+    "href": "https://bayline.example/connect"
+  },
+  "request": {
+    "label": "Request an integration",
+    "href": "https://bayline.example/integrations/request"
+  },
+  "demo": {
+    "title": "Integrations",
+    "nav": [
+      "Platform",
+      "Docs"
+    ],
+    "footer": "Bayline is an invented warehouse system. Every app named here is invented."
+  }
+}

@@ -1,0 +1,594 @@
+{
+ "brand": "Low Light",
+ "lang": "en-GB",
+ "title": {
+  "lines": [
+   "Low",
+   "Light"
+  ],
+  "accent": 1
+ },
+ "kicker": "A weekend of films after dark: two screens and a bar at the Kestrel Picturehouse in Hastings.",
+ "theme": {
+  "type": "serif",
+  "bg": "#0e0c0a",
+  "surface": "#1a1712",
+  "past": "#14120e",
+  "ink": "#f1eadf",
+  "accent": "#f4a63a",
+  "onAccent": "#1a0f02"
+ },
+ "ppm": 2.2,
+ "phoneSwitch": "track",
+ "venue": {
+  "name": "The Kestrel Picturehouse",
+  "short": "The Kestrel, Hastings",
+  "note": "Two screens and a bar on the seafront",
+  "city": "Hastings",
+  "zone": "Europe/London",
+  "rows": [
+   [
+    "Address",
+    "The Kestrel Picturehouse, 3 Marine Parade, Hastings TN34"
+   ],
+   [
+    "Getting home",
+    "Night bus 20 from the seafront until 01:40. Taxi rank outside"
+   ],
+   [
+    "Step-free",
+    "Screen One and the bar. Screen Two by platform lift"
+   ],
+   [
+    "Captions",
+    "Every screening marked CC in the programme"
+   ],
+   [
+    "Ages",
+    "Late Shorts is 18 and over. Bring ID"
+   ],
+   [
+    "Doors",
+    "11:30 both days. Bar open until 01:30 on Saturday"
+   ]
+  ],
+  "plan": {
+   "floors": [
+    {
+     "name": "Street level",
+     "w": 300,
+     "h": 150,
+     "entrance": "Entrance, Marine Parade",
+     "rooms": [
+      {
+       "room": "1",
+       "label": "Screen One",
+       "note": "182 seats, step-free",
+       "x": 0,
+       "y": 0,
+       "w": 175,
+       "h": 150,
+       "screen": true
+      },
+      {
+       "room": "B",
+       "label": "The Long Bar",
+       "note": "Talks, free entry",
+       "x": 175,
+       "y": 0,
+       "w": 125,
+       "h": 85
+      },
+      {
+       "label": "Foyer",
+       "note": "Box office",
+       "x": 175,
+       "y": 85,
+       "w": 125,
+       "h": 65
+      }
+     ]
+    },
+    {
+     "name": "Upstairs, 13 steps or lift",
+     "w": 300,
+     "h": 80,
+     "rooms": [
+      {
+       "room": "2",
+       "label": "Screen Two",
+       "note": "64 seats",
+       "x": 0,
+       "y": 0,
+       "w": 300,
+       "h": 80,
+       "screen": true
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "rooms": [
+  {
+   "id": "1",
+   "name": "Screen One",
+   "note": "182 seats · 35mm, DCP"
+  },
+  {
+   "id": "2",
+   "name": "Screen Two",
+   "note": "64 seats · DCP"
+  },
+  {
+   "id": "B",
+   "name": "The Long Bar",
+   "note": "Talks · free entry",
+   "sparse": true
+  }
+ ],
+ "tracks": [
+  {
+   "id": "mn",
+   "name": "New films",
+   "mark": "solid"
+  },
+  {
+   "id": "rs",
+   "name": "Restorations",
+   "mark": "hatch",
+   "accent": true
+  },
+  {
+   "id": "sh",
+   "name": "Shorts",
+   "mark": "dots"
+  },
+  {
+   "id": "tk",
+   "name": "Talks",
+   "mark": "hairline"
+  }
+ ],
+ "days": [
+  {
+   "id": "sat",
+   "date": "2027-10-23",
+   "opens": "11:30",
+   "closes": "01:30"
+  },
+  {
+   "id": "sun",
+   "date": "2027-10-24",
+   "opens": "11:30",
+   "closes": "23:30"
+  }
+ ],
+ "breaks": [],
+ "sessions": [
+  {
+   "code": "1.1",
+   "day": "sat",
+   "room": "1",
+   "start": "12:30",
+   "end": "14:15",
+   "track": "mn",
+   "title": "The Salt Year",
+   "meta": "Ilse Marten · 2026 · 98 min",
+   "people": [
+    "ilse"
+   ],
+   "line": "A salt-marsh family and the one summer the tide did not go out."
+  },
+  {
+   "code": "1.2",
+   "day": "sat",
+   "room": "1",
+   "start": "15:00",
+   "end": "17:10",
+   "track": "rs",
+   "title": "Harbour Lights Go Out",
+   "meta": "Dov Carrell · 1979 · 121 min · 35mm",
+   "people": [],
+   "line": "Restored from a fire-damaged print. Reel four keeps 41 seconds of black."
+  },
+  {
+   "code": "1.3",
+   "day": "sat",
+   "room": "1",
+   "start": "18:00",
+   "end": "19:50",
+   "track": "mn",
+   "title": "Nine Winters",
+   "meta": "Mariam Sadeghi · 2027 · 104 min · UK premiere",
+   "people": [],
+   "line": "Shot on one farm, every January from 2018 to 2026."
+  },
+  {
+   "code": "1.4",
+   "day": "sat",
+   "room": "1",
+   "start": "20:30",
+   "end": "22:25",
+   "track": "mn",
+   "title": "Paper Moths",
+   "meta": "Ana Ribeiro · 2027 · 108 min · opening night",
+   "people": [
+    "ana"
+   ],
+   "line": "A bookbinder, a flooded archive and a macro lens that cost nine pounds.",
+   "access": [
+    "CC"
+   ]
+  },
+  {
+   "code": "1.5",
+   "day": "sat",
+   "room": "1",
+   "start": "23:00",
+   "end": "00:50",
+   "track": "rs",
+   "title": "Night Bus to Ostend",
+   "meta": "Pieter Vos · 1987 · 102 min · 35mm",
+   "people": [],
+   "line": "The last bus, the last ferry, and a driver who will not stop talking."
+  },
+  {
+   "code": "2.1",
+   "day": "sat",
+   "room": "2",
+   "start": "13:00",
+   "end": "14:30",
+   "track": "sh",
+   "title": "Shorts: Coastlines",
+   "meta": "Six films · 84 min",
+   "people": [],
+   "line": "Six films made within a mile of the sea."
+  },
+  {
+   "code": "2.2",
+   "day": "sat",
+   "room": "2",
+   "start": "15:30",
+   "end": "17:00",
+   "track": "sh",
+   "title": "Shorts: Rooms After Midnight",
+   "meta": "Five films · 81 min",
+   "people": [],
+   "line": "Five films, each set in one room, all after dark.",
+   "access": [
+    "CC"
+   ]
+  },
+  {
+   "code": "2.3",
+   "day": "sat",
+   "room": "2",
+   "start": "17:30",
+   "end": "19:15",
+   "track": "mn",
+   "title": "A Field Guide to Leaving",
+   "meta": "Joon-ho Park · 2026 · 96 min · documentary",
+   "people": [],
+   "line": "Six people pack up one house in Busan over a long weekend."
+  },
+  {
+   "code": "2.4",
+   "day": "sat",
+   "room": "2",
+   "start": "20:00",
+   "end": "21:45",
+   "track": "rs",
+   "title": "The Lamp Keeper’s Daughter",
+   "meta": "Edith Varga · 1962 · 98 min · new 4K",
+   "people": [],
+   "line": "A new scan from the original negative, first shown in 1962."
+  },
+  {
+   "code": "2.5",
+   "day": "sat",
+   "room": "2",
+   "start": "22:15",
+   "end": "23:45",
+   "track": "sh",
+   "title": "Late Shorts",
+   "meta": "Seven films · 86 min · 18",
+   "people": [],
+   "line": "Seven films too strange for the afternoon.",
+   "status": "full"
+  },
+  {
+   "code": "B1",
+   "day": "sat",
+   "room": "B",
+   "start": "14:30",
+   "end": "15:15",
+   "track": "tk",
+   "title": "Restoring a burnt reel",
+   "meta": "Talk · 45 min",
+   "people": [
+    "gwen"
+   ]
+  },
+  {
+   "code": "B2",
+   "day": "sat",
+   "room": "B",
+   "start": "19:55",
+   "end": "20:25",
+   "track": "tk",
+   "title": "Nine Winters: Q&A",
+   "meta": "After 1.3",
+   "people": [
+    "mariam"
+   ]
+  },
+  {
+   "code": "B3",
+   "day": "sat",
+   "room": "B",
+   "start": "22:30",
+   "end": "23:00",
+   "track": "tk",
+   "title": "Inside the booth: a 35mm changeover",
+   "meta": "Demonstration",
+   "people": [
+    "sol"
+   ]
+  },
+  {
+   "code": "1.6",
+   "day": "sun",
+   "room": "1",
+   "start": "12:00",
+   "end": "13:45",
+   "track": "mn",
+   "title": "Small Hours",
+   "meta": "Tamsin Ure · 2027 · 97 min · intro by the director",
+   "people": [
+    "tamsin"
+   ],
+   "line": "A night porter, a hotel that never fills, and one long shift."
+  },
+  {
+   "code": "1.7",
+   "day": "sun",
+   "room": "1",
+   "start": "14:30",
+   "end": "16:20",
+   "track": "rs",
+   "title": "The Long Pier",
+   "meta": "Aurelio Brandão · 1971 · 104 min · 35mm",
+   "people": [],
+   "line": "The only surviving print, lent by a seaside film society."
+  },
+  {
+   "code": "1.8",
+   "day": "sun",
+   "room": "1",
+   "start": "17:00",
+   "end": "18:50",
+   "track": "mn",
+   "title": "Paper Moths",
+   "meta": "Ana Ribeiro · 2027 · 108 min · second screening",
+   "people": [],
+   "line": "A bookbinder, a flooded archive and a macro lens that cost nine pounds.",
+   "access": [
+    "CC"
+   ]
+  },
+  {
+   "code": "1.9",
+   "day": "sun",
+   "room": "1",
+   "start": "19:30",
+   "end": "21:20",
+   "track": "mn",
+   "title": "Undertow",
+   "meta": "Kaito Mori · 2027 · 101 min · closing night",
+   "people": [
+    "kaito"
+   ],
+   "line": "Two lifeguards and the summer the beach was closed."
+  },
+  {
+   "code": "2.6",
+   "day": "sun",
+   "room": "2",
+   "start": "12:30",
+   "end": "14:00",
+   "track": "sh",
+   "title": "Shorts: First Films",
+   "meta": "Six films · 82 min",
+   "people": [],
+   "line": "Six debuts, none longer than 18 minutes."
+  },
+  {
+   "code": "2.7",
+   "day": "sun",
+   "room": "2",
+   "start": "14:30",
+   "end": "16:15",
+   "track": "mn",
+   "title": "A Field Guide to Leaving",
+   "meta": "Joon-ho Park · 2026 · 96 min · second screening",
+   "people": [],
+   "line": "Six people pack up one house in Busan over a long weekend.",
+   "access": [
+    "CC"
+   ]
+  },
+  {
+   "code": "2.8",
+   "day": "sun",
+   "room": "2",
+   "start": "16:45",
+   "end": "18:30",
+   "track": "rs",
+   "title": "Winter Ferry",
+   "meta": "Halina Wróbel · 1966 · 94 min · new 2K",
+   "people": [],
+   "line": "A ferry crossing in a frozen strait, restored from two damaged prints."
+  },
+  {
+   "code": "2.9",
+   "day": "sun",
+   "room": "2",
+   "start": "19:00",
+   "end": "20:30",
+   "track": "sh",
+   "title": "Shorts: Audience Award",
+   "meta": "Five films · 79 min",
+   "people": [],
+   "line": "The five shorts you voted for, shown again."
+  },
+  {
+   "code": "B4",
+   "day": "sun",
+   "room": "B",
+   "start": "13:50",
+   "end": "14:20",
+   "track": "tk",
+   "title": "Small Hours: Q&A",
+   "meta": "After 1.6",
+   "people": [
+    "tamsin"
+   ]
+  },
+  {
+   "code": "B5",
+   "day": "sun",
+   "room": "B",
+   "start": "16:30",
+   "end": "17:15",
+   "track": "tk",
+   "title": "Programming a festival on a cinema’s budget",
+   "meta": "Talk · 45 min",
+   "people": [
+    "nell"
+   ]
+  },
+  {
+   "code": "B6",
+   "day": "sun",
+   "room": "B",
+   "start": "21:25",
+   "end": "22:00",
+   "track": "tk",
+   "title": "Undertow: Q&A",
+   "meta": "After 1.9",
+   "people": [
+    "kaito"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "id": "ana",
+   "name": "Ana Ribeiro",
+   "role": "Director, Paper Moths",
+   "says": "I shot the moth scenes on a 1970s macro lens I bought for nine pounds. I will bring it, and the receipt.",
+   "talk": "1.4",
+   "featured": true
+  },
+  {
+   "id": "mariam",
+   "name": "Mariam Sadeghi",
+   "role": "Director, Nine Winters",
+   "says": "Nine winters means nine actual winters. We went back to the same farm every January from 2018.",
+   "talk": "B2",
+   "featured": true
+  },
+  {
+   "id": "gwen",
+   "name": "Gwen Adair",
+   "role": "Film archivist",
+   "says": "Reel four of Harbour Lights was half melted. I will show you what we saved frame by frame, and what we had to let go.",
+   "talk": "B1",
+   "featured": true
+  },
+  {
+   "id": "sol",
+   "name": "Sol Brennan",
+   "role": "Projectionist, the Kestrel",
+   "says": "Watch the top right corner for the cue dot. You will never unsee it, and you will never miss a changeover again.",
+   "talk": "B3",
+   "featured": true
+  },
+  {
+   "id": "tamsin",
+   "name": "Tamsin Ure",
+   "role": "Director, Small Hours",
+   "says": "Every night shift in the film is a real one. I worked the desk for a winter before I wrote a word.",
+   "talk": "B4",
+   "featured": true
+  },
+  {
+   "id": "nell",
+   "name": "Nell Okafor",
+   "role": "Programmer, Low Light",
+   "says": "Eighteen screenings cost less than one week of a city festival’s hotel bill. I will put the spreadsheet on the screen.",
+   "talk": "B5",
+   "featured": true
+  },
+  {
+   "id": "ilse",
+   "name": "Ilse Marten",
+   "role": "Director, The Salt Year"
+  },
+  {
+   "id": "kaito",
+   "name": "Kaito Mori",
+   "role": "Director, Undertow"
+  }
+ ],
+ "facts": {
+  "extra": {
+   "label": "Programme",
+   "value": "18 screenings, 6 talks",
+   "note": "5 restorations and 5 shorts programmes"
+  }
+ },
+ "tickets": [
+  {
+   "name": "Weekend pass",
+   "includes": "Every screening and talk, a reserved seat in Screen One",
+   "price": "£58",
+   "salesEnd": "2027-10-22T18:00",
+   "ended": true,
+   "url": "https://low-light.example/passes/weekend"
+  },
+  {
+   "name": "Late double bill",
+   "includes": "Late Shorts and Night Bus to Ostend",
+   "price": "£15",
+   "salesEnd": "2027-10-23T22:15",
+   "url": "https://low-light.example/passes/late"
+  },
+  {
+   "name": "Sunday pass",
+   "includes": "Every Sunday screening and talk, from 12:00",
+   "price": "£30",
+   "salesEnd": "2027-10-24T11:00",
+   "url": "https://low-light.example/passes/sunday"
+  },
+  {
+   "name": "Single film",
+   "includes": "One screening. Book from any film in the programme",
+   "price": "£9.50",
+   "salesEnd": "2027-10-24T19:30",
+   "endsNote": "when the last film starts",
+   "url": "https://low-light.example/films"
+  }
+ ],
+ "titles": {
+  "speakers": "Guests, in their words"
+ },
+ "after": "Low Light has ended for this year. The audience award went to the shorts programme you voted for.",
+ "preview": {
+  "clock": "2027-10-23T20:50",
+  "before": "2027-10-01T12:00",
+  "after": "2027-10-25T10:00"
+ },
+ "footer": "Low Light is programmed by the Kestrel's volunteers. Questions: hello@low-light.example"
+}

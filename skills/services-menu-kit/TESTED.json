@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-09",
+  "checks": [
+    "node scripts/build.mjs examples/marrow-street/services.json out/marrow-street",
+    "node scripts/check.mjs out/marrow-street/index.html",
+    "node scripts/build.mjs examples/keelson/services.json out/keelson",
+    "node scripts/check.mjs out/keelson/index.html",
+    "node scripts/record.mjs out/marrow-street/index.html --moments",
+    "node scripts/record.mjs out/marrow-street/index.html --seconds 18 --poster 5.63",
+    "node scripts/record.mjs out/keelson/index.html --still 9.43 --size 390x844 --scale 2"
+  ],
+  "agents": []
+}

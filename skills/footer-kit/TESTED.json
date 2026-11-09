@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/ferrow/footer.json out/ferrow",
+    "node scripts/check.mjs out/ferrow/index.html",
+    "node scripts/build.mjs examples/ostrel/footer.json out/ostrel",
+    "node scripts/check.mjs out/ostrel/index.html",
+    "node scripts/build.mjs examples/ferrow/footer.index.json out/ferrow-index",
+    "node scripts/check.mjs out/ferrow-index/index.html",
+    "node scripts/build.mjs examples/ferrow/footer.dispatch.json out/ferrow-dispatch",
+    "node scripts/check.mjs out/ferrow-dispatch/index.html",
+    "node scripts/record.mjs out/ferrow/index.html",
+    "node scripts/record.mjs out/ostrel/index.html"
+  ],
+  "agents": []
+}

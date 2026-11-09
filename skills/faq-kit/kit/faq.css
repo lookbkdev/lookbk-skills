@@ -1,0 +1,253 @@
+/* FAQ Kit: the whole design, scoped to .fq. Two layouts (index: topic groups
+   with a sticky contents rail; ledger: one flat ruled list), two type sets
+   (book, readout), the phone layout and reduced motion. Every class starts fq-. */
+.fq, .fq *, .fq *::before, .fq *::after { box-sizing: border-box; margin: 0; padding: 0 }
+.fq {
+  --gut: clamp(16px, 3.4vw, 56px);
+  --pad-top: 24px;
+  background: var(--bg); color: var(--ink);
+  font: 400 17px/1.6 var(--text);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  max-width: 1328px; margin: 0 auto;
+  padding: clamp(56px, 8vw, 128px) var(--gut) clamp(72px, 9vw, 160px);
+  overflow-wrap: break-word;
+}
+.fq a { color: inherit }
+.fq button, .fq input { font: inherit; color: inherit }
+.fq :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px }
+.fq-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+
+/* ---------- intro ---------- */
+.fq-eyebrow { font: 500 13px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mute); display: flex; align-items: center; gap: 12px }
+.fq-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; flex: none }
+.fq-head { font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--display-track); line-height: 1.02; font-size: var(--head-size); margin-top: 22px; text-wrap: balance }
+.fq-head em, .fq-stuck h3 em { font-style: var(--turn-style); color: var(--turn) }
+.fq-lede { color: var(--mute); max-width: 40ch; margin-top: 20px; font-size: 18px; line-height: 1.55 }
+
+/* ---------- search: one ruled line (shown only when the runtime runs) ---------- */
+.fq-search { display: none; position: relative; margin-top: 36px }
+.fq-js .fq-search { display: block }
+.fq-search label { display: block; font: 500 13px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); margin-bottom: 10px }
+.fq-field { display: flex; align-items: center; gap: 12px; border-bottom: 1.5px solid var(--ink); padding: 6px 0 10px }
+.fq-field svg { flex: none; width: 20px; height: 20px }
+.fq-field input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; font-size: 20px; line-height: 1.3; padding: 0; -webkit-appearance: none; appearance: none }
+.fq-field input::-webkit-search-cancel-button { -webkit-appearance: none }
+.fq-field input::placeholder { color: var(--mute); opacity: 1 }
+.fq-field kbd { font: 500 13px/1 var(--mono); color: var(--mute); border: 1px solid var(--rule); border-radius: 4px; padding: 4px 7px }
+.fq-field:focus-within, .fq-typing .fq-field { border-bottom-width: 2.5px; padding-bottom: 9px }
+.fq-field:focus-within kbd, .fq-typing .fq-field kbd { visibility: hidden }
+.fq-count { margin-top: 12px; font: 400 14px/1.4 var(--mono); color: var(--mute); min-height: 1.4em }
+
+/* ---------- contents (index layout) ---------- */
+.fq-contents { margin-top: 44px; list-style: none; border-top: 1px solid var(--rule) }
+.fq-contents a { display: grid; grid-template-columns: 28px 1fr auto; align-items: baseline; gap: 10px; text-decoration: none; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 16px }
+.fq-contents .fq-n { font: 500 13px/1 var(--mono); color: var(--mute) }
+.fq-contents .fq-t { display: flex; align-items: baseline; gap: 8px; min-width: 0 }
+.fq-contents .fq-t span { white-space: nowrap }
+.fq-contents .fq-t::after { content: ""; flex: 1; border-bottom: 1.5px dotted var(--rule); transform: translateY(-4px) }
+.fq-contents .fq-c { font: 500 13px/1 var(--mono); color: var(--mute) }
+.fq-contents .fq-short { display: none }
+.fq-contents a[aria-current="true"] { font-weight: 600 }
+.fq-contents a[aria-current="true"] .fq-n { color: var(--accent) }
+.fq-contents a:hover .fq-t span { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px }
+.fq-railnote { margin-top: 28px; font-size: 15px; line-height: 1.5; color: var(--mute); max-width: 36ch }
+.fq-railnote a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px }
+
+/* ---------- groups and entries ---------- */
+.fq-group { scroll-margin-top: var(--pad-top) }
+.fq-group + .fq-group { margin-top: 64px }
+.fq-ghead, .fq-cols { display: grid; grid-template-columns: var(--addr-w) minmax(0, 1fr) var(--v-w) 28px; column-gap: 24px; align-items: baseline }
+.fq-ghead { padding-bottom: 16px; border-bottom: 1.5px solid var(--ink) }
+.fq-ghead .fq-n { font: 500 13px/1 var(--mono); color: var(--mute); letter-spacing: .06em }
+.fq-ghead .fq-tl { display: flex; align-items: baseline; gap: 14px; min-width: 0 }
+.fq-ghead h3 { font-family: var(--display); font-weight: var(--display-w); font-size: 30px; letter-spacing: var(--display-track); line-height: 1.1 }
+.fq-ghead .fq-c { font: 400 14px/1 var(--mono); color: var(--mute) }
+.fq-vl, .fq-cols { font: 500 12.5px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--mute) }
+.fq-vl { padding-left: 17px }
+.fq-cols { padding: 0 0 14px; border-bottom: 1.5px solid var(--ink) }
+.fq-cols span:first-child { padding-left: 18px }
+.fq-cols span:nth-child(3) { padding-left: 17px }
+
+.fq-q { border-bottom: 1px solid var(--rule); position: relative; scroll-margin-top: var(--pad-top) }
+.fq-q > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: var(--addr-w) minmax(0, 1fr) var(--v-w) 28px; column-gap: 24px; align-items: baseline; padding: 22px 0; position: relative }
+.fq-q > summary::-webkit-details-marker { display: none }
+.fq-q > summary::marker { content: "" }
+.fq-q > summary:focus-visible { outline-offset: 4px }
+.fq-addr { font: 500 13px/1 var(--mono); color: var(--mute); letter-spacing: .02em }
+.fq-qt { font-family: var(--q-font); font-weight: var(--q-w); font-size: var(--q-size); line-height: 1.3; letter-spacing: var(--q-track); text-wrap: pretty }
+.fq-v { position: relative; font: var(--v-font); color: var(--accent); letter-spacing: var(--v-track); text-transform: var(--v-case); line-height: 1.35; padding-left: 16px }
+.fq-v::before { content: ""; position: absolute; left: 0; top: -5px; bottom: -5px; width: 1px; background: var(--rule) }
+.fq-q > summary:hover .fq-v::before { background: var(--ink) }
+.fq-pm { position: relative; width: 16px; height: 16px; justify-self: end; align-self: start; margin-top: calc(var(--q-size) * .65 - 8px) }
+.fq-pm::before, .fq-pm::after { content: ""; position: absolute; left: 0; top: 7.25px; width: 16px; height: 1.5px; background: var(--ink); transition: transform 260ms cubic-bezier(.2, .7, .2, 1) }
+.fq-pm::after { transform: rotate(90deg) }
+.fq-q[open]:not(.fq-closing) .fq-pm::after { transform: rotate(90deg) scaleX(calc(1 - var(--p, 1))) }
+/* the open marker: a rule in the margin beside the entry */
+.fq-q::before { content: ""; position: absolute; left: calc(var(--rail-off) * -1); top: 22px; width: var(--mw, 2px); height: 0; background: var(--accent); transition: height 340ms cubic-bezier(.2, .7, .2, 1) }
+.fq-q[open]:not(.fq-closing)::before { height: calc((100% - 44px) * var(--p, 1)) }
+.fq-q.fq-flash::before { animation: fq-flash 1200ms cubic-bezier(.2, .7, .2, 1) }
+@keyframes fq-flash { 0% { width: 2px } 20% { width: 6px } 100% { width: 2px } }
+
+.fq-ans { overflow: hidden }
+.fq-ans-in { display: grid; grid-template-columns: var(--addr-w) minmax(0, 1fr) var(--v-w) 28px; column-gap: 24px; padding: 0 0 30px }
+.fq-body, .fq-foot { grid-column: 2 / 4; max-width: 64ch }
+.fq-body > * + * { margin-top: 16px }
+.fq-body p { font-size: 17px; line-height: 1.62 }
+.fq-body strong { font-weight: 600 }
+.fq-body a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--accent) }
+.fq-body code { font: 400 .94em/1 var(--mono); background: var(--panel); padding: 2px 5px; border-radius: 3px }
+.fq-body .fq-note { font-size: 15px; color: var(--mute); border-left: 2px solid var(--rule); padding-left: 14px }
+.fq-body ol { list-style: none; counter-reset: fq-s; border-left: 1px solid var(--rule) }
+.fq-body ol li { counter-increment: fq-s; display: grid; grid-template-columns: 44px 1fr; padding: 6px 0; font-size: 16.5px; line-height: 1.55 }
+.fq-body ol li::before { content: counter(fq-s, decimal-leading-zero); font: 500 13px/1.9 var(--mono); color: var(--accent); padding-left: 14px }
+.fq-body table { border-collapse: collapse; width: 100%; font-size: 15.5px }
+.fq-body caption { caption-side: bottom; text-align: left; font: 400 13px/1.5 var(--mono); color: var(--mute); padding-top: 10px }
+.fq-body th { font: 500 12.5px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--mute); text-align: left; padding: 0 16px 10px 0; border-bottom: 1px solid var(--ink); vertical-align: bottom }
+.fq-body td { padding: 10px 16px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: top }
+.fq-body td.fq-num { font-variant-numeric: tabular-nums }
+.fq-body td:last-child, .fq-body th:last-child { text-align: right; padding-right: 0 }
+.fq-more { display: flex; flex-wrap: wrap; gap: 8px 28px; padding-top: 4px }
+.fq-body .fq-more a { font: 500 15px/1.4 var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px }
+.fq-body .fq-more a::after { content: " ↗"; font-family: var(--mono); font-size: 13px; color: var(--accent) }
+.fq-foot { display: flex; gap: 20px; align-items: center; margin-top: 22px; font: 400 13px/1 var(--mono); color: var(--mute) }
+.fq-foot button { display: none; background: none; border: 0; cursor: pointer; color: var(--mute); font: inherit; gap: 6px; align-items: center; padding: 6px 0; min-height: 32px }
+.fq-js .fq-foot button { display: inline-flex }
+.fq-foot button:hover { color: var(--ink) }
+.fq-hit { background: var(--mark); color: var(--mark-ink); border-radius: 2px; padding: 0 1px }
+.fq-snip { grid-column: 2 / 4; font-size: 15px; color: var(--mute); margin-top: 8px; line-height: 1.5 }
+.fq-q.fq-hidden, .fq-group.fq-hidden { display: none }
+.fq-empty { display: none; padding: 40px 0; border-bottom: 1px solid var(--rule) }
+.fq-empty.fq-on { display: block }
+.fq-empty p { font-family: var(--display); font-weight: var(--display-w); font-size: 28px; line-height: 1.25; letter-spacing: var(--display-track) }
+.fq-empty a { color: var(--accent) }
+
+/* ---------- still stuck ---------- */
+.fq-stuck { margin-top: clamp(64px, 8vw, 120px); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; padding-top: 28px; border-top: 1.5px solid var(--ink); scroll-margin-top: var(--pad-top) }
+.fq-stuck .fq-lead { grid-column: 1 / span 6 }
+.fq-stuck h3 { font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--display-track); font-size: clamp(34px, 4vw, 52px); line-height: 1.05; text-wrap: balance }
+.fq-stuck .fq-lead p { margin-top: 22px; color: var(--mute); font-size: 17px; line-height: 1.55; max-width: 46ch }
+.fq-stuck .fq-lead p strong { color: var(--ink); font-weight: 600 }
+.fq-who { grid-column: 8 / span 5 }
+.fq-roster { list-style: none; margin-bottom: 22px; border-top: 1px solid var(--rule) }
+.fq-roster li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 16px }
+.fq-roster b { font-weight: 600 }
+.fq-roster span { font: 400 13px/1.3 var(--mono); color: var(--mute); text-align: right }
+.fq-status { display: none; gap: 10px; align-items: center; font: 500 14px/1.3 var(--mono); color: var(--ink) }
+.fq-js .fq-status { display: flex }
+.fq-status i { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px var(--live-ring) }
+.fq-status.fq-off i { background: var(--mute); box-shadow: none }
+.fq-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px }
+.fq-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; font: 600 15px/1 var(--text); text-decoration: none; border: 1.5px solid var(--ink); border-radius: var(--radius); transition: background-color 200ms, color 200ms }
+.fq-btn.fq-primary { background: var(--btn); color: var(--btn-ink); border-color: var(--btn) }
+.fq-btn svg { width: 14px; height: 14px; transition: transform 240ms cubic-bezier(.2, .7, .2, 1) }
+.fq-btn:hover svg { transform: translateX(3px) }
+.fq-btn:not(.fq-primary):hover { background: var(--panel) }
+
+/* ---------- index layout: a sticky contents rail beside the groups ---------- */
+.fq-L-index { --addr-w: 34px; --rail-off: 18px; --v-w: 210px }
+.fq-L-index .fq-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px }
+.fq-L-index .fq-side { grid-column: 1 / span 4 }
+.fq-L-index .fq-side-in { position: sticky; top: 40px }
+.fq-L-index .fq-list { grid-column: 6 / span 7; padding-top: 8px; min-width: 0 }
+
+/* ---------- ledger layout: one ruled list with column heads ---------- */
+.fq-L-ledger { --addr-w: 120px; --rail-off: 0px; --v-w: 300px }
+.fq-L-ledger .fq-top { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end }
+.fq-L-ledger .fq-top .fq-intro { grid-column: 1 / span 8 }
+.fq-L-ledger .fq-top .fq-search { grid-column: 9 / span 4; margin-top: 0 }
+.fq-L-ledger .fq-list { margin-top: 80px }
+.fq-L-ledger .fq-q::before { left: 0 }
+.fq-L-ledger .fq-addr { font: 500 15px/1 var(--mono); color: var(--accent); padding-left: 18px }
+.fq-L-ledger .fq-q > summary { padding: 26px 0 }
+.fq-L-ledger .fq-ans-in { padding-bottom: 36px }
+
+/* ---------- the phone search bar (slides in once the real search has scrolled away) ---------- */
+.fq-bar { display: none }
+
+/* ---------- type sets ---------- */
+.fq-T-book {
+  --display-w: 500; --display-track: -0.015em; --head-size: clamp(46px, 5.2vw, 76px); --turn-style: italic;
+  --q-font: var(--display); --q-w: 500; --q-size: 23px; --q-size-m: 21px; --q-track: -0.005em;
+  --v-font: 600 15px/1.35 var(--text); --v-track: 0; --v-case: none;
+}
+.fq-T-readout {
+  --display-w: 600; --display-track: -0.035em; --head-size: clamp(52px, 7.2vw, 112px); --turn-style: normal;
+  --q-font: var(--display); --q-w: 500; --q-size: 24px; --q-size-m: 20px; --q-track: -0.015em;
+  --v-font: 500 14px/1.35 var(--mono); --v-track: .04em; --v-case: uppercase;
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1100px) {
+  .fq-L-index .fq-side { grid-column: 1 / span 5 }
+  .fq-L-index .fq-list { grid-column: 6 / span 7 }
+  .fq-L-index { --v-w: 170px; --addr-w: 30px }
+  .fq-L-ledger { --addr-w: 64px; --v-w: 220px }
+  .fq-L-ledger .fq-top .fq-intro { grid-column: 1 / span 7 }
+  .fq-L-ledger .fq-top .fq-search { grid-column: 8 / span 5 }
+  .fq-ghead, .fq-cols, .fq-q > summary, .fq-ans-in { column-gap: 18px }
+}
+@media (max-width: 900px) {
+  .fq-L-index .fq-grid { display: block }
+  .fq-L-index .fq-side-in { position: static }
+  .fq-L-index .fq-list { margin-top: 48px }
+  .fq-L-index .fq-contents { display: flex; flex-wrap: wrap; gap: 8px; border: 0; margin-top: 28px }
+  .fq-L-index .fq-contents li { flex: 0 0 auto }
+  .fq-L-index .fq-contents a { display: flex; gap: 8px; padding: 0 14px; min-height: 44px; align-items: center; border: 1px solid var(--rule); border-radius: 999px }
+  .fq-L-index .fq-contents .fq-t::after, .fq-L-index .fq-contents .fq-n { display: none }
+  .fq-railnote { display: none }
+  .fq-L-index { --rail-off: 14px }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 720px) {
+  .fq { --pad-top: 68px; font-size: 16px; padding-top: 48px }
+  .fq-head { margin-top: 16px }
+  .fq-lede { font-size: 16px; margin-top: 14px }
+  .fq-search { margin-top: 26px }
+  .fq-field input { font-size: 18px }
+  .fq-field kbd { display: none }
+  .fq-L-ledger .fq-top { display: block }
+  .fq-L-ledger .fq-top .fq-search { margin-top: 32px }
+  .fq-L-ledger .fq-list { margin-top: 40px }
+  .fq-L-index .fq-list { margin-top: 40px }
+  .fq-L-index .fq-contents .fq-full { display: none }
+  .fq-L-index .fq-contents .fq-short { display: inline }
+  .fq-L-index .fq-contents .fq-t { gap: 0 }
+  .fq-cols, .fq-vl { display: none }
+  .fq-ghead { grid-template-columns: auto minmax(0, 1fr); column-gap: 16px }
+  .fq-q > summary { grid-template-columns: minmax(0, 1fr) 20px; row-gap: 8px; padding: 20px 0 }
+  .fq-L-ledger .fq-q > summary { padding: 20px 0 }
+  .fq-addr { grid-column: 1; grid-row: 1; font-size: 12px }
+  .fq-L-ledger .fq-addr { font-size: 13px; padding-left: 0 }
+  .fq-qt { grid-column: 1; grid-row: 2; font-size: var(--q-size-m) }
+  .fq-v { grid-column: 1; grid-row: 3; padding-left: 0; font-size: 16px }
+  .fq-v::before { display: none }
+  .fq-pm { grid-column: 2; grid-row: 2; margin-top: calc(var(--q-size-m) * .65 - 8px) }
+  .fq-snip { grid-column: 1; grid-row: 4; font-size: 16px }
+  .fq-ans-in { display: block; padding: 6px 0 26px }
+  .fq-body, .fq-foot { max-width: none }
+  .fq-body p, .fq-body ol li, .fq-body table { font-size: 16px }
+  .fq-body .fq-note { font-size: 16px }
+  .fq-body code { font-size: 1em }
+  .fq-body .fq-more a { font-size: 16px }
+  .fq-q::before, .fq-L-ledger .fq-q::before { left: -12px }
+  .fq-stuck { display: block }
+  .fq-stuck .fq-lead p { font-size: 16px }
+  .fq-who { margin-top: 26px }
+  .fq-status { font-size: 16px; align-items: flex-start }
+  .fq-status i { margin-top: 7px }
+  .fq-btn { flex: 1 1 100%; justify-content: center; font-size: 16px }
+  .fq-empty p { font-size: 24px }
+  .fq-js .fq-bar { display: block; position: sticky; top: 0; z-index: 5; height: 0; margin: 0 calc(var(--gut) * -1) }
+  .fq-bar > div { position: absolute; left: 0; right: 0; top: 0; display: flex; padding: 0 var(--gut); height: 52px; align-items: center; gap: 12px; background: var(--bar-bg); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); font: 500 13px/1 var(--mono); color: var(--mute); transform: translateY(-101%); visibility: hidden; transition: transform 260ms cubic-bezier(.2, .7, .2, 1), visibility 0s 260ms }
+  .fq-bar.fq-on > div { transform: none; visibility: visible; transition: transform 260ms cubic-bezier(.2, .7, .2, 1), visibility 0s }
+  .fq-bar button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; background: none; border: 0; font: 500 16px/1 var(--text); color: var(--ink); cursor: pointer }
+  .fq-bar button svg { width: 17px; height: 17px }
+  .fq-bar .fq-cur { margin-left: auto; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+}
+
+/* ---------- reduced motion, and the recorder's own clock ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .fq *, .fq *::before, .fq *::after { transition: none !important; animation: none !important }
+}
+.fq-rec *, .fq-rec *::before, .fq-rec *::after { transition: none !important; animation: none !important }

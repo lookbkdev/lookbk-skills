@@ -1,0 +1,100 @@
+{
+  "style": "night",
+  "dates": "mdy",
+  "brand": {
+    "name": "Drywash Expeditions",
+    "mark": "mesa",
+    "links": [
+      { "label": "Itinerary", "href": "#day-1" },
+      { "label": "Included", "href": "#included" },
+      { "label": "Dates", "href": "#dates" },
+      { "label": "Price", "href": "#price" }
+    ],
+    "cta": { "label": "Check dates", "href": "https://drywash.example/tours/high-desert" }
+  },
+  "trip": {
+    "kicker": ["Photography tour", "6 days, 5 nights", "Small group of 8"],
+    "title": "High desert, _long exposures_",
+    "lede": "Six days in the high basin with two working photographers: dawn on the mesas, midday in the slot washes, dark-sky nights at camp. We drive the long legs so you can spend the good light shooting.",
+    "mode": "drive",
+    "group": 8
+  },
+  "map": { "route": "route.geojson", "geo": "geo.geojson" },
+  "days": [
+    {
+      "from": "Corvo Junction", "to": "Ash Flats", "km": 51, "drive": "1 h 30", "onFoot": { "km": 2, "up": 20 },
+      "text": "Meet at the Corvo Junction depot at 13:00 for a kit check, then out to the flats for the first sunset and a first night of star trails.",
+      "sleep": { "name": "Ash Flats camp", "detail": "bell tents with cots, shared washroom" },
+      "meals": { "breakfast": false, "lunch": false, "dinner": true },
+      "optional": [{ "label": "Night session at camp until 01:00", "price": "free" }],
+      "note": { "label": "Light", "text": "Sunset is near 17:50 on the autumn departures, with golden hour from about 17:10." }
+    },
+    {
+      "from": "Ash Flats", "to": "Tinaja Rim", "km": 68, "drive": "2 h", "onFoot": { "km": 4, "up": 120, "terrain": "rough" },
+      "text": "A start before dawn for low side light on the flats, then up the rim road. Midday is for editing and a rest; the evening is on the rim edge.",
+      "sleep": { "name": "Tinaja Rim camp", "detail": "bell tents with cots, shared washroom" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true },
+      "optional": [{ "label": "Walk to the rim arch, 4 km there and back", "price": "free" }]
+    },
+    {
+      "from": "Tinaja Rim", "to": "Ilo Dry Lake", "km": 61, "drive": "1 h 45", "onFoot": { "km": 3, "up": 30 },
+      "text": "Down onto the dry lake for the salt crust at blue hour. Wide lenses, and a tripod you trust in the wind.",
+      "sleep": { "name": "Ilo lake house", "detail": "rooms for two, shared bathrooms" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true },
+      "optional": [{ "label": "Drone session where the rules allow it", "price": "free" }]
+    },
+    {
+      "from": "Ilo Dry Lake", "to": "Sable Wash", "km": 71, "drive": "2 h", "onFoot": { "km": 6, "up": 180, "terrain": "scramble" },
+      "text": "The slot washes: reflected light between narrow walls. Walks on sand, with some scrambling over dry falls up to 2 m high.",
+      "sleep": { "name": "Sable Wash camp", "detail": "bell tents with cots, shared washroom" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true },
+      "optional": [{ "label": "A second slot, 6 km there and back, for the keen", "price": "free" }],
+      "note": { "label": "Heat", "text": "We are in the washes before 11:00 and out of them by midday." }
+    },
+    {
+      "from": "Sable Wash", "to": "Kestrel Butte", "km": 46, "drive": "1 h 15", "onFoot": { "km": 3, "up": 140, "terrain": "rough" },
+      "text": "A short drive to the butte, a long-exposure workshop in the afternoon, and the last night under the darkest sky of the trip.",
+      "sleep": { "name": "Kestrel Butte camp", "detail": "bell tents with cots, shared washroom" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true },
+      "optional": [{ "label": "Portraits at camp by lantern light", "price": "free" }]
+    },
+    {
+      "from": "Kestrel Butte", "to": "Corvo Junction", "km": 238, "drive": "4 h 30", "onFoot": { "km": 1, "up": 40 },
+      "text": "Sunrise on the butte, breakfast, then the long drive back with a portfolio review on the way. At the depot by 16:00.",
+      "sleep": { "none": true, "detail": "the depot motel can be booked for you" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": false }
+    }
+  ],
+  "included": [
+    "Two photographers leading every departure",
+    "All driving in high-clearance vehicles, with fuel and permits",
+    "Tripods and filters to borrow, and a dark-sky field guide"
+  ],
+  "notIncluded": [
+    "Getting to Corvo Junction, and home from there",
+    "Dinner on day 6, and drinks",
+    "Camera insurance and travel insurance",
+    "Drone permits, if you bring a drone"
+  ],
+  "departures": {
+    "asOf": "2026-11-03",
+    "capacity": 8,
+    "list": [
+      { "start": "2027-03-14", "end": "2027-03-19", "left": 4, "price": 3450 },
+      { "start": "2027-04-11", "end": "2027-04-16", "left": 0, "price": 3450 },
+      { "start": "2027-10-03", "end": "2027-10-08", "left": 6, "price": 3450 },
+      { "start": "2027-11-07", "end": "2027-11-12", "left": 8, "price": 3290 }
+    ]
+  },
+  "price": {
+    "currency": "$",
+    "amount": 3450,
+    "per": "per person, sharing a tent or room with one other",
+    "covers": ["All 5 nights", "Every meal marked on the days above", "Two photographers for the whole tour", "All driving, fuel and park permits", "Loan tripods, filters and a field guide"],
+    "terms": [
+      { "label": "Own tent or room", "text": "+$290" },
+      { "label": "Deposit", "text": "$500 to hold a place" },
+      { "label": "Balance", "text": "Due 60 days before" }
+    ]
+  }
+}

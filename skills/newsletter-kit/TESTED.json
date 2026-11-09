@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/selftest.mjs",
+    "node scripts/build.mjs examples/brine-crumb/letter.json out/brine-crumb",
+    "node scripts/check.mjs out/brine-crumb/index.html",
+    "node scripts/build.mjs examples/tail-latency/letter.json out/tail-latency",
+    "node scripts/check.mjs out/tail-latency/index.html",
+    "node scripts/record.mjs out/brine-crumb/index.html --seconds 12 --poster 8",
+    "node scripts/record.mjs out/tail-latency/index.html --seconds 12 --poster 9.55"
+  ],
+  "agents": []
+}

@@ -1,0 +1,209 @@
+/* Motion Heroes kit v2: the hero around the effect, as five art-directed
+   compositions (data-comp). Everything is scoped under .mh and themed by
+   --mh-* variables. Effects may not restyle any .mh-* class (the build
+   refuses it), so the rules here hold for every package:
+   - the bar is a solid plate, 72px tall (60px on phones), and nothing in the
+     body starts within 40px of it (--mh-clear);
+   - small text only ever sits on a solid plate (.mh-plate);
+   - shell text is 14px or more on wide screens, 16px or more on phones;
+   - the headline is at least 7.2% of the viewport's height;
+   - no eyebrow chip, no pill buttons, no second headline colour. */
+.mh{position:relative;isolation:isolate;box-sizing:border-box;min-height:var(--mh-height,100vh);min-height:var(--mh-height,100svh);display:grid;background:var(--mh-bg);color:var(--mh-ink);font-family:var(--mh-body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;--mh-pad:clamp(16px,3.4vw,64px);--mh-vh:1vh;--mh-bar-h:72px}
+@supports (height:1svh){.mh{--mh-vh:1svh}}
+.mh *,.mh *::before,.mh *::after{box-sizing:border-box}
+.mh :where(h1,p,dl,dd,ol){margin:0;padding:0}
+.mh :where(a){color:inherit}
+.mh :focus-visible{outline:2px solid var(--mh-ink);outline-offset:4px}
+
+/* the effect: the still picture first, the live canvas over it */
+.mh-stage{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.mh-still,.mh-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mh-still svg{display:block;width:100%;height:100%}
+.mh-still-obj{position:absolute;left:var(--mh-sx,50%);top:var(--mh-sy,50%);width:var(--mh-ss,min(46vw,72vh));aspect-ratio:1;transform:translate(-50%,-50%)}
+.mh-still-obj svg{display:block;width:100%;height:100%;overflow:visible}
+.mh-canvas{opacity:0;transition:opacity .7s ease}
+.mh.mh-ready .mh-canvas{opacity:1}
+.mh.mh-ready .mh-still,.mh.mh-ready .mh-still-obj{visibility:hidden;transition:visibility 0s .7s}
+.mh.mh-fallback .mh-canvas,.mh.mh-fallback .mh-front{display:none}
+.mh.mh-record .mh-canvas,.mh.mh-record .mh-still,.mh.mh-record .mh-still-obj{transition:none}
+/* the effect's own place in the layout (measured by the runtime as view.stage) */
+.mh-field{position:relative;z-index:0;min-height:0;pointer-events:none}
+/* the effect's front layer, in front of the headline and behind the plates (typeMode "occlude") */
+.mh-front{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+
+/* solid plates: every piece of small text sits on one */
+.mh-plate{background:var(--mh-plate)}
+
+/* the bar */
+.mh-bar{position:relative;z-index:4;grid-area:bar;display:flex;align-items:center;gap:clamp(20px,2.6vw,44px);height:var(--mh-bar-h);padding:0 var(--mh-pad);font-size:15px;font-weight:500}
+.mh-brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--mh-display);font-weight:700;font-size:20px;letter-spacing:-.01em;min-height:44px;white-space:nowrap}
+.mh-logo{flex:none;width:28px;height:28px;display:grid;place-items:center}
+.mh-logo-svg svg{width:100%;height:100%;display:block}
+.mh-logo-text{border:1.5px solid currentColor;font-size:14px;font-weight:700;letter-spacing:0}
+.mh-nav{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);margin-left:auto}
+.mh-nav-a,.mh-nav-b{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px)}
+.mh-nav a{text-decoration:none;display:inline-flex;align-items:baseline;gap:8px;min-height:44px;align-items:center}
+.mh-nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.mh-n{display:none;font-size:14px;font-variant-numeric:tabular-nums;color:var(--mh-mute)}
+.mh-action{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:7px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+
+/* the headline: one block per line; *emphasis* is the italic, same colour */
+.mh-title{position:relative;z-index:1;font-family:var(--mh-display);font-weight:var(--mh-weight);font-size:calc(var(--mh-vh) * 9);line-height:.88;letter-spacing:-.035em;margin:0;padding-top:.2em}
+.mh-line{display:block}
+.mh-bl{display:inline-block;width:0;height:0;vertical-align:baseline}
+.mh-title em{font-style:italic;font-weight:inherit}
+.mh[data-type=scene].mh-ready .mh-title{color:transparent;-webkit-text-fill-color:transparent}
+.mh[data-type=scene].mh-fallback .mh-title{color:var(--mh-ink);-webkit-text-fill-color:currentColor}
+.mh[data-type=lit] .mh-title{padding-bottom:.18em;margin-bottom:-.18em;color:transparent;background:radial-gradient(circle var(--mh-lr,1px) at var(--mh-lx,-9999px) var(--mh-ly,-9999px),var(--mh-lit) 0%,color-mix(in srgb,var(--mh-lit) 55%,var(--mh-lit-base)) 42%,var(--mh-lit-base) 100%);-webkit-background-clip:text;background-clip:text}
+
+/* the copy plate */
+.mh-copy{position:relative;z-index:3;grid-area:copy}
+.mh-sub{font-family:var(--mh-display);font-size:clamp(22px,2vw,34px);line-height:1.15;letter-spacing:-.015em;font-weight:500}
+.mh-lede{font-size:clamp(16px,1.1vw,19px);line-height:1.55;color:var(--mh-mute);max-width:36em}
+.mh-lede a{color:var(--mh-ink)}
+.mh-act{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.mh-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;text-decoration:none;font-weight:600;font-size:17px;white-space:nowrap}
+.mh-arrow{flex:none;transition:transform .25s ease}
+.mh-cta:hover .mh-arrow{transform:translateX(4px)}
+.mh-link{font-size:16px;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px;min-height:44px;display:inline-flex;align-items:center}
+
+/* ============================================ type-effect: the headline IS the effect
+   bar: 64px, the brand in the display face's capitals, spaced; the links in small spaced capitals; no rule */
+.mh[data-comp=type-effect]{--mh-bar-h:64px;grid-template-columns:minmax(0,1fr);grid-template-rows:var(--mh-bar-h) minmax(var(--mh-clear),1fr) auto minmax(28px,1fr) auto;grid-template-areas:"bar" "." "title" "." "copy"}
+.mh[data-comp=type-effect] .mh-brand{font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.16em}
+.mh[data-comp=type-effect] .mh-nav,.mh[data-comp=type-effect] .mh-action{font-size:14px;text-transform:uppercase;letter-spacing:.12em}
+.mh[data-comp=type-effect] .mh-field{grid-row:1/-1;grid-column:1}
+.mh[data-comp=type-effect] .mh-title{grid-area:title;justify-self:center;text-align:center;white-space:nowrap;font-size:var(--mh-fit,min(20vw,calc(var(--mh-vh) * 36)));line-height:.8;letter-spacing:-.03em;padding:0 var(--mh-pad)}
+.mh[data-comp=type-effect] .mh-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"sub act" "lede act";column-gap:clamp(32px,6vw,120px);row-gap:12px;align-items:end;padding:26px var(--mh-pad) 30px;border-top:1px solid var(--mh-hair)}
+.mh[data-comp=type-effect] .mh-sub{grid-area:sub;font-style:italic}
+.mh[data-comp=type-effect] .mh-lede{grid-area:lede}
+.mh[data-comp=type-effect] .mh-act{grid-area:act;justify-content:flex-end;align-self:end}
+.mh[data-comp=type-effect] .mh-cta{font-family:var(--mh-display);font-size:22px;padding-bottom:6px;min-height:0;border-bottom:2px solid var(--mh-accent)}
+/* portrait: the word runs up the screen in a band a screen tall (positioned in its own grid area); the copy follows below the fold */
+.mh[data-comp=type-effect][data-rot]{overflow-x:clip;grid-template-rows:var(--mh-bar-h) var(--mh-clear) var(--mh-band,60vh) var(--mh-clear) auto}
+.mh[data-comp=type-effect][data-rot] .mh-title{position:absolute;left:50%;top:calc(var(--mh-band,60vh) / 2);transform:translate(-50%,-50%) rotate(-90deg);margin:0;padding:0}
+
+/* ============================================ editorial: an asymmetric 12-column grid
+   bar: 72px ruled band, the links as a mono index (01, 02 ...). The drawing field spans columns
+   4-12; the headline sits over columns 1-8 at the foot; the copy is a ruled column in 10-12. */
+.mh[data-comp=editorial]{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.5vw,28px);padding:0 var(--mh-pad);grid-template-rows:var(--mh-bar-h) var(--mh-clear) minmax(0,1fr) auto var(--mh-pad)}
+.mh[data-comp=editorial] .mh-bar{grid-column:1/-1;grid-row:1;margin:0 calc(-1 * var(--mh-pad));border-bottom:1px solid var(--mh-line);font-family:var(--mh-mono);font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.mh[data-comp=editorial] .mh-brand{font-family:var(--mh-display);font-size:24px;letter-spacing:.02em}
+.mh[data-comp=editorial] .mh-n{display:inline}
+.mh[data-comp=editorial] .mh-rules{position:absolute;z-index:1;left:var(--mh-pad);right:var(--mh-pad);top:var(--mh-bar-h);bottom:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.5vw,28px);pointer-events:none}
+.mh[data-rules=off] .mh-rules{display:none}
+.mh[data-rules=fade-with-story] .mh-rules{opacity:calc(1 - min(1, var(--mh-p, 0) * 4))}
+.mh-rules i{border-left:1px solid var(--mh-hair);border-right:1px solid var(--mh-hair);opacity:.7}
+.mh[data-comp=editorial] .mh-field{grid-column:4/-1;grid-row:2/-1;margin-right:calc(-1 * var(--mh-pad))}
+.mh[data-comp=editorial] .mh-copy{grid-column:10/-1;grid-row:4;align-self:end;border-top:2px solid var(--mh-ink);margin-left:calc(-1 * clamp(12px,1.5vw,28px))}
+.mh[data-comp=editorial] .mh-sub{padding:16px 0 0;font-size:22px}
+.mh[data-comp=editorial] .mh-lede{padding:14px 0 18px;color:var(--mh-ink);font-size:16px}
+.mh[data-comp=editorial] .mh-act{display:grid;gap:0}
+.mh[data-comp=editorial] .mh-cta{width:100%;min-height:56px;border-top:1px solid var(--mh-line);border-bottom:1px solid var(--mh-line);font-family:var(--mh-mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.mh[data-comp=editorial] .mh-link{border-bottom:1px solid var(--mh-line);min-height:48px;font-family:var(--mh-mono);font-size:14px;text-decoration:none}
+.mh[data-comp=editorial] .mh-title{grid-column:1/span 8;grid-row:4;align-self:end;font-size:max(calc(var(--mh-vh) * 7.2),min(calc(var(--mh-vh) * 15),9.4vw));line-height:.86;letter-spacing:-.01em;margin-top:var(--mh-clear)}
+
+/* ============================================ lockup: centred, the effect behind
+   bar: 88px, no rule, the brand centred in the display face between two groups of links (also in
+   the display face). The headline is fitted to 85% of the width; the copy is a full-width colophon
+   band at the foot: the lede on the left, one ruled call to action on the right. */
+.mh[data-comp=lockup]{--mh-bar-h:88px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-rows:var(--mh-bar-h) minmax(var(--mh-clear),1fr) auto 28px auto minmax(var(--mh-clear),1fr)}
+.mh[data-comp=lockup] .mh-field{grid-row:1/-1;grid-column:1/-1}
+.mh[data-comp=lockup] .mh-bar{grid-column:1/-1;grid-row:1;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);font-family:var(--mh-display);font-size:17px;font-weight:500}
+.mh[data-comp=lockup] .mh-brand{grid-column:2;grid-row:1;font-size:30px;letter-spacing:-.02em}
+.mh[data-comp=lockup] .mh-nav{display:contents}
+.mh[data-comp=lockup] .mh-nav-a{grid-column:1;grid-row:1;justify-self:start}
+.mh[data-comp=lockup] .mh-nav-b{grid-column:3;grid-row:1;justify-self:end}
+.mh[data-comp=lockup] .mh-action{grid-column:3;grid-row:1;justify-self:end}
+.mh[data-comp=lockup] .mh-title{grid-column:2;grid-row:3;justify-self:center;text-align:center;font-size:var(--mh-fit,max(calc(var(--mh-vh) * 7.2),min(calc(var(--mh-vh) * 20),11vw)));line-height:.86;letter-spacing:-.045em;white-space:nowrap}
+/* the specimen caption: under the headline's left edge the lede, under its right edge one ruled call to action */
+.mh[data-comp=lockup] .mh-copy{grid-column:2;grid-row:5;display:grid;grid-template-columns:minmax(0,26em) auto;justify-content:space-between;align-items:start;column-gap:48px;padding:0}
+.mh[data-comp=lockup] .mh-sub{grid-column:1;font-size:20px}
+.mh[data-comp=lockup] .mh-lede{grid-column:1;font-size:17px;line-height:1.5}
+.mh[data-comp=lockup] .mh-act{grid-column:2;grid-row:1/span 2;justify-self:end}
+.mh[data-comp=lockup] .mh-cta{font-family:var(--mh-display);font-size:19px;min-width:min(300px,30vw);padding:0 2px;border-top:1px solid var(--mh-ink);border-bottom:1px solid var(--mh-ink);min-height:56px}
+
+/* ============================================ split: a solid panel, a full-height stage */
+.mh[data-comp=split]{grid-template-columns:minmax(0,42fr) minmax(0,58fr);grid-template-rows:var(--mh-bar-h) var(--mh-clear) auto minmax(28px,1fr) auto}
+.mh[data-comp=split] .mh-bar{grid-column:1/-1;grid-row:1;border-bottom:1px solid var(--mh-line)}
+.mh[data-comp=split] .mh-panel{grid-column:1;grid-row:2/-1;position:relative;z-index:1;border-right:1px solid var(--mh-line)}
+.mh[data-comp=split] .mh-field{grid-column:2;grid-row:2/-1}
+.mh[data-comp=split] .mh-title{grid-column:1;grid-row:3;z-index:2;padding:.2em var(--mh-pad) 0;font-size:max(calc(var(--mh-vh) * 7.2),min(calc(var(--mh-vh) * 13),6.2vw));line-height:.9;letter-spacing:-.03em}
+.mh[data-comp=split] .mh-copy{grid-column:1;grid-row:5;display:grid;gap:22px;padding:0 var(--mh-pad)}
+.mh[data-comp=split] .mh-act{display:grid;gap:0;margin:8px calc(-1 * var(--mh-pad)) 0}
+.mh[data-comp=split] .mh-cta{width:100%;min-height:72px;padding:0 var(--mh-pad);background:var(--mh-ink);color:var(--mh-on-ink);font-size:19px}
+.mh[data-comp=split] .mh-link{padding:0 var(--mh-pad);border-top:1px solid var(--mh-line);min-height:52px}
+
+/* ============================================ story: pinned, steps light up as you scroll */
+.mh[data-comp=story]{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.5vw,28px);padding:0 var(--mh-pad);grid-template-rows:var(--mh-bar-h) var(--mh-clear) auto minmax(24px,1fr) auto var(--mh-pad)}
+.mh[data-comp=story] .mh-bar{grid-column:1/-1;grid-row:1;margin:0 calc(-1 * var(--mh-pad));border-bottom:1px solid var(--mh-hair);font-family:var(--mh-mono);font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+.mh[data-comp=story] .mh-n{display:inline}
+.mh[data-comp=story] .mh-field{grid-column:1/-1;grid-row:2/-1;margin:0 calc(-1 * var(--mh-pad))}
+.mh-steps{position:relative;z-index:3;list-style:none;grid-column:9/-1;grid-row:3;align-self:start;border:1px solid var(--mh-hair);counter-reset:none}
+.mh-step{display:grid;grid-template-columns:auto 1fr;column-gap:16px;padding:14px 20px;border-top:1px solid var(--mh-hair);color:var(--mh-mute);font-size:15px;line-height:1.45}
+.mh-step:first-child{border-top:0}
+.mh-step strong{font-size:17px;font-weight:600}
+.mh-step-n{grid-row:span 2;font-variant-numeric:tabular-nums;font-size:14px;padding-top:2px}
+.mh-step-t{grid-column:2;display:none}
+.mh-step.mh-on{color:var(--mh-ink);box-shadow:inset 3px 0 0 var(--mh-accent)}
+.mh-step.mh-on .mh-step-t{display:block}
+.mh[data-comp=story] .mh-title{grid-column:1/span 8;grid-row:5;align-self:end;font-size:max(calc(var(--mh-vh) * 7.2),min(calc(var(--mh-vh) * 13),8vw));line-height:.88;letter-spacing:-.03em}
+.mh[data-comp=story] .mh-copy{grid-column:9/-1;grid-row:5;align-self:end;display:grid;gap:16px;padding:20px 22px;border:1px solid var(--mh-hair)}
+.mh[data-comp=story] .mh-cta{min-height:0;padding-bottom:6px;border-bottom:2px solid var(--mh-accent);justify-self:start}
+
+/* the intro: the plates settle into place once. Nothing is hidden at any
+   moment (no clip, no fade), so the first frame is already the whole picture. */
+/* not in recordings: a looping video has no intro, so its last frame meets its first */
+.mh.mh-live:not(.mh-record) .mh-copy,.mh.mh-live:not(.mh-record) .mh-steps{animation:mh-settle 1.2s cubic-bezier(.16,1,.3,1) both}
+.mh.mh-live:not(.mh-record) .mh-steps{animation-delay:.12s}
+@keyframes mh-settle{from{transform:translateY(18px)}to{transform:none}}
+
+/* tablets */
+@media (max-width:1100px){
+  .mh[data-comp=editorial] .mh-copy{grid-column:9/-1}
+  .mh[data-comp=editorial] .mh-title{grid-column:1/span 8}
+  .mh[data-comp=editorial] .mh-field{grid-column:3/-1}
+  .mh[data-comp=story] .mh-steps,.mh[data-comp=story] .mh-copy{grid-column:7/-1}
+  .mh[data-comp=split]{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+/* phones: one column, the effect in its own band, 16px text or more */
+@media (max-width:759px){
+  .mh{--mh-bar-h:60px;font-size:17px}
+  .mh-bar{font-size:16px;gap:16px}
+  .mh-brand{font-size:19px}
+  .mh-nav{display:none}
+  .mh-action{font-size:16px}
+  .mh-cta{font-size:17px}
+  .mh[data-comp=type-effect] .mh-copy{grid-template-columns:minmax(0,1fr);grid-template-areas:"sub" "lede" "act";row-gap:14px;padding:22px var(--mh-pad) 26px}
+  .mh[data-comp=type-effect]{--mh-bar-h:60px}
+  .mh[data-comp=type-effect] .mh-nav,.mh[data-comp=type-effect] .mh-action,.mh[data-comp=editorial] .mh-cta,.mh[data-comp=editorial] .mh-link,.mh[data-comp=editorial] .mh-bar,.mh[data-comp=story] .mh-bar{font-size:16px}
+  .mh[data-comp=lockup]{--mh-bar-h:60px;grid-template-columns:minmax(0,1fr);grid-template-rows:var(--mh-bar-h) var(--mh-clear) auto 24px auto minmax(28px,1fr)}
+  .mh[data-comp=lockup] .mh-title{grid-column:1;white-space:normal;padding:.24em 4vw 0;line-height:.84}
+  .mh[data-comp=lockup] .mh-copy{grid-column:1;grid-template-columns:minmax(0,1fr);row-gap:16px;padding:0 var(--mh-pad)}
+  .mh[data-comp=lockup] .mh-act{grid-column:1;grid-row:auto;justify-self:stretch}
+  .mh[data-comp=lockup] .mh-cta{min-width:0;width:100%}
+  .mh[data-comp=type-effect] .mh-act{justify-content:flex-start}
+  .mh[data-comp=type-effect] .mh-sub{font-size:24px}
+  .mh[data-comp=editorial]{grid-template-columns:minmax(0,1fr);grid-template-rows:var(--mh-bar-h) var(--mh-clear) minmax(300px,1fr) auto 28px}
+  .mh[data-comp=story]{grid-template-columns:minmax(0,1fr);grid-template-rows:var(--mh-bar-h) var(--mh-clear) auto minmax(240px,1fr) auto 28px}
+  .mh[data-comp=editorial] .mh-rules{display:none}
+  .mh[data-comp=story] .mh-title{grid-column:1;grid-row:3;align-self:start;margin-top:0}
+  .mh[data-comp=story] .mh-field{grid-column:1;grid-row:4;margin:24px calc(-1 * var(--mh-pad))}
+  .mh[data-comp=story] .mh-copy{grid-column:1;grid-row:5}
+  .mh[data-comp=editorial] .mh-field{grid-column:1;grid-row:2/4;margin:0 calc(-1 * var(--mh-pad))}
+  .mh[data-comp=editorial] .mh-title{grid-column:1;grid-row:3;align-self:end;margin:0 0 20px}
+  .mh[data-comp=editorial] .mh-copy{grid-column:1;grid-row:4;margin-left:0}
+  .mh[data-comp=story] .mh-steps{grid-column:1;grid-row:4;align-self:end;margin-bottom:24px}
+  .mh[data-comp=lockup] .mh-bar{display:flex;justify-content:space-between}
+  .mh[data-comp=lockup] .mh-nav{display:none}
+  .mh[data-comp=lockup] .mh-brand{font-size:20px}
+  .mh[data-comp=lockup] .mh-copy{padding:18px 16px 20px}
+  .mh[data-comp=split]{grid-template-columns:minmax(0,1fr);grid-template-rows:var(--mh-bar-h) minmax(260px,46vh) var(--mh-clear) auto 28px auto}
+  .mh[data-comp=split] .mh-field{grid-column:1;grid-row:2}
+  .mh[data-comp=split] .mh-panel{grid-column:1;grid-row:3/-1;border-right:0;border-top:1px solid var(--mh-line)}
+  .mh[data-comp=split] .mh-title{grid-row:4}
+  .mh[data-comp=split] .mh-copy{grid-row:6}
+}
+@media (prefers-reduced-motion:reduce){
+  .mh:not(.mh-record) *{animation:none!important;transition:none!important}
+}

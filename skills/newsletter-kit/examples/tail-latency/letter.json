@@ -1,0 +1,99 @@
+{
+  "layout": "inline",
+  "today": "2026-11-09",
+  "theme": {
+    "page": "#0e1012",
+    "ink": "#e9ebe6",
+    "accent": "#ffcf5a",
+    "onAccent": "#1b1503",
+    "accent2": "#7fb3ff",
+    "client": "#15181b",
+    "mail": "#111316",
+    "display": "geist",
+    "text": "geist",
+    "mono": "geist",
+    "fields": "soft"
+  },
+  "brand": {
+    "name": "Tail Latency",
+    "monogram": "p99",
+    "from": "Tail Latency",
+    "address": "issue@taillatency.example"
+  },
+  "eyebrow": "Weekly · for engineers who carry the pager",
+  "headline": "One measured idea about _performance_, every Monday.",
+  "dek": "Each issue takes one claim about latency, queues or storage, tests it on real hardware and shows the numbers. Here is this week’s, as it lands.",
+  "schedule": {
+    "first": "2022-10-10",
+    "every": 1,
+    "weekday": "mon",
+    "time": "07:00",
+    "tz": "UTC",
+    "skipped": ["2023-12-25", "2024-12-30"],
+    "read": "9-minute read"
+  },
+  "issue": {
+    "no": 212,
+    "date": "2026-11-09",
+    "subject": "Your p99 is lying: coordinated omission, measured",
+    "preheader": "One load test, run two ways. At p99.9 the number moved from 41 ms to 1.1 s.",
+    "title": "Your p99 is lying",
+    "body": [
+      "Most load generators wait for a reply before sending the next request. When the server stalls, the generator stalls with it, and the requests that should have queued are never sent.",
+      "So the histogram looks healthy, because the worst moments were never sampled. We re-ran one test with a fixed send schedule:"
+    ],
+    "figure": {
+      "type": "chart",
+      "title": "Latency by percentile, log scale",
+      "note": "Same server, same load",
+      "scale": "log",
+      "x": ["p50", "p90", "p99", "p99.9", "p99.99"],
+      "ticks": [[1, "1 ms"], [10, "10 ms"], [100, "100 ms"], [1000, "1 s"]],
+      "series": [
+        { "name": "Waits for each reply", "values": [3.1, 6.8, 18, 41, 64] },
+        { "name": "Fixed send schedule", "values": [3.4, 9.5, 240, 1100, 1900], "accent": true }
+      ],
+      "callouts": [
+        { "series": 1, "at": 3, "label": "1.1 s" },
+        { "series": 0, "at": 3, "label": "41 ms" }
+      ],
+      "alt": "Latency by percentile on a log scale. Waiting for each reply reports 41 ms at p99.9; a fixed send schedule shows 1.1 s at p99.9 and 1.9 s at p99.99."
+    },
+    "moreWords": 1620,
+    "href": "https://taillatency.example/issues/212"
+  },
+  "archive": [
+    { "no": 211, "title": "Connection pools are queues. Size them like queues", "date": "2026-11-02", "read": "8 min", "href": "https://taillatency.example/issues/211" },
+    { "no": 210, "title": "What fsync actually promises", "date": "2026-10-26", "read": "11 min", "href": "https://taillatency.example/issues/210" },
+    { "no": 209, "title": "Retry storms, and the budget that stops them", "date": "2026-10-19", "read": "7 min", "href": "https://taillatency.example/issues/209" },
+    { "no": 208, "title": "Reading a flame graph upside down", "date": "2026-10-12", "read": "6 min", "href": "https://taillatency.example/issues/208" }
+  ],
+  "count": {
+    "value": 18406,
+    "label": "subscribers",
+    "source": "from the sending service’s export",
+    "asOf": "2026-11-02"
+  },
+  "form": {
+    "label": "Work or personal email",
+    "placeholder": "you@company.example",
+    "button": "Subscribe",
+    "provider": "proxy",
+    "action": "#"
+  },
+  "privacy": [
+    ["Stored", "Your address and the date you joined. Nothing else."],
+    ["Never", "Sold, shared, or matched to ad networks. Links are not tracked."],
+    ["Leaving", "One click in every issue footer, or reply “stop”."]
+  ],
+  "demo": {
+    "title": "Tail Latency · a weekly letter on performance, inline signup",
+    "above": {
+      "label": "End of an article on the page above",
+      "text": "That is the whole trick: send on a schedule, not on a reply, and record the time each request should have gone out."
+    },
+    "below": "The page continues",
+    "email": "kwame@osei.example",
+    "readerTz": "Europe/Berlin"
+  }
+}

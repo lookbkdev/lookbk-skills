@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-08",
+  "kit": "motion-heroes-v2",
+  "checks": [
+    "node scripts/build.mjs examples/wrenfold/hero.json out/wrenfold",
+    "node scripts/check.mjs out/wrenfold/index.html",
+    "node scripts/build.mjs examples/varde/hero.json out/varde",
+    "node scripts/check.mjs out/varde/index.html",
+    "node scripts/record.mjs out/wrenfold/index.html --seconds 20 --size 1920x1080 --fps 30 --poster 0",
+    "node scripts/record.mjs out/wrenfold/index.html --still 6.3 --size 1920x1080 --png out/lamp-across.png",
+    "node scripts/record.mjs out/varde/index.html --seconds 16 --size 1920x1080 --fps 30 --poster 0",
+    "node scripts/record.mjs out/varde/index.html --still 5.2 --size 1920x1080 --png out/second-still.png",
+    "node scripts/record.mjs out/wrenfold/index.html --still 0 --size 390x844 --scale 2 --png out/phone.png",
+    "node scripts/record.mjs out/varde/index.html --still 0 --size 390x844 --scale 2 --png out/phone-2.png"
+  ],
+  "agents": []
+}

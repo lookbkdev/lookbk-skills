@@ -1,0 +1,137 @@
+{
+  "title": "Fernhouse: water each plant on its own day",
+  "description": "Fernhouse learns how fast each pot dries out and tells you which plant needs water today. Plant care for iPhone and Android.",
+  "lang": "en",
+  "fonts": {
+    "href": "https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap",
+    "display": "'Young Serif', Georgia, serif",
+    "body": "'Figtree', system-ui, sans-serif",
+    "mono": "'IBM Plex Mono', ui-monospace, monospace"
+  },
+  "type": { "h1Size": 66, "h1Phone": 40, "h1Weight": 400, "h1Line": 1.02, "h1Tracking": -0.01, "chapterSize": 30, "chapterWeight": 400, "brandWeight": 400 },
+  "colors": {
+    "bg": "#e8e1d4", "ink": "#1d221b", "ink2": "#2f352c", "muted": "#555b51", "line": "#1d221b29",
+    "accent": "#23533b", "accentInk": "#23533b", "onAccent": "#f6f1e7", "shadow": "#342816"
+  },
+  "light": { "kind": "window", "color": "#fff8e6", "strength": 1, "grain": 0.07 },
+  "phone": { "finish": "titanium" },
+  "brand": { "name": "Fernhouse", "icon": "leaf", "href": "#" },
+  "nav": [
+    { "label": "How it works", "href": "#how" },
+    { "label": "Plants we know", "href": "#plants" },
+    { "label": "Pricing", "href": "#pricing" }
+  ],
+  "cta": { "label": "Get the app", "href": "#get" },
+  "eyebrow": "Plant care for iPhone and Android",
+  "headline": "Water each plant _on its own day._",
+  "lede": "Fernhouse learns how fast each pot dries out, then tells you which one needs you today. Four steps, about twenty seconds.",
+  "buttons": [
+    { "label": "Download Fernhouse", "href": "#get" },
+    { "label": "See 1,400 plants it knows", "href": "#plants" }
+  ],
+  "play": "scroll",
+  "stepSeconds": 4,
+  "app": {
+    "colors": {
+      "bg": "#f6f2ea", "surface": "#ffffff", "sheet": "#fbf8f2", "ink": "#1b1f1a", "muted": "#666d62", "line": "#e3ddd1",
+      "tint": "#e4ece4", "accent": "#23533b", "onAccent": "#f6f1e7", "accent2": "#c35a32", "onAccent2": "#fff7f0"
+    },
+    "statusBar": "dark",
+    "titleWeight": 400,
+    "time": "9:41",
+    "tabs": [
+      { "icon": "leaf", "label": "Plants" },
+      { "icon": "calendar", "label": "Schedule" },
+      { "icon": "search", "label": "Identify" },
+      { "icon": "user", "label": "You" }
+    ]
+  },
+  "steps": [
+    {
+      "title": "See who is thirsty",
+      "body": "Open the app and today's list is already sorted: the pots that need water first, the ones that can wait after.",
+      "alt": "Today: Monstera needs water, the fig in 2 days",
+      "tap": "monstera",
+      "tapLabel": "Monstera",
+      "screen": {
+        "tab": 0,
+        "blocks": [
+          { "type": "nav", "icons": ["more"] },
+          { "type": "title", "over": "Tuesday 14 May", "text": "Today" },
+          { "type": "chips", "style": "small", "items": ["All 11", "Living room", "Bedroom", "Bath"] },
+          { "type": "rows", "items": [
+            { "id": "monstera", "icon": "leaf", "title": "Monstera", "line": "Living room · 24% moist", "pill": "Water", "tone": "hot" },
+            { "icon": "leaf", "title": "Fiddle-leaf fig", "line": "Hallway · 41% moist", "pill": "2 days" },
+            { "icon": "drop", "title": "Calathea", "line": "Bathroom · mist only", "pill": "Mist" },
+            { "icon": "leaf", "title": "Snake plant", "line": "Bedroom · 66% moist", "pill": "9 days" }
+          ] },
+          { "type": "tiles", "title": "This week", "meta": "3 of 11 pots", "items": [
+            { "label": "Water", "value": "3" }, { "label": "Mist", "value": "2" }, { "label": "Feed", "value": "1" }
+          ] }
+        ]
+      }
+    },
+    {
+      "title": "Know why, not just when",
+      "body": "Each plant keeps a 14 day moisture line, so you can see the Monstera dries in nine days, not seven.",
+      "via": "push",
+      "alt": "Monstera: 24% moisture, a 14 day line falling to the 25% line",
+      "tap": "log",
+      "screen": {
+        "tab": 0,
+        "blocks": [
+          { "type": "nav", "back": "Today", "icons": ["more"] },
+          { "type": "title", "over": "Living room · north window", "text": "Monstera" },
+          { "type": "tiles", "items": [
+            { "label": "Moisture", "value": "24%" }, { "label": "Dries in", "value": "9 d" }, { "label": "Light", "value": "Low" }
+          ] },
+          { "type": "chart", "title": "Soil moisture", "meta": "Last 14 days", "kind": "line", "values": [78, 74, 69, 63, 58, 52, 47, 41, 36, 31, 27, 23, 20, 18], "threshold": { "value": 25, "label": "Water below 25%" } },
+          { "type": "rows", "items": [
+            { "icon": "drop", "title": "Watered 500 ml", "line": "Sunday 5 May", "value": "9 d ago", "tone": "soft" },
+            { "icon": "sun", "title": "Moved off the radiator", "line": "Wednesday 1 May" }
+          ] },
+          { "type": "button", "id": "log", "label": "Log watering", "dock": true }
+        ]
+      }
+    },
+    {
+      "title": "Log it in one tap",
+      "body": "Pick the amount, say if you fed it, save. The next reminder moves to match.",
+      "via": "sheet",
+      "alt": "Log watering sheet: 500 ml, fed, next water Thursday 23 May",
+      "tap": "save",
+      "screen": {
+        "blocks": [
+          { "type": "nav", "left": "Cancel", "title": "Log watering" },
+          { "type": "title", "over": "Amount", "text": "Monstera" },
+          { "type": "chips", "on": 1, "items": ["250 ml", "500 ml", "750 ml", "1 l"] },
+          { "type": "toggles", "items": [
+            { "label": "Fed this time", "on": true }, { "label": "Rotated the pot", "on": false }, { "label": "Note", "on": "Add" }
+          ] },
+          { "type": "note", "title": "Next water", "meta": "moves to", "text": "Thursday 23 May" },
+          { "type": "text", "text": "Last time: 500 ml on Sunday 5 May" },
+          { "type": "button", "id": "save", "label": "Save", "dock": true }
+        ]
+      }
+    },
+    {
+      "title": "Keep the streak",
+      "body": "Twenty-two days without a dry pot. The calendar fills in as you go, one green square a day.",
+      "via": "tab",
+      "alt": "Schedule: May calendar with 22 days filled",
+      "note": { "label": "Streak", "value": "22 days" },
+      "screen": {
+        "tab": 1,
+        "blocks": [
+          { "type": "nav", "icons": ["more"] },
+          { "type": "title", "over": "May", "text": "22 days, no dry pots" },
+          { "type": "calendar", "start": 2, "days": 31, "filled": [[1, 22]], "today": 22 },
+          { "type": "rows", "items": [
+            { "icon": "drop", "title": "Monstera", "line": "Watered 500 ml · fed", "pill": "Done" },
+            { "icon": "leaf", "title": "Calathea", "line": "Misted", "pill": "Done" }
+          ] }
+        ]
+      }
+    }
+  ]
+}

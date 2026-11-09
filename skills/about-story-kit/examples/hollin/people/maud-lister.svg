@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="800" height="1000">
+<!-- A cut-paper stand-in made in code for the About Story Kit demo. Not a photo of anyone. -->
+<defs>
+<filter id="lift" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2a1d10" flood-opacity=".32"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="62"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .09 0"/></filter>
+</defs>
+<rect width="400" height="500" fill="#d8c0b0"/>
+<circle cx="242.00809117406607" cy="119.29693845100701" r="67.38304906524718" fill="#fff" opacity=".2"/>
+<g transform="rotate(-1.2 200 400)">
+<g filter="url(#lift)"><circle cx="96.1" cy="232.4" r="30.293334303423762" fill="#8f8a84"/><circle cx="97.3" cy="207.5" r="27.50760773383081" fill="#8f8a84"/><circle cx="103.4" cy="183.5" r="31.21293439157307" fill="#8f8a84"/><circle cx="114.2" cy="161.8" r="25.572676558047533" fill="#8f8a84"/><circle cx="129.0" cy="143.6" r="28.827665286138654" fill="#8f8a84"/><circle cx="147.1" cy="129.8" r="24.591375386342406" fill="#8f8a84"/><circle cx="167.5" cy="121.2" r="29.447087170556188" fill="#8f8a84"/><circle cx="189.0" cy="118.3" r="25.12637068890035" fill="#8f8a84"/><circle cx="210.6" cy="121.2" r="29.915105579420924" fill="#8f8a84"/><circle cx="230.9" cy="129.8" r="25.67249244824052" fill="#8f8a84"/><circle cx="249.0" cy="143.6" r="26.63462859019637" fill="#8f8a84"/><circle cx="263.9" cy="161.8" r="24.5387620665133" fill="#8f8a84"/><circle cx="274.6" cy="183.5" r="31.00035190396011" fill="#8f8a84"/><circle cx="280.8" cy="207.5" r="28.334714271128178" fill="#8f8a84"/><circle cx="282.0" cy="232.4" r="29.339070357382298" fill="#8f8a84"/></g>
+<g filter="url(#lift)"><path d="M2.469836136326194 520 C 2.469836136326194 408.9173981989734, 42.469836136326194 368.9173981989734, 143.0288894046098 364.9173981989734 L 235.0288894046098 364.9173981989734 C 335.5879426728934 368.9173981989734, 375.5879426728934 408.9173981989734, 375.5879426728934 520 Z" fill="#2f5557"/></g>
+<g filter="url(#lift)"><rect x="159.0288894046098" y="293.6901379232295" width="60" height="91.2272602757439" rx="12" fill="#5e3b26"/><ellipse cx="189.0288894046098" cy="372.9173981989734" rx="46" ry="20" fill="#5e3b26"/></g>
+<g filter="url(#lift)"><ellipse cx="189.0288894046098" cy="243.69013792322949" rx="89.10617366898805" ry="105.39109567413107" fill="#5e3b26"/></g>
+<g filter="url(#lift)"></g>
+</g>
+<rect width="400" height="500" filter="url(#grain)"/>
+</svg>

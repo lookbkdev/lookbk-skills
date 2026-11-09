@@ -1,0 +1,66 @@
+{
+  "composition": "lockup",
+  "brand": {
+    "name": "Aldermoor",
+    "href": "/"
+  },
+  "nav": [
+    {
+      "label": "Rooms",
+      "href": "/rooms"
+    },
+    {
+      "label": "The wood",
+      "href": "/wood"
+    }
+  ],
+  "action": {
+    "label": "Book a week",
+    "href": "/book"
+  },
+  "hero": {
+    "title": "Stay until\nthe leaves\nare down.",
+    "lede": "Nine rooms in a sugar-maple wood, open from the first frost to the last leaf. Breakfast by the stove, long walks after.",
+    "cta": {
+      "label": "Book an October week",
+      "href": "/book/october"
+    }
+  },
+  "theme": {
+    "mode": "light",
+    "background": "#eadab0",
+    "ink": "#24170f",
+    "accent": "#9c3a1c",
+    "plate": "#efe2bf",
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Inter",
+      "weight": 640,
+      "advance": 0.5
+    }
+  },
+  "effect": {
+    "scene": "golden-hour",
+    "leaf": "maple",
+    "sign": "steel",
+    "letters": "#1f130c",
+    "light": 0.2,
+    "density": 1,
+    "landings": 3,
+    "gust": 1,
+    "cycle": 20,
+    "follow": true,
+    "grain": 0.5,
+    "seed": 7
+  },
+  "motion": {
+    "speed": 1,
+    "pointer": true
+  },
+  "meta": {
+    "title": "Aldermoor: nine rooms in a sugar-maple wood",
+    "description": "An autumn guesthouse in a maple wood, open from the first frost to the last leaf. Book an October week.",
+    "url": "https://aldermoor.example/",
+    "lang": "en"
+  }
+}

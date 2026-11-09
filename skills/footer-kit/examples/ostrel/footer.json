@@ -1,0 +1,66 @@
+{
+  "layout": "place",
+  "theme": {
+    "sheet": "#1d1916", "ink": "#efe6d6",
+    "board": "#e0743a", "boardInk": "#16100b",
+    "accent": "#e0743a", "onAccent": "#16100b", "turn": "#ec8a4e",
+    "display": "bricolage", "buttons": "pill"
+  },
+  "brand": { "name": "Ostrel", "break": "Os|trel", "legal": "Ostrel Kitchen & Wine Bar Ltd · 14 Tannery Row, Leith EH6 7QR", "year": 2026 },
+  "cta": {
+    "eyebrow": "Wood-fire kitchen · wine bar",
+    "headline": "Come in from the _cold._",
+    "primary": { "label": "Book a table", "href": "/book" }
+  },
+  "place": {
+    "address": "14 Tannery Row, Leith\nEdinburgh EH6 7QR",
+    "phone": "0131 496 0712",
+    "timezone": "Europe/London",
+    "now": "2026-11-13T19:30:00Z",
+    "hours": { "mon": "closed", "tue": "17:00-23:00", "wed": "17:00-23:00", "thu": "17:00-23:00", "fri": "12:00-24:00", "sat": "12:00-24:00", "sun": "12:00-21:00" },
+    "directions": { "label": "Get directions", "href": "https://ostrel.example/directions" },
+    "map": {
+      "streets": [
+        { "points": [[0, 62], [38, 60], [64, 58], [100, 55]], "width": 7, "name": "Commercial St", "labelAt": [4, 68], "labelAngle": -2 },
+        { "points": [[22, 0], [24, 38], [27, 60], [30, 100]], "width": 4 },
+        { "points": [[58, 0], [60, 30], [64, 58], [66, 100]], "width": 4 },
+        { "points": [[24, 38], [60, 30], [100, 26]], "width": 3, "name": "Tannery Row", "labelAt": [30, 43], "labelAngle": -12 },
+        { "points": [[0, 84], [27, 82], [66, 80], [100, 78]], "width": 3 },
+        { "points": [[60, 30], [80, 0]], "width": 2.5 },
+        { "points": [[38, 60], [44, 100]], "width": 2.5 }
+      ],
+      "water": { "shape": [[0, 0], [20, 0], [16, 14], [10, 26], [0, 30]], "name": "Water of Leith", "labelAt": [3, 9] },
+      "park": { "shape": [[67, 62], [96, 60], [98, 76], [68, 78]], "name": "Links Green", "labelAt": [70, 72] },
+      "route": [[0, 62], [38, 60], [64, 58], [61, 40], [60, 30], [72, 28.4]],
+      "pin": [72, 28.4],
+      "from": "Leith Walk stop"
+    },
+    "gettingHere": [
+      { "mode": "Tram", "text": "Leith Walk stop, 2 min walk" },
+      { "mode": "Bus", "text": "16, 22, 36 to Tannery Row" },
+      { "mode": "Bikes", "text": "Racks outside the door" }
+    ]
+  },
+  "columns": [
+    { "title": "Eat", "links": [
+      { "label": "Menu", "href": "/menu" }, { "label": "Wine list", "href": "/wine" },
+      { "label": "Private dining", "href": "/private" }, { "label": "Gift cards", "href": "/gift" } ] },
+    { "title": "Ostrel", "links": [
+      { "label": "Our fire", "href": "/fire" }, { "label": "Suppliers", "href": "/suppliers" },
+      { "label": "Jobs", "href": "/jobs" }, { "label": "Press", "href": "/press" } ] }
+  ],
+  "socials": [
+    { "label": "Instagram", "href": "https://instagram.com/" },
+    { "label": "Untappd", "href": "https://ostrel.example/untappd" }
+  ],
+  "legalLinks": [
+    { "label": "Privacy", "href": "/privacy" }, { "label": "Allergens", "href": "/allergens" }, { "label": "Terms", "href": "/terms" }
+  ],
+  "demo": {
+    "title": "Ostrel · Wood-fire kitchen and wine bar, Leith",
+    "above": [
+      { "label": "Ostrel · Leith", "heading": "Everything on the menu has been _near the fire._", "text": "A wood-fire kitchen and a long bar on Tannery Row. The menu follows the boats into Newhaven and the farms up the Water of Leith." },
+      { "label": "Tonight’s fire", "heading": "Whole turbot over vine cuttings, brown butter, sea herbs. Bread from the same oven at six.", "text": "The menu changes with the catch. Walk-ins at the bar until 21:30." }
+    ]
+  }
+}

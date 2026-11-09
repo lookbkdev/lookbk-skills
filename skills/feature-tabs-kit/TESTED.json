@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/tallowby/features.json out/tallowby",
+    "node scripts/check.mjs out/tallowby/index.html",
+    "node scripts/build.mjs examples/parcelwright/features.json out/parcelwright",
+    "node scripts/check.mjs out/parcelwright/index.html",
+    "node scripts/record.mjs out/tallowby/index.html --seconds 12 --size 1920x1080 --poster 4.2",
+    "node scripts/record.mjs out/parcelwright/index.html --seconds 12 --size 1920x1080 --poster 4.2"
+  ],
+  "agents": []
+}

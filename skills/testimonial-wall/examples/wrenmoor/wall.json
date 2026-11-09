@@ -1,0 +1,55 @@
+{
+  "theme": "letters",
+  "pageTitle": "Wrenmoor: letters from our customers",
+  "brand": "Wrenmoor",
+  "kicker": "Letters from 2,140 bedrooms",
+  "title": "Slept on, then _written about._",
+  "order": ["spread", "cases", "press"],
+  "rating": { "score": 4.8, "count": 2140, "source": "verified reviews since 2022", "distribution": [85, 10, 3, 1, 1] },
+  "lead": {
+    "label": "Letter",
+    "items": [
+      { "quote": "We washed them forty times before I wrote this. They are softer now than the day they came, and they still don’t pill at the hem.", "name": "Priya Natarajan", "role": "Stonewash set, double", "place": "Bristol", "tab": "Priya, Bristol", "result": { "value": "40", "label": "*washes in,* and no pilling at the hem." } },
+      { "quote": "Our guest rooms used to smell of the cupboard. Now people ask about the sheets before they ask for the Wi‑Fi.", "name": "Tom Achterberg", "role": "Three-room guesthouse", "place": "Whitby", "tab": "Tom, Whitby", "result": { "value": "3", "label": "*rooms switched over* in one season." } },
+      { "quote": "I run hot. Every summer I’d end up on top of the duvet by two. This was the first July I didn’t.", "name": "Mara Lindqvist", "role": "Night-shift nurse", "place": "Glasgow", "tab": "Mara, Glasgow", "result": { "value": "0", "label": "*nights on top of the duvet* this July." } },
+      { "quote": "The return label was in the box and I never used it. That’s the review.", "name": "Dev Okafor", "role": "Ordered a sample, kept the set", "place": "Leeds", "tab": "Dev, Leeds", "result": { "value": "30", "label": "*nights to send it back.* He kept it." } }
+    ]
+  },
+  "wall": {
+    "label": "Reviews from verified buyers",
+    "layout": "beside",
+    "columns": 2,
+    "notes": [
+      { "stars": 5, "quote": "They feel like the sheets at my grandmother’s, _heavy and cool,_ without the ironing.", "name": "Ruth Ebner", "about": "Harrogate", "date": "Mar 2026" },
+      { "stars": 4, "quote": "Lovely, but order a size up: the fitted sheet is _snug on a 30 cm mattress._", "name": "Callum Reid", "about": "Perth", "date": "Feb 2026" },
+      { "stars": 5, "quote": "Arrived in a cotton bag with a handwritten wash card. _I kept the card._", "name": "Ines Barros", "about": "Bath", "date": "Feb 2026" },
+      { "stars": 5, "quote": "Two kids, one dog, a lot of washing. _Still the colour it was_ in September.", "name": "Owen Pryce", "about": "Cardiff", "date": "Jan 2026" },
+      { "stars": 5, "quote": "The oat colour is warmer than the photos. _Better, actually._", "name": "Sofia Marchetti", "about": "Edinburgh", "date": "Jan 2026" },
+      { "stars": 4, "quote": "Creased out of the dryer, as linen does. _I’ve stopped minding._", "name": "Hal Brennan", "about": "York", "date": "Dec 2025" },
+      { "stars": 5, "quote": "I bought one pillowcase to test. _Then the rest of the bed._", "name": "Anouk de Vries", "about": "Norwich", "date": "Dec 2025" },
+      { "stars": 5, "quote": "Customer service answered on a Sunday and _swapped the size the same week._", "name": "Ben Adeyemi", "about": "Leeds", "date": "Nov 2025" },
+      { "stars": 3, "quote": "Good sheets, slow delivery: _eleven days_ to the Highlands. Worth the wait, just.", "name": "Morag Lennox", "about": "Inverness", "date": "Nov 2025" },
+      { "stars": 5, "quote": "We gave a set as a wedding present and _were asked where from_ at the reception.", "name": "Jonah Whitley", "about": "Durham", "date": "Oct 2025" }
+    ]
+  },
+  "cases": {
+    "label": "Cases",
+    "title": "Four households, measured.",
+    "items": [
+      { "segment": "Guesthouse", "value": "5→2", "label": "laundry runs a week", "quote": "Linen that dries on the line in an afternoon changed our whole Monday.", "name": "The Saltings", "place": "Whitby, 3 rooms", "link": { "label": "Read the case", "href": "/cases/the-saltings" } },
+      { "segment": "Holiday let", "value": "4.97", "label": "guest rating, up from 4.71", "quote": "Guests mention the bed in nearly every review now. They never used to.", "name": "Hollin Barn", "place": "Malham, 2 rooms", "link": { "label": "Read the case", "href": "/cases/hollin-barn" } },
+      { "segment": "Family", "value": "6", "label": "sets replaced 14 odd sheets", "quote": "Fewer, better sheets. The cupboard finally shuts.", "name": "The Nnadi family", "place": "Manchester", "link": { "label": "Read the case", "href": "/cases/nnadi-family" } },
+      { "segment": "Host", "value": "11 min", "label": "saved on every room turnover", "quote": "No ironing means the beds are made before the cleaner’s kettle boils.", "name": "Studio Brae", "place": "Fort William", "link": { "label": "Read the case", "href": "/cases/studio-brae" } }
+    ]
+  },
+  "press": {
+    "label": "In print",
+    "items": [
+      { "name": "The Weekend Review", "style": "serif-italic", "line": "“The quietest sheets we tested this year.”" },
+      { "name": "Field & Hearth", "style": "caps", "line": "“Linen for people who hate ironing.”" },
+      { "name": "Northern Living", "style": "serif-bold", "line": "“Made the guest room feel like a hotel.”" },
+      { "name": "sleepquarterly", "style": "sans", "line": "“Best for hot sleepers, 2026.”" },
+      { "name": "the lowdown", "style": "serif", "line": "“Worth the price after a month.”" }
+    ]
+  }
+}

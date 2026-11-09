@@ -1,0 +1,101 @@
+{
+  "brand": "Ashby & Rowe",
+  "studio": "Ashby & Rowe",
+  "eyebrow": "How a kitchen happens · Ashby & Rowe",
+  "headline": "Twelve weeks from a tape measure to _the first dinner._",
+  "lede": "Five stages, the same order every time. Each one ends with something you can hold, so you always know where the money and the weeks have gone.",
+  "theme": {
+    "page": "#f3eee5", "ink": "#1d1a15", "accent": "#1d5a50", "onAccent": "#f3eee5",
+    "you": "#8a5112", "stage": "#e6dece", "paper": "#fbf9f4", "paperInk": "#1d1a15",
+    "display": "newsreader"
+  },
+  "calendar": { "total": 60, "week": 5 },
+  "price": { "kind": "from", "label": "Fitted, from", "value": 16900, "currency": "£" },
+  "yourTime": { "hours": 6 },
+  "steps": [
+    {
+      "title": "Measured survey", "who": "Maya Rowe, designer", "start": 0, "length": 1,
+      "summary": "We measure every wall, pipe and socket, and talk through how you actually cook.",
+      "give": "Two hours at home, your wishlist and a few photos of kitchens you like",
+      "get": "A measured survey drawing, 2 sheets",
+      "pay": { "label": "Survey", "free": true },
+      "you": [{ "day": 0, "minutes": 120 }],
+      "artifact": {
+        "kind": "plan", "alt": "A measured plan of the kitchen, 3420 by 2860 mm, with the window, door, units and gas point marked",
+        "meta": "Survey · 14 Brook Lane · 1:50", "size": [3420, 2860],
+        "window": [1070, 1870], "door": { "at": 1300, "width": 600 },
+        "units": [[60, 60, 2140, 420], [3020, 60, 340, 1240], [940, 1050, 1310, 480]],
+        "marks": [{ "x": 3150, "y": 1700, "label": "gas" }],
+        "block": [["Client", "Ward, 14 Brook Lane"], ["Sheet", "1 of 2"], ["By", "M. Rowe"]]
+      }
+    },
+    {
+      "title": "Design and a fixed quote", "who": "Maya with our estimator", "start": 1, "length": 9,
+      "summary": "Two rounds of changes are included. The price we quote is the price you pay.",
+      "give": "One showroom visit to choose doors, worktop and handles",
+      "get": "A 3D plan and a fixed quote, held for 60 days",
+      "pay": { "label": "Design fee", "amount": 450, "credited": true },
+      "you": [{ "day": 5, "minutes": 120 }, { "day": 9, "minutes": 30 }],
+      "artifact": {
+        "kind": "sheet", "alt": "Quotation Q-2611: six lines adding up to a fixed total of £17,500, stamped held for 60 days",
+        "meta": "Quotation Q-2611 · 3 Feb", "title": "Ward kitchen, fixed price", "style": "table", "sum": true,
+        "rows": [["Cabinets, 14 units, painted ash", "£7,860"], ["Oak worktop, 3.4 m, oiled", "£2,140"], ["Appliances, 4 items", "£3,920"], ["Fitting, plumbing, electrics", "£3,780"], ["Waste removal", "£250"], ["Design fee credit", "−£450"]],
+        "total": ["Total, fixed", "£17,500"], "stamp": "Held 60 days"
+      }
+    },
+    {
+      "title": "Made in our workshop", "who": "Our joinery shop in Hexley", "start": 10, "length": 30,
+      "summary": "Carcasses, doors and the oak worktop are cut and finished to your survey, not pulled from a catalogue.",
+      "give": "Nothing but patience, and the deposit",
+      "get": "A booked delivery date and a photo update every Friday",
+      "pay": { "label": "Deposit", "percent": 40 },
+      "artifact": {
+        "kind": "log", "alt": "The workshop's Friday log, one line a week from week 3 to week 8, ending with the delivery booked",
+        "meta": "Workshop · job 2611", "title": "Friday updates",
+        "entries": [
+          { "day": 14, "label": "Wk 3", "text": "Ash boards chosen and stacked to settle" },
+          { "day": 19, "label": "Wk 4", "text": "Carcasses cut, 14 of 14" },
+          { "day": 24, "label": "Wk 5", "text": "Doors routed, first coat of paint" },
+          { "day": 29, "label": "Wk 6", "text": "Worktop oiled, second coat on doors" },
+          { "day": 34, "label": "Wk 7", "text": "Dry fit in the shop, photographed" },
+          { "day": 39, "label": "Wk 8", "text": "Wrapped. Delivery booked Mon 9 March, 8 am" }
+        ]
+      }
+    },
+    {
+      "title": "Fitting", "who": "Two fitters, the same faces every day", "start": 40, "length": 15,
+      "summary": "Old kitchen out, services moved, new kitchen in. Dust sheets down and swept every evening.",
+      "give": "A key, and three weeks without a kitchen",
+      "get": "A site log by text at 5 pm every working day",
+      "pay": { "label": "On delivery", "percent": 50 },
+      "you": [{ "day": 40, "minutes": 15 }],
+      "artifact": {
+        "kind": "log", "alt": "The fitting log sent by text each evening, from the old kitchen coming out to the wall units going up",
+        "meta": "Site log · texts at 5 pm", "title": "Brook Lane, fitting",
+        "entries": [
+          { "day": 40, "label": "Day 41", "text": "Old kitchen out. Water capped, skip gone." },
+          { "day": 41, "label": "Day 42", "text": "New sockets in, first-fix plumbing done." },
+          { "day": 43, "label": "Day 44", "text": "Floor units level, worktop templated." },
+          { "day": 46, "label": "Day 47", "text": "Worktop in. Sink working tonight." },
+          { "day": 49, "label": "Day 50", "text": "Wall units hung, doors adjusted." },
+          { "day": 53, "label": "Day 54", "text": "Splashback tiled and grouted." }
+        ]
+      }
+    },
+    {
+      "title": "Handover", "who": "Maya and the lead fitter", "start": 55, "length": 5,
+      "summary": "We walk every drawer and hinge with you, fix what you find, then hand over the paperwork.",
+      "give": "One hour for the walk-round",
+      "get": "A signed snag list and a 10-year guarantee",
+      "pay": { "label": "At handover", "percent": 10 },
+      "you": [{ "day": 59, "minutes": 60 }],
+      "artifact": {
+        "kind": "certificate", "alt": "A ten-year guarantee certificate for the cabinets, numbered 2611, with the snag list closed",
+        "meta": "Ashby & Rowe · No. 2611", "title": "Ten-year guarantee",
+        "body": "Cabinet carcasses, doors, hinges and runners at 14 Brook Lane, from handover on 24 March.",
+        "foot": "Snag list: 6 items, 6 closed", "seal": { "big": "10", "small": "years" }
+      }
+    }
+  ],
+  "demo": { "title": "How it works", "nav": ["Kitchens", "Book a survey"], "footer": "Ashby & Rowe · Kitchens made in Hexley · Invented for this example" }
+}

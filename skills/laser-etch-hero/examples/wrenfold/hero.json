@@ -1,0 +1,43 @@
+{
+  "composition": "lockup",
+  "brand": { "name": "Wrenfold", "href": "/" },
+  "nav": [
+    { "label": "Boards", "href": "/boards" },
+    { "label": "Keepsakes", "href": "/keepsakes" },
+    { "label": "Workshop", "href": "/workshop" }
+  ],
+  "action": { "label": "Order a board", "href": "/order" },
+  "hero": {
+    "title": "Written\ninto the\nwood.",
+    "lede": "Maple boards engraved with your words, one line of light at a time. Made to order in our workshop, shipped in 9 days.",
+    "cta": { "label": "Engrave a board", "href": "/engrave" }
+  },
+  "theme": {
+    "mode": "light",
+    "background": "#f1ece3",
+    "plate": "#f1ece3",
+    "ink": "#1f1812",
+    "accent": "#a3461a",
+    "fonts": { "display": "Fraunces", "body": "Inter", "weight": 700, "advance": 0.55 }
+  },
+  "effect": {
+    "material": "maple",
+    "machine": "gantry",
+    "layout": "board",
+    "bench": "#bab2a5",
+    "lamp": "#fff3e0",
+    "mark": "W",
+    "depth": 1,
+    "smoke": 0.8,
+    "cycle": 20,
+    "follow": true,
+    "grain": 0.5
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Wrenfold: maple boards engraved with your words",
+    "description": "End-grain and long-grain maple boards, laser engraved to order in a small workshop and shipped in 9 days.",
+    "url": "https://wrenfold.example/",
+    "lang": "en"
+  }
+}

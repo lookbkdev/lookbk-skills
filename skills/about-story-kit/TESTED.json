@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/hollin/about.json out/hollin",
+    "node scripts/check.mjs out/hollin/index.html",
+    "node scripts/build.mjs examples/halyard/about.json out/halyard",
+    "node scripts/check.mjs out/halyard/index.html",
+    "node scripts/build.mjs examples/hollin/about.photos.json out/hollin-photos",
+    "node scripts/check.mjs out/hollin-photos/index.html",
+    "node scripts/record.mjs out/hollin/index.html",
+    "node scripts/record.mjs out/halyard/index.html"
+  ],
+  "agents": []
+}

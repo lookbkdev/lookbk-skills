@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/quaywise/proof.json out/quaywise",
+    "node scripts/check.mjs out/quaywise/index.html",
+    "node scripts/build.mjs examples/gridmere/proof.json out/gridmere",
+    "node scripts/check.mjs out/gridmere/index.html",
+    "node scripts/build.mjs examples/quaywise/proof.row.json out/quaywise-row",
+    "node scripts/check.mjs out/quaywise-row/index.html",
+    "node scripts/record.mjs out/quaywise/index.html",
+    "node scripts/record.mjs out/gridmere/index.html"
+  ],
+  "agents": []
+}

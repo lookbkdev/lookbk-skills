@@ -1,0 +1,89 @@
+{
+  "files": {
+    "band-gold.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "band-silver.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "band-gold-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "band-silver-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "stack-gold.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "stack-gold-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "moonstone-gold.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "moonstone-gold-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "onyx-silver.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "onyx-silver-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "small-hoops-gold.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "small-hoops-silver.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "small-hoops-gold-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "small-hoops-silver-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "wide-hoops-gold.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "wide-hoops-gold-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "pearl-studs-gold.webp": {
+      "mmAcross": 58.9,
+      "enlarged": 1.12
+    },
+    "pearl-studs-gold-turn.webp": {
+      "mmAcross": 58.9,
+      "enlarged": 1.12
+    },
+    "disc-pendant-gold.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "disc-pendant-gold-turn.webp": {
+      "mmAcross": 66,
+      "enlarged": 1
+    },
+    "ed-375.webp": {
+      "mmAcross": 72,
+      "enlarged": 1
+    }
+  },
+  "frameMm": 66
+}

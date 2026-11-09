@@ -1,0 +1,1019 @@
+{
+  "brand": "Fennick",
+  "lang": "en",
+  "mark": {
+    "shape": "square",
+    "cut": "bars",
+    "color": "#16181b",
+    "ink": "#f5f4ef"
+  },
+  "eyebrow": "Integrations · Fennick bookkeeping",
+  "headline": "See what crosses over _before you connect it._",
+  "lede": "Every integration says which records move, in which direction, on what trigger and how often, and what stays where it is. The ones we do not support are listed at the bottom, with what to do instead.",
+  "theme": {
+    "display": "newsreader",
+    "page": "#f5f4ef",
+    "surface": "#fbfaf6",
+    "ink": "#16181b",
+    "accent": "#1d47c8",
+    "onAccent": "#f7f8ff",
+    "packet": "#1d47c8",
+    "status": {
+      "native": "#1f6b45",
+      "webhook": "#1d47c8",
+      "community": "#7a5a12",
+      "coming": "#5b5e63"
+    }
+  },
+  "categories": [
+    "Sales and tills",
+    "Banking",
+    "Payroll and time",
+    "Stock",
+    "Receipts",
+    "Projects",
+    "Tax"
+  ],
+  "featured": [
+    "tillwright",
+    "shopfold",
+    "orrisbank",
+    "payslate",
+    "docketbox",
+    "crewclock"
+  ],
+  "selected": "tillwright",
+  "apps": [
+    {
+      "id": "tillwright",
+      "name": "Tillwright",
+      "category": "Sales and tills",
+      "status": "native",
+      "mark": {
+        "shape": "circle",
+        "cut": "bar",
+        "color": "#c2410c",
+        "ink": "#ffffff"
+      },
+      "summary": "Daily till totals and card payouts land as journals, not 900 receipts.",
+      "by": "Built and supported by Fennick",
+      "plans": "All plans",
+      "conflict": "Tax codes: Fennick wins",
+      "log": "Every sync kept 90 days",
+      "flows": [
+        {
+          "record": "Daily sales",
+          "dir": "in",
+          "trigger": "When the till is closed",
+          "cadence": "daily",
+          "theirs": "Z-report",
+          "ours": "Sales journal"
+        },
+        {
+          "record": "Card payouts",
+          "dir": "in",
+          "trigger": "When a payout lands",
+          "cadence": "within 1 h",
+          "theirs": "Payout",
+          "ours": "Bank: Payouts"
+        },
+        {
+          "record": "Tax rates",
+          "dir": "out",
+          "trigger": "When you edit a rate",
+          "cadence": "instant",
+          "theirs": "Tax rates",
+          "ours": "Tax codes"
+        },
+        {
+          "record": "Refunds",
+          "dir": "in",
+          "cadence": "every 15 min",
+          "theirs": "Refunds",
+          "ours": "Credit notes"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Single receipts",
+          "why": "only daily totals cross"
+        },
+        {
+          "record": "Staff tips",
+          "why": "paid out from the till"
+        },
+        {
+          "record": "Customer names",
+          "why": "never leave the till"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Sign in to Tillwright and allow read access",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Match each till tax rate to a Fennick tax code",
+          "minutes": 3,
+          "who": "you"
+        },
+        {
+          "step": "Pick the bank account payouts arrive in",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Last 12 months come in while you work",
+          "minutes": 20,
+          "who": "us"
+        }
+      ]
+    },
+    {
+      "id": "orrisbank",
+      "name": "Orrisbank",
+      "category": "Banking",
+      "status": "native",
+      "mark": {
+        "shape": "hex",
+        "cut": "dot",
+        "color": "#0f6e6e",
+        "ink": "#ffffff"
+      },
+      "summary": "The bank’s own feed, every morning at 06:00.",
+      "by": "Built and supported by Fennick",
+      "plans": "All plans",
+      "conflict": "The bank is never edited",
+      "log": "Every feed kept 13 months",
+      "flows": [
+        {
+          "record": "Bank lines",
+          "dir": "in",
+          "cadence": "daily 06:00",
+          "theirs": "Statement lines",
+          "ours": "Bank: To reconcile"
+        },
+        {
+          "record": "Balances",
+          "dir": "in",
+          "cadence": "daily 06:00",
+          "theirs": "Closing balance",
+          "ours": "Bank balance"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Your bank login",
+          "why": "we never see it"
+        },
+        {
+          "record": "Card PINs and limits",
+          "why": "stay with the bank"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Approve the feed in Orrisbank’s app",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Choose the start date",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Up to 24 months of lines come in",
+          "minutes": 10,
+          "who": "us"
+        }
+      ]
+    },
+    {
+      "id": "shopfold",
+      "name": "Shopfold",
+      "category": "Sales and tills",
+      "status": "native",
+      "mark": {
+        "shape": "tri",
+        "cut": "dot",
+        "color": "#7c3aed",
+        "ink": "#ffffff"
+      },
+      "summary": "Online orders, fees and refunds as one daily journal.",
+      "by": "Built and supported by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Tax codes: Fennick wins",
+      "log": "Every sync kept 90 days",
+      "flows": [
+        {
+          "record": "Online sales",
+          "dir": "in",
+          "trigger": "At midnight, shop time",
+          "cadence": "daily",
+          "theirs": "Orders",
+          "ours": "Sales journal"
+        },
+        {
+          "record": "Platform fees",
+          "dir": "in",
+          "trigger": "At midnight, shop time",
+          "cadence": "daily",
+          "theirs": "Fees",
+          "ours": "Expenses: Fees"
+        },
+        {
+          "record": "Refunds",
+          "dir": "in",
+          "cadence": "every 15 min",
+          "theirs": "Refunds",
+          "ours": "Credit notes"
+        },
+        {
+          "record": "Tax rates",
+          "dir": "out",
+          "trigger": "When you edit a rate",
+          "cadence": "instant",
+          "theirs": "Tax settings",
+          "ours": "Tax codes"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Shoppers’ addresses",
+          "why": "never needed for books"
+        },
+        {
+          "record": "Abandoned carts",
+          "why": "not a sale yet"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Install the Fennick app in Shopfold",
+          "minutes": 2,
+          "who": "you"
+        },
+        {
+          "step": "Match tax rates to Fennick tax codes",
+          "minutes": 3,
+          "who": "you"
+        },
+        {
+          "step": "Pick the payout account",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Last 12 months come in while you work",
+          "minutes": 25,
+          "who": "us"
+        }
+      ]
+    },
+    {
+      "id": "payslate",
+      "name": "Payslate",
+      "category": "Payroll and time",
+      "status": "native",
+      "mark": {
+        "shape": "pill",
+        "cut": "bar",
+        "color": "#be185d",
+        "ink": "#ffffff"
+      },
+      "summary": "Pay runs as journals. Filing stays in Payslate.",
+      "by": "Built and supported by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Pay figures: Payslate wins",
+      "log": "Every pay run kept 6 years",
+      "flows": [
+        {
+          "record": "Pay runs",
+          "dir": "in",
+          "trigger": "When a pay run is approved",
+          "cadence": "within 1 h",
+          "theirs": "Pay run",
+          "ours": "Wages journal"
+        },
+        {
+          "record": "Tax owed",
+          "dir": "in",
+          "trigger": "When a pay run is approved",
+          "cadence": "within 1 h",
+          "theirs": "Liabilities",
+          "ours": "Bills: Tax office"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Payslips",
+          "why": "private to each person"
+        },
+        {
+          "record": "Bank details of staff",
+          "why": "never needed for books"
+        },
+        {
+          "record": "Payroll filing",
+          "why": "done inside Payslate"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Connect from Payslate’s settings",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Map pay items to accounts",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Past pay runs this tax year come in",
+          "minutes": 5,
+          "who": "us"
+        }
+      ]
+    },
+    {
+      "id": "docketbox",
+      "name": "Docketbox",
+      "category": "Receipts",
+      "status": "native",
+      "mark": {
+        "shape": "square",
+        "cut": "chev",
+        "color": "#a16207",
+        "ink": "#ffffff"
+      },
+      "summary": "Snapped receipts become bills with the image attached.",
+      "by": "Built and supported by Fennick",
+      "plans": "All plans",
+      "conflict": "Amounts: Docketbox wins",
+      "log": "Every receipt kept 6 years",
+      "flows": [
+        {
+          "record": "Receipts",
+          "dir": "in",
+          "trigger": "When a receipt is approved",
+          "cadence": "within 1 h",
+          "theirs": "Receipt and image",
+          "ours": "Bill and image"
+        },
+        {
+          "record": "Suppliers",
+          "dir": "out",
+          "trigger": "When you add a supplier",
+          "cadence": "instant",
+          "theirs": "Supplier list",
+          "ours": "Contacts"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Unapproved receipts",
+          "why": "wait in Docketbox"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Sign in to Docketbox and allow access",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Pick the default expense account",
+          "minutes": 2,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "crewclock",
+      "name": "Crewclock",
+      "category": "Payroll and time",
+      "status": "webhook",
+      "mark": {
+        "shape": "circle",
+        "cut": "slash",
+        "color": "#15803d",
+        "ink": "#ffffff"
+      },
+      "summary": "Approved hours post to a webhook you point at Fennick.",
+      "by": "Crewclock webhook, documented by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Hours: Crewclock wins",
+      "log": "Every delivery kept 30 days",
+      "flows": [
+        {
+          "record": "Approved hours",
+          "dir": "in",
+          "trigger": "When a manager approves a week",
+          "cadence": "within 1 h",
+          "theirs": "Timesheet",
+          "ours": "Draft wages journal"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Clock-in photos",
+          "why": "stay with the shift"
+        },
+        {
+          "record": "Rotas",
+          "why": "not needed for books"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Copy your Fennick webhook address",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Paste it into Crewclock and pick events",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Send a test week and check the draft",
+          "minutes": 4,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "stockpot",
+      "name": "Stockpot",
+      "category": "Stock",
+      "status": "native",
+      "mark": {
+        "shape": "diamond",
+        "cut": "dot",
+        "color": "#b45309",
+        "ink": "#ffffff"
+      },
+      "summary": "Stock value at month end, not every movement.",
+      "by": "Built and supported by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Stock value: Stockpot wins",
+      "log": "Every sync kept 90 days",
+      "flows": [
+        {
+          "record": "Stock value",
+          "dir": "in",
+          "trigger": "On the last day of the month",
+          "cadence": "daily 23:00",
+          "theirs": "Valuation",
+          "ours": "Stock on hand"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Single stock moves",
+          "why": "only the value crosses"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Sign in to Stockpot and allow access",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Pick the stock and cost accounts",
+          "minutes": 3,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "halyard",
+      "name": "Halyard",
+      "category": "Receipts",
+      "status": "native",
+      "mark": {
+        "shape": "hex",
+        "cut": "bar",
+        "color": "#334155",
+        "ink": "#ffffff"
+      },
+      "summary": "Approved team expenses with the approver’s name.",
+      "by": "Built and supported by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Amounts: Halyard wins",
+      "log": "Every claim kept 6 years",
+      "flows": [
+        {
+          "record": "Expense claims",
+          "dir": "in",
+          "trigger": "When a claim is approved",
+          "cadence": "within 1 h",
+          "theirs": "Approved claims",
+          "ours": "Bills: Staff"
+        },
+        {
+          "record": "Repayments",
+          "dir": "in",
+          "trigger": "When a claim is paid",
+          "cadence": "within 1 h",
+          "theirs": "Repayments",
+          "ours": "Bill payments"
+        },
+        {
+          "record": "Projects",
+          "dir": "out",
+          "trigger": "When you add a project",
+          "cadence": "instant",
+          "theirs": "Project codes",
+          "ours": "Tracking"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Rejected claims",
+          "why": "never reach the books"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Connect from Halyard’s admin page",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Map expense types to accounts",
+          "minutes": 3,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "kittle",
+      "name": "Kittle Pay",
+      "category": "Banking",
+      "status": "native",
+      "mark": {
+        "shape": "circle",
+        "cut": "ring",
+        "color": "#9333ea",
+        "ink": "#ffffff"
+      },
+      "summary": "Invoice payments mark the invoice paid in Fennick.",
+      "by": "Built and supported by Fennick",
+      "plans": "All plans",
+      "conflict": "Invoices: Fennick wins",
+      "log": "Every payment kept 13 months",
+      "flows": [
+        {
+          "record": "Payments",
+          "dir": "in",
+          "trigger": "When a customer pays",
+          "cadence": "instant",
+          "theirs": "Payment",
+          "ours": "Invoice: Paid"
+        },
+        {
+          "record": "Fees",
+          "dir": "in",
+          "trigger": "At each payout",
+          "cadence": "daily",
+          "theirs": "Fees",
+          "ours": "Expenses: Fees"
+        },
+        {
+          "record": "Invoices",
+          "dir": "out",
+          "trigger": "When you send an invoice",
+          "cadence": "instant",
+          "theirs": "Payment link",
+          "ours": "Invoice"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Card numbers",
+          "why": "never leave Kittle Pay"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Sign in to Kittle Pay and allow access",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Pick the clearing account",
+          "minutes": 2,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "larkmail",
+      "name": "Larkmail",
+      "category": "Projects",
+      "status": "webhook",
+      "mark": {
+        "shape": "pill",
+        "cut": "dot",
+        "color": "#0369a1",
+        "ink": "#ffffff"
+      },
+      "summary": "Send overdue reminders from your own mailbox.",
+      "by": "Larkmail webhook, documented by Fennick",
+      "plans": "All plans",
+      "conflict": "Wording: yours, in Larkmail",
+      "log": "Every delivery kept 30 days",
+      "flows": [
+        {
+          "record": "Overdue invoices",
+          "dir": "out",
+          "trigger": "When an invoice is 7 days late",
+          "cadence": "daily 09:00",
+          "theirs": "Reminder draft",
+          "ours": "Overdue list"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Your inbox",
+          "why": "Fennick never reads it"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Create a webhook in Larkmail",
+          "minutes": 3,
+          "who": "you"
+        },
+        {
+          "step": "Paste its address into Fennick",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Write the reminder in Larkmail",
+          "minutes": 3,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "ostler",
+      "name": "Ostler",
+      "category": "Stock",
+      "status": "webhook",
+      "mark": {
+        "shape": "square",
+        "cut": "cross",
+        "color": "#4d7c0f",
+        "ink": "#ffffff"
+      },
+      "summary": "Purchase orders out, received goods back in.",
+      "by": "Ostler webhook, documented by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Quantities: Ostler wins",
+      "log": "Every delivery kept 30 days",
+      "flows": [
+        {
+          "record": "Purchase orders",
+          "dir": "out",
+          "trigger": "When you approve one",
+          "cadence": "instant",
+          "theirs": "Orders",
+          "ours": "Purchase orders"
+        },
+        {
+          "record": "Goods received",
+          "dir": "in",
+          "trigger": "When goods are booked in",
+          "cadence": "within 1 h",
+          "theirs": "Deliveries",
+          "ours": "Draft bills"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Shelf locations",
+          "why": "not needed for books"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Copy your Fennick webhook address",
+          "minutes": 1,
+          "who": "you"
+        },
+        {
+          "step": "Add it to Ostler for two events",
+          "minutes": 5,
+          "who": "you"
+        },
+        {
+          "step": "Match units and accounts",
+          "minutes": 6,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "plotline",
+      "name": "Plotline",
+      "category": "Projects",
+      "status": "community",
+      "mark": {
+        "shape": "tri",
+        "cut": "bar",
+        "color": "#b91c1c",
+        "ink": "#ffffff"
+      },
+      "summary": "Billable project hours as draft invoices.",
+      "by": "Kept up by Plotline users, not Fennick",
+      "plans": "All plans",
+      "conflict": "Hours: Plotline wins",
+      "log": "Kept by the connector",
+      "flows": [
+        {
+          "record": "Billable hours",
+          "dir": "in",
+          "trigger": "When a project is billed",
+          "cadence": "within 1 h",
+          "theirs": "Billable time",
+          "ours": "Draft invoice"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Unbilled time",
+          "why": "waits in Plotline"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Install the community connector",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Map clients to Fennick contacts",
+          "minutes": 6,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "ferrule",
+      "name": "Ferrule",
+      "category": "Projects",
+      "status": "community",
+      "mark": {
+        "shape": "diamond",
+        "cut": "ring",
+        "color": "#0e7490",
+        "ink": "#ffffff"
+      },
+      "summary": "Won deals open a customer and a draft quote.",
+      "by": "Kept up by Ferrule users, not Fennick",
+      "plans": "All plans",
+      "conflict": "Contacts: Fennick wins",
+      "log": "Kept by the connector",
+      "flows": [
+        {
+          "record": "Won deals",
+          "dir": "in",
+          "trigger": "When a deal is marked won",
+          "cadence": "every 15 min",
+          "theirs": "Deal",
+          "ours": "Draft quote"
+        },
+        {
+          "record": "Customers",
+          "dir": "in",
+          "trigger": "When a deal is marked won",
+          "cadence": "every 15 min",
+          "theirs": "Company",
+          "ours": "Contact"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Lost deals",
+          "why": "not a customer"
+        },
+        {
+          "record": "Sales notes",
+          "why": "stay with the deal"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Install the community connector",
+          "minutes": 4,
+          "who": "you"
+        },
+        {
+          "step": "Pick which pipeline counts",
+          "minutes": 4,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "brindle",
+      "name": "Brindle Sheets",
+      "category": "Projects",
+      "status": "community",
+      "mark": {
+        "shape": "square",
+        "cut": "half",
+        "color": "#166534",
+        "ink": "#ffffff"
+      },
+      "summary": "Any report as a live sheet, refreshed hourly.",
+      "by": "Kept up by Brindle users, not Fennick",
+      "plans": "Standard and up",
+      "conflict": "Sheets are read only",
+      "log": "Kept by the connector",
+      "flows": [
+        {
+          "record": "Reports",
+          "dir": "out",
+          "cadence": "every 1 h",
+          "theirs": "Live sheet",
+          "ours": "Saved reports"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Edits in the sheet",
+          "why": "never come back"
+        }
+      ],
+      "setup": [
+        {
+          "step": "Add the Fennick add-on to Brindle",
+          "minutes": 3,
+          "who": "you"
+        },
+        {
+          "step": "Pick a saved report",
+          "minutes": 2,
+          "who": "you"
+        }
+      ]
+    },
+    {
+      "id": "tidewater",
+      "name": "Tidewater Tax",
+      "category": "Tax",
+      "status": "coming",
+      "eta": "Planned for March 2027",
+      "mark": {
+        "shape": "circle",
+        "cut": "chev",
+        "color": "#475569",
+        "ink": "#ffffff"
+      },
+      "summary": "File VAT returns straight from Fennick.",
+      "by": "Being built by Fennick",
+      "plans": "Standard and up",
+      "conflict": "Returns: Fennick wins",
+      "log": "Every filing kept 6 years",
+      "flows": [
+        {
+          "record": "VAT returns",
+          "dir": "out",
+          "trigger": "When you submit a return",
+          "cadence": "instant",
+          "theirs": "Filing",
+          "ours": "VAT return"
+        },
+        {
+          "record": "Receipts of filing",
+          "dir": "in",
+          "trigger": "After each filing",
+          "cadence": "within 1 h",
+          "theirs": "Receipt",
+          "ours": "Filed returns"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Your tax login",
+          "why": "stays with Tidewater"
+        }
+      ]
+    },
+    {
+      "id": "moorgate",
+      "name": "Moorgate Bank",
+      "category": "Banking",
+      "status": "coming",
+      "eta": "When their feed opens",
+      "mark": {
+        "shape": "hex",
+        "cut": "cross",
+        "color": "#64748b",
+        "ink": "#ffffff"
+      },
+      "summary": "Direct feed once their API opens. Statement upload works today.",
+      "by": "Being built by Fennick",
+      "plans": "All plans",
+      "conflict": "The bank is never edited",
+      "log": "Every feed kept 13 months",
+      "flows": [
+        {
+          "record": "Bank lines",
+          "dir": "in",
+          "cadence": "daily 06:00",
+          "theirs": "Statement lines",
+          "ours": "Bank: To reconcile"
+        }
+      ],
+      "stays": [
+        {
+          "record": "Your bank login",
+          "why": "we never see it"
+        }
+      ]
+    }
+  ],
+  "unsupported": [
+    {
+      "what": "Two-way sync with another ledger",
+      "why": "Two sets of books that edit each other drift apart within a month.",
+      "instead": "Import once with the migration tool, then switch.",
+      "keywords": [
+        "ledger",
+        "sync",
+        "accounting"
+      ]
+    },
+    {
+      "what": "Bank logins we would have to scrape",
+      "why": "We only use a bank’s own feed, never your password.",
+      "instead": "Upload a statement file; it takes about a minute.",
+      "keywords": [
+        "bank",
+        "login",
+        "scrape"
+      ]
+    },
+    {
+      "what": "Filing payroll",
+      "why": "Fennick records pay runs. The filing stays with your payroll app.",
+      "instead": "Connect Payslate or post a journal by hand.",
+      "keywords": [
+        "payroll",
+        "filing"
+      ]
+    },
+    {
+      "what": "Crypto wallets",
+      "why": "We cannot value them reliably from day to day.",
+      "instead": "Record them as a manual asset and revalue at year end.",
+      "keywords": [
+        "crypto",
+        "bitcoin",
+        "wallet",
+        "coin"
+      ]
+    },
+    {
+      "what": "Till printers and card readers",
+      "why": "No direct hardware connections.",
+      "instead": "Go through your till app, such as Tillwright.",
+      "keywords": [
+        "printer",
+        "card reader",
+        "hardware",
+        "terminal"
+      ]
+    }
+  ],
+  "cta": {
+    "label": "Connect {app}",
+    "href": "https://fennick.example/connect"
+  },
+  "request": {
+    "label": "Ask us for an integration",
+    "href": "https://fennick.example/integrations/request"
+  },
+  "stated": {
+    "integrations": 16,
+    "native": 8,
+    "unsupported": 5
+  },
+  "demo": {
+    "title": "Integrations",
+    "nav": [
+      "Pricing",
+      "Help"
+    ],
+    "footer": "Fennick is an invented bookkeeping product. Every app named here is invented."
+  }
+}

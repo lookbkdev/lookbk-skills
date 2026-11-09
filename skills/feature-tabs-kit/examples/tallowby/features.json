@@ -1,0 +1,98 @@
+{
+  "lang": "en-GB",
+  "title": "Tallowby · How it works",
+  "theme": {
+    "mode": "light",
+    "bg": "#f3efe6", "ink": "#1b1a17", "mute": "#5b564c", "rule": "#d8d0bf",
+    "sheet": "#fffdf8", "sheetInk": "#1b1a17", "sheetMute": "#5f5a50", "sheetRule": "#e7e1d4",
+    "accent": "#a0341f", "onAccent": "#fffdf8", "accent2": "#2b4a9b", "ok": "#2f6b46",
+    "display": "newsreader", "text": "public-sans", "mono": "jetbrains",
+    "radius": 4, "railSide": "left", "stage": "plate"
+  },
+  "money": { "currency": "GBP", "locale": "en-GB" },
+  "header": {
+    "eyebrow": "How Tallowby works",
+    "headline": "The month closes\nbefore _the ovens cool._",
+    "lede": "Tallowby keeps the books for independent food businesses. Four things happen to every receipt, and none of them need you."
+  },
+  "stage": { "name": "Harbour Street Bakery · March" },
+  "objects": [
+    { "id": "pay", "label": "Card payouts", "amount": 6214.35, "flow": "in", "tag": "Sales" },
+    { "id": "rent", "label": "Harbour Street rent", "amount": 1850.00, "flow": "out", "tag": "Premises" },
+    { "id": "flour", "label": "Millbrook Flour Co.", "amount": 412.80, "flow": "out", "tag": "Ingredients" },
+    { "id": "dairy", "label": "Calder Dairy", "amount": 238.10, "flow": "out", "tag": "Ingredients" },
+    { "id": "oven", "label": "Oven service", "amount": 145.00, "flow": "out", "tag": "Equipment" }
+  ],
+  "features": [
+    {
+      "title": "Capture",
+      "claim": "Photograph a receipt at the counter. It is read, dated and filed before it reaches your pocket.",
+      "proof": { "value": "2.8 s", "label": "median read time" },
+      "caption": "Every receipt becomes a line: who, what kind, how much. The newest one is still being read.",
+      "view": {
+        "type": "list",
+        "columns": ["Receipt", "Category", "Amount"],
+        "rows": [
+          { "obj": "pay", "sub": "Settled 31 Mar" },
+          { "obj": "rent", "sub": "Standing order · 1 Mar" },
+          { "obj": "flour", "sub": "Read in 2.6 s · 14 Mar" },
+          { "obj": "dairy", "sub": "Read in 3.0 s · 21 Mar" },
+          { "obj": "oven", "sub": "Reading…", "live": true }
+        ]
+      }
+    },
+    {
+      "title": "Match",
+      "claim": "Bank lines find their receipts on their own. You only see the ones that could not.",
+      "proof": { "from": "matched", "label": "paired without a click" },
+      "caption": "The same five lines, now paired with the bank feed. One is waiting for a receipt.",
+      "view": {
+        "type": "compare",
+        "summary": "matched automatically · 1 needs a receipt",
+        "left": "Bank feed", "right": "Receipts",
+        "rows": [
+          { "obj": "pay", "raw": "CARD SETTLE 31/03" },
+          { "obj": "rent", "raw": "SO HARBOUR ST PROP" },
+          { "obj": "flour", "raw": "MILLBRK FLR 0412" },
+          { "obj": "dairy", "raw": "CALDER DRY LTD" },
+          { "obj": "oven", "raw": "K ROSS ENG 2803", "open": "Needs a receipt" }
+        ]
+      }
+    },
+    {
+      "title": "See",
+      "claim": "Know where the month went by Tuesday, not when the accountant calls in June.",
+      "proof": { "from": "netWhole", "label": "kept in March" },
+      "caption": "The lines become bars: what came in above the rule, what went out below, what was kept.",
+      "view": {
+        "type": "chart",
+        "total": { "label": "Kept in March", "note": "{share}p of every pound taken", "expect": "£3,568.45" },
+        "groups": [
+          { "label": "Came in", "objects": ["pay"] },
+          { "label": "Went out", "objects": ["rent", "flour", "dairy", "oven"] }
+        ],
+        "net": "Kept"
+      }
+    },
+    {
+      "title": "Send",
+      "claim": "Your accountant gets one tidy note with the file attached, not a shoebox.",
+      "proof": { "value": "1", "label": "email per month" },
+      "caption": "The month, packed into a note your accountant can file in a minute.",
+      "view": {
+        "type": "message",
+        "to": "Priya Nand · Nand & Co.",
+        "subject": "Harbour Street Bakery · March close",
+        "body": "Hi Priya, March is reconciled. One query: the oven service has no receipt yet.",
+        "lines": ["pay", "rent", "flour", "dairy", "oven"],
+        "attachment": { "kind": "CSV", "name": "march-close.csv · 2 KB" },
+        "steps": [
+          { "title": "Reconciled", "meta": "31 Mar · 18:02", "done": true },
+          { "title": "Sent to Priya", "meta": "1 Apr · 09:14", "done": true },
+          { "title": "Opened", "meta": "waiting" }
+        ]
+      }
+    }
+  ],
+  "tour": { "auto": true, "seconds": 7 }
+}

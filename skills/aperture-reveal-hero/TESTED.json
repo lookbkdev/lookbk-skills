@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-08",
+  "kit": "motion-heroes-v2",
+  "checks": [
+    "node scripts/build.mjs examples/thale/hero.json out/thale",
+    "node scripts/check.mjs out/thale/index.html",
+    "node scripts/build.mjs examples/corte/hero.json out/corte",
+    "node scripts/check.mjs out/corte/index.html",
+    "node scripts/record.mjs out/thale/index.html --seconds 12 --size 1920x1080 --fps 30 --poster 0",
+    "node scripts/record.mjs out/corte/index.html --still 0 --size 1920x1080 --png out/second.png",
+    "node scripts/record.mjs out/corte/index.html --still 5.6 --size 1920x1080 --png out/second-still.png",
+    "node scripts/record.mjs out/thale/index.html --still 0 --size 390x844 --scale 2 --png out/phone.png",
+    "node scripts/record.mjs out/thale/index.html --still 5.6 --size 390x844 --scale 2 --png out/phone-open.png",
+    "node scripts/record.mjs out/corte/index.html --still 0 --size 390x844 --scale 2 --png out/phone-2.png"
+  ],
+  "agents": []
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "bars",
+  "describe": "Unique crashes found per hour across eleven hours of fuzzing the write-ahead log: 34 in the first hour, falling to none by the tenth.",
+  "unit": "",
+  "max": 40,
+  "ticks": 4,
+  "values": [
+    33,
+    24,
+    17,
+    10,
+    6,
+    5,
+    5,
+    3,
+    1,
+    2,
+    2,
+    0
+  ],
+  "highlight": [
+    0,
+    2
+  ],
+  "x": [
+    [
+      0,
+      "0 h"
+    ],
+    [
+      5,
+      "5 h"
+    ],
+    [
+      11,
+      "11 h"
+    ]
+  ]
+}

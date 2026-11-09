@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/brask-moura/contact.json out/brask-moura",
+    "node scripts/check.mjs out/brask-moura/index.html",
+    "node scripts/build.mjs examples/orrin/contact.json out/orrin",
+    "node scripts/check.mjs out/orrin/index.html",
+    "node scripts/record.mjs out/brask-moura/index.html",
+    "node scripts/record.mjs out/orrin/index.html"
+  ],
+  "agents": []
+}

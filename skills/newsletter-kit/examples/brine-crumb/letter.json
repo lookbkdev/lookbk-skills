@@ -1,0 +1,95 @@
+{
+  "layout": "page",
+  "today": "2026-11-09",
+  "theme": {
+    "page": "#f4efe4",
+    "ink": "#211c16",
+    "accent": "#a8361a",
+    "onAccent": "#fbf6ec",
+    "accent2": "#4f5e2c",
+    "client": "#fffdf8",
+    "display": "young",
+    "text": "literata",
+    "mono": "plex",
+    "fields": "square"
+  },
+  "brand": {
+    "name": "Brine & Crumb",
+    "monogram": "B&",
+    "from": "Inés at Brine & Crumb",
+    "address": "letters@brinecrumb.example",
+    "author": "Inés Arroyo"
+  },
+  "eyebrow": "A cooking letter from one small kitchen",
+  "headline": "One method, two recipes, _tested four times._",
+  "dek": "Every other Thursday I write up one thing I changed in my cooking and the two dishes that proved it. This is the last issue, exactly as it arrived.",
+  "about": "One method, two recipes and a reader question.",
+  "schedule": {
+    "first": "2023-07-20",
+    "every": 2,
+    "weekday": "thu",
+    "time": "07:30",
+    "tz": "Europe/Madrid",
+    "read": "6-minute read"
+  },
+  "issue": {
+    "no": 87,
+    "date": "2026-11-05",
+    "subject": "Salt the beans the night before (yes, really)",
+    "preheader": "Plus a 20-minute escarole soup, and the one pot I would keep.",
+    "title": "Salt the beans the night before",
+    "dropCap": true,
+    "body": [
+      "For years I believed salting dried beans made their skins tough. It doesn’t. A tablespoon of salt in two litres of soaking water gives creamier insides and skins that hold together.",
+      "I tested it on four batches of cannellini this fortnight, salted and unsalted, side by side, and asked my neighbours to taste blind. Three batches out of four, they picked the brined beans."
+    ],
+    "figure": {
+      "type": "list",
+      "title": "In this issue",
+      "items": [
+        ["The overnight brine, with quantities", "2 min"],
+        ["Escarole and white bean soup", "20 min"],
+        ["Reader question: cast iron and tomatoes", "1 min"]
+      ]
+    },
+    "moreWords": 1140,
+    "href": "https://brinecrumb.example/archive/87"
+  },
+  "archive": [
+    { "no": 86, "title": "Stock from the vegetable drawer", "date": "2026-10-22", "read": "5 min", "href": "https://brinecrumb.example/archive/86" },
+    { "no": 85, "title": "Why my rice stopped sticking", "date": "2026-10-08", "read": "7 min", "href": "https://brinecrumb.example/archive/85" },
+    { "no": 84, "title": "A tomato tart for the last tomatoes", "date": "2026-09-24", "read": "6 min", "href": "https://brinecrumb.example/archive/84" },
+    { "no": 83, "title": "The case against the garlic press", "date": "2026-09-10", "read": "4 min", "href": "https://brinecrumb.example/archive/83" },
+    { "no": 82, "title": "Sourdough discard, ranked by usefulness", "date": "2026-08-27", "read": "8 min", "href": "https://brinecrumb.example/archive/82" }
+  ],
+  "stats": { "issues": 87, "since": 2023 },
+  "count": {
+    "value": 6240,
+    "label": "readers",
+    "source": "count from our mailing list",
+    "asOf": "2026-11-01"
+  },
+  "form": {
+    "label": "Your email address",
+    "placeholder": "you@yourmail.example",
+    "button": "Send me {next}",
+    "provider": "post",
+    "action": "#"
+  },
+  "privacy": [
+    ["We keep", "Your email address and the date you joined. Nothing else."],
+    ["We never", "Sell, share or rent the list. No tracking pixels in issues."],
+    ["You leave", "With one click at the foot of every issue. No survey."]
+  ],
+  "nav": [
+    { "label": "Archive", "href": "https://brinecrumb.example/archive" },
+    { "label": "Recipes", "href": "https://brinecrumb.example/recipes" },
+    { "label": "About Inés", "href": "https://brinecrumb.example/about" }
+  ],
+  "footer": { "left": "© 2026 Inés Arroyo", "right": "Written and cooked in Valencia" },
+  "demo": {
+    "title": "Brine & Crumb · a cooking letter every other Thursday",
+    "email": "ana@weiss.example",
+    "readerTz": "Europe/Madrid"
+  }
+}

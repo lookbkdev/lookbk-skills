@@ -1,0 +1,149 @@
+{
+ "brand": "Fixture",
+ "lang": "en-GB",
+ "title": {
+  "lines": [
+   "Fixture"
+  ]
+ },
+ "kicker": "A test event for the checks.",
+ "theme": {
+  "type": "grotesk",
+  "bg": "#f2efe8",
+  "surface": "#e8e3d8",
+  "past": "#e9e5dc",
+  "ink": "#141412",
+  "accent": "#c4311a",
+  "onAccent": "#fff8f0"
+ },
+ "venue": {
+  "name": "Test Hall",
+  "short": "Test Hall, London",
+  "note": "A fixture",
+  "city": "London",
+  "zone": "Europe/London",
+  "rows": [
+   [
+    "Address",
+    "1 Test Street, London"
+   ],
+   [
+    "Doors",
+    "08:00"
+   ]
+  ]
+ },
+ "rooms": [
+  {
+   "id": "A",
+   "name": "Hall"
+  },
+  {
+   "id": "B",
+   "name": "Studio"
+  }
+ ],
+ "tracks": [
+  {
+   "id": "t",
+   "name": "Talks",
+   "mark": "solid"
+  }
+ ],
+ "people": [
+  {
+   "id": "ann",
+   "name": "Ann Test",
+   "role": "Speaker",
+   "says": "A sentence.",
+   "talk": "A1",
+   "featured": true
+  },
+  {
+   "id": "bo",
+   "name": "Bo Test",
+   "role": "Speaker"
+  }
+ ],
+ "online": {
+  "rooms": [
+   "A"
+  ],
+  "what": "Hall, live"
+ },
+ "days": [
+  {
+   "id": "sat",
+   "date": "2027-03-13",
+   "opens": "08:00",
+   "closes": "18:00"
+  },
+  {
+   "id": "sun",
+   "date": "2027-03-14",
+   "opens": "06:00",
+   "closes": "18:00"
+  }
+ ],
+ "sessions": [
+  {
+   "code": "A1",
+   "day": "sat",
+   "room": "A",
+   "start": "09:00",
+   "end": "10:00",
+   "track": "t",
+   "title": "Before the US clocks change",
+   "people": [
+    "ann"
+   ]
+  },
+  {
+   "code": "A2",
+   "day": "sun",
+   "room": "A",
+   "start": "06:30",
+   "end": "07:30",
+   "track": "t",
+   "title": "Across the US change",
+   "people": [
+    "bo"
+   ]
+  },
+  {
+   "code": "A3",
+   "day": "sun",
+   "room": "A",
+   "start": "12:00",
+   "end": "13:00",
+   "track": "t",
+   "title": "After the US change",
+   "people": [
+    "ann"
+   ]
+  }
+ ],
+ "tickets": [
+  {
+   "name": "Pass",
+   "includes": "Everything",
+   "price": "£10",
+   "salesEnd": "2027-03-14T12:00",
+   "url": "https://fixture.example/pass"
+  }
+ ],
+ "preview": {
+  "clock": "2027-03-13T09:30",
+  "before": "2027-03-01T09:00",
+  "after": "2027-03-15T09:00",
+  "visitorZone": "America/New_York"
+ },
+ "expect": {
+  "zone": "America/New_York",
+  "times": {
+   "A1": "04:00–05:00",
+   "A2": "01:30–03:30",
+   "A3": "08:00–09:00"
+  }
+ }
+}

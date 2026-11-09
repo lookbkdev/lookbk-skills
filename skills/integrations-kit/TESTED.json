@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/fennick/integrations.json out/fennick",
+    "node scripts/check.mjs out/fennick/index.html",
+    "node scripts/build.mjs examples/bayline/integrations.json out/bayline",
+    "node scripts/check.mjs out/bayline/index.html",
+    "node scripts/record.mjs out/fennick/index.html --moments",
+    "node scripts/record.mjs out/fennick/index.html --seconds 23.5 --poster 3.8",
+    "node scripts/record.mjs out/bayline/index.html --still 3.8 --size 390x844 --scale 2"
+  ],
+  "agents": []
+}

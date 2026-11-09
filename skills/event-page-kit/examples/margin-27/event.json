@@ -1,0 +1,811 @@
+{
+ "brand": "Margin 27",
+ "lang": "en-GB",
+ "title": {
+  "lines": [
+   "Margin",
+   "27"
+  ],
+  "accent": 1
+ },
+ "kicker": "Two days on designing public services that people can actually use: forms, letters, queues, procurement and the people who sign them off.",
+ "theme": {
+  "type": "grotesk",
+  "bg": "#f2efe8",
+  "surface": "#e8e3d8",
+  "past": "#e9e5dc",
+  "ink": "#141412",
+  "accent": "#c4311a",
+  "onAccent": "#fff8f0"
+ },
+ "ppm": 2.8,
+ "phoneSwitch": "room",
+ "venue": {
+  "name": "Albion Mill",
+  "short": "Albion Mill, Leeds",
+  "note": "9 minutes from the station, step-free",
+  "city": "Leeds",
+  "zone": "Europe/London",
+  "rows": [
+   [
+    "Address",
+    "Albion Mill, 14 Canal Wharf, Leeds LS1 4BR"
+   ],
+   [
+    "From the station",
+    "9 minutes on foot, flat, along the canal towpath"
+   ],
+   [
+    "Step-free",
+    "Every room. A lift to the Loft and the Workroom"
+   ],
+   [
+    "Hearing",
+    "Induction loop in the Hall. Live captions on every Hall session"
+   ],
+   [
+    "BSL",
+    "Sessions marked BSL in the programme, and others on request until 4 March"
+   ],
+   [
+    "Quiet room",
+    "Room D on the ground floor, open 08:30 to 18:30"
+   ]
+  ],
+  "plan": {
+   "floors": [
+    {
+     "name": "Ground floor",
+     "w": 300,
+     "h": 140,
+     "entrance": "Entrance, step-free, canal side",
+     "rooms": [
+      {
+       "room": "A",
+       "label": "Hall",
+       "note": "400 seats, loop",
+       "x": 0,
+       "y": 0,
+       "w": 300,
+       "h": 80
+      },
+      {
+       "label": "Courtyard",
+       "note": "Coffee and lunch",
+       "x": 0,
+       "y": 80,
+       "w": 180,
+       "h": 60,
+       "open": true
+      },
+      {
+       "label": "Quiet room",
+       "note": "Room D",
+       "x": 180,
+       "y": 80,
+       "w": 120,
+       "h": 60
+      }
+     ]
+    },
+    {
+     "name": "First floor",
+     "w": 300,
+     "h": 140,
+     "rooms": [
+      {
+       "room": "B",
+       "label": "Loft",
+       "note": "120 seats",
+       "x": 0,
+       "y": 0,
+       "w": 300,
+       "h": 75
+      },
+      {
+       "room": "C",
+       "label": "Workroom",
+       "note": "30 seats",
+       "x": 0,
+       "y": 75,
+       "w": 215,
+       "h": 65
+      },
+      {
+       "label": "Lift",
+       "x": 215,
+       "y": 75,
+       "w": 85,
+       "h": 65,
+       "solid": true
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "rooms": [
+  {
+   "id": "A",
+   "name": "Hall",
+   "note": "400 seats · streamed"
+  },
+  {
+   "id": "B",
+   "name": "Loft",
+   "note": "120 seats · lift"
+  },
+  {
+   "id": "C",
+   "name": "Workroom",
+   "note": "30 seats · book ahead"
+  }
+ ],
+ "tracks": [
+  {
+   "id": "ev",
+   "name": "Evidence",
+   "mark": "solid"
+  },
+  {
+   "id": "pr",
+   "name": "Practice",
+   "mark": "ticks"
+  },
+  {
+   "id": "ws",
+   "name": "Workshop",
+   "mark": "dashes"
+  }
+ ],
+ "days": [
+  {
+   "id": "thu",
+   "date": "2027-03-11",
+   "opens": "08:30",
+   "closes": "18:30"
+  },
+  {
+   "id": "fri",
+   "date": "2027-03-12",
+   "opens": "08:30",
+   "closes": "18:00"
+  }
+ ],
+ "breaks": [
+  {
+   "day": "thu",
+   "start": "11:00",
+   "end": "11:30",
+   "title": "Coffee",
+   "where": "Courtyard"
+  },
+  {
+   "day": "thu",
+   "start": "12:30",
+   "end": "13:30",
+   "title": "Lunch",
+   "where": "Courtyard and Loft landing"
+  },
+  {
+   "day": "thu",
+   "start": "15:00",
+   "end": "15:30",
+   "title": "Tea",
+   "where": "Courtyard"
+  },
+  {
+   "day": "fri",
+   "start": "11:00",
+   "end": "11:30",
+   "title": "Coffee",
+   "where": "Courtyard"
+  },
+  {
+   "day": "fri",
+   "start": "12:30",
+   "end": "13:30",
+   "title": "Lunch",
+   "where": "Courtyard and Loft landing"
+  },
+  {
+   "day": "fri",
+   "start": "15:00",
+   "end": "15:30",
+   "title": "Tea",
+   "where": "Courtyard"
+  }
+ ],
+ "sessions": [
+  {
+   "code": "A1",
+   "day": "thu",
+   "room": "A",
+   "start": "09:30",
+   "end": "10:15",
+   "track": "ev",
+   "title": "The form is the service",
+   "people": [
+    "nadia"
+   ],
+   "access": [
+    "BSL"
+   ]
+  },
+  {
+   "code": "A2",
+   "day": "thu",
+   "room": "A",
+   "start": "10:15",
+   "end": "11:00",
+   "track": "ev",
+   "title": "What 40,000 benefit letters taught us about reading age",
+   "people": [
+    "tomasz"
+   ]
+  },
+  {
+   "code": "A3",
+   "day": "thu",
+   "room": "A",
+   "start": "11:30",
+   "end": "12:30",
+   "track": "pr",
+   "title": "Who signs off a design in a council?",
+   "people": [
+    "ama",
+    "felix",
+    "ruth"
+   ],
+   "line": "Three people who sign off, on what they look for and what makes them say no."
+  },
+  {
+   "code": "A4",
+   "day": "thu",
+   "room": "A",
+   "start": "13:30",
+   "end": "14:15",
+   "track": "pr",
+   "title": "Designing the queue, not the website",
+   "people": [
+    "ama"
+   ],
+   "access": [
+    "BSL"
+   ]
+  },
+  {
+   "code": "A5",
+   "day": "thu",
+   "room": "A",
+   "start": "14:15",
+   "end": "15:00",
+   "track": "ev",
+   "title": "Accessibility audits that move budgets",
+   "people": [
+    "ruth"
+   ]
+  },
+  {
+   "code": "A6",
+   "day": "thu",
+   "room": "A",
+   "start": "15:30",
+   "end": "16:30",
+   "track": "pr",
+   "title": "Plain language, four languages, one letter",
+   "people": [
+    "lucia"
+   ],
+   "line": "One council letter in English, Polish, Urdu and Romanian, and what each version changed in the others."
+  },
+  {
+   "code": "A7",
+   "day": "thu",
+   "room": "A",
+   "start": "16:45",
+   "end": "17:30",
+   "track": "ev",
+   "title": "Ten years of shared patterns: what stuck",
+   "people": [
+    "mehmet"
+   ],
+   "access": [
+    "BSL"
+   ]
+  },
+  {
+   "code": "B1",
+   "day": "thu",
+   "room": "B",
+   "start": "09:30",
+   "end": "10:30",
+   "track": "ev",
+   "title": "Service maps a minister can read in two minutes",
+   "people": [
+    "hannah"
+   ]
+  },
+  {
+   "code": "B2",
+   "day": "thu",
+   "room": "B",
+   "start": "10:30",
+   "end": "11:00",
+   "track": "pr",
+   "title": "Research operations on no budget",
+   "people": [
+    "kofi"
+   ]
+  },
+  {
+   "code": "B3",
+   "day": "thu",
+   "room": "B",
+   "start": "11:30",
+   "end": "12:30",
+   "track": "ev",
+   "title": "Paying research participants fairly",
+   "people": [
+    "priya"
+   ],
+   "line": "The rate card, the tax question and the vouchers nobody could spend."
+  },
+  {
+   "code": "B4",
+   "day": "thu",
+   "room": "B",
+   "start": "13:30",
+   "end": "14:30",
+   "track": "pr",
+   "title": "Content design for crisis phone lines",
+   "people": [
+    "sinead"
+   ]
+  },
+  {
+   "code": "B5",
+   "day": "thu",
+   "room": "B",
+   "start": "14:30",
+   "end": "15:00",
+   "track": "ev",
+   "title": "Error messages, ranked by calls",
+   "people": [
+    "jonas"
+   ]
+  },
+  {
+   "code": "B6",
+   "day": "thu",
+   "room": "B",
+   "start": "15:30",
+   "end": "16:30",
+   "track": "pr",
+   "title": "Procurement is a design material",
+   "people": [
+    "felix"
+   ]
+  },
+  {
+   "code": "C1",
+   "day": "thu",
+   "room": "C",
+   "start": "09:30",
+   "end": "11:00",
+   "track": "ws",
+   "title": "Rewrite a real letter, live",
+   "people": [
+    "lucia"
+   ],
+   "line": "Bring a letter your service sends. Leave with a rewrite and its reading age.",
+   "status": "full"
+  },
+  {
+   "code": "C2",
+   "day": "thu",
+   "room": "C",
+   "start": "11:30",
+   "end": "12:30",
+   "track": "ws",
+   "title": "Testing with screen reader users",
+   "people": [
+    "kofi"
+   ]
+  },
+  {
+   "code": "C3",
+   "day": "thu",
+   "room": "C",
+   "start": "13:30",
+   "end": "15:00",
+   "track": "ws",
+   "title": "Map a service in ninety minutes",
+   "people": [
+    "hannah"
+   ],
+   "line": "Sticky notes, a real case file and one wall for each table."
+  },
+  {
+   "code": "C4",
+   "day": "thu",
+   "room": "C",
+   "start": "15:30",
+   "end": "17:00",
+   "track": "ws",
+   "title": "Write the error message first",
+   "people": [
+    "jonas"
+   ],
+   "line": "Start from the 20 errors people phone about most.",
+   "status": "full"
+  },
+  {
+   "code": "A8",
+   "day": "fri",
+   "room": "A",
+   "start": "09:30",
+   "end": "10:15",
+   "track": "ev",
+   "title": "Counting what a form costs a household",
+   "people": [
+    "farah"
+   ]
+  },
+  {
+   "code": "A9",
+   "day": "fri",
+   "room": "A",
+   "start": "10:15",
+   "end": "11:00",
+   "track": "pr",
+   "title": "Running a design system with two people",
+   "people": [
+    "oskar"
+   ]
+  },
+  {
+   "code": "A10",
+   "day": "fri",
+   "room": "A",
+   "start": "11:30",
+   "end": "12:30",
+   "track": "pr",
+   "title": "The first year of a digital team in a small council",
+   "people": [
+    "nadia",
+    "yusuf",
+    "bea"
+   ],
+   "line": "A panel of three people who started one, with the budget lines on screen."
+  },
+  {
+   "code": "A11",
+   "day": "fri",
+   "room": "A",
+   "start": "13:30",
+   "end": "14:15",
+   "track": "ev",
+   "title": "Plain numbers: showing uncertainty in public statistics",
+   "people": [
+    "yusuf"
+   ],
+   "access": [
+    "BSL"
+   ]
+  },
+  {
+   "code": "A12",
+   "day": "fri",
+   "room": "A",
+   "start": "14:15",
+   "end": "15:00",
+   "track": "pr",
+   "title": "Designing for the person helping someone else",
+   "people": [
+    "bea"
+   ]
+  },
+  {
+   "code": "A13",
+   "day": "fri",
+   "room": "A",
+   "start": "15:30",
+   "end": "16:15",
+   "track": "ev",
+   "title": "What we stopped measuring, and why",
+   "people": [
+    "hannah"
+   ]
+  },
+  {
+   "code": "A14",
+   "day": "fri",
+   "room": "A",
+   "start": "16:30",
+   "end": "17:15",
+   "track": "pr",
+   "title": "The service after the service",
+   "people": [
+    "ama"
+   ],
+   "access": [
+    "BSL"
+   ]
+  },
+  {
+   "code": "B7",
+   "day": "fri",
+   "room": "B",
+   "start": "09:30",
+   "end": "10:30",
+   "track": "ev",
+   "title": "Usability testing in a library, not a lab",
+   "people": [
+    "kofi"
+   ]
+  },
+  {
+   "code": "B8",
+   "day": "fri",
+   "room": "B",
+   "start": "10:30",
+   "end": "11:00",
+   "track": "pr",
+   "title": "Naming things in two scripts",
+   "people": [
+    "lucia"
+   ]
+  },
+  {
+   "code": "B9",
+   "day": "fri",
+   "room": "B",
+   "start": "11:30",
+   "end": "12:30",
+   "track": "ev",
+   "title": "Reading age is not the whole story",
+   "people": [
+    "tomasz"
+   ],
+   "line": "The follow-up to A2: the letters that scored well and still failed."
+  },
+  {
+   "code": "B10",
+   "day": "fri",
+   "room": "B",
+   "start": "13:30",
+   "end": "14:30",
+   "track": "pr",
+   "title": "Content audits with a spreadsheet and a deadline",
+   "people": [
+    "sinead"
+   ]
+  },
+  {
+   "code": "B11",
+   "day": "fri",
+   "room": "B",
+   "start": "14:30",
+   "end": "15:00",
+   "track": "pr",
+   "title": "Accessible PDFs: a short, honest talk",
+   "people": [
+    "ruth"
+   ]
+  },
+  {
+   "code": "B12",
+   "day": "fri",
+   "room": "B",
+   "start": "15:30",
+   "end": "16:30",
+   "track": "ev",
+   "title": "Service standards that survive a reorganisation",
+   "people": [
+    "felix"
+   ]
+  },
+  {
+   "code": "C5",
+   "day": "fri",
+   "room": "C",
+   "start": "09:30",
+   "end": "11:00",
+   "track": "ws",
+   "title": "Blueprint a bin collection",
+   "people": [
+    "mehmet"
+   ],
+   "line": "Front stage, back stage and the depot, from one missed-bin report."
+  },
+  {
+   "code": "C6",
+   "day": "fri",
+   "room": "C",
+   "start": "11:30",
+   "end": "12:30",
+   "track": "ws",
+   "title": "Pair-writing with a lawyer in the room",
+   "people": [
+    "farah"
+   ]
+  },
+  {
+   "code": "C7",
+   "day": "fri",
+   "room": "C",
+   "start": "13:30",
+   "end": "15:00",
+   "track": "ws",
+   "title": "Test your own form with a screen reader",
+   "people": [
+    "jonas"
+   ],
+   "line": "Laptops out. You will hear your form the way 2 in 100 of your users do."
+  },
+  {
+   "code": "C8",
+   "day": "fri",
+   "room": "C",
+   "start": "15:30",
+   "end": "17:00",
+   "track": "ws",
+   "title": "Budget a research round in an hour",
+   "people": [
+    "priya"
+   ],
+   "line": "Leave with a costed plan you can put in front of a finance officer."
+  }
+ ],
+ "people": [
+  {
+   "id": "nadia",
+   "name": "Nadia Okonkwo-Hale",
+   "role": "Head of design, a northern city council",
+   "says": "If a resident has to phone us to finish a form, the form has failed, however good it looks.",
+   "talk": "A1",
+   "featured": true
+  },
+  {
+   "id": "tomasz",
+   "name": "Tomasz Wierzbicki",
+   "role": "Content lead, a national benefits agency",
+   "says": "We read 40,000 letters. The median one needed a reading age of 16. We got it to 11 without losing a single legal clause.",
+   "talk": "A2",
+   "featured": true
+  },
+  {
+   "id": "ama",
+   "name": "Ama Boateng",
+   "role": "Service owner, a regional transport authority",
+   "says": "The ticket office queue is a service too. We redesigned the floor tape before we touched the app.",
+   "talk": "A4",
+   "featured": true
+  },
+  {
+   "id": "priya",
+   "name": "Priya Raman",
+   "role": "Research operations, independent",
+   "says": "A £20 voucher for a ninety-minute interview is not a thank you. Here is the rate card we use and why.",
+   "talk": "B3",
+   "featured": true
+  },
+  {
+   "id": "ruth",
+   "name": "Ruth Calloway",
+   "role": "Accessibility lead, a housing association",
+   "says": "An audit that ends in a PDF changes nothing. One that ends in a budget line changes the next five years.",
+   "talk": "A5",
+   "featured": true
+  },
+  {
+   "id": "felix",
+   "name": "Felix Achterberg",
+   "role": "Commercial lead, a county council",
+   "says": "The contract decides what the team is allowed to learn. Write the learning into the contract.",
+   "talk": "B6",
+   "featured": true
+  },
+  {
+   "id": "lucia",
+   "name": "Lucía Ferrer Vidal",
+   "role": "Translation and content, a city council"
+  },
+  {
+   "id": "mehmet",
+   "name": "Mehmet Aydın",
+   "role": "Former head of a shared design system"
+  },
+  {
+   "id": "hannah",
+   "name": "Hannah Lindqvist",
+   "role": "Service designer, a health board"
+  },
+  {
+   "id": "kofi",
+   "name": "Kofi Mensah",
+   "role": "User researcher, a public library service"
+  },
+  {
+   "id": "sinead",
+   "name": "Sinéad Moloney",
+   "role": "Content designer, a mental health charity"
+  },
+  {
+   "id": "jonas",
+   "name": "Jonas Brandt",
+   "role": "Interaction designer, a tax office"
+  },
+  {
+   "id": "farah",
+   "name": "Farah Siddiqui",
+   "role": "Policy designer, a city council"
+  },
+  {
+   "id": "oskar",
+   "name": "Oskar Lind",
+   "role": "Design system lead, a small agency"
+  },
+  {
+   "id": "yusuf",
+   "name": "Yusuf Demir",
+   "role": "Head of data, a district council"
+  },
+  {
+   "id": "bea",
+   "name": "Beatriz Lobo",
+   "role": "Carer and researcher"
+  }
+ ],
+ "online": {
+  "rooms": [
+   "A"
+  ],
+  "what": "Hall sessions, live",
+  "after": "Recordings for 30 days"
+ },
+ "tickets": [
+  {
+   "name": "Two days",
+   "includes": "Both days, all Hall and Loft sessions, one workshop",
+   "price": "£340",
+   "salesEnd": "2027-03-10T23:59",
+   "ended": true,
+   "url": "https://margin-27.example/tickets/two-days"
+  },
+  {
+   "name": "Friday only",
+   "includes": "Friday 12 March, all sessions, workshops by ballot",
+   "price": "£190",
+   "salesEnd": "2027-03-11T18:00",
+   "url": "https://margin-27.example/tickets/friday"
+  },
+  {
+   "name": "Unwaged and students",
+   "includes": "Friday 12 March, as above",
+   "price": "£45",
+   "salesEnd": "2027-03-11T18:00",
+   "stock": 12,
+   "url": "https://margin-27.example/tickets/unwaged"
+  },
+  {
+   "name": "Online",
+   "includes": "Hall sessions live with captions, recordings for 30 days",
+   "price": "£60",
+   "salesEnd": "2027-03-12T16:00",
+   "url": "https://margin-27.example/tickets/online"
+  }
+ ],
+ "titles": {
+  "speakers": "Who says what"
+ },
+ "after": "Margin 27 has ended. Hall recordings are online for ticket holders until 11 April.",
+ "preview": {
+  "clock": "2027-03-11T10:40",
+  "before": "2027-02-15T12:00",
+  "after": "2027-03-13T10:00",
+  "visitorZone": "America/New_York"
+ },
+ "footer": "Margin is run by a volunteer committee. Programme questions: programme@margin-27.example"
+}

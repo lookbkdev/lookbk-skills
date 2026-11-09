@@ -1,0 +1,321 @@
+/* Services Menu Kit: the whole design, scoped to .sm.
+   Two layouts on one markup: .sm-L-menu (a printed carte: centred masthead,
+   a margin column for the verdict, the price on a leader at the right) and
+   .sm-L-ratecard (a technical rate card: column heads per course, the price
+   right after the name, deliverables as a two-column list), plus .sm-dense
+   for a tighter rate card. Two type systems: .sm-T-caslon and .sm-T-archivo.
+   The verdict marks are three registered numbers (--sm-bar, --sm-tag,
+   --sm-u) so the browser can ease them and the recorder can set them. */
+@property --sm-bar { syntax: '<number>'; inherits: true; initial-value: 0 }
+@property --sm-tag { syntax: '<number>'; inherits: true; initial-value: 0 }
+@property --sm-u { syntax: '<number>'; inherits: true; initial-value: 0 }
+
+.sm { background: var(--bg); color: var(--ink); font-family: var(--text); font-size: 16px; line-height: 1.5; padding: 112px 0 120px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-kerning: normal }
+.sm *, .sm *::before, .sm *::after { box-sizing: border-box }
+.sm :where(h2, h3, h4, p, ul, ol, dl, dd, figure, fieldset, legend, table) { margin: 0; padding: 0 }
+.sm :where(ul, ol) { list-style: none }
+.sm :where(p, dd, li) { text-wrap: pretty }
+.sm :where(h2, h3) { text-wrap: balance }
+.sm-wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px }
+.sm-nb { white-space: nowrap }
+.sm-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap }
+.sm-lbl { font-family: var(--text); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); line-height: 1.4 }
+.sm-T-archivo .sm-lbl { font-family: var(--figure); font-weight: 500; letter-spacing: .05em }
+.sm a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 4px }
+.sm a:focus-visible, .sm button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px }
+.sm b { font-weight: 600 }
+
+/* ---------- masthead ---------- */
+.sm-mast { padding-bottom: 40px }
+.sm-kick { display: flex; align-items: center; gap: 16px }
+.sm-kick i { width: 40px; height: 1px; background: var(--rule) }
+.sm-mast h2 { font-family: var(--display); font-weight: 400; font-size: 112px; line-height: .95; letter-spacing: -.01em; margin: 26px 0 22px }
+.sm-mast h2 em { font-family: var(--italic); font-style: italic; font-size: .72em; color: var(--accent); letter-spacing: 0 }
+.sm-lede { font-family: var(--italic); font-style: italic; font-size: 21px; line-height: 1.5; color: var(--mute); max-width: 640px }
+.sm-facts { display: flex; flex-wrap: wrap; gap: 4px 0; margin-top: 28px; font-size: 14px; color: var(--mute) }
+.sm-facts li:not(:last-child)::after { content: "·"; margin: 0 14px; color: var(--quiet) }
+.sm-L-menu .sm-mast { text-align: center }
+.sm-L-menu .sm-kick, .sm-L-menu .sm-facts { justify-content: center }
+.sm-L-menu .sm-lede { margin: 0 auto }
+.sm-double { height: 5px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink) }
+.sm-L-ratecard .sm-double { display: none }
+.sm-L-ratecard .sm-mast { display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: end; border-bottom: 1px solid var(--rule); padding-bottom: 44px }
+.sm-L-ratecard .sm-kick i { display: none }
+.sm-T-archivo .sm-mast h2 { font-weight: 600; font-size: 84px; font-variation-settings: 'wdth' 112; letter-spacing: -.025em; line-height: .98; margin: 22px 0 0 }
+.sm-T-archivo .sm-mast h2 em { font-family: var(--display); font-style: normal; font-size: 1em; font-weight: 300; letter-spacing: -.03em }
+.sm-T-archivo .sm-lede { font-style: normal; font-size: 17px }
+.sm-T-archivo .sm-facts { font-family: var(--figure); font-size: 14px; margin-top: 18px }
+.sm-L-ratecard .sm-facts { display: grid; grid-template-columns: auto auto; justify-content: start; gap: 2px 28px }
+.sm-L-ratecard .sm-facts li::after { display: none }
+
+/* ---------- help me choose ---------- */
+.sm-choose { display: grid; grid-template-columns: 112px 1.15fr 1.1fr 1fr; gap: 0 32px; align-items: start; padding: 30px 0; border-bottom: 1px solid var(--rule) }
+.sm-choose[hidden] { display: none }
+.sm-ct { font-family: var(--name); font-weight: 400; font-size: 20px; line-height: 1.2; padding-top: 2px }
+.sm-choose fieldset { border: 0; min-width: 0 }
+.sm-choose legend { margin-bottom: 10px }
+.sm-opts { display: flex; flex-wrap: wrap; gap: 2px 15px }
+.sm-opt { position: relative; display: inline-flex; cursor: pointer; font-family: var(--figure); font-size: 18px; line-height: 1.3; color: var(--mute); padding: 6px 0 8px; min-height: 40px; transition: color .2s }
+.sm-opt input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer }
+.sm-opt > span { padding-bottom: 3px; background: linear-gradient(var(--accent), var(--accent)) 0 100% / calc(var(--sm-u) * 100%) 1.5px no-repeat; pointer-events: none }
+.sm-opt:has(input:checked) { color: var(--ink); --sm-u: 1 }
+.sm-opt:has(input:focus-visible) > span { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 1px }
+.sm-js:not(.sm-rec) .sm-opt { transition: color .2s, --sm-u .32s cubic-bezier(.2,.7,.2,1) }
+.sm-tally { font-size: 16px; line-height: 1.5; color: var(--mute) }
+.sm-keys { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px; font-size: 14px; color: var(--mute) }
+.sm-key { display: inline-flex; align-items: center; gap: 7px }
+.sm-key i, .sm-tag i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); flex: none }
+.sm-k-stretch i, .is-stretch .sm-tag i { background: transparent; border: 1.5px solid var(--stretch) }
+.sm-k-out i, .is-out .sm-tag i { background: var(--rule) }
+.sm-clear { font: inherit; font-size: 14px; color: var(--ink); background: none; border: 0; border-bottom: 1px solid var(--rule); cursor: pointer; padding: 0 0 1px; margin-top: 10px }
+.sm-clear[hidden] { display: none }
+.sm-T-archivo .sm-ct { font-weight: 600; font-size: 17px; font-variation-settings: 'wdth' 112 }
+.sm-L-ratecard .sm-choose { grid-template-columns: 160px 1fr 1fr 1.25fr; background: var(--panel); border: 1px solid var(--rule); padding: 26px 28px; margin-top: 40px; border-radius: 2px }
+.sm-L-ratecard .sm-opts { gap: 6px }
+.sm-L-ratecard .sm-opt { font-size: 15px; padding: 8px 12px; min-height: 40px; border: 1px solid var(--rule); border-radius: 2px; align-items: center }
+.sm-L-ratecard .sm-opt > span { background: none; padding: 0 }
+.sm-L-ratecard .sm-opt:has(input:checked) { border-color: var(--accent); color: var(--accent); background: var(--accent-wash) }
+
+/* ---------- the choice, kept in sight ---------- */
+.sm-stick { position: sticky; top: 0; z-index: 5; height: 0 }
+.sm-stick[hidden] { display: none }
+.sm-stick-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 -28px; padding: 12px 28px; background: var(--bg); border-bottom: 1px solid var(--rule); visibility: hidden; opacity: 0; transform: translateY(-8px) }
+.sm-stick.sm-on .sm-stick-in { visibility: visible; opacity: 1; transform: none }
+.sm-js:not(.sm-rec) .sm-stick-in { transition: opacity .24s ease-out, transform .32s cubic-bezier(.2,.7,.2,1), visibility 0s linear .32s }
+.sm-js:not(.sm-rec) .sm-stick.sm-on .sm-stick-in { transition: opacity .24s ease-out, transform .32s cubic-bezier(.2,.7,.2,1), visibility 0s }
+.sm-stick-t { font-size: 15px; color: var(--mute) }
+.sm-stick-t b { color: var(--ink); font-weight: 600 }
+.sm-change { font: inherit; font-size: 15px; color: var(--ink); background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 0 0 1px; cursor: pointer; flex: none }
+.sm-T-archivo .sm-stick-t { font-family: var(--figure); font-size: 14px }
+
+/* ---------- courses ---------- */
+.sm-course { padding-top: 64px }
+.sm-ch { display: grid; grid-template-columns: 112px 1fr auto; gap: 0 32px; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid var(--ink) }
+.sm-code { font-family: var(--display); font-size: 40px; line-height: 1; color: var(--accent) }
+.sm-ch h3 { font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1.05 }
+.sm-ch p { font-family: var(--italic); font-style: italic; font-size: 17px; color: var(--mute); max-width: 440px; text-align: right; line-height: 1.45 }
+.sm-T-archivo .sm-code { font-family: var(--figure); font-size: 14px; letter-spacing: .04em }
+.sm-T-archivo .sm-ch h3 { font-weight: 600; font-size: 30px; font-variation-settings: 'wdth' 112; letter-spacing: -.015em }
+.sm-T-archivo .sm-ch p { font-style: normal; font-size: 15px }
+.sm-L-ratecard .sm-course { padding-top: 72px }
+.sm-L-ratecard .sm-ch { grid-template-columns: 200px 1fr auto; border-bottom-color: var(--rule) }
+
+/* ---------- one service ---------- */
+.sm-e { position: relative; display: grid; gap: 0 32px; padding: 30px 0 32px; border-bottom: 1px solid var(--hair) }
+.sm-e::before { content: ""; position: absolute; left: -20px; top: 30px; bottom: 32px; width: 2px; background: var(--accent); transform: scaleY(var(--sm-bar)); transform-origin: top }
+.is-stretch.sm-e::before, .is-stretch.sm-set::before { background: repeating-linear-gradient(var(--stretch) 0 5px, transparent 5px 9px) }
+.sm-tag { display: inline-flex; align-items: center; gap: 7px; font-family: var(--text); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); opacity: var(--sm-tag); transform: translateY(calc((1 - var(--sm-tag)) * 4px)); line-height: 1.4; align-self: start }
+.sm-T-archivo .sm-tag { font-family: var(--figure); font-weight: 500; letter-spacing: .05em }
+.is-stretch .sm-tag { color: var(--stretch) }
+.is-out .sm-tag { color: var(--quiet) }
+.is-fit, .is-stretch { --sm-bar: 1; --sm-tag: 1 }
+.is-out { --sm-tag: 1 }
+.sm-js:not(.sm-rec) .sm-e, .sm-js:not(.sm-rec) .sm-set, .sm-js:not(.sm-rec) .sm-tag { transition: --sm-bar .36s cubic-bezier(.2,.7,.2,1), --sm-tag .3s cubic-bezier(.2,.7,.2,1) }
+.sm-rec .sm-e, .sm-rec .sm-set { transition: none }
+/* not now: quieter colours, still AA, still readable: the reason is the useful half */
+.sm-e.is-out, .sm-set.is-out { --ink-e: var(--mute); --mute-e: var(--quiet) }
+.sm-e, .sm-set { --ink-e: var(--ink); --mute-e: var(--mute) }
+.sm-e .sm-name, .sm-e .sm-typ b, .sm-e .sm-from b, .sm-e .sm-gets, .sm-e .sm-skip dd, .sm-e .sm-pm b, .sm-set .sm-name, .sm-set .sm-settyp, .sm-set .sm-bill th, .sm-set .sm-tot td, .sm-set .sm-parts b { color: var(--ink-e) }
+.sm-e .sm-bring dd, .sm-e .sm-takes, .sm-e .sm-from, .sm-e .sm-pm, .sm-set .sm-parts, .sm-set .sm-bill td, .sm-set .sm-fromm { color: var(--mute-e) }
+.is-out .sm-gets li::marker, .is-out .sm-gets li::before { color: var(--quiet) }
+.sm-why { font-size: 15px; line-height: 1.5; color: var(--ink); padding-top: 18px }
+.sm-why[hidden] { display: none }
+.sm-why b { font-weight: 600 }
+
+.sm-head { display: flex; align-items: baseline; gap: 14px; min-width: 0 }
+.sm-name { font-family: var(--name); font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -.005em }
+.sm-lead { flex: 1; min-width: 24px; border-bottom: 2px dotted var(--rule); transform: translateY(-6px) }
+.sm-pm { display: none }
+.sm-price p { margin: 0 }
+.sm-typ b { font-family: var(--figure); font-weight: 400; font-size: 28px; line-height: 1.15; font-variant-numeric: lining-nums tabular-nums }
+.sm-typ small { font-size: 14px; color: var(--mute); margin-left: 2px }
+.sm-from { font-size: 15px; margin-top: 6px }
+.sm-from b { font-family: var(--figure); font-weight: 400 }
+.sm-min { display: block }
+.sm-takes { font-size: 15px; margin-top: 2px }
+.sm-takes .sm-lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%) }
+.sm-gets ul { margin-top: 10px; max-width: 660px }
+.sm-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 20px }
+.sm-meta dt { margin-bottom: 5px }
+.sm-meta dd { font-size: 15px; line-height: 1.5; margin: 0 }
+.sm-skip dt { color: var(--accent) }
+
+/* menu: a margin for the verdict, the outputs as an italic line of ingredients, the price column at the right */
+.sm-L-menu .sm-e { grid-template-columns: 112px 1fr 200px; grid-template-areas: "tag head price" "tag gets price" "tag meta price" "tag why why" }
+.sm-L-menu .sm-tag { grid-area: tag; padding-top: 10px }
+.sm-L-menu .sm-head { grid-area: head }
+.sm-L-menu .sm-price { grid-area: price; text-align: right; padding-top: 2px }
+.sm-L-menu .sm-typ .sm-lbl { display: block; margin-bottom: 4px }
+.sm-L-menu .sm-gets { grid-area: gets }
+.sm-L-menu .sm-meta { grid-area: meta }
+.sm-L-menu .sm-why { grid-area: why }
+.sm-L-menu .sm-gets ul { font-family: var(--italic); font-style: italic; font-size: 19px; line-height: 1.5 }
+.sm-L-menu .sm-gets li { display: inline }
+.sm-L-menu .sm-gets li:not(:last-child)::after { content: "\00a0\00b7"; font-style: normal; color: var(--accent); margin-right: .3em }
+.sm-L-menu .sm-name { white-space: nowrap }
+
+/* rate card: column heads, price right after the name, a two-column checklist of deliverables */
+.sm-cols { display: grid; grid-template-columns: minmax(0, 1fr) 150px 130px 170px 120px; gap: 0 24px; padding: 14px 0 10px; border-bottom: 1px solid var(--rule); font-family: var(--figure); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--mute) }
+.sm-cols span:nth-child(2), .sm-cols span:nth-child(3) { text-align: right }
+.sm-L-ratecard .sm-e { grid-template-columns: minmax(0, 1fr) 150px 130px 170px 120px; gap: 0 24px; padding: 24px 0 26px; grid-template-areas: "head typ from takes tag" "gets gets gets meta meta" "why why why meta meta" }
+.sm-L-ratecard:not(.sm-dense) .sm-e > .sm-meta { grid-row: 2 / span 2; align-self: start }
+.sm-L-ratecard .sm-price { display: contents }
+.sm-L-ratecard .sm-typ { grid-area: typ; text-align: right }
+.sm-L-ratecard .sm-typ .sm-lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%) }
+.sm-L-ratecard .sm-typ b { font-size: 21px }
+.sm-L-ratecard .sm-typ small { display: block; font-size: 14px }
+.sm-L-ratecard .sm-from { grid-area: from; text-align: right; margin: 0; padding-top: 3px; font-size: 15px }
+.sm-L-ratecard .sm-from b { font-size: 15px }
+.sm-L-ratecard .sm-min { display: block }
+.sm-L-ratecard .sm-takes { grid-area: takes; margin: 0; padding-top: 3px; font-family: var(--figure); font-size: 14px }
+.sm-L-ratecard .sm-tag { grid-area: tag; justify-self: end; padding-top: 6px }
+.sm-L-ratecard .sm-head { grid-area: head }
+.sm-L-ratecard .sm-lead { display: none }
+.sm-T-archivo .sm-name { font-weight: 600; font-size: 22px; font-variation-settings: 'wdth' 108; letter-spacing: -.01em }
+.sm-L-ratecard .sm-gets { grid-area: gets; padding-right: 8px }
+.sm-L-ratecard .sm-gets ul { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px; margin-top: 16px; max-width: none }
+.sm-L-ratecard .sm-gets li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.45 }
+.sm-L-ratecard .sm-gets li::before { content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 1px; background: var(--accent) }
+.sm-L-ratecard .sm-meta { grid-area: meta; grid-template-columns: 1fr; gap: 12px; margin-top: 16px }
+.sm-L-ratecard .sm-meta dd { font-size: 14px }
+.sm-T-archivo .sm-skip dt { color: var(--stretch) }
+.sm-L-ratecard .sm-why { grid-area: why; padding-top: 16px; font-size: 15px }
+.sm-L-ratecard .sm-e::before { left: -18px; top: 24px; bottom: 26px }
+/* dense rate card: one ruled line per fact, outputs as a run of text */
+.sm-dense .sm-e { padding: 16px 0 18px; grid-template-areas: "head typ from takes tag" "gets gets gets gets gets" "meta meta meta meta meta" "why why why why why" }
+.sm-dense .sm-gets ul { display: block; margin-top: 6px; color: var(--mute) }
+.sm-dense .sm-gets li { display: inline; padding: 0; font-size: 15px }
+.sm-dense .sm-gets li::before { display: none }
+.sm-dense .sm-gets li:not(:last-child)::after { content: "\00a0\00b7"; color: var(--accent); margin-right: .3em }
+.sm-dense .sm-meta { grid-template-columns: 1fr 1fr; gap: 0 24px; margin-top: 8px }
+.sm-dense .sm-meta > div { display: flex; gap: 10px; align-items: baseline }
+.sm-dense .sm-meta dt { margin: 0; flex: none }
+.sm-dense .sm-why { padding-top: 8px }
+
+/* ---------- set menus ---------- */
+.sm-sets { margin-top: 88px; border: 1px solid var(--ink); padding: 6px }
+.sm-sets-in { border: 1px solid var(--ink); padding: 44px 48px 40px }
+.sm-sets-h { text-align: center; margin-bottom: 34px }
+.sm-sets-h h3 { font-family: var(--display); font-weight: 400; font-size: 52px; line-height: 1; margin: 12px 0 10px }
+.sm-sets-h p { font-family: var(--italic); font-style: italic; font-size: 17px; color: var(--mute) }
+.sm-set-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 0 56px }
+.sm-set { position: relative; padding-top: 4px }
+.sm-set + .sm-set::after { content: ""; position: absolute; left: -28px; top: 0; bottom: 0; width: 1px; background: var(--hair) }
+.sm-set::before { content: ""; position: absolute; left: -18px; top: 4px; height: 44px; width: 2px; background: var(--accent); transform: scaleY(var(--sm-bar)); transform-origin: top }
+.sm-settyp { font-family: var(--figure); font-size: 28px; line-height: 1.15; font-variant-numeric: lining-nums tabular-nums }
+.sm-parts { font-family: var(--italic); font-style: italic; font-size: 17px; line-height: 1.5; margin: 6px 0 18px }
+.sm-parts b { font-weight: 400 }
+.sm-bill { width: 100%; border-collapse: collapse; font-size: 15px }
+.sm-bill thead th { padding: 0 0 8px; font-weight: 600 }
+.sm-bill th, .sm-bill td { text-align: left; font-weight: 400; padding: 7px 0; border-top: 1px solid var(--hair); vertical-align: baseline }
+.sm-bill thead th, .sm-bill thead td { border-top: 0 }
+.sm-bill .sm-n { text-align: right; padding-left: 18px; white-space: nowrap; font-family: var(--figure); font-variant-numeric: lining-nums tabular-nums }
+.sm-bill thead .sm-n { font-family: var(--text) }
+.sm-T-archivo .sm-bill thead .sm-n { font-family: var(--figure) }
+.sm-bill .sm-ov th, .sm-bill .sm-ov td { font-style: italic }
+.sm-bill .sm-tot th, .sm-bill .sm-tot td { border-top: 1px solid var(--ink); padding: 10px 0 10px; font-weight: 600 }
+.sm-bill .sm-tot .sm-n { font-size: 18px; font-weight: 400; padding-left: 18px }
+.sm-bill .sm-tot { border-bottom: 3px double var(--ink) }
+.sm-fromm { display: none; font-size: 16px; margin-top: 12px }
+.sm-set .sm-tag { display: flex; justify-self: start; justify-content: flex-start; margin-top: 16px }
+.sm-L-ratecard .sm-sets { border-color: var(--rule); background: var(--panel) }
+.sm-L-ratecard .sm-sets-in { border: 0; padding: 40px 44px }
+.sm-L-ratecard .sm-sets-h { text-align: left }
+.sm-T-archivo .sm-sets-h h3 { font-weight: 600; font-size: 34px; font-variation-settings: 'wdth' 112; letter-spacing: -.015em }
+.sm-T-archivo .sm-sets-h p, .sm-T-archivo .sm-parts { font-style: normal; font-size: 15px }
+.sm-T-archivo .sm-settyp { font-size: 22px }
+.sm-L-ratecard .sm-bill .sm-tot th, .sm-L-ratecard .sm-bill .sm-tot td { border-top-color: var(--rule) }
+.sm-L-ratecard .sm-bill .sm-tot { border-bottom-color: var(--rule) }
+.sm-foot { display: flex; justify-content: space-between; gap: 24px; margin-top: 40px; font-size: 14px; color: var(--mute) }
+
+/* ---------- tablet ---------- */
+@media (max-width: 1100px) {
+  .sm-choose, .sm-L-ratecard .sm-choose { grid-template-columns: 1fr 1fr; gap: 18px 32px }
+  .sm-ct { grid-column: 1 / -1 }
+  .sm-sum { grid-column: 1 / -1 }
+  .sm-cols { display: none }
+  .sm-L-ratecard .sm-e, .sm-dense .sm-e { grid-template-columns: 1fr 1fr 1fr; grid-template-areas: "head head tag" "typ from takes" "gets gets gets" "meta meta meta" "why why why"; gap: 6px 24px }
+  .sm-L-ratecard .sm-typ, .sm-L-ratecard .sm-from { text-align: left }
+  .sm-L-ratecard:not(.sm-dense) .sm-e > .sm-meta { grid-area: meta }
+  .sm-L-ratecard .sm-typ .sm-lbl { position: static; width: auto; height: auto; clip-path: none; display: block }
+  .sm-L-ratecard .sm-meta { grid-template-columns: 1fr 1fr; gap: 0 24px }
+  .sm-L-ratecard .sm-mast { grid-template-columns: 1fr; gap: 20px }
+  .sm-L-menu .sm-e { grid-template-columns: 88px 1fr 180px; gap: 0 24px }
+  .sm-L-menu .sm-name { white-space: normal }
+  .sm-ch, .sm-L-ratecard .sm-ch { grid-template-columns: 88px 1fr; gap: 0 24px }
+  .sm-ch p { grid-column: 2; text-align: left; margin-top: 8px }
+  .sm-L-ratecard .sm-ch { grid-template-columns: 1fr }
+  .sm-L-ratecard .sm-ch p { grid-column: 1 }
+  .sm-set-grid { grid-template-columns: 1fr; gap: 40px }
+  .sm-set + .sm-set::after { left: 0; right: 0; top: -20px; bottom: auto; width: auto; height: 1px }
+  .sm-mast h2 { font-size: 88px }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 700px) {
+  .sm { padding: 64px 0 80px }
+  .sm-wrap { padding: 0 20px }
+  .sm-lbl, .sm-tag, .sm-cols { font-size: 13px }
+  .sm-mast h2 { font-size: 60px }
+  .sm-T-archivo .sm-mast h2 { font-size: 46px }
+  .sm-lede { font-size: 18px }
+  .sm-T-archivo .sm-lede { font-size: 17px }
+  .sm-facts { flex-direction: column; font-size: 16px }
+  .sm-facts li::after { display: none }
+  .sm-T-archivo .sm-facts { font-size: 16px }
+  .sm-choose, .sm-L-ratecard .sm-choose { grid-template-columns: 1fr; gap: 22px }
+  .sm-L-ratecard .sm-choose { padding: 22px 18px }
+  .sm-opt { font-size: 19px; min-height: 44px }
+  .sm-L-ratecard .sm-opt { font-size: 16px; min-height: 44px }
+  .sm-keys, .sm-clear, .sm-tally { font-size: 16px }
+  .sm-course, .sm-L-ratecard .sm-course { padding-top: 52px }
+  .sm-ch, .sm-L-ratecard .sm-ch { grid-template-columns: auto 1fr; gap: 0 14px }
+  .sm-L-ratecard .sm-ch { grid-template-columns: 1fr }
+  .sm-code { font-size: 32px }
+  .sm-T-archivo .sm-code { font-size: 14px }
+  .sm-ch h3 { font-size: 32px }
+  .sm-T-archivo .sm-ch h3 { font-size: 26px }
+  .sm-ch p, .sm-T-archivo .sm-ch p { grid-column: 1 / -1; font-size: 16px }
+  .sm-L-menu .sm-e, .sm-L-ratecard .sm-e, .sm-dense .sm-e { grid-template-columns: 1fr; grid-template-areas: "tag" "head" "pm" "gets" "meta" "why"; gap: 0; padding: 26px 0 28px }
+  .sm-tag { grid-area: tag; height: 0; overflow: hidden; padding: 0 !important; justify-self: start }
+  .sm-filtering .sm-tag { height: auto; overflow: visible; margin-bottom: 10px }
+  .sm-e::before, .sm-L-ratecard .sm-e::before { left: -12px; top: 26px; bottom: 28px }
+  .sm-L-menu .sm-name { white-space: normal; font-size: 26px }
+  .sm-T-archivo .sm-name { font-size: 22px }
+  .sm-lead { display: none }
+  .sm-price { display: none !important }
+  .sm-pm { display: block; grid-area: pm; font-size: 16px; line-height: 1.55; margin-top: 8px }
+  .sm-pm b { font-family: var(--figure); font-weight: 400; font-size: 22px; margin-right: 2px }
+  .sm-T-archivo .sm-pm b { font-size: 19px }
+  .sm-pm .sm-dot { color: var(--quiet) }
+  .sm-pm-t { display: block }
+  .sm-L-menu .sm-gets ul { font-size: 18px }
+  .sm-L-ratecard .sm-gets ul { grid-template-columns: 1fr; gap: 8px }
+  .sm-L-ratecard .sm-gets li, .sm-dense .sm-gets li { font-size: 16px }
+  .sm-meta, .sm-L-ratecard .sm-meta, .sm-dense .sm-meta { grid-template-columns: 1fr; gap: 14px; margin-top: 18px }
+  .sm-dense .sm-meta > div { display: block }
+  .sm-dense .sm-meta dt { margin-bottom: 5px }
+  .sm-meta dd, .sm-L-ratecard .sm-meta dd { font-size: 16px }
+  .sm-why, .sm-L-ratecard .sm-why { font-size: 16px }
+  .sm-sets { margin-top: 64px }
+  .sm-sets-in, .sm-L-ratecard .sm-sets-in { padding: 32px 18px 28px }
+  .sm-sets-h h3 { font-size: 40px }
+  .sm-T-archivo .sm-sets-h h3 { font-size: 30px }
+  .sm-sets-h p, .sm-T-archivo .sm-sets-h p, .sm-parts, .sm-T-archivo .sm-parts { font-size: 16px }
+  .sm-set::before { left: -10px }
+  .sm-bill { font-size: 16px }
+  .sm-bill .sm-f { display: none }
+  .sm-bill .sm-n { padding-left: 12px }
+  .sm-fromm { display: block }
+  .sm-settyp { font-size: 24px }
+  .sm-T-archivo .sm-settyp { font-size: 20px }
+  .sm-foot { flex-direction: column; font-size: 16px }
+  .sm-stick-t, .sm-change, .sm-T-archivo .sm-stick-t { font-size: 16px }
+  .sm-stick-in { margin: 0 -20px; padding: 10px 20px }
+  .sm-stick-n { display: block }
+  .sm-stick-n .sm-dot { display: none }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sm *, .sm *::before { transition: none !important }
+}

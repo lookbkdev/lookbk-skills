@@ -1,0 +1,93 @@
+{
+  "lang": "en",
+  "layout": "index",
+  "theme": {
+    "type": "book",
+    "bg": "#f4f1e9",
+    "ink": "#17181a",
+    "accent": "#1c5a4b",
+    "mark": "#f0d77e",
+    "live": "#2f7d55",
+    "button": "ink",
+    "corners": "square"
+  },
+  "intro": {
+    "eyebrow": "Before you switch",
+    "headline": "The fine print, _in plain words._",
+    "lede": "Straight answers on billing, your data and moving over from whatever you use now. If one is missing, ask the people who wrote them."
+  },
+  "search": { "label": "Search the answers", "placeholder": "Try “export”, “VAT” or “seats”" },
+  "groups": [
+    {
+      "id": "billing", "title": "Pricing & billing", "short": "Billing",
+      "items": [
+        { "id": "free-trial", "q": "Is there a free trial, and does it need a card?", "short": "30 days, no card",
+          "a": [ { "p": "Every new workspace gets **30 days of Studio**, our middle plan, with no card on file. On day 30 you choose a plan, or the workspace drops to Solo, which is free for one person for as long as you like. Nothing is deleted either way." } ] },
+        { "id": "adding-seats", "q": "What happens if we add people in the middle of a month?", "short": "Charged to the day",
+          "a": [
+            { "p": "You pay for the days the seat exists, not the whole month. The next invoice shows each change on its own line, so your accountant can follow it." },
+            { "table": {
+                "head": ["Seat added on", "Days billed", "You pay"],
+                "rows": [["1 March", "31 of 31", "€14.00"], ["16 March", "16 of 31", "€7.23"], ["31 March", "1 of 31", "€0.45"]],
+                "caption": "Studio is €14 a seat a month; March has 31 days.",
+                "computed": { "column": 2, "exprs": ["14 * 31 / 31", "14 * 16 / 31", "14 * 1 / 31"], "decimals": 2 } } },
+            { "more": [ { "label": "How proration works", "href": "https://fernwork.example/docs/billing/proration" } ] }
+          ] },
+        { "id": "invoice", "q": "Can we pay yearly, by bank transfer?", "short": "Yes, from 10 seats",
+          "a": [ { "p": "From 10 seats on a yearly plan we send a PDF invoice with 30-day terms and our bank details. Below 10 seats, yearly is card only." } ] },
+        { "id": "vat", "q": "Do your prices include VAT?", "short": "Only where it applies",
+          "a": [ { "p": "Prices are shown without VAT. Inside the EU we add it unless you give us a valid VAT number; then the invoice is reverse-charged and says so." } ] }
+      ]
+    },
+    {
+      "id": "data", "title": "Your data",
+      "items": [
+        { "id": "export", "q": "Can we export everything and leave?", "short": "Yes, in one file",
+          "a": [
+            { "p": "One export holds every timesheet, client, project and invoice, as CSV plus the original PDFs. It works on every plan, including after a plan has lapsed." },
+            { "steps": ["Open **Settings → Workspace → Export**.", "Pick a date range, or leave it on **Everything**.", "We email a download link within 10 minutes. It stays valid for 7 days."] },
+            { "more": [ { "label": "What is in the export", "href": "https://fernwork.example/docs/export" }, { "label": "Column reference", "href": "https://fernwork.example/docs/export/columns" } ] }
+          ] },
+        { "id": "where", "q": "Where is our data stored?", "short": "Frankfurt, EU",
+          "a": [ { "p": "In two data centres in Frankfurt, with nightly encrypted backups kept for 35 days. Nothing is copied outside the EU." } ] },
+        { "id": "who-sees", "q": "Can anyone at Fernwork read our timesheets?", "short": "Only if you ask us to",
+          "a": [ { "p": "Support can open your workspace only after an admin grants access from **Settings → Security**. Access ends after 72 hours, and every view is logged where your admins can see it." } ] }
+      ]
+    },
+    {
+      "id": "switching", "title": "Switching over", "short": "Switching",
+      "items": [
+        { "id": "import", "q": "How long does it take to move from spreadsheets or another tracker?", "short": "About 20 minutes",
+          "a": [
+            { "p": "Most studios are tracking on day one. Bring a CSV from wherever you are now." },
+            { "steps": ["Export your projects and time entries as CSV.", "Drop the file on **Import** and match the columns. We guess most of them.", "Check the preview, then import. It can be undone for 24 hours.", "Invite the team. Their history comes with them."] },
+            { "more": [ { "label": "Import guide", "href": "https://fernwork.example/docs/import" } ] }
+          ] },
+        { "id": "numbering", "q": "Will our invoice numbers carry on?", "short": "From the next number",
+          "a": [ { "p": "Set the next number once (for example `2026-0148`) and Fernwork carries on from there, in your format." } ] },
+        { "id": "setup-help", "q": "Will you help us set it up?", "short": "Free on Studio and up",
+          "a": [ { "p": "A 45-minute call with someone who has run a studio. We import your data with you and set up your rates and invoice templates." } ] }
+      ]
+    }
+  ],
+  "contact": {
+    "headline": "Still stuck? _Ask the people who wrote this._",
+    "text": "Every message is read and answered by one of the three people who wrote these answers. First reply within **4 working hours**; last month the median was **1 h 52 min**.",
+    "promise": "4 working hours",
+    "people": [
+      { "name": "Mara Alves", "remit": "billing & plans" },
+      { "name": "Joost Dekker", "remit": "imports" },
+      { "name": "Ines Rocha", "remit": "security & data" }
+    ],
+    "city": "Lisbon",
+    "timezone": "Europe/Lisbon",
+    "hours": { "days": ["mon", "tue", "wed", "thu", "fri"], "open": "08:00", "close": "18:00" },
+    "now": "2026-11-05T11:40:00Z",
+    "actions": [
+      { "label": "Email support", "href": "mailto:help@fernwork.example" },
+      { "label": "Book a 15-minute call", "href": "https://fernwork.example/call" }
+    ]
+  },
+  "preview": { "open": ["adding-seats", "export"], "query": "csv", "deepLink": "import" },
+  "demo": { "title": "Fernwork · Questions before you switch" }
+}

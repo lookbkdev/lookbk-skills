@@ -1,0 +1,38 @@
+{
+  "layout": "figures",
+  "brand": "Gridmere",
+  "theme": { "preset": "signal" },
+  "eyebrow": ["Gridmere in operation", "Each figure with its source"],
+  "statement": "Battery fleets that answer the grid _in seconds,_ run by the operators below.",
+  "runLabel": "Run by",
+  "captionLabel": "What they run",
+  "captionHint": "Select an operator to see what they run on Gridmere.",
+  "marks": [
+    { "name": "Calderwick Power", "svg": "logos/calderwick.svg", "align": "center", "use": "Dispatches every site into the balancing market from one desk.", "href": "https://gridmere.example/operators/calderwick" },
+    { "name": "Saltmarsh Solar", "svg": "logos/saltmarsh.svg", "align": "center", "use": "Shifts midday solar into the evening peak.", "href": "https://gridmere.example/operators/saltmarsh" },
+    { "name": "Fenmoor", "svg": "logos/fenmoor.svg", "use": "Holds frequency response on a rural network.", "href": "https://gridmere.example/operators/fenmoor" },
+    { "name": "Bray & Kell", "svg": "logos/bray-kell.svg", "use": "Trades its storage portfolio day ahead and intraday.", "href": "https://gridmere.example/operators/bray-kell" },
+    { "name": "Ninefield", "svg": "logos/ninefield.svg", "align": "center", "use": "Runs community batteries for a housing co-operative.", "href": "https://gridmere.example/operators/ninefield" },
+    { "name": "Ettrin", "svg": "logos/ettrin.svg", "align": "center", "use": "Stacks capacity and arbitrage contracts per site.", "href": "https://gridmere.example/operators/ettrin" }
+  ],
+  "stats": [
+    { "value": "1.84", "unit": "GWh", "label": "of stored energy dispatched on an average day", "note": 1 },
+    { "value": "99.2", "unit": "%", "label": "of dispatch instructions met inside the grid operator’s window", "note": 2 },
+    { "value": "2.6", "unit": "s", "label": "median from a price signal to a new inverter setpoint", "note": 3 }
+  ],
+  "notesHead": "Sources",
+  "notes": [
+    { "basis": "Mean daily energy discharged across 31 sites, 1 Jul to 30 Sep 2026, metered at the point of connection.", "source": "Gridmere site telemetry", "asOf": "2026-09-30" },
+    { "basis": "Share of 48,210 instructions in Q3 2026 met within the operator’s stated tolerance.", "source": "Grid operator settlement data", "asOf": "2026-09-30" },
+    { "basis": "Median latency across all setpoint changes in September 2026, measured at the inverter.", "source": "Gridmere control-plane logs", "asOf": "2026-09-30" }
+  ],
+  "balance": { "area": 2600 },
+  "preview": { "open": [3, 1] },
+  "demo": {
+    "nav": [ { "label": "Platform", "href": "https://gridmere.example/platform" }, { "label": "Operators", "href": "https://gridmere.example/operators" }, { "label": "Contact", "href": "https://gridmere.example/contact" } ],
+    "headline": "One control room for every battery you run.",
+    "lede": "Gridmere forecasts prices, bids your storage into the markets and turns each instruction into an inverter setpoint, site by site.",
+    "cta": { "label": "See the platform", "href": "https://gridmere.example/platform" },
+    "footer": "Gridmere is an invented company for this example. Every operator, figure and source on this page is made up."
+  }
+}

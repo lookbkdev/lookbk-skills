@@ -1,0 +1,95 @@
+{
+  "lang": "en",
+  "layout": "ratecard",
+  "money": { "currency": "USD", "locale": "en-US" },
+  "theme": { "type": "archivo", "bg": "#0d1012", "ink": "#e6e8e3", "accent": "#97dcb0", "stretch": "#efc169" },
+  "intro": {
+    "kicker": "Keelson Data · Rate card",
+    "headline": "What we do, _priced._",
+    "lede": "Data engineering for companies with 20 to 400 pipelines. Ranges come from 61 engagements since 2023; we do not quote a figure we cannot back.",
+    "facts": ["6 services", "2 sets", "USD, before tax", "Rev. October 2026"]
+  },
+  "chooser": { "title": "Help me choose", "budgets": [15000, 50000, 100000], "weeks": [4, 8, 12] },
+  "courses": [
+    {
+      "code": "01 / DIAGNOSE",
+      "title": "Diagnose",
+      "note": "Two weeks or so. You keep the findings whether or not we do the fixing.",
+      "services": [
+        {
+          "id": "health-check",
+          "name": "Pipeline health check",
+          "gets": ["an inventory of every pipeline and its owner", "cost by warehouse and by job", "the 10 failures most likely to page someone"],
+          "from": 8000, "typical": 9500, "weeks": [2, 2],
+          "bring": "Read-only access to the warehouse and orchestrator, and 2 hours with whoever is on call.",
+          "skip": "You run fewer than 20 pipelines. A senior engineer can do this in a week."
+        },
+        {
+          "id": "cost",
+          "name": "Cost teardown",
+          "gets": ["a spend report down to the query", "3 to 5 changes, each with its saving priced", "the changes in a branch you can merge"],
+          "from": 12000, "typical": 15000, "weeks": [3, 4],
+          "bring": "A billing export for 90 days and a reviewer for the branch.",
+          "skip": "Your warehouse bill is under $8,000 a month. The fee would take over a year to pay back."
+        }
+      ]
+    },
+    {
+      "code": "02 / BUILD",
+      "title": "Build",
+      "note": "Fixed scope, fixed fee and a named lead. A working demo every Thursday.",
+      "services": [
+        {
+          "id": "contracts",
+          "name": "Data contracts and tests",
+          "gets": ["contracts for your 15 most-used tables", "tests that run in CI", "alerts routed to the owning team", "a one-page guide for new tables"],
+          "from": 28000, "typical": 36000, "weeks": [5, 7],
+          "bring": "An owner for each table and a staging environment.",
+          "skip": "Nobody will own a table when it breaks. Contracts without owners are paperwork."
+        },
+        {
+          "id": "streaming",
+          "name": "Streaming ingestion",
+          "gets": ["events from app to warehouse in 60 seconds", "replay from any hour", "a schema registry", "a runbook for the on-call"],
+          "from": 45000, "typical": 58000, "weeks": [8, 12],
+          "bring": "An event spec, even a rough one, and cloud access for a sandbox.",
+          "skip": "Your reports are read once a day. Batch is cheaper and nobody will notice the difference."
+        },
+        {
+          "id": "migration",
+          "name": "Warehouse migration",
+          "gets": ["schema and history moved", "every dashboard checked against the old numbers", "a 2-week parallel run", "a rollback plan"],
+          "from": 60000, "typical": 85000, "weeks": [10, 16],
+          "bring": "A freeze window, and sign-off from finance on the reconciled numbers.",
+          "skip": "The reason is a feature, not a cost or a limit. Features arrive; migrations are hard to undo."
+        }
+      ]
+    },
+    {
+      "code": "03 / RUN",
+      "title": "Run",
+      "note": "After a build, or on its own when your team is stretched.",
+      "services": [
+        {
+          "id": "on-call",
+          "name": "On-call retainer",
+          "gets": ["a named engineer on your rota 1 week in 4", "incident write-ups within 2 working days", "a monthly reliability report"],
+          "from": 6500, "typical": 8000, "monthly": { "minMonths": 3, "startsWithinWeeks": 1 },
+          "bring": "Pager access and a runbook, even an out-of-date one.",
+          "skip": "You get paged fewer than twice a month. Call us when that changes."
+        }
+      ]
+    }
+  ],
+  "sets": {
+    "kicker": "Booked together",
+    "title": "Common combinations",
+    "note": "Totals are the sum of the parts; the time allows for the overlap we plan.",
+    "items": [
+      { "name": "Fix the bill", "parts": ["health-check", "cost"], "overlapWeeks": 0, "note": "One kickoff, one report." },
+      { "name": "Move house", "parts": ["health-check", "contracts", "migration"], "overlapWeeks": 4, "note": "Contracts run alongside the first 4 weeks of the migration." }
+    ]
+  },
+  "foot": { "text": "A written scope and a fixed fee within 5 working days of a call.", "cta": { "label": "Book a scoping call", "href": "https://keelson.example/scoping" } },
+  "preview": { "first": { "budget": 50000, "weeks": 12 }, "second": { "budget": 100000, "weeks": 12 } }
+}

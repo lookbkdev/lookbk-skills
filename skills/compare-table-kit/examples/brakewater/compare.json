@@ -1,0 +1,115 @@
+{
+  "lang": "en",
+  "brand": "Brakewater",
+  "theme": {
+    "mode": "dark",
+    "paper": "#0c0e0f",
+    "column": "#141a1d",
+    "ink": "#e9e7e1",
+    "us": "#8fcbff",
+    "onUs": "#08121a",
+    "them": "#f1b55c",
+    "themWash": "#221b10",
+    "display": "bricolage-grotesque",
+    "text": "ibm-plex-sans",
+    "mono": "jetbrains-mono"
+  },
+  "head": {
+    "eyebrow": ["Brakewater compared", "8 questions", "Facts as of 3 Nov 2026"],
+    "headline": "Brakewater against the _four things you would use instead._",
+    "lede": "Error tracking for teams of 5 to 30 engineers. Every figure below has a source and a date, **including the rows where we come second.**"
+  },
+  "product": { "id": "bw", "name": "Brakewater", "desc": "Errors, traces and alerts in one place" },
+  "alternatives": [
+    { "id": "self", "name": "Run it yourself", "short": "Run it yourself", "called": "running it yourself", "desc": "Open-source stack on your own servers", "kind": "diy", "invented": true },
+    { "id": "cloud", "name": "Your cloud’s logs", "short": "Cloud logs", "called": "your cloud’s logs", "desc": "Built into the host you deploy to", "kind": "have", "invented": true },
+    { "id": "tw", "name": "Tracewell", "short": "Tracewell", "called": "Tracewell", "desc": "Hosted error tracking", "kind": "software", "invented": true },
+    { "id": "fl", "name": "Faultline", "short": "Faultline", "called": "Faultline", "desc": "Enterprise observability suite", "kind": "software", "invented": true }
+  ],
+  "sources": [
+    { "id": "bw", "kind": "public", "text": "Brakewater price page and docs", "asOf": "2026-11-03", "url": "https://brakewater.example/pricing" },
+    { "id": "host", "kind": "public", "text": "Cloud host public price calculator, 5M events and 30 days kept", "asOf": "2026-11-03" },
+    { "id": "rivals", "kind": "public", "text": "Tracewell and Faultline public price pages and docs", "asOf": "2026-11-03", "url": "https://tracewell.example/pricing" },
+    { "id": "servers", "kind": "public", "text": "List prices for 2 small server instances and 500 GB of storage", "asOf": "2026-11-03" },
+    { "id": "survey", "kind": "own", "text": "Brakewater survey of 340 teams, method on request", "asOf": "2026-10-31", "period": "Aug to Oct 2026" },
+    { "id": "est", "kind": "own", "estimate": true, "text": "Our estimate, explained under How we compared", "asOf": "2026-11-03" }
+  ],
+  "groups": [
+    {
+      "question": "What does a year cost at 5M events a month?",
+      "assumes": "8 engineers, 5M events a month, 30 days kept.",
+      "rows": [
+        { "label": "The yearly bill", "verdict": "cloud", "cells": {
+          "bw": { "fact": "$1,440", "note": "$120 a month, flat", "source": "bw" },
+          "self": { "fact": "$1,032", "note": "2 small servers and storage", "source": "servers" },
+          "cloud": { "fact": "$864", "note": "Ingest plus 30-day storage", "source": "host" },
+          "tw": { "fact": "$2,712", "note": "Team plan plus overage", "source": "rivals" },
+          "fl": { "fact": "$9,600", "note": "Annual contract minimum", "source": "rivals" } } },
+        { "label": "A month when traffic spikes 10x", "verdict": "bw", "cells": {
+          "bw": { "fact": "$120", "note": "Sampling starts, the bill stays", "source": "bw" },
+          "self": { "fact": "Disk fills", "note": "Add servers by hand", "source": "est" },
+          "cloud": { "fact": "$7,200", "note": "Billed per GB ingested", "source": "host" },
+          "tw": { "fact": "$1,180", "note": "$0.25 per 1k events over plan", "source": "rivals" },
+          "fl": { "fact": "Covered", "note": "Up to the contract cap", "source": "rivals" } } },
+        { "label": "Engineer time to keep it running", "verdict": "bw", "cells": {
+          "bw": { "fact": "Under 1 h a month", "source": "survey" },
+          "self": { "fact": "6 to 10 h a month", "note": "Upgrades, disks, backups", "source": "survey" },
+          "cloud": { "fact": "2 h a month", "note": "Writing and fixing queries", "source": "survey" },
+          "tw": { "fact": "About 1 h a month", "source": "survey" },
+          "fl": { "fact": "About 2 h a month", "note": "Admin console, seat changes", "source": "survey" } } }
+      ]
+    },
+    {
+      "question": "How long until the first useful alert?",
+      "assumes": "From creating an account to an error reaching the right person.",
+      "rows": [
+        { "label": "Time to first alert", "verdict": "cloud", "cells": {
+          "bw": { "fact": "11 min", "note": "Median of 340 new teams", "source": "survey" },
+          "self": { "fact": "1 to 2 days", "note": "Install, configure, wire alerts", "source": "est" },
+          "cloud": { "fact": "Already on", "note": "Logs flow from day one", "source": "host" },
+          "tw": { "fact": "20 min", "source": "rivals" },
+          "fl": { "fact": "2 to 4 weeks", "note": "Single sign-on and procurement", "source": "rivals" } } },
+        { "label": "Repeat errors grouped", "verdict": { "level": ["bw", "fl"] }, "cells": {
+          "bw": { "fact": "By stack and release", "source": "bw" },
+          "self": { "fact": "With a plugin", "note": "You configure it", "source": "est" },
+          "cloud": { "fact": "Not grouped", "note": "Raw lines only", "source": "host" },
+          "tw": { "fact": "By stack trace", "source": "rivals" },
+          "fl": { "fact": "By rules you tune", "source": "rivals" } } },
+        { "label": "Alert reaches the owner", "verdict": "bw", "cells": {
+          "bw": { "fact": "Routed by code owner", "note": "Reads your owners file", "source": "bw" },
+          "self": { "fact": "One channel", "source": "est" },
+          "cloud": { "fact": "One channel", "source": "host" },
+          "tw": { "fact": "Per project", "source": "rivals" },
+          "fl": { "fact": "Per team, set by admin", "source": "rivals" } } }
+      ]
+    },
+    {
+      "question": "What happens to your data when you leave?",
+      "assumes": "Events, traces and the alert history.",
+      "rows": [
+        { "label": "Getting it out", "verdict": "self", "cells": {
+          "bw": { "fact": "Full export, no fee", "note": "NDJSON, any time", "source": "bw" },
+          "self": { "fact": "It never left", "note": "It is on your servers", "source": "est" },
+          "cloud": { "fact": "Priced per GB", "source": "host" },
+          "tw": { "fact": "Last 30 days", "note": "JSON only", "source": "rivals" },
+          "fl": { "fact": "Through support", "source": "rivals" } } },
+        { "label": "Code you would change", "verdict": { "level": ["bw", "self"] }, "cells": {
+          "bw": { "fact": "One SDK call", "note": "OpenTelemetry format", "source": "bw" },
+          "self": { "fact": "None", "note": "You chose the format", "source": "est" },
+          "cloud": { "fact": "Every logging call", "note": "Tied to the provider", "source": "host" },
+          "tw": { "fact": "Every SDK call", "note": "Its own format", "source": "rivals" },
+          "fl": { "fact": "Agent and SDK", "note": "Its own format", "source": "rivals" } } }
+      ]
+    }
+  ],
+  "picks": {
+    "bw": "You have 5 to 30 engineers, traffic that spikes, and want alerts going to whoever owns the code.",
+    "self": "You have a platform engineer with spare hours, and data that must never leave your servers.",
+    "cloud": "You are pre-launch or under 1M events a month. It is already on and costs least.",
+    "tw": "Your traffic is steady and small, and you only need errors, not traces.",
+    "fl": "You have 200 or more engineers, a compliance team and a procurement process to match."
+  },
+  "cta": { "label": "Start a 14-day trial", "href": "#start" },
+  "method": "How we compared: a team of 8 engineers sending 5M events a month and keeping 30 days. Facts about Tracewell, Faultline and the cloud host come from their public pages on the date shown. Survey figures are what teams using each option told us.",
+  "corrections": "corrections@brakewater.example"
+}

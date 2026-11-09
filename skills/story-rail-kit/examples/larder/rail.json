@@ -1,0 +1,45 @@
+{
+  "site": "https://lanternlarder.example",
+  "page": { "brand": "Lantern Larder", "nav": ["Recipes", "Pantry", "Shop", "Journal"] },
+  "theme": {
+    "mode": "dark",
+    "bg": "#15110d", "surface": "#201a14", "ink": "#f3eadc", "mute": "#b6a690", "rule": "#3a3027",
+    "accent": "#eaa441", "onAccent": "#1a1108",
+    "chart": ["#b6a690", "#eaa441", "#d9482c"],
+    "display": "fraunces", "mono": "dm-mono", "radius": 6
+  },
+  "head": {
+    "eyebrow": "This week’s cooking",
+    "title": "Fire first, _then_ the recipe.",
+    "dek": "{Count} recipes from the test kitchen this week, and the one move each depends on."
+  },
+  "link": "Cook this",
+  "cards": [
+    { "kind": "wide", "name": "Charred lime broth", "meta": "25 min · Serves 4",
+      "claim": "The depth comes from a lime burnt black in a dry pan, not from stock.",
+      "href": "/recipes/charred-lime-broth",
+      "media": { "drawn": "broth", "alt": "A bowl of amber broth from above, oil drifting on it, with two charred lime halves beside it." } },
+    { "kind": "tall", "name": "Blood orange, fennel", "meta": "10 min · Raw",
+      "claim": "Cut the orange across, never into wedges, and the salt lands on every segment.",
+      "href": "/recipes/blood-orange-fennel",
+      "media": { "drawn": "orange", "alt": "A blood orange cut across, deep red segments and pale pith, with fennel fronds." } },
+    { "kind": "number", "figure": "38", "unit": "min",
+      "label": "median time from cold pan to table across our weeknight recipes.",
+      "source": "64 recipes, timed in the test kitchen, 2026",
+      "split": [["Prep", 12], ["Cook", 22], ["Rest", 4]],
+      "href": "/journal/how-we-time-recipes", "link": "See the method" },
+    { "kind": "quote",
+      "text": "Burn the lime. Properly black. That is the whole trick.",
+      "by": "Marisol Teague", "role": "Head cook", "href": "/journal/burn-the-lime", "link": "Read the story" },
+    { "kind": "wide", "name": "Black beans, slow", "meta": "3 h · Mostly waiting",
+      "claim": "Salt the water at the start; the skins stay whole and the middles go creamy.",
+      "href": "/recipes/black-beans-slow",
+      "media": { "drawn": "beans", "alt": "Black beans in a red enamelled pot from above, with soured cream, coriander and a wooden spoon." } },
+    { "kind": "tall", "name": "Chilli oil, two ways", "meta": "40 min · Keeps 3 months",
+      "claim": "Pour the oil at 120 °C and the flakes toast without turning bitter.",
+      "href": "/recipes/chilli-oil",
+      "media": { "drawn": "jar", "alt": "A glass jar of red chilli oil with flakes settled at the bottom and a plain paper label." } }
+  ],
+  "end": { "title": "All 64 recipes", "note": "Sorted by time, then by pan", "href": "/recipes" },
+  "behaviour": { "autoplay": false }
+}

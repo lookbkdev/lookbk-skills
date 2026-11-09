@@ -1,0 +1,51 @@
+{
+  "composition": "editorial",
+  "brand": { "name": "Pell Ridge", "href": "/" },
+  "nav": [
+    { "label": "Open nights", "href": "/nights" },
+    { "label": "The dome", "href": "/dome" },
+    { "label": "Getting up", "href": "/getting-up" }
+  ],
+  "action": { "label": "Book a night", "href": "/book" },
+  "hero": {
+    "title": "THE NIGHT\nHELD STILL.",
+    "lede": "A 60 cm telescope on a dark ridge two hours from the city. Small groups, a warm room, and an astronomer at the eyepiece until two.",
+    "cta": { "label": "Choose a clear night", "href": "/book/nights" }
+  },
+  "theme": {
+    "mode": "dark",
+    "rules": "off",
+    "background": "#2b2c30",
+    "plate": "#1c1916",
+    "ink": "#efe6d2",
+    "accent": "#c9a45c",
+    "fonts": { "display": "Jost", "body": "Inter", "mono": "IBM Plex Mono", "weight": 500, "advance": 0.58 }
+  },
+  "effect": {
+    "scene": "observatory",
+    "flakeKind": "glitter",
+    "flakes": 240,
+    "wall": "#25272e",
+    "stone": "#2b2c30",
+    "ledge": "#141518",
+    "paint": "#c7a66a",
+    "sun": "#b8c8ff",
+    "sunStrength": 2.4,
+    "fill": "#525a6a",
+    "base": "ebony",
+    "lipLight": 0.8,
+    "polish": 0.9,
+    "cycle": 14,
+    "shakeAt": 2.2,
+    "shake": 1,
+    "follow": true,
+    "grain": 0.5
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Pell Ridge Observatory: open nights at a 60 cm telescope",
+    "description": "Small-group nights at a 60 cm telescope on a dark ridge two hours from the city, with an astronomer at the eyepiece until two.",
+    "url": "https://pell-ridge.example/",
+    "lang": "en"
+  }
+}

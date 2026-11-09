@@ -11,7 +11,7 @@
     {
       "name": "lookbk",
       "source": "./",
-      "description": "All eight free Lookbk skills in one plugin: two videos, a slide deck, link-preview images, an architecture diagram, two landing pages and an interactive washing-line hero.",
+      "description": "All 38 free Lookbk skills in one plugin: two videos, a slide deck, link-preview images, an architecture diagram, two landing pages, 24 Page Kits for website sections and pages, and seven animated hero sections.",
       "category": "design",
       "tags": [
         "video",
@@ -19,7 +19,9 @@
         "images",
         "landing-page",
         "diagram",
-        "hero-section"
+        "hero-section",
+        "page-kits",
+        "web"
       ]
     },
     {
@@ -111,6 +113,366 @@
       ],
       "license": "MIT",
       "homepage": "https://lookbk.dev/skills/washing-line-hero"
+    },
+    {
+      "name": "phone-screen-showcase",
+      "source": "./skills/phone-screen-showcase",
+      "description": "An app landing page hero: one phone that walks through 3 to 5 of your app's screens tap by tap as visitors scroll. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/phone-screen-showcase"
+    },
+    {
+      "name": "proof-band-kit",
+      "source": "./skills/proof-band-kit",
+      "description": "A trusted-by band: customer logos balanced to the same visual weight and figures with sourced, dated notes. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/proof-band-kit"
+    },
+    {
+      "name": "feature-tabs-kit",
+      "source": "./skills/feature-tabs-kit",
+      "description": "A features section: 3 to 6 tabs beside one stage drawn as real UI, where switching tabs moves the same objects into a new view. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/feature-tabs-kit"
+    },
+    {
+      "name": "process-steps-kit",
+      "source": "./skills/process-steps-kit",
+      "description": "A how-it-works section set as a project schedule: 3 to 7 steps drawn to scale, with hours and payments that add up. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/process-steps-kit"
+    },
+    {
+      "name": "integrations-kit",
+      "source": "./skills/integrations-kit",
+      "description": "An integrations section and directory with a wiring diagram per app: what syncs, which way, how often and what doesn't. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/integrations-kit"
+    },
+    {
+      "name": "spec-sheet-kit",
+      "source": "./skills/spec-sheet-kit",
+      "description": "A hardware product's spec section drawn as an engineering drawing whose balloons match the spec table. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/spec-sheet-kit"
+    },
+    {
+      "name": "testimonial-wall",
+      "source": "./skills/testimonial-wall",
+      "description": "A social-proof section: real star distribution, a lead quote, a reading-paced review wall, case cards and press quotes. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/testimonial-wall"
+    },
+    {
+      "name": "compare-table-kit",
+      "source": "./skills/compare-table-kit",
+      "description": "A vs or alternatives section set as a fact-checked brief: every cell a sourced, dated fact, with the rows you lose. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/compare-table-kit"
+    },
+    {
+      "name": "pricing-kit",
+      "source": "./skills/pricing-kit",
+      "description": "A pricing section where every plan hangs from one shared price scale, with a yearly switch, comparison and calculator. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/pricing-kit"
+    },
+    {
+      "name": "fee-calculator-kit",
+      "source": "./skills/fee-calculator-kit",
+      "description": "A transfer or card-fee calculator section: every fee as a line, the margin as money, and the arrival time across time zones. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/fee-calculator-kit"
+    },
+    {
+      "name": "services-menu-kit",
+      "source": "./skills/services-menu-kit",
+      "description": "An agency's services section set as a menu, with set menus that add up and a help-me-choose form. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/services-menu-kit"
+    },
+    {
+      "name": "booking-slots-kit",
+      "source": "./skills/booking-slots-kit",
+      "description": "An appointment booking section that works out every free time from hours, shifts, service lengths and bookings. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/booking-slots-kit"
+    },
+    {
+      "name": "story-rail-kit",
+      "source": "./skills/story-rail-kit",
+      "description": "A horizontal rail of cards with native snapping and a scale drawn from the cards. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/story-rail-kit"
+    },
+    {
+      "name": "faq-kit",
+      "source": "./skills/faq-kit",
+      "description": "A FAQ section you can read closed, with a short answer beside every question, search and FAQPage data. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/faq-kit"
+    },
+    {
+      "name": "newsletter-kit",
+      "source": "./skills/newsletter-kit",
+      "description": "A newsletter signup that shows your latest real issue opened in an inbox, with a send calendar and every form state designed. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/newsletter-kit"
+    },
+    {
+      "name": "contact-kit",
+      "source": "./skills/contact-kit",
+      "description": "A contact section with reasons, reply times from real working hours, a rota and a drawn way to the door. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/contact-kit"
+    },
+    {
+      "name": "closing-cta-kit",
+      "source": "./skills/closing-cta-kit",
+      "description": "The band above the footer in three layouts: a ticket, a poster or a sentence form, with real dates. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/closing-cta-kit"
+    },
+    {
+      "name": "footer-kit",
+      "source": "./skills/footer-kit",
+      "description": "A landing page footer where the page lifts away to reveal your name edge to edge, in four layouts. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/footer-kit"
+    },
+    {
+      "name": "about-story-kit",
+      "source": "./skills/about-story-kit",
+      "description": "An About page with a dated record, evidence notes and a contact sheet of the team. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/about-story-kit"
+    },
+    {
+      "name": "portfolio-index-kit",
+      "source": "./skills/portfolio-index-kit",
+      "description": "A typographic work index whose rows slide out their pictures, with case pages. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/portfolio-index-kit"
+    },
+    {
+      "name": "shop-collection-kit",
+      "source": "./skills/shop-collection-kit",
+      "description": "A small brand's collection page with plates that turn over, filters, a quick view and optional rendered stills. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/shop-collection-kit"
+    },
+    {
+      "name": "journal-index-kit",
+      "source": "./skills/journal-index-kit",
+      "description": "A magazine-style journal front page and articles from Markdown, with RSS, sitemap and structured data. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/journal-index-kit"
+    },
+    {
+      "name": "event-page-kit",
+      "source": "./skills/event-page-kit",
+      "description": "A conference or festival page with a timetable drawn to scale, a now line, speakers, tickets and calendar files. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/event-page-kit"
+    },
+    {
+      "name": "itinerary-kit",
+      "source": "./skills/itinerary-kit",
+      "description": "A guided trip itinerary page with a drawn route map, height strip and day ledger, all measured. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "page-kits"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/itinerary-kit"
+    },
+    {
+      "name": "parallax-depth-hero",
+      "source": "./skills/parallax-depth-hero",
+      "description": "A WebGL multiplane hero with the headline as one of the layers, moving with the pointer and scroll. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/parallax-depth-hero"
+    },
+    {
+      "name": "signal-glitch-hero",
+      "source": "./skills/signal-glitch-hero",
+      "description": "A WebGL hero where your photo and headline lock on through a corrupted broadcast signal. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/signal-glitch-hero"
+    },
+    {
+      "name": "falling-leaves-hero",
+      "source": "./skills/falling-leaves-hero",
+      "description": "A three.js hero of leaves falling through real light, landing on the headline and sliding off. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/falling-leaves-hero"
+    },
+    {
+      "name": "aperture-reveal-hero",
+      "source": "./skills/aperture-reveal-hero",
+      "description": "A WebGL hero where a lens iris in the headline's O clicks open to flood the frame. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/aperture-reveal-hero"
+    },
+    {
+      "name": "laser-etch-hero",
+      "source": "./skills/laser-etch-hero",
+      "description": "A WebGL hero where a laser engraver cuts your headline into maple or anodised aluminium. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/laser-etch-hero"
+    },
+    {
+      "name": "snow-globe-hero",
+      "source": "./skills/snow-globe-hero",
+      "description": "A ray-traced snow globe hero with your headline cut into the stone plinth. Only this skill; skip it if you installed lookbk.",
+      "category": "design",
+      "tags": [
+        "web",
+        "hero-section"
+      ],
+      "license": "MIT",
+      "homepage": "https://lookbk.dev/skills/snow-globe-hero"
     }
   ]
 }

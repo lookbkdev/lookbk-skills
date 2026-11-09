@@ -1,0 +1,113 @@
+{
+  "brand": "Orrin Labs",
+  "title": "Support and contact · Orrin Labs",
+  "description": "Reach the Orrin support desk in Rotterdam, Austin or Taipei, see who is on now, and when you will hear back.",
+  "theme": {
+    "page": "#0b0c0d", "surface": "#131517", "ink": "#e8eae6",
+    "accent": "#ff6b3d", "onAccent": "#160904", "open": "#53d18e",
+    "voice": "geist", "corners": "round"
+  },
+  "eyebrow": "Support and contact",
+  "headline": "Tell us what is going on. _A person replies,_ not a bot.",
+  "people": {
+    "mara": { "name": "Mara Tesfaye", "role": "Support, Europe", "city": "Rotterdam", "tz": "Europe/Amsterdam", "hours": { "mon-fri": "08:00-17:00" } },
+    "dan": { "name": "Daniel Ruiz", "role": "Support, Americas", "city": "Austin", "tz": "America/Chicago", "hours": { "mon-fri": "08:00-17:00" } },
+    "yu": { "name": "Yu-Ting Chen", "role": "Support, Asia Pacific", "city": "Taipei", "tz": "Asia/Taipei", "hours": { "mon-fri": "08:00-17:00" } },
+    "jonas": { "name": "Jonas Veld", "role": "Sales for teams", "city": "Rotterdam", "tz": "Europe/Amsterdam", "hours": { "mon-fri": "09:00-17:30" } }
+  },
+  "routes": [
+    {
+      "id": "fault", "title": "My Orrin is not working", "to": ["mara", "dan", "yu"], "desk": "Support desk",
+      "reply": { "within": 2, "unit": "working-hours" }, "email": "help@orrin.example", "ref": "OR",
+      "button": "Send to support",
+      "fields": [
+        { "k": "serial", "label": "Serial number", "required": true, "half": true, "mono": true, "hint": "on the base, starts with OR1", "placeholder": "OR1-0000-0000", "pattern": "OR1-[A-Z0-9]{4}-[A-Z0-9]{4}", "patternMessage": "Serial numbers look like OR1-4K7Q-82JD, on the base of the unit." },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "led", "type": "swatch", "label": "What is the light doing", "hint": "on the front of the unit", "required": true, "options": [{ "label": "Steady green", "color": "#3fbf6f" }, { "label": "Blinking amber", "color": "#f2a33a" }, { "label": "Steady red", "color": "#ea4b3c" }, { "label": "No light", "color": "none" }] },
+        { "k": "msg", "type": "textarea", "label": "What happened", "required": true, "placeholder": "What you saw, and since when." }
+      ],
+      "sent": { "headline": "Got it, {name}. {first} has it.", "read": "at the desk in {city}", "reply": "with a fix, or a replacement on its way" }
+    },
+    {
+      "id": "return", "title": "A return or warranty claim", "to": ["mara", "dan", "yu"], "desk": "Support desk",
+      "reply": { "within": 1, "unit": "working-days" }, "email": "returns@orrin.example", "ref": "RT",
+      "button": "Start the return",
+      "fields": [
+        { "k": "order", "label": "Order number", "required": true, "half": true, "mono": true, "placeholder": "OR-000000", "pattern": "OR-[0-9]{6}", "patternMessage": "Order numbers look like OR-204871, in your receipt email." },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "serial", "label": "Serial number", "required": true, "half": true, "mono": true, "hint": "on the base, starts with OR1", "placeholder": "OR1-0000-0000", "pattern": "OR1-[A-Z0-9]{4}-[A-Z0-9]{4}", "patternMessage": "Serial numbers look like OR1-4K7Q-82JD, on the base of the unit." },
+        { "k": "why", "type": "choice", "label": "Why it is coming back", "required": true, "options": ["It is faulty", "Damaged in delivery", "Wrong item", "Changed my mind"] },
+        { "k": "msg", "type": "textarea", "label": "Anything else" }
+      ],
+      "sent": { "headline": "Got it, {name}. {first} has it.", "read": "and checks your order", "reply": "with a return label and a drop-off point" }
+    },
+    {
+      "id": "teams", "title": "Buying five or more", "to": ["jonas"],
+      "reply": { "within": 1, "unit": "working-days" }, "email": "teams@orrin.example", "ref": "TS",
+      "fields": [
+        { "k": "name", "label": "Your name", "required": true, "half": true, "autocomplete": "name" },
+        { "k": "email", "type": "email", "label": "Work email", "required": true, "half": true },
+        { "k": "company", "label": "Company or school", "required": true, "half": true, "autocomplete": "organization" },
+        { "k": "qty", "type": "select", "label": "How many", "options": ["5 to 9", "10 to 49", "50 or more"], "half": true },
+        { "k": "msg", "type": "textarea", "label": "Where they will go" }
+      ],
+      "sent": { "headline": "Thanks, {name}. {first} has it.", "read": "in {city}", "reply": "with team pricing and lead times" }
+    },
+    {
+      "id": "press", "title": "Press and partners", "to": ["jonas"],
+      "reply": { "within": 2, "unit": "working-days" }, "email": "press@orrin.example", "ref": "PR",
+      "fields": [
+        { "k": "name", "label": "Your name", "required": true, "half": true, "autocomplete": "name" },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "outlet", "label": "Publication or company", "required": true },
+        { "k": "msg", "type": "textarea", "label": "What you have in mind", "required": true }
+      ],
+      "sent": { "headline": "Thanks, {name}. {first} has it.", "read": "in {city}", "reply": "with review units or a call" }
+    }
+  ],
+  "aside": {
+    "lead": "Before you write:",
+    "body": "hold the power button for 10 seconds to restart. It clears about a third of the problems we see, and you keep every setting.",
+    "phoneLabel": "Call support", "phone": "+31 10 000 2290", "phoneHours": "Whenever someone on the support desk is in"
+  },
+  "offices": [
+    {
+      "city": "Rotterdam workshop", "address": ["Graanweg 14, Hall C", "3011 Rotterdam"], "tz": "Europe/Amsterdam", "hours": { "mon-fri": "08:00-17:00" },
+      "steps": ["From the water bus stop, follow the quay past the cranes.", "Hall C is the third shed. Visitors use the *side door*, not the loading bay.", "Repairs drop-off is just inside on the left, weekdays 09:00 to 16:00."],
+      "plan": {
+        "size": [600, 340],
+        "water": [[[0,0],[600,0],[600,66],[0,66]]],
+        "blocks": [[[40,130],[180,130],[180,300],[40,300]], [[210,130],[350,130],[350,300],[210,300]]],
+        "us": [[380,130],[560,130],[560,300],[380,300]],
+        "door": [[440,130],[466,130]],
+        "bay": { "at": [[500,130],[548,130]], "label": "BAY" },
+        "route": [[84,96],[453,96],[453,176]],
+        "marks": [[84,96],[453,96],[453,176]],
+        "labels": [{ "text": "GRAANWEG", "at": [270,118] }, { "text": "MAAS", "at": [270,40] }, { "text": "HALL C", "at": [470,262] }, { "text": "HALL B", "at": [280,230] }],
+        "scale": { "metres": 20, "units": 80 },
+        "crop": [40, 20, 500, 316]
+      }
+    },
+    {
+      "city": "Austin returns depot", "address": ["2200 Mill Yard Rd, Unit 6", "Austin, TX 78702"], "tz": "America/Chicago", "hours": { "mon-fri": "08:00-17:00" },
+      "steps": ["Turn in at the second yard gate. Parking is on the right.", "Unit 6 is at the end. *Ring the bell* by the roller door.", "Bring the box and your return number. We test it while you wait."],
+      "plan": {
+        "size": [600, 340],
+        "blocks": [[[70,100],[300,100],[300,150],[70,150]], [[70,190],[300,190],[300,250],[70,250]], [[360,190],[470,190],[470,310],[360,310]]],
+        "us": [[470,190],[570,190],[570,310],[470,310]],
+        "door": [[496,190],[544,190]],
+        "gate": [[312,84],[348,84]],
+        "route": [[60,60],[330,60],[330,130],[520,130],[520,230]],
+        "marks": [[130,60],[520,158],[520,230]],
+        "labels": [{ "text": "MILL YARD RD", "at": [250,44] }, { "text": "UNIT 6", "at": [520,290] }, { "text": "PARKING", "at": [185,175] }],
+        "scale": { "metres": 20, "units": 80 },
+        "crop": [50, 24, 500, 316]
+      }
+    }
+  ],
+  "form": { "endpoint": "https://orrin.example/api/support", "alt": "No chat window, no bots. A person reads every note." },
+  "preview": {
+    "now": "2026-11-10T22:10:00Z", "tz": "America/New_York", "switchTo": "return", "ref": "027",
+    "draft": { "serial": "OR1-4K7Q-82JD", "email": "sam.okoye@mail.example", "led": "Blinking amber", "msg": "Since the update last night it charges to 40% and stops. The app says cell balancing, but nothing changes after six hours.", "order": "OR-204871", "why": "It is faulty", "name": "Sam Okoye" }
+  }
+}

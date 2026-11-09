@@ -1,0 +1,126 @@
+{
+  "brand": "Brask Moura Architects",
+  "title": "Contact · Brask Moura Architects",
+  "description": "Write to the right person at Brask Moura Architects in Lisbon or Copenhagen, see who is in today, and find the door.",
+  "theme": {
+    "page": "#f2efe8", "surface": "#faf8f3", "ink": "#1c1d1b",
+    "accent": "#b8361a", "onAccent": "#fff8f2", "open": "#2c7a4b",
+    "voice": "spectral", "corners": "square"
+  },
+  "eyebrow": "Contact · Studio desk",
+  "headline": "Tell us what it is about, and we will _put you through._",
+  "people": {
+    "ines": { "name": "Inês Moura", "role": "Partner, new work", "city": "Lisbon", "tz": "Europe/Lisbon", "hours": { "mon-fri": "09:30-18:30" } },
+    "karl": { "name": "Karl Brask", "role": "Partner, projects on site", "city": "Copenhagen", "tz": "Europe/Copenhagen", "hours": { "mon-fri": "08:00-16:00" } },
+    "rita": { "name": "Rita Sales", "role": "Studio manager, press", "city": "Lisbon", "tz": "Europe/Lisbon", "hours": { "mon-thu": "10:00-17:00" } },
+    "ana": { "name": "Ana Lind", "role": "Reads every portfolio", "city": "Copenhagen", "tz": "Europe/Copenhagen", "hours": { "fri": "09:00-15:00" }, "away": [["2026-12-21", "2027-01-03"]] }
+  },
+  "routes": [
+    {
+      "id": "commission", "title": "A new building or renovation", "to": ["ines"],
+      "reply": { "within": 2, "unit": "working-days" }, "email": "new@braskmoura.example", "ref": "BMA",
+      "note": "Inês answers new work herself.",
+      "fields": [
+        { "k": "name", "label": "Your name", "required": true, "half": true, "autocomplete": "name" },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "kind", "type": "select", "label": "What kind of project", "options": ["A house", "Housing", "A cultural building", "A workplace", "Something else"], "half": true },
+        { "k": "site", "label": "Where is the site", "half": true, "placeholder": "Town and country" },
+        { "k": "budget", "type": "choice", "label": "Construction budget", "hint": "helps us reply properly", "options": ["Under €500k", "€500k to 2m", "€2m to 10m", "Over €10m", "Not sure yet"] },
+        { "k": "msg", "type": "textarea", "label": "Tell us about it", "required": true, "placeholder": "A few lines is plenty: what, where, when." }
+      ],
+      "sent": { "headline": "Thank you, {name}. {first} has it.", "read": "at her desk in {city}", "reply": "usually with a time for a call" }
+    },
+    {
+      "id": "site", "title": "A project we are already working on", "to": ["karl"],
+      "reply": { "within": 1, "unit": "working-days" }, "email": "projects@braskmoura.example", "ref": "BMP",
+      "fields": [
+        { "k": "name", "label": "Your name", "required": true, "half": true, "autocomplete": "name" },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "project", "label": "Project name or number", "required": true, "placeholder": "For example 2419, Strandhuset" },
+        { "k": "msg", "type": "textarea", "label": "What do you need from us", "required": true }
+      ],
+      "sent": { "headline": "Thank you, {name}. {first} has it.", "read": "from site or the office", "reply": "or a call if it cannot wait" }
+    },
+    {
+      "id": "press", "title": "Press, books and lectures", "to": ["rita"],
+      "reply": { "within": 2, "unit": "working-days" }, "email": "press@braskmoura.example", "ref": "BMR",
+      "fields": [
+        { "k": "name", "label": "Your name", "required": true, "half": true, "autocomplete": "name" },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "outlet", "label": "Publication or event", "required": true, "half": true },
+        { "k": "deadline", "type": "date", "label": "Your deadline", "half": true },
+        { "k": "msg", "type": "textarea", "label": "What is it for", "required": true, "placeholder": "The piece or the talk, and which project." }
+      ],
+      "sent": { "headline": "Thank you, {name}. {first} has it.", "read": "and sends drawings or photos if you need them", "reply": "with what we can share and when" }
+    },
+    {
+      "id": "jobs", "title": "Working with us", "to": ["ana"],
+      "reply": { "within": 2, "unit": "working-days", "say": "two Fridays" }, "email": "jobs@braskmoura.example", "ref": "BMJ",
+      "note": "Ana reads every portfolio on Fridays.",
+      "fields": [
+        { "k": "name", "label": "Your name", "required": true, "half": true, "autocomplete": "name" },
+        { "k": "email", "type": "email", "label": "Email", "required": true, "half": true },
+        { "k": "portfolio", "type": "url", "label": "Portfolio link", "required": true, "hint": "a link is better than an attachment" },
+        { "k": "role", "type": "choice", "label": "You are", "options": ["An architect", "A Part 2 student", "Looking for an internship"] },
+        { "k": "msg", "type": "textarea", "label": "Anything we should know" }
+      ],
+      "sent": { "headline": "Thank you, {name}. {first} will look.", "read": "with the other portfolios on Friday", "reply": "either way, so you are not left waiting" }
+    }
+  ],
+  "aside": {
+    "lead": "Not sure which?",
+    "body": "Pick the closest. If it belongs with someone else, we pass it on ourselves and tell you who has it. Nobody gets bounced.",
+    "phoneLabel": "Rather talk", "phone": "+351 21 000 4810", "phoneHours": "Mon to Fri, 09:30 to 18:30 Lisbon time"
+  },
+  "offices": [
+    {
+      "city": "Lisbon studio", "address": ["Travessa da Oliveira 14, 2nd floor", "1200-650 Lisbon"], "tz": "Europe/Lisbon", "hours": { "mon-fri": "09:30-18:30" },
+      "steps": ["From the tram stop, walk up the steps of the Calçada for about 2 minutes.", "The door is green, between the bakery and the bookbinder. Press *bell 2*.", "Second floor, no lift. Ask us for the ground floor meeting room if you need it."],
+      "plan": {
+        "size": [600, 340],
+        "blocks": [
+          [[0,0],[50,0],[50,112],[0,112]], [[90,0],[140,0],[140,112],[90,112]], [[140,0],[204,0],[204,112],[140,112]], [[204,0],[240,0],[240,112],[204,112]],
+          [[300,0],[356,0],[356,112],[300,112]], [[356,0],[420,0],[420,112],[356,112]], [[420,0],[600,0],[600,112],[420,112]],
+          [[0,146],[50,146],[50,340],[0,340]], [[90,146],[600,146],[600,250],[90,250]], [[90,290],[600,290],[600,340],[90,340]]
+        ],
+        "us": [[240,0],[300,0],[300,112],[240,112]],
+        "door": [[250,112],[274,112]],
+        "stairs": { "at": [[70,152],[70,284]], "width": 40, "treads": 9 },
+        "route": [[70,272],[70,124],[262,124],[262,62]],
+        "marks": [[70,272],[262,124],[262,62]],
+        "labels": [
+          { "text": "TRAVESSA DA OLIVEIRA", "at": [160,142] },
+          { "text": "TRAM 28", "at": [250,275] },
+          { "text": "BAKERY", "at": [222,56], "angle": -90 },
+          { "text": "BINDER", "at": [328,56], "angle": -90 },
+          { "text": "CALÇADA", "at": [30,220], "angle": -90 }
+        ],
+        "scale": { "metres": 20, "units": 80 },
+        "crop": [8, 0, 340, 340]
+      }
+    },
+    {
+      "city": "Copenhagen office", "address": ["Ved Kanalen 7, courtyard building", "1401 Copenhagen K"], "tz": "Europe/Copenhagen", "hours": { "mon-fri": "08:00-16:00" },
+      "steps": ["Bike racks are on the quay, in front of number 7.", "Go through the gate and across the courtyard. Our door is *opposite the gate*.", "Ground floor. Step-free from the quay."],
+      "plan": {
+        "size": [600, 340],
+        "water": [[[0,252],[600,252],[600,340],[0,340]]],
+        "blocks": [[[0,0],[240,0],[240,200],[0,200]], [[284,0],[600,0],[600,200],[284,200]], [[240,0],[284,0],[284,60],[240,60]]],
+        "courts": [[[240,112],[284,112],[284,200],[240,200]]],
+        "us": [[222,60],[310,60],[310,112],[222,112]],
+        "door": [[256,112],[280,112]],
+        "gate": [[240,200],[284,200]],
+        "route": [[96,226],[262,226],[262,150],[268,90]],
+        "marks": [[96,226],[262,200],[268,90]],
+        "labels": [{ "text": "VED KANALEN", "at": [190,246] }, { "text": "KANAL", "at": [220,300] }],
+        "scale": { "metres": 20, "units": 80 },
+        "crop": [60, 30, 320, 290]
+      }
+    }
+  ],
+  "form": { "endpoint": "https://braskmoura.example/api/notes", "alt": "A person reads every note, usually the one it is addressed to." },
+  "preview": {
+    "now": "2026-11-10T15:40:00Z", "tz": "Europe/London", "switchTo": "press", "ref": "027",
+    "draft": { "name": "Helena Varga", "email": "helena@varga-house.example", "kind": "A house", "site": "Sintra, Portugal", "budget": "€500k to 2m", "msg": "We bought a 1930s farmhouse on a steep plot above the village and want to keep the stone shell. Two of us, often four.", "outlet": "Casa Quarterly", "deadline": "2026-12-04" }
+  }
+}

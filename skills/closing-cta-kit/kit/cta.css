@@ -1,0 +1,247 @@
+/* Closing CTA Kit: the whole design, scoped to .cc. Three layouts (stub, poster,
+   sentence), the phone rules, the entrance (driven by runtime.js through
+   inline styles, so it can be stepped frame by frame) and the reduced-motion
+   settled state. Colours and faces arrive as custom properties from the build. */
+
+.cc, .cc *, .cc *::before, .cc *::after { box-sizing: border-box; margin: 0; padding: 0 }
+.cc { background: var(--band); color: var(--ink); font-family: var(--text); font-size: 17px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; position: relative; overflow-x: clip }
+.cc .cc-lbl { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1.35 }
+.cc .cc-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+.cc a, .cc button, .cc select, .cc input { -webkit-tap-highlight-color: transparent }
+.cc :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px }
+.cc .cc-stub-face :focus-visible { outline-color: var(--on-accent) }
+
+/* ---------- buttons ---------- */
+.cc .cc-btn { display: inline-flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 26px; font: 600 17px/1 var(--text);
+  text-decoration: none; border-radius: var(--radius); white-space: nowrap; border: 0; cursor: pointer }
+.cc .cc-primary { background: var(--accent); color: var(--on-accent) }
+.cc .cc-primary .cc-price { font: 500 15px/1 var(--mono); padding-left: 14px; border-left: 1px solid var(--on-accent-rule) }
+.cc .cc-ar { display: inline-block; transition: transform .24s cubic-bezier(.2,.7,.2,1) }
+.cc .cc-btn:hover .cc-ar, .cc .cc-btn:focus-visible .cc-ar { transform: translateX(3px) }
+.cc .cc-link { color: var(--ink); font-weight: 500; text-decoration: none; padding-bottom: 4px;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; transition: background-size .3s cubic-bezier(.2,.7,.2,1) }
+.cc .cc-link:hover { background-size: 0 1px; background-position: 100% 100% }
+.cc .cc-actions { display: flex; align-items: center; gap: 30px; flex-wrap: wrap }
+
+/* =====================================================================
+   STUB: an admission ticket; the stub carries the fact
+   ===================================================================== */
+.cc[data-layout="stub"] { padding: 128px 24px 136px }
+.cc .cc-wrap { max-width: 1200px; margin: 0 auto; position: relative }
+.cc .cc-shadow { filter: drop-shadow(0 1px 0 rgba(var(--shade),.10)) drop-shadow(0 18px 28px rgba(var(--shade),.14)) drop-shadow(0 2px 4px rgba(var(--shade),.08)) }
+.cc .cc-tk { --px: 69%; --r: 17px; display: grid; grid-template-columns: var(--px) 1fr; min-height: 470px; background: var(--card);
+  border-radius: 6px; position: relative;
+  -webkit-mask: radial-gradient(circle var(--r) at var(--px) 0, #0000 calc(var(--r) - .5px), #000 var(--r)) top / 100% 51% no-repeat,
+                radial-gradient(circle var(--r) at var(--px) 100%, #0000 calc(var(--r) - .5px), #000 var(--r)) bottom / 100% 51% no-repeat;
+          mask: radial-gradient(circle var(--r) at var(--px) 0, #0000 calc(var(--r) - .5px), #000 var(--r)) top / 100% 51% no-repeat,
+                radial-gradient(circle var(--r) at var(--px) 100%, #0000 calc(var(--r) - .5px), #000 var(--r)) bottom / 100% 51% no-repeat }
+.cc .cc-tk::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: multiply; border-radius: inherit;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .3  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>") }
+.cc .cc-main { padding: 44px 56px 46px; display: flex; flex-direction: column; position: relative; min-width: 0 }
+.cc .cc-top { display: flex; justify-content: space-between; gap: 16px; color: var(--mute); padding-bottom: 18px; border-bottom: 1px solid var(--rule) }
+.cc .cc-top b { font-weight: 500; color: var(--ink) }
+.cc .cc-h { font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--display-track); text-transform: var(--display-case); color: var(--ink); text-wrap: balance }
+.cc .cc-h em { font-style: var(--em-style); font-weight: var(--em-weight); color: var(--turn) }
+.cc .cc-main .cc-h { font-size: 104px; line-height: .86; margin-top: 30px }
+.cc .cc-lede { max-width: 560px; margin-top: 22px; color: var(--mute); font-size: 18px; line-height: 1.5 }
+.cc .cc-main .cc-actions { margin-top: 28px }
+.cc .cc-fields { display: grid; grid-template-columns: repeat(var(--n), auto); justify-content: space-between; gap: 0 24px; margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--rule) }
+.cc .cc-fields dt { color: var(--mute) }
+.cc .cc-fields dd { font: 600 17px/1.3 var(--text); margin-top: 6px; color: var(--ink) }
+.cc .cc-perf { position: absolute; left: var(--px); top: var(--r); bottom: var(--r); width: 0; z-index: 1 }
+.cc .cc-perf i { position: absolute; left: -2.5px; width: 5px; height: 5px; border-radius: 50%; background: var(--band) }
+.cc .cc-stub-face { background: var(--accent); color: var(--on-accent); padding: 44px 58px 40px 46px; display: flex; flex-direction: column; position: relative; min-width: 0 }
+.cc .cc-stub-face .cc-lbl { color: var(--stub-label) }
+.cc .cc-fact { display: flex; align-items: flex-start; margin-top: 26px }
+.cc .cc-num { font: var(--display-heavy) var(--num-size, var(--num-def, 330px))/.78 var(--display); letter-spacing: -.02em; display: block; overflow: hidden; padding-top: .04em; white-space: nowrap; text-transform: uppercase }
+.cc .cc-num > span { display: inline-block }
+.cc .cc-of { font: 500 34px/1 var(--display); margin: 10px 0 0 10px; color: var(--stub-label); white-space: nowrap }
+.cc .cc-seats { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; max-width: 260px }
+.cc .cc-seats i { width: 15px; height: 15px; border-radius: 50%; display: block; position: relative }
+.cc .cc-seats i.cc-sfree { background: var(--on-accent) }
+.cc .cc-seats i.cc-sgone { border: 1.5px solid var(--stub-dim) }
+.cc .cc-seats i.cc-sgone::after { content: ""; position: absolute; left: 50%; top: -1px; bottom: -1px; width: 1.5px; margin-left: -.75px; background: var(--stub-dim); transform: rotate(45deg) }
+.cc .cc-legend { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap }
+.cc .cc-legend span { display: inline-flex; align-items: center; gap: 7px }
+.cc .cc-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; position: relative }
+.cc .cc-legend .cc-k-free { background: var(--on-accent) }
+.cc .cc-legend .cc-k-gone { border: 1.5px solid var(--stub-dim) }
+.cc .cc-legend .cc-k-gone::after { content: ""; position: absolute; left: 50%; top: -1px; bottom: -1px; width: 1.5px; margin-left: -.75px; background: var(--stub-dim); transform: rotate(45deg) }
+.cc .cc-note { margin-top: 18px; font-size: 15px; line-height: 1.35 }
+.cc .cc-sfoot { margin-top: auto; padding-top: 22px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; font-size: 16px; line-height: 1.35 }
+.cc .cc-sfoot .cc-lbl { display: block; margin-bottom: 4px }
+.cc .cc-barcode { height: 44px; width: 78px; flex: none; opacity: .9;
+  background: repeating-linear-gradient(90deg, var(--on-accent) 0 2px, transparent 2px 4px, var(--on-accent) 4px 5px, transparent 5px 8px, var(--on-accent) 8px 11px, transparent 11px 12px) }
+.cc .cc-stamp { position: absolute; width: var(--stamp, 172px); height: var(--stamp, 172px); left: var(--sx, 0px); top: var(--sy, 0px); z-index: 3; pointer-events: none;
+  color: var(--stamp-ink); mix-blend-mode: multiply; transform: rotate(-11deg); transform-origin: 50% 50% }
+.cc .cc-stamp[data-on-stub] { color: var(--on-accent); mix-blend-mode: normal }
+.cc .cc-stamp svg { width: 100%; height: 100%; overflow: visible; display: block }
+
+/* =====================================================================
+   POSTER: the fact is the figure
+   ===================================================================== */
+.cc[data-layout="poster"] { padding: 0 24px }
+.cc .cc-ps { max-width: 1296px; margin: 0 auto; padding: 112px 0 104px; border-top: 1px solid var(--rule) }
+.cc .cc-ps-head { display: flex; justify-content: space-between; gap: 16px; color: var(--mute) }
+.cc .cc-ps-head b { color: var(--ink); font-weight: 500 }
+.cc .cc-eyebrow { display: flex; align-items: center; gap: 12px; color: var(--eyebrow) }
+.cc .cc-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; flex: none }
+.cc .cc-ps-title { margin-top: 56px }
+.cc .cc-ps .cc-h { font-size: 104px; line-height: .92; margin-top: 22px; max-width: 940px; font-variation-settings: 'wdth' var(--head-wdth, 100) }
+.cc .cc-ps-grid { display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr); gap: 64px; margin-top: 64px; align-items: end }
+.cc .cc-fig { position: relative; display: flex; align-items: flex-start; min-width: 0; padding-bottom: 48px }
+.cc .cc-fig .cc-cur { font: var(--display-heavy) calc(var(--fs, 400px) * .3)/.74 var(--display); font-variation-settings: 'wdth' var(--fig-wdth, 100); color: var(--ink); margin: calc(var(--fs, 400px) * .035) .06em 0 0 }
+.cc .cc-fig .cc-n { font: var(--display-heavy) var(--fs, 400px)/.74 var(--display); font-variation-settings: 'wdth' var(--fig-wdth, 100); color: var(--accent);
+  letter-spacing: -.045em; display: flex; flex: none; overflow: hidden; padding: .06em .14em 6px 0; margin-top: -.06em; white-space: nowrap }
+.cc .cc-fig .cc-n > span { display: inline-block }
+.cc .cc-fig .cc-was { position: absolute; left: 4px; bottom: 0; font: 500 15px/1.3 var(--mono); color: var(--mute); letter-spacing: .02em }
+.cc .cc-fig .cc-was s { color: var(--ink); text-decoration-thickness: 1.5px }
+.cc .cc-ps-copy { padding-bottom: 6px; min-width: 0 }
+.cc .cc-ps .cc-lede { margin-top: 0; max-width: 470px }
+.cc .cc-ps .cc-actions { margin-top: 34px }
+.cc .cc-proof { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: auto 1fr; gap: 4px 26px; align-items: baseline }
+.cc .cc-score { font: var(--display-heavy) 44px/1 var(--display); font-variation-settings: 'wdth' 112; color: var(--ink); grid-row: span 2 }
+.cc .cc-score small { display: block; font: 500 12px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); margin-top: 8px; font-variation-settings: normal }
+.cc .cc-proof blockquote { font: italic 400 18px/1.4 var(--text); color: var(--ink); text-wrap: balance }
+.cc .cc-proof cite { font-style: normal; color: var(--mute); font-size: 14px }
+.cc .cc-win { margin-top: 64px; position: relative }
+.cc .cc-win-row { display: flex; justify-content: space-between; gap: 16px; color: var(--mute) }
+.cc .cc-win-row b { color: var(--ink); font-weight: 500 }
+.cc .cc-track { position: relative; height: 40px; margin: 40px 12px 0 0 }
+.cc .cc-draw { position: absolute; inset: 0; transform-origin: 0 50% }
+.cc .cc-rail { position: absolute; left: 0; right: 0; top: 19px; height: 1px; background: var(--rule-strong) }
+.cc .cc-gone { position: absolute; left: 0; top: 18px; height: 3px; background: var(--mute); width: var(--t) }
+.cc .cc-left { position: absolute; top: 19px; height: 1px; left: var(--t); right: 0; background: var(--accent) }
+.cc .cc-ticks { position: absolute; inset: 13px 0 13px 0; background: repeating-linear-gradient(90deg, var(--rule-strong) 0 1px, transparent 1px var(--tick)) }
+.cc .cc-today { position: absolute; left: var(--t); top: 0; height: 40px; width: 2px; transform: translateX(-1px) }
+.cc .cc-today::before { content: ""; position: absolute; inset: 0; background: var(--accent) }
+.cc .cc-today span { position: absolute; top: -30px; white-space: nowrap; color: var(--accent) }
+.cc .cc-today[data-side="r"] span { left: 12px }
+.cc .cc-today[data-side="l"] span { right: 12px }
+.cc .cc-end { position: absolute; right: 0; top: 9px; width: 22px; height: 22px; transform: translateX(50%) }
+.cc .cc-end svg { width: 100%; height: 100%; display: block; overflow: visible }
+.cc .cc-end circle { fill: var(--band); stroke: var(--accent); stroke-width: 2 }
+.cc .cc-win[data-closed] .cc-today { display: none }
+.cc .cc-win[data-closed] .cc-end circle { fill: var(--mute); stroke: var(--mute) }
+
+/* =====================================================================
+   SENTENCE: the form is the headline
+   ===================================================================== */
+.cc[data-layout="sentence"] { padding: 120px 24px }
+.cc .cc-st { max-width: 1200px; margin: 0 auto }
+.cc .cc-st-head { display: flex; justify-content: space-between; gap: 16px; color: var(--mute); border-bottom: 1px solid var(--rule); padding-bottom: 16px }
+.cc .cc-st-head b { color: var(--ink); font-weight: 500 }
+.cc .cc-say { margin-top: 48px; font-size: 96px; line-height: 1.42 }
+.cc .cc-blank { display: inline-block; position: relative; vertical-align: baseline; margin: 0 .04em; line-height: 1 }
+.cc .cc-blank select, .cc .cc-blank input { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--accent); background: transparent;
+  border: 0; border-radius: 0; padding: 0; margin: 0; text-indent: 0; line-height: 1; height: 1em; vertical-align: baseline; -webkit-appearance: none; appearance: none; display: inline-block }
+.cc .cc-blank select:focus-visible, .cc .cc-blank input:focus-visible { outline: none }
+.cc .cc-blank:has(select:focus-visible) .cc-rule { box-shadow: 0 0 0 2px var(--band), 0 0 0 4px var(--ring) }
+.cc .cc-blank select { cursor: pointer; padding-right: .42em }
+.cc .cc-blank input { text-transform: none; letter-spacing: 0 }
+.cc .cc-blank input::placeholder { color: var(--placeholder); opacity: 1 }
+.cc .cc-blank .cc-rule { position: absolute; left: 0; right: 0; top: calc(var(--base, .8em) + .09em); height: 4px; background: var(--ink); transform-origin: 0 50% }
+.cc .cc-blank[data-filled] .cc-rule { background: var(--accent) }
+.cc .cc-blank .cc-chev { position: absolute; right: 0; top: 50%; width: .3em; height: .3em; pointer-events: none; color: var(--mute); transform: translateY(-30%) }
+.cc .cc-blank .cc-cap { position: absolute; left: 0; top: calc(var(--base, .8em) + .09em + 14px); white-space: nowrap; color: var(--mute); line-height: 1 }
+.cc .cc-blank:focus-within .cc-rule { height: 6px }
+.cc .cc-blank[data-err] input { color: var(--error) }
+.cc .cc-blank[data-err] .cc-rule { background: var(--error) }
+.cc .cc-blank[data-err] .cc-cap { color: var(--error) }
+.cc .cc-msg { color: var(--error); font-weight: 500; font-size: 17px; margin-top: 34px; min-height: 1.5em }
+.cc .cc-st-foot { display: flex; align-items: center; gap: 32px; margin-top: 18px }
+.cc .cc-st-foot .cc-fine { color: var(--mute); font-size: 15px; max-width: 480px }
+.cc .cc-st-foot .cc-primary[disabled] { cursor: progress }
+.cc .cc-dots i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin: 0 3px; animation: cc-step 1s infinite steps(1) }
+.cc .cc-dots i:nth-child(2) { animation-delay: .33s } .cc .cc-dots i:nth-child(3) { animation-delay: .66s }
+@keyframes cc-step { 0% { opacity: 1 } 33% { opacity: .25 } }
+.cc .cc-sent { display: none }
+.cc[data-state="sent"] .cc-form { display: none }
+.cc[data-state="sent"] .cc-sent { display: block }
+.cc .cc-sent .cc-say { outline: none }
+.cc .cc-sent .cc-say b { font-weight: inherit; color: var(--accent); white-space: nowrap }
+.cc .cc-sent .cc-say b.cc-as-typed { text-transform: none; letter-spacing: 0; font-size: .8em; white-space: normal; overflow-wrap: anywhere }
+.cc .cc-hold { display: inline-flex; gap: 28px; margin-top: 40px; padding: 18px 22px; background: var(--accent); color: var(--on-accent); border-radius: 4px }
+.cc .cc-hold .cc-lbl { color: var(--stub-label); display: block; margin-bottom: 4px }
+.cc .cc-hold div { font: 600 17px/1.3 var(--text) }
+
+/* after the deadline: the band says so */
+.cc[data-closed] .cc-seats, .cc[data-closed] .cc-legend { display: none }
+
+/* =====================================================================
+   TABLET AND PHONE
+   ===================================================================== */
+@media (max-width: 1100px) {
+  .cc .cc-main .cc-h { font-size: 84px }
+  .cc .cc-main { padding: 40px 40px 40px }
+  .cc .cc-stub-face { padding: 40px 50px 36px 36px }
+  .cc .cc-ps .cc-h { font-size: 84px }
+  .cc .cc-say { font-size: 80px }
+}
+@media (max-width: 900px) {
+  .cc[data-layout="stub"] { padding: 88px 20px 96px }
+  .cc .cc-tk { --px: 64% }
+  .cc .cc-main .cc-h { font-size: 66px }
+  .cc .cc-fields { grid-template-columns: 1fr 1fr; gap: 16px 20px; justify-content: stretch }
+  .cc .cc-ps-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px }
+  .cc .cc-ps .cc-h { font-size: 68px }
+  .cc .cc-say { font-size: 64px }
+}
+@media (max-width: 640px) {
+  .cc { font-size: 16px }
+  .cc[data-layout="stub"] { padding: 56px 14px 64px }
+  .cc .cc-tk { grid-template-columns: 1fr; min-height: 0;
+    -webkit-mask: radial-gradient(circle var(--r) at 0 var(--py), #0000 calc(var(--r) - .5px), #000 var(--r)) left / 51% 100% no-repeat,
+                  radial-gradient(circle var(--r) at 100% var(--py), #0000 calc(var(--r) - .5px), #000 var(--r)) right / 51% 100% no-repeat;
+            mask: radial-gradient(circle var(--r) at 0 var(--py), #0000 calc(var(--r) - .5px), #000 var(--r)) left / 51% 100% no-repeat,
+                  radial-gradient(circle var(--r) at 100% var(--py), #0000 calc(var(--r) - .5px), #000 var(--r)) right / 51% 100% no-repeat }
+  .cc .cc-stub-face { order: -1; border-radius: 6px 6px 0 0; padding: 28px 22px 26px }
+  .cc .cc-main { padding: 26px 22px 28px }
+  .cc .cc-top { flex-direction: column; gap: 6px }
+  .cc .cc-main .cc-h { font-size: 60px; margin-top: 22px }
+  .cc .cc-lede { font-size: 16px; margin-top: 16px }
+  .cc .cc-main .cc-actions { margin-top: 26px }
+  .cc .cc-actions { flex-direction: column; align-items: stretch; gap: 18px }
+  .cc .cc-actions .cc-link { align-self: flex-start }
+  .cc .cc-primary .cc-price { margin-left: auto }
+  .cc .cc-fields { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px }
+  .cc .cc-perf { left: var(--r); right: var(--r); top: var(--py); bottom: auto; height: 0; width: auto }
+  .cc .cc-perf i { top: -2.5px; left: auto }
+  .cc .cc-fact { margin-top: 12px }
+  .cc .cc-of { font-size: 30px }
+  .cc { --num-def: 156px }
+  .cc .cc-seats { max-width: 320px; gap: 6px; margin-top: 16px }
+  .cc .cc-seats i { width: 18px; height: 18px }
+  .cc .cc-note { margin-top: 12px; font-size: 16px }
+  .cc .cc-primary .cc-price { font-size: 16px }
+  .cc .cc-st-foot .cc-fine { font-size: 16px }
+  .cc .cc-proof cite { font-size: 16px }
+  .cc .cc-sfoot { padding-top: 18px }
+  .cc .cc-vert, .cc .cc-barcode { display: none }
+  .cc .cc-ps { padding: 64px 0 }
+  .cc .cc-ps-head { flex-direction: column; gap: 6px }
+  .cc .cc-ps-title { margin-top: 32px }
+  .cc .cc-ps .cc-h { font-size: 46px }
+  .cc .cc-ps-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 36px }
+  .cc .cc-ps .cc-lede { font-size: 16px }
+  .cc .cc-proof { grid-template-columns: 1fr; gap: 10px }
+  .cc .cc-score { grid-row: auto }
+  .cc .cc-win-row { flex-direction: column; gap: 6px }
+  .cc .cc-track { margin-top: 18px; margin-bottom: 34px }
+  .cc .cc-today span, .cc .cc-today[data-side] span { top: auto; bottom: -32px; left: -1px; right: auto }
+  .cc .cc-today[data-side="l"] span { left: auto; right: -1px }
+  .cc[data-layout="sentence"] { padding: 64px 16px }
+  .cc .cc-st-head { flex-direction: column; gap: 6px }
+  .cc .cc-say { font-size: 48px; margin-top: 28px; line-height: 1.62 }
+  .cc .cc-blank .cc-rule { height: 3px }
+  .cc .cc-blank.cc-mail { font-size: .66em; max-width: calc(100% - .4em) }
+  .cc .cc-blank.cc-mail input { max-width: 100% }
+  .cc .cc-st-foot { flex-direction: column; align-items: stretch; gap: 16px }
+  .cc .cc-hold { display: flex; flex-direction: column; gap: 12px }
+}
+
+/* reduced motion: everything settled, nothing travels */
+@media (prefers-reduced-motion: reduce) {
+  .cc *, .cc *::before, .cc *::after { transition: none !important; animation: none !important }
+}

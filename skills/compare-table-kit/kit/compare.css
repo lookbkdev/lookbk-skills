@@ -1,0 +1,265 @@
+/* Compare Table Kit: the whole design, scoped to .ct. Widths are the
+   section's own (container queries), so the embed adapts to its column:
+   1180 px and up: label column, product column, alternatives;
+   700 to 1179: labels above each row, the product column sticks on the left
+   when the alternatives scroll sideways;
+   under 700: the pair view, two at a time, swiped. */
+.ct, .ct *, .ct *::before, .ct *::after { box-sizing: border-box }
+.ct { container: ct / inline-size; position: relative; background: var(--paper); color: var(--ink); font: 400 16px/1.5 var(--text); -webkit-font-smoothing: antialiased; font-variant-numeric: lining-nums }
+:where(.ct) :where(p, h2, h3, ol) { margin: 0; padding: 0 }
+:where(.ct) a { color: inherit }
+:where(.ct) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer }
+.ct :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px }
+.ct-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+.ct-in { --gut: 48px; max-width: 1344px; margin: 0 auto; padding: 112px var(--gut) 96px }
+
+/* head */
+.ct-head { display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px; align-items: end; padding-bottom: 44px }
+.ct-eyebrow { font: 500 13px/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--mute); display: flex; flex-wrap: wrap; gap: 4px 14px }
+.ct-eyebrow span + span::before { content: "/"; margin-right: 14px; color: var(--rule2) }
+.ct-h { font-family: var(--display); font-weight: var(--d-weight); letter-spacing: var(--d-track); line-height: var(--d-lead); font-size: clamp(44px, 5.9cqw, 80px); margin-top: 22px; text-wrap: balance }
+.ct-h em { font-style: var(--turn-style); color: var(--us) }
+.ct-lede { font-size: 19px; line-height: 1.55; color: var(--mute); max-width: 44ch }
+.ct-lede strong { color: var(--ink); font-weight: 600 }
+.ct-tally { display: flex; border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--rule); margin-top: 28px }
+.ct-tally p { flex: 1; padding: 14px 16px 14px 0 }
+.ct-tally p + p { padding-left: 16px; border-left: 1px solid var(--rule) }
+.ct-tally b { display: block; font-family: var(--display); font-weight: var(--d-weight); font-size: 56px; line-height: .95; letter-spacing: -.02em; font-variant-numeric: tabular-nums lining-nums }
+.ct-tally b small { font: 500 13px/1 var(--mono); color: var(--mute); letter-spacing: .02em; margin-left: 8px }
+.ct-tally span { display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; font: 500 13px/1.3 var(--mono); color: var(--mute); letter-spacing: .02em }
+.ct-sq { flex: none; width: 10px; height: 10px; margin-top: 3px; border: 1.5px solid currentColor; display: inline-block }
+.ct-tally .is-us .ct-sq { color: var(--us); background: var(--us) }
+.ct-tally .is-them .ct-sq { color: var(--them); background: var(--them) }
+
+/* the board */
+.ct-board { position: relative }
+.ct-grid { display: grid; grid-template-columns: 248px minmax(0, 1.18fr) repeat(var(--n), minmax(0, 1fr)) }
+.ct-headbar { position: sticky; top: var(--ct-top); z-index: 6; overflow: hidden; background: var(--paper); transition: box-shadow 120ms linear }
+.ct-headbar.is-stuck { box-shadow: 0 1px 0 var(--rule2), 0 10px 18px -16px var(--shade) }
+.ct-scroll { overflow-x: auto; overflow-y: hidden; contain: paint; scrollbar-width: thin; scrollbar-color: var(--rule2) transparent }
+.ct-ch { padding: 18px 18px 16px; border-bottom: 1.5px solid var(--ink); background: var(--paper); display: flex; flex-direction: column; justify-content: flex-end }
+.ct-ch.ct-lab { padding-left: 0; font: 500 13px/1.35 var(--mono); color: var(--mute); letter-spacing: .02em }
+.ct-ch.is-us { background: var(--us); color: var(--on-us); border-bottom-color: var(--us) }
+.ct-kind { font: 500 12px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 10px; color: var(--mute) }
+.ct-ch.is-us .ct-kind, .ct-ch.is-us .ct-ds { color: var(--on-us) }
+.ct-nm { font: 600 19px/1.15 var(--text); letter-spacing: -.01em }
+.ct-ds { font-size: 14px; line-height: 1.35; color: var(--mute); margin-top: 6px }
+
+.ct-gh { grid-column: 1 / -1; border-bottom: 1px solid var(--rule2) }
+.ct-ghi { display: grid; grid-template-columns: 248px 1fr; padding: 48px 0 16px }
+.ct-no { font: 500 13px/1 var(--mono); color: var(--mute); padding-top: 14px; letter-spacing: .04em }
+.ct-gh h3, .ct-pg h3 { font-family: var(--display); font-weight: var(--d-weight); letter-spacing: var(--d-track); font-size: 36px; line-height: 1.06; text-wrap: balance }
+.ct-as { font-size: 15px; color: var(--mute); margin-top: 8px }
+.ct-as b { font: 500 12px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-right: 6px }
+
+.ct-r { display: contents }
+.ct-rl { padding: 18px 18px 18px 0; border-bottom: 1px solid var(--rule) }
+.ct-q { font: 600 16px/1.3 var(--text) }
+.ct-v { display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; font: 500 13px/1.35 var(--mono); letter-spacing: .01em }
+.ct-v.is-us { color: var(--us) }
+.ct-v.is-them { color: var(--them) }
+.ct-v.is-level { color: var(--mute) }
+.ct-v .ct-sq { transition: background-color 140ms linear calc(var(--dl, 0ms) + 380ms) }
+.ct-on .ct-v:not(.is-level) .ct-sq, .ct-pane .ct-on .ct-v:not(.is-level) .ct-sq { background: currentColor }
+
+.ct-c { padding: 18px; border-bottom: 1px solid var(--rule); background: var(--paper) }
+.ct-c.is-us { background: var(--column) }
+.ct-c.win.is-alt { background: var(--wash) }
+.ct-cf { font: 600 21px/1.25 var(--text); letter-spacing: -.012em; font-variant-numeric: tabular-nums lining-nums }
+.ct-n { font-size: 14px; line-height: 1.42; color: var(--mute); margin-top: 9px; max-width: 32ch }
+.ct-nb { white-space: nowrap }
+
+/* the underline that says who is ahead: drawn, never faded */
+.ct-u { background-repeat: no-repeat; background-position: 0 100%; padding-bottom: 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone }
+.ct .win .ct-u { background-image: linear-gradient(var(--edge), var(--edge)); background-size: calc(var(--draw, 1) * 100%) 3px; transition: background-size 420ms cubic-bezier(.2, .7, .2, 1) var(--dl, 0ms) }
+.ct .win.is-us .ct-u { --edge: var(--us) }
+.ct .win.is-alt .ct-u { --edge: var(--them) }
+.ct .lvl .ct-u { background-image: repeating-linear-gradient(90deg, var(--mute) 0 4px, transparent 4px 7px); background-size: calc(var(--draw, 1) * 100%) 1.5px; transition: background-size 420ms cubic-bezier(.2, .7, .2, 1) var(--dl, 0ms) }
+.ct.ct-armed .ct-r, .ct.ct-armed .ct-pr { --draw: 0 }
+.ct.ct-armed .ct-r.ct-on, .ct.ct-armed .ct-pr.ct-on { --draw: 1 }
+.ct.ct-armed .ct-v:not(.is-level) .ct-sq { background: transparent }
+.ct.ct-armed .ct-on .ct-v:not(.is-level) .ct-sq { background: currentColor }
+
+/* source marks */
+.ct-cf sup { vertical-align: top; position: relative; top: 1px; margin-left: 5px; line-height: 1 }
+.ct-m { position: relative; font: 500 12px/1 var(--mono) !important; letter-spacing: 0; color: var(--mute) !important; border: 1px solid var(--rule2) !important; border-radius: 2px; padding: 2px 4px !important; transition: background-color 160ms, color 160ms }
+.ct-m::after { content: ""; position: absolute; inset: -12px -8px }
+.ct-m.is-est { font-style: italic !important; border-style: dashed !important }
+.ct-m:hover, .ct-m[aria-expanded="true"] { background: var(--ink) !important; color: var(--paper) !important; border-color: var(--ink) !important }
+
+/* the source pop-up lives in a layer beside the section, so a phone's bottom sheet can be fixed */
+.ct-layer { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 30; font: 400 14px/1.45 var(--text); color: var(--paper); -webkit-font-smoothing: antialiased }
+.ct-layer *, .ct-layer *::before, .ct-layer *::after { box-sizing: border-box }
+:where(.ct-layer) p { margin: 0 }
+:where(.ct-layer) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer }
+.ct-pop { position: absolute; width: 340px; background: var(--ink); color: var(--paper); padding: 16px 18px 14px; font-size: 14px; line-height: 1.45; box-shadow: 0 14px 34px -10px var(--shade); opacity: 1; transform: none; transition: opacity 160ms cubic-bezier(.2, .7, .2, 1), transform 160ms cubic-bezier(.2, .7, .2, 1) }
+.ct-pop[hidden] { display: none }
+.ct-pop.is-in { opacity: 0; transform: translateY(4px) }
+.ct-pop::before { content: ""; position: absolute; left: var(--tip, 20px); top: -6px; border: 6px solid transparent; border-top: 0; border-bottom-color: var(--ink) }
+.ct-pop.is-above::before { top: auto; bottom: -6px; border-bottom: 0; border-top: 6px solid var(--ink) }
+.ct-pk2 { font: 500 12px/1.35 var(--mono); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center }
+.ct-pk2 .tag { border: 1px solid currentColor; padding: 2px 6px; border-radius: 2px }
+.ct-pa { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; font-size: 14px }
+.ct-pa a[hidden] { display: none !important }
+.ct-pa a, .ct-pa button { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; min-height: 32px; display: inline-flex; align-items: center }
+.ct-pa button { margin-left: auto }
+.ct-pop :focus-visible { outline: 2px solid var(--paper); outline-offset: 2px }
+.ct-pop:focus-visible { outline: 2px solid var(--us); outline-offset: 2px }
+.ct-layer.is-narrow .ct-pop { position: fixed; left: 0 !important; right: 0; top: auto !important; bottom: 0; width: auto; padding: 20px 16px calc(16px + env(safe-area-inset-bottom)); font-size: 16px }
+.ct-layer.is-narrow .ct-pa { font-size: 16px }
+.ct-layer.is-narrow .ct-pa a, .ct-layer.is-narrow .ct-pa button { min-height: 44px }
+.ct-layer.is-narrow .ct-pop::before { display: none }
+.ct-layer.is-narrow .ct-pop.is-in { transform: translateY(12px) }
+.ct-layer.ct-rec * { transition: none !important }
+@media (prefers-reduced-motion: reduce) { .ct-layer * { transition: none !important } }
+@media print { .ct-layer { display: none } }
+
+/* picks */
+.ct-pkh .ct-ghi { padding-top: 56px; border-bottom: 1.5px solid var(--ink); margin-bottom: -1px }
+.ct-picks .ct-rl { border-bottom: 1px solid var(--rule) }
+.ct-picks .ct-q { font: 500 13px/1.35 var(--mono); color: var(--mute); padding-top: 2px; letter-spacing: .02em }
+.ct-pk { padding: 20px 18px 28px; font-size: 15px; line-height: 1.5; border-bottom: 1px solid var(--rule); background: var(--paper) }
+.ct-pk.is-us { background: var(--column) }
+.ct-who { font: 500 12px/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--mute); margin-bottom: 10px }
+.ct-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; background: var(--us); color: var(--on-us) !important; font: 600 15px/1.2 var(--text); padding: 13px 18px; border-radius: 2px; text-decoration: none; min-height: 44px }
+.ct-cta span { transition: transform 200ms cubic-bezier(.2, .7, .2, 1) }
+.ct-cta:hover span { transform: translateX(3px) }
+
+/* sources */
+.ct-sources { margin-top: 64px; border-top: 1.5px solid var(--ink); display: grid; grid-template-columns: 248px 1fr }
+.ct-sources h3 { font: 500 13px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; padding-top: 20px; color: var(--mute) }
+.ct-sources ol { list-style: none; columns: 2; column-gap: 48px; padding-top: 14px }
+.ct-sources li { break-inside: avoid; display: grid; grid-template-columns: 38px 1fr; font-size: 14px; line-height: 1.5; color: var(--mute); padding: 6px 0; transition: color 180ms }
+.ct-sources li.is-lit { color: var(--ink) }
+.ct-sources li.is-lit .ct-sn { background: var(--ink); color: var(--paper) }
+.ct-sn { font: 500 12px/1 var(--mono); color: var(--ink); justify-self: start; padding: 3px 4px; margin-top: 2px; border-radius: 2px; transition: background-color 180ms, color 180ms }
+.ct-sk { font: 500 12px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; border: 1px solid var(--rule2); padding: 2px 5px; border-radius: 2px; color: var(--ink); margin-right: 4px; white-space: nowrap }
+.ct-sources li.is-own .ct-sk { border-color: var(--ink) }
+.ct-sd { font: 400 12px/1.5 var(--mono); white-space: nowrap }
+.ct-su { font: 400 12px/1.5 var(--mono); text-underline-offset: 3px }
+.ct-method { grid-column: 2; font-size: 14px; color: var(--mute); margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); max-width: 92ch }
+
+/* pair view, phone */
+.ct-pair { display: none }
+
+/* 700 to 1179: labels above the rows; the alternatives scroll under a sticky product column */
+@container ct (max-width: 1179px) {
+  .ct-in { --gut: 32px; padding: 88px var(--gut) 80px }
+  .ct-head { grid-template-columns: 1fr; gap: 28px }
+  .ct-lede { max-width: 56ch }
+  .ct-grid { grid-template-columns: minmax(232px, 1.18fr) repeat(var(--n), minmax(196px, 1fr)) }
+  .ct-ch.ct-lab { display: none }
+  .ct-rl, .ct-gh { grid-column: 1 / -1 }
+  .ct-rl { padding: 22px 0 0; border-bottom: 0 }
+  .ct-rli, .ct-ghi { position: sticky; left: 0; width: min(100%, calc(100cqw - 2 * var(--gut))) }
+  .ct-rli { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding-bottom: 4px }
+  .ct-rli .ct-v { margin-top: 0 }
+  .ct-ghi { grid-template-columns: 52px 1fr; padding-top: 40px }
+  .ct-gh h3 { font-size: 32px }
+  .ct-c.is-us, .ct-ch.is-us, .ct-pk.is-us { position: sticky; left: 0; z-index: 2 }
+  .ct-scroll.is-scrolled .is-us, .ct-headbar.is-scrolled .is-us { box-shadow: 10px 0 14px -12px var(--shade) }
+  .ct-picks .ct-rl { display: none }
+  .ct-sources { grid-template-columns: 1fr }
+  .ct-sources h3 { padding-bottom: 2px }
+  .ct-method { grid-column: 1 }
+}
+
+/* under 700: two at a time */
+@container ct (max-width: 699px) {
+  .ct-in { --gut: 16px; padding: 56px var(--gut) 64px }
+  .ct-head { gap: 18px; padding-bottom: 24px }
+  .ct-eyebrow { font-size: 12px }
+  .ct-eyebrow .x3 { display: none }
+  .ct-h { font-size: 42px; margin-top: 16px }
+  .ct-lede { font-size: 17px }
+  .ct-tally { margin-top: 20px }
+  .ct-tally p { padding: 12px 10px 12px 0 }
+  .ct-tally p + p { padding-left: 10px }
+  .ct-tally b { font-size: 44px }
+  .ct-tally b small { font-size: 12px; margin-left: 4px }
+  .ct-tally span { font-size: 12px }
+  .ct-board { display: none }
+  .ct-pair { display: block }
+  .ct-pw { font: 500 12px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--mute); margin: 4px 0 10px }
+  .ct-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gut)); padding: 2px var(--gut) }
+  .ct-chips::-webkit-scrollbar { display: none }
+  .ct-chips button { flex: none; height: 44px; padding: 0 16px; border: 1px solid var(--rule2); font: 500 16px/1 var(--text); border-radius: 2px; white-space: nowrap; transition: background-color 180ms, color 180ms, border-color 180ms }
+  .ct-chips button[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink) }
+  .ct-phead { position: sticky; top: var(--ct-top); z-index: 6; display: grid; grid-template-columns: 1fr 1fr; margin-top: 16px; background: var(--paper); border-bottom: 1.5px solid var(--ink) }
+  .ct-phead > div { padding: 12px 12px 10px; font: 600 16px/1.2 var(--text); display: flex; flex-direction: column; gap: 4px; min-width: 0 }
+  .ct-phead .is-us { background: var(--us); color: var(--on-us) }
+  .ct-phead small { font: 500 12px/1.3 var(--mono); letter-spacing: .02em; color: var(--mute) }
+  .ct-phead .is-us small { color: var(--on-us) }
+  .ct-pager { display: flex; justify-content: space-between; align-items: center; font: 500 12px/1 var(--mono); color: var(--mute); padding-top: 12px; letter-spacing: .02em }
+  .ct-bars { display: flex; gap: 5px }
+  .ct-bars i { width: 18px; height: 3px; background: var(--rule2); transition: background-color 180ms }
+  .ct-bars i.on { background: var(--ink) }
+  .ct-track { contain: paint; display: grid; grid-auto-flow: column; grid-auto-columns: 100%; column-gap: 32px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; align-items: start }
+  .ct-track::-webkit-scrollbar { display: none }
+  .ct-pane { scroll-snap-align: start; scroll-snap-stop: always; min-width: 0 }
+  .ct-pg { padding-top: 28px }
+  .ct-pg h3 { font-size: 28px; line-height: 1.1 }
+  .ct-pg .ct-as { font-size: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--rule2) }
+  .ct-pr { border-bottom: 1px solid var(--rule); padding-top: 14px }
+  .ct-pr .ct-v { margin-top: 6px }
+  .ct-two { display: grid; grid-template-columns: 1fr 1fr; margin-top: 10px }
+  .ct-two .ct-c { padding: 12px 12px 14px; border: 0 }
+  .ct-two .ct-cf { font-size: 19px }
+  .ct-two .ct-n { font-size: 16px; line-height: 1.38; margin-top: 8px }
+  .ct-ppk .ct-two { margin-top: 14px }
+  .ct-ppk .ct-pk { font-size: 16px; padding: 14px 12px 18px; border: 0 }
+  .ct-pcta { margin-top: 8px }
+  .ct-pcta .ct-cta { width: 100%; justify-content: space-between; font-size: 16px }
+  .ct-sources { margin-top: 48px }
+  .ct-sources ol { columns: 1 }
+  .ct-sources li { font-size: 16px; grid-template-columns: 40px 1fr }
+  .ct-method { font-size: 16px }
+}
+
+/* recording: the recorder sets every value itself */
+.ct.ct-rec *, .ct.ct-rec *::before, .ct.ct-rec *::after { transition: none !important }
+.ct.ct-rec .ct-track { scroll-snap-type: none }
+
+@media (prefers-reduced-motion: reduce) {
+  .ct *, .ct *::before, .ct *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important }
+}
+
+/* print: the whole table on paper, light, with every source */
+@media print {
+  @page { size: landscape; margin: 11mm }
+  .ct { --paper: #fff !important; --column: #f0f0f0 !important; --wash: #f6efe2 !important; --ink: #000 !important; --mute: #3d3d3d !important; --rule: #cfcfcf !important; --rule2: #9a9a9a !important; --us: var(--print-us) !important; --on-us: #fff !important; --them: var(--print-them) !important; --shade: transparent !important; background: #fff; color: #000; container-type: normal; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  .ct-in { padding: 0; max-width: none }
+  .ct-head { grid-template-columns: 1.3fr 1fr; gap: 28px; padding-bottom: 18px; align-items: start }
+  .ct-h { font-size: 34px; margin-top: 8px }
+  .ct-lede { font-size: 12px }
+  .ct-tally b { font-size: 26px }
+  .ct-pair, .ct-cta span { display: none !important }
+  .ct-board { display: block !important }
+  .ct-headbar { position: static; box-shadow: none !important }
+  .ct-scroll { overflow: visible }
+  .ct-grid { grid-template-columns: 130px minmax(0, 1.18fr) repeat(var(--n), minmax(0, 1fr)) !important }
+  .ct-ch.ct-lab { display: flex !important }
+  .ct-rl, .ct-gh { grid-column: auto !important }
+  .ct-gh { grid-column: 1 / -1 !important }
+  .ct-rl { padding: 8px 8px 8px 0 !important; border-bottom: 1px solid var(--rule) !important }
+  .ct-rli, .ct-ghi { position: static !important; width: auto !important; display: block !important }
+  .ct-ghi { display: grid !important; grid-template-columns: 130px 1fr !important; padding: 14px 0 6px !important }
+  .ct-c.is-us, .ct-ch.is-us, .ct-pk.is-us { position: static !important; box-shadow: none !important }
+  .ct-picks .ct-rl { display: block !important }
+  .ct-gh h3 { font-size: 18px }
+  .ct-as, .ct-q, .ct-n, .ct-pk, .ct-ds { font-size: 10px }
+  .ct-v, .ct-kind, .ct-who, .ct-no, .ct-ch.ct-lab { font-size: 8.5px }
+  .ct-nm { font-size: 12px }
+  .ct-ch, .ct-c, .ct-pk { padding: 8px }
+  .ct-cf { font-size: 12.5px }
+  .ct-m { font-size: 8px !important; padding: 1px 2px !important }
+  .ct-r { --draw: 1 !important }
+  .ct *, .ct *::before, .ct *::after { transition: none !important }
+  .ct-v:not(.is-level) .ct-sq { background: currentColor !important }
+  .ct-c, .ct-rl, .ct-pk { break-inside: avoid }
+  .ct-gh { break-after: avoid }
+  .ct-sources { margin-top: 14px; grid-template-columns: 130px 1fr; break-inside: avoid }
+  .ct-sources li { font-size: 9.5px; padding: 2px 0; color: #000 }
+  .ct-sk, .ct-sd, .ct-su, .ct-sn { font-size: 8px }
+  .ct-method { font-size: 9.5px; grid-column: 2 }
+}

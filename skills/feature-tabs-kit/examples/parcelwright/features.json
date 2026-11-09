@@ -1,0 +1,124 @@
+{
+  "lang": "en",
+  "title": "Parcelwright · The parcel object",
+  "theme": {
+    "mode": "dark",
+    "bg": "#0c1012", "ink": "#e8ede9", "mute": "#94a19f", "rule": "#243034",
+    "sheet": "#131a1d", "sheetInk": "#e8ede9", "sheetMute": "#9aa6a4", "sheetRule": "#263135",
+    "accent": "#ff7a45", "onAccent": "#170a04", "accent2": "#9fd6c3", "ok": "#9fd6c3",
+    "display": "schibsted", "text": "schibsted", "mono": "plex",
+    "radius": 10, "railSide": "right", "stage": "shadow"
+  },
+  "money": { "currency": "EUR", "locale": "en-IE" },
+  "header": {
+    "eyebrow": "Parcelwright · the parcel object",
+    "headline": "One parcel object,\n_from quote to door._",
+    "lede": "Parcelwright is a shipping API for small European shops. You describe a parcel once; every step after that reads the same object."
+  },
+  "stage": {
+    "name": "pcl_7Q4K",
+    "states": [
+      { "text": "draft" },
+      { "text": "quoted" },
+      { "text": "label created", "tone": "ok" },
+      { "text": "in transit", "tone": "accent" }
+    ]
+  },
+  "objects": [
+    { "id": "from", "text": "14 Constitution St, Leith EH6 6NG" },
+    { "id": "to", "text": "8 Rue Mercière, 69002 Lyon" },
+    { "id": "weight", "text": "2.4 kg" },
+    { "id": "size", "text": "30 × 20 × 12 cm" },
+    { "id": "service", "text": "Northway Express" },
+    { "id": "price", "amount": 23.60 },
+    { "id": "tracking", "text": "PW-7Q4K-2291" }
+  ],
+  "features": [
+    {
+      "title": "Describe it",
+      "crumb": "Describe",
+      "claim": "Addresses, weight and size, checked as you type. Postcodes are validated against the country.",
+      "proof": { "value": "31", "label": "countries validated" },
+      "caption": "The parcel as a form. The destination is being typed and checked.",
+      "view": {
+        "type": "form",
+        "fields": [
+          { "label": "From", "obj": "from", "status": "GB · valid" },
+          { "label": "To", "obj": "to", "focus": true },
+          { "label": "Weight", "obj": "weight", "half": true },
+          { "label": "Size", "obj": "size", "half": true }
+        ],
+        "segment": { "label": "Speed", "options": ["Cheapest", "Balanced", "Fastest"], "selected": 1 },
+        "note": "Postcode checked against FR",
+        "button": "Get rates"
+      }
+    },
+    {
+      "title": "Compare rates",
+      "crumb": "Compare",
+      "claim": "Every carrier we work with quotes the same parcel. Pick by price or by days.",
+      "proof": { "from": "options", "label": "quotes in one call" },
+      "caption": "The same parcel, quoted three ways. Balanced picks the 2 day service.",
+      "view": {
+        "type": "choice",
+        "route": { "chip": "weight", "from": "Leith EH6", "to": "Lyon 69002" },
+        "scale": { "steps": 6, "min": "1 day", "max": "6 days" },
+        "options": [
+          { "label": "Brisk Ground", "sub": "4 to 5 days · tracked", "days": 5, "price": 14.20 },
+          { "obj": "service", "sub": "2 days · tracked, signed", "days": 2, "price": 23.60, "priceObj": "price", "selected": true },
+          { "label": "Overnight Air", "sub": "next day by 10:30", "days": 1, "price": 41.90 }
+        ],
+        "note": "Quotes hold for 30 min",
+        "button": "Buy label"
+      }
+    },
+    {
+      "title": "Ship from code",
+      "crumb": "Ship",
+      "claim": "The same parcel as one request. Labels come back as a PDF and a ZPL link.",
+      "proof": { "value": "1", "label": "request, one label" },
+      "caption": "The same values as a request. Nothing is typed again between steps.",
+      "view": {
+        "type": "code",
+        "tabs": ["curl", "node", "python", "php"],
+        "request": {
+          "method": "POST", "path": "/v1/shipments",
+          "fields": [
+            { "key": "from", "obj": "from" },
+            { "key": "to", "obj": "to" },
+            { "key": "weight", "obj": "weight" },
+            { "key": "size", "obj": "size" },
+            { "key": "service", "obj": "service" }
+          ]
+        },
+        "response": {
+          "status": "201 Created",
+          "fields": [
+            { "key": "tracking", "obj": "tracking" },
+            { "key": "amount", "obj": "price" },
+            { "key": "label", "value": "https://parcelwright.example/l/7Q4K.pdf", "phone": false }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Track it",
+      "crumb": "Track",
+      "claim": "Events arrive as webhooks in one format, whichever carrier is moving the box.",
+      "proof": { "from": "events", "label": "events, one format" },
+      "caption": "The parcel in transit. The address typed in step one is the last stop.",
+      "view": {
+        "type": "timeline",
+        "head": { "label": "Tracking", "obj": "tracking", "sub": "service", "asideLabel": "Arrives", "aside": "Thu 10 Apr", "paid": "price" },
+        "events": [
+          { "event": "label.created", "place": "Leith EH6", "time": "Tue 09:12", "state": "done" },
+          { "event": "picked_up", "place": "Edinburgh hub", "time": "Tue 16:40", "state": "done" },
+          { "event": "in_transit", "place": "Coquelles, crossing to FR", "time": "Wed 06:05", "state": "now" },
+          { "event": "out_for_delivery", "place": "Lyon depot", "time": "Thu", "state": "next" },
+          { "event": "delivered", "obj": "to", "state": "next" }
+        ]
+      }
+    }
+  ],
+  "tour": { "auto": true, "seconds": 7 }
+}

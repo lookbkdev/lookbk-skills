@@ -1,0 +1,63 @@
+{
+  "lang": "en",
+  "layout": "ledger",
+  "theme": {
+    "type": "readout",
+    "bg": "#0e0f11",
+    "ink": "#ece6dc",
+    "accent": "#f0a43c",
+    "mark": "#f0a43c",
+    "markInk": "#0e0f11",
+    "button": "accent",
+    "corners": "pill"
+  },
+  "intro": {
+    "eyebrow": "Orrery A2 · questions",
+    "headline": "Before they’re _in your room._"
+  },
+  "search": { "label": "Search", "placeholder": "Trial, delivery, turntable…" },
+  "items": [
+    { "id": "home-trial", "q": "Can I try them at home before I decide?", "short": "Yes · 100 nights",
+      "a": [ { "p": "Live with them for 100 nights. Move them around, play your own records, have friends over. If they are not for you, we collect them and refund every cent, delivery included." } ] },
+    { "id": "returns", "q": "What if they don’t suit my room?", "short": "We collect, free",
+      "a": [
+        { "p": "Most rooms are fixed by placement, not by returning. Try this first, then decide." },
+        { "steps": ["Pull each speaker 30 cm from the wall behind it.", "Turn the **Room** dial on the back to **Near wall** if the bass booms.", "Still wrong? Book a collection in your account. A courier brings the boxes."] },
+        { "more": [ { "label": "Placement guide", "href": "https://orrery.example/guide/placement" } ] }
+      ] },
+    { "id": "delivery", "q": "How long does delivery take?", "short": "2 to 8 working days",
+      "a": [
+        { "table": {
+            "head": ["Where", "Working days", "Cost"],
+            "rows": [["Netherlands & Belgium", "2 to 3", "Free"], ["Rest of the EU", "3 to 6", "Free"], ["United Kingdom", "5 to 8", "€29 incl. duties"]] } },
+        { "p": "Every pair ships in two boxes on one pallet, and the courier books a two-hour window with you the day before." }
+      ] },
+    { "id": "amp", "q": "Do I need an amplifier?", "short": "No · they are active",
+      "a": [ { "p": "Each A2 has its own 2 × 60 W amplifier, tuned to its drivers. Plug in power and a source: streaming over Wi-Fi, HDMI from the TV, or analogue in." } ] },
+    { "id": "turntable", "q": "Will they work with my turntable?", "short": "Yes · phono stage built in",
+      "a": [ { "p": "Switch the input on the back to **Phono MM** and connect the turntable directly, ground wire included. A moving-coil cartridge needs its own step-up." } ] },
+    { "id": "warranty", "q": "What does the warranty cover?", "short": "10 years on drivers",
+      "a": [ { "p": "10 years on the drivers and cabinets, 3 years on the electronics. Repairs are done in our Utrecht workshop and we pay the courier both ways." } ] },
+    { "id": "instalments", "q": "Can I spread the cost?", "short": "12 months · 0%",
+      "a": [ { "p": "Yes, over 12 monthly payments at 0%, chosen at checkout. The 100-night trial still applies, and a return cancels the payments." } ] }
+  ],
+  "contact": {
+    "headline": "Still deciding? _Hear them first._",
+    "text": "Come and play your own records on a pair in our Utrecht room, or write to the two people who run it. Replies within **1 working day**, usually the same afternoon.",
+    "promise": "1 working day",
+    "people": [
+      { "name": "Sanne Veld", "remit": "listening room" },
+      { "name": "Koen Oosterhuis", "remit": "service & repairs" }
+    ],
+    "city": "Utrecht",
+    "timezone": "Europe/Amsterdam",
+    "hours": { "days": ["tue", "wed", "thu", "fri", "sat"], "open": "10:00", "close": "18:00" },
+    "now": "2026-11-05T19:10:00Z",
+    "actions": [
+      { "label": "Book a listening session", "href": "https://orrery.example/listen" },
+      { "label": "Write to us", "href": "mailto:listen@orrery.example" }
+    ]
+  },
+  "preview": { "open": ["returns", "delivery"], "query": "free", "deepLink": "turntable" },
+  "demo": { "title": "Orrery A2 · Questions" }
+}

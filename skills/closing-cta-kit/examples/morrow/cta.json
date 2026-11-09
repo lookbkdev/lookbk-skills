@@ -1,0 +1,132 @@
+{
+  "layout": "stub",
+  "brand": "Morrow Clay Studio",
+  "theme": {
+    "band": "#e4dccd",
+    "card": "#fbf8f1",
+    "ink": "#1f1a15",
+    "accent": "#1f45a0",
+    "onAccent": "#f6f1e6",
+    "display": "shoulders",
+    "buttons": "square"
+  },
+  "eyebrow": "Admit one · Weekend wheel course",
+  "serial": "No. 0412",
+  "headline": "Throw your first _set of bowls._",
+  "lede": "Two days on the wheel with Ines Varga. Clay, glazes and two firings included; your pieces are ready to collect two weeks later.",
+  "primary": {
+    "label": "Book a place",
+    "href": "https://morrowclay.example/book/course-31",
+    "price": "€340"
+  },
+  "secondary": {
+    "label": "See the two days",
+    "href": "https://morrowclay.example/courses/wheel-weekend"
+  },
+  "fact": {
+    "kind": "count",
+    "value": 4,
+    "of": 10,
+    "label": "Places left",
+    "left": "left",
+    "taken": "booked"
+  },
+  "closes": {
+    "at": "2026-12-01T18:00",
+    "tz": "Europe/London",
+    "title": "Booking closes",
+    "label": "Tue 1 Dec, 18:00",
+    "countdown": "{days} day{s} left to book"
+  },
+  "fields": [
+    {
+      "label": "Dates",
+      "value": "Sat 5 & Sun 6 Dec"
+    },
+    {
+      "label": "Time",
+      "value": "10:00 to 16:00"
+    },
+    {
+      "label": "Where",
+      "value": "Morrow Yard"
+    },
+    {
+      "label": "Group",
+      "value": "10 people"
+    }
+  ],
+  "stamp": {
+    "top": "BOOKING CLOSES",
+    "bottom": "TUE 1 DEC · 18:00",
+    "big": "1",
+    "small": "DEC"
+  },
+  "afterClose": {
+    "eyebrow": "Waitlist · Weekend wheel course",
+    "headline": "December is full. _February is next._",
+    "lede": "The next weekend on the wheel is Sat 6 and Sun 7 Feb. Join the waitlist and we write to you the day booking opens.",
+    "primary": {
+      "label": "Join the waitlist",
+      "href": "https://morrowclay.example/waitlist"
+    },
+    "fact": {
+      "label": "Next course",
+      "value": "6",
+      "unit": "Feb",
+      "note": "Waitlist open"
+    },
+    "stamp": {
+      "top": "BOOKING CLOSED",
+      "bottom": "NEXT COURSE · FEB",
+      "big": "6",
+      "small": "FEB"
+    },
+    "fields": [
+      {
+        "label": "Dates",
+        "value": "Sat 6 & Sun 7 Feb"
+      },
+      {
+        "label": "Time",
+        "value": "10:00 to 16:00"
+      },
+      {
+        "label": "Where",
+        "value": "Morrow Yard"
+      },
+      {
+        "label": "Group",
+        "value": "10 people"
+      }
+    ],
+    "foot": {
+      "title": "Booking opens",
+      "label": "Mon 4 Jan, 09:00"
+    },
+    "secondary": {
+      "label": "See the two days",
+      "href": "https://morrowclay.example/courses/wheel-weekend"
+    }
+  },
+  "preview": {
+    "now": "2026-11-09"
+  },
+  "demo": {
+    "above": [
+      [
+        "Do I need any experience?",
+        "No"
+      ],
+      [
+        "What do I take home?",
+        "4 to 6 pieces"
+      ],
+      [
+        "Can I pay in two parts?",
+        "Yes"
+      ]
+    ],
+    "footer": "© 2026 Morrow Clay Studio · Morrow Yard"
+  }
+}

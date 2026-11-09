@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-09",
+  "checks": [
+    "node scripts/test.mjs",
+    "node scripts/build.mjs examples/linnet/booking.json out/linnet",
+    "node scripts/check.mjs out/linnet/index.html",
+    "node scripts/build.mjs examples/lantern/booking.json out/lantern",
+    "node scripts/check.mjs out/lantern/index.html",
+    "node scripts/record.mjs out/linnet/index.html",
+    "node scripts/record.mjs out/lantern/index.html"
+  ],
+  "agents": []
+}

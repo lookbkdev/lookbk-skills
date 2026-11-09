@@ -1,0 +1,174 @@
+{
+  "layout": "index",
+  "theme": {
+    "sheet": "#f5f1e8",
+    "ink": "#1c1a16",
+    "board": "#23392b",
+    "boardInk": "#efe8da",
+    "accent": "#23392b",
+    "onAccent": "#f5f1e8",
+    "turn": "#7c2c1c",
+    "display": "gloock",
+    "buttons": "square"
+  },
+  "brand": {
+    "name": "Ferrow",
+    "break": "Fer|row",
+    "legal": "Ferrow Outdoor Ltd · Registered in England 11840275",
+    "year": 2026
+  },
+  "cta": {
+    "eyebrow": "Showrooms in Bristol and Ghent",
+    "headline": "Sit outside\n_until it’s dark._",
+    "lede": "Cast aluminium and plantation teak, built to stay out all year. Sit on every piece before you buy.",
+    "primary": {
+      "label": "Find a showroom",
+      "href": "/showrooms"
+    },
+    "secondary": {
+      "label": "Order the catalogue",
+      "href": "/catalogue"
+    }
+  },
+  "columns": [
+    {
+      "title": "Collections",
+      "links": [
+        {
+          "label": "Lounge",
+          "href": "/lounge",
+          "note": "12 pieces"
+        },
+        {
+          "label": "Dining",
+          "href": "/dining",
+          "note": "9 pieces"
+        },
+        {
+          "label": "Shade",
+          "href": "/shade",
+          "note": "4 pieces"
+        },
+        {
+          "label": "Planters",
+          "href": "/planters",
+          "note": "6 pieces"
+        },
+        {
+          "label": "Accessories",
+          "href": "/accessories",
+          "note": "18 pieces"
+        }
+      ]
+    },
+    {
+      "title": "Studio",
+      "links": [
+        {
+          "label": "About Ferrow",
+          "href": "/about"
+        },
+        {
+          "label": "Materials",
+          "href": "/materials"
+        },
+        {
+          "label": "Journal",
+          "href": "/journal"
+        },
+        {
+          "label": "Trade programme",
+          "href": "/trade"
+        }
+      ]
+    },
+    {
+      "title": "Help",
+      "links": [
+        {
+          "label": "Delivery",
+          "href": "/delivery"
+        },
+        {
+          "label": "Care guide",
+          "href": "/care"
+        },
+        {
+          "label": "25-year warranty",
+          "href": "/warranty"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ]
+    }
+  ],
+  "visit": [
+    {
+      "city": "Bristol",
+      "address": "Wapping Wharf, BS1 4RW",
+      "hours": "Tue–Sun 10–18"
+    },
+    {
+      "city": "Ghent",
+      "address": "Dok Noord 7, 9000 Gent",
+      "hours": "Wed–Sun 11–19"
+    }
+  ],
+  "socials": [
+    {
+      "label": "Instagram",
+      "href": "https://instagram.com/"
+    },
+    {
+      "label": "Pinterest",
+      "href": "https://ferrow.example/pinterest"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://youtube.com/"
+    }
+  ],
+  "legalLinks": [
+    {
+      "label": "Privacy",
+      "href": "/privacy"
+    },
+    {
+      "label": "Terms",
+      "href": "/terms"
+    },
+    {
+      "label": "Cookies",
+      "href": "/cookies"
+    },
+    {
+      "label": "Accessibility",
+      "href": "/accessibility"
+    }
+  ],
+  "backToTop": {
+    "label": "Back to top"
+  },
+  "demo": {
+    "title": "Ferrow · Outdoor furniture in cast aluminium and teak",
+    "above": [
+      {
+        "label": "Ferrow · Outdoor furniture",
+        "heading": "Furniture that _stays out._",
+        "text": "Cast aluminium frames, plantation teak, powder coats tested through four winters on a Bristol roof. Every piece is made to be left outside."
+      },
+      {
+        "label": "From the trade",
+        "heading": "“We put forty of them on a hotel roof in Lisbon. Three summers in, the teak has gone silver and not one weld has moved.”",
+        "text": "Inês Carvalhal, head of interiors at a Lisbon hotel group"
+      },
+      {
+        "label": "The warranty",
+        "heading": "Twenty-five years on every frame, and a care guide for every season.",
+        "text": "Teak is oiled or left to silver; aluminium needs a rinse in spring. That is all."
+      }
+    ]
+  }
+}

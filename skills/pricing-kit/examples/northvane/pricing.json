@@ -1,0 +1,84 @@
+{
+  "theme": "dark",
+  "type": "technical",
+  "lang": "en",
+  "title": "Pricing · Northvane forecast API",
+  "description": "Weather forecasts by the call. Four plans from a free key to a custom contract, 20% off when billed yearly.",
+  "eyebrow": "Northvane API · Pricing",
+  "headline": "Forecasts by the call. _Pay for what you ask._",
+  "promises": ["Hard spending caps on every paid plan", "Overage billed to the thousand calls", "99.95% uptime on Scale, in writing"],
+  "currency": "$",
+  "unit": "/ month",
+  "billing": { "monthly": "Monthly", "yearly": "Yearly", "saving": "20% off yearly", "start": "monthly" },
+  "scale": { "max": 200, "step": 50 },
+  "included": {
+    "title": "Every plan",
+    "items": ["Hourly and 15-day forecasts", "Global 1 km grid", "JSON and protobuf", "Status page and changelog"],
+    "note": "Calls are counted per request; cached hits are free."
+  },
+  "plans": [
+    {
+      "name": "Hobby", "for": "Side projects and prototypes.", "monthly": 0, "yearly": 0,
+      "cta": { "label": "Get a free key", "href": "/keys/new" },
+      "adds_title": "To try it properly", "adds": ["10k calls a month", "Forecasts to 7 days", "Community support"]
+    },
+    {
+      "name": "Build", "for": "An app with real users.", "monthly": 40, "yearly": 32,
+      "cta": { "label": "Start building", "href": "/signup?plan=build" },
+      "adds_title": "Everything in Hobby, plus", "adds": ["1M calls, then $0.03 per 1k", "Minutely rain nowcast", "Email support in 1 day"]
+    },
+    {
+      "name": "Scale", "for": "Products where weather is the feature.", "monthly": 200, "yearly": 160,
+      "cta": { "label": "Start a 14-day trial", "href": "/signup?plan=scale" },
+      "adds_title": "Everything in Build, plus", "adds": ["20M calls, then $0.02 per 1k", "Historical archive to 1979", "99.95% uptime SLA", "Support in 4 hours"],
+      "recommended": { "label": "Our pick for production apps", "reason": "20M calls and an uptime SLA included" }
+    },
+    {
+      "name": "Enterprise", "custom": "Let's talk", "custom_note": "Billed yearly, by invoice", "for": "Your own region, volume or contract.",
+      "cta": { "label": "Talk to sales", "href": "mailto:sales@northvane.example" },
+      "adds_title": "Everything in Scale, plus", "adds": ["Dedicated region", "Volume pricing", "Security review"]
+    }
+  ],
+  "compare": {
+    "title": "All features",
+    "groups": [
+      { "label": "Calls", "rows": [
+        { "label": "Calls included a month", "values": ["10k", "1M", "20M", "Custom"] },
+        { "label": "Overage per 1k calls", "values": [false, "$0.03", "$0.02", "Custom"] },
+        { "label": "Hard spending cap", "values": [false, true, true, true] }
+      ]},
+      { "label": "Data", "rows": [
+        { "label": "Forecast range", "values": ["7 days", "15 days", "15 days", "15 days"] },
+        { "label": "Minutely rain nowcast", "values": [false, true, true, true] },
+        { "label": "Historical archive", "values": [false, false, "To 1979", "To 1979"] },
+        { "label": "Dedicated region", "values": [false, false, false, true] }
+      ]},
+      { "label": "Support", "rows": [
+        { "label": "Response time", "values": ["Community", "1 day", "4 hours", "1 hour"] },
+        { "label": "Uptime SLA", "values": [false, false, "99.95%", "99.99%"] },
+        { "label": "Status page", "values": [true, true, true, true] }
+      ]}
+    ]
+  },
+  "calculator": {
+    "title": "What would you pay?",
+    "intro": "Slide to your monthly calls. The plan that costs least lights up.",
+    "one": "call", "many": "calls", "suffix": "a month",
+    "min": 1000, "max": 50000000, "scale": "log", "value": 4200000,
+    "plans": [
+      { "limit": 10000 },
+      { "includes": 1000000, "each": 0.03, "per": 1000 },
+      { "includes": 20000000, "each": 0.02, "per": 1000 },
+      { "quote": true }
+    ]
+  },
+  "faq": {
+    "title": "Before you choose",
+    "items": [
+      { "q": "What counts as a call?", "a": "One request to any endpoint. Responses served from our cache within 10 minutes are free." },
+      { "q": "Can I cap my spend?", "a": "Yes. Set a monthly cap; at the cap you get a warning and calls fall back to cached data." },
+      { "q": "Do unused calls roll over?", "a": "No. Allowances reset on your billing date." },
+      { "q": "Can I pay by invoice?", "a": "On Scale and Enterprise, with 30-day terms." }
+    ]
+  }
+}

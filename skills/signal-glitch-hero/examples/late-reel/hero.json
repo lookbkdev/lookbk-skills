@@ -1,0 +1,77 @@
+{
+  "composition": "lockup",
+  "brand": {
+    "name": "Late Reel",
+    "href": "/"
+  },
+  "nav": [
+    {
+      "label": "Tonight",
+      "href": "/tonight"
+    },
+    {
+      "label": "Archive",
+      "href": "/archive"
+    },
+    {
+      "label": "Programme",
+      "href": "/programme"
+    }
+  ],
+  "action": {
+    "label": "Subscribe",
+    "href": "/subscribe"
+  },
+  "hero": {
+    "title": "Now showing\nafter midnight.",
+    "lede": "An independent cinema channel that starts at 00:00. One film a night, picked by a programmer, never by an algorithm.",
+    "cta": {
+      "label": "See tonight's film",
+      "href": "/tonight"
+    }
+  },
+  "theme": {
+    "mode": "dark",
+    "background": "#0b0c0d",
+    "ink": "#f0e8d8",
+    "accent": "#e9a24a",
+    "fonts": {
+      "display": "Big Shoulders Display",
+      "body": "Instrument Sans",
+      "mono": "IBM Plex Mono",
+      "weight": 800,
+      "advance": 0.46
+    }
+  },
+  "effect": {
+    "picture": "late-reel.jpg",
+    "focusX": 0.62,
+    "focusY": 0.45,
+    "phoneFocusX": 0.8,
+    "cycle": 12,
+    "acquire": 2.4,
+    "fade": 1.1,
+    "refresh": "columns",
+    "block": 16,
+    "mosh": 0.85,
+    "tear": 0.75,
+    "roll": true,
+    "chroma": 0.75,
+    "burst": true,
+    "buffer": "#08090a",
+    "blanking": "#030303",
+    "grade": 4.5,
+    "follow": true,
+    "grain": 0.45
+  },
+  "motion": {
+    "speed": 1,
+    "pointer": true
+  },
+  "meta": {
+    "title": "Late Reel: an independent cinema channel after midnight",
+    "description": "One film a night from 00:00, picked by a programmer.",
+    "url": "https://late-reel.example/",
+    "lang": "en"
+  }
+}

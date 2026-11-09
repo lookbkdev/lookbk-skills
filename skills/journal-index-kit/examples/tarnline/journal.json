@@ -1,0 +1,53 @@
+{
+  "brand": "Tarnline",
+  "masthead": "Tarnline _Engineering_",
+  "strap": "How we build a time-series database that has to stay up: storage, the query engine, the incidents, and the tools in between.",
+  "since": "Written by the people who are on call for it",
+  "publisher": "Tarnline",
+  "language": "en",
+  "site": {
+    "url": "https://tarnline.example/engineering/",
+    "home": "https://tarnline.example/",
+    "nav": [
+      { "label": "Product", "href": "https://tarnline.example/product/" },
+      { "label": "Docs", "href": "https://tarnline.example/docs/" },
+      { "label": "Engineering", "href": "https://tarnline.example/engineering/", "current": true },
+      { "label": "Careers", "href": "https://tarnline.example/careers/" }
+    ]
+  },
+  "theme": {
+    "preset": "ink",
+    "fonts": "geist",
+    "leadSide": "right",
+    "dropCap": false
+  },
+  "issueLabel": "No.",
+  "sections": ["Storage", "Query engine", "Reliability", "Postmortems", "Tooling"],
+  "series": [
+    {
+      "name": "Rebuilding compaction",
+      "description": "Why our LSM tree compacted at the worst possible moment, and the scheduler we built instead.",
+      "parts": ["The write cliff", "Measuring the fight", "The scheduler that stopped fighting", "Leveled against tiered, for real"]
+    },
+    {
+      "name": "On call",
+      "description": "How the rota, the runbooks and the pager actually work here, written by the people holding it.",
+      "parts": ["The rota, rewritten", "Runbooks people read", "Alert budgets", "Handover notes", "The quiet week"]
+    }
+  ],
+  "indexLimit": 8,
+  "labels": {
+    "lead": "Lead story",
+    "index": "Index",
+    "series": "Series",
+    "seriesIntro": "Longer arcs, written as the work happened. Each part links to the next.",
+    "read": "Read the post",
+    "plate": "Fig."
+  },
+  "footer": {
+    "email": "https://tarnline.example/engineering/newsletter/",
+    "emailLabel": "the monthly email",
+    "colophon": "Set in Geist, Source Serif 4 and Geist Mono"
+  },
+  "feed": { "title": "Tarnline Engineering", "items": 20 }
+}

@@ -1,0 +1,30 @@
+{
+  "composition": "lockup",
+  "brand": { "name": "Harrow & Fell", "href": "/" },
+  "nav": [
+    { "label": "Routes", "href": "/routes" },
+    { "label": "Huts", "href": "/huts" },
+    { "label": "Guides", "href": "/guides" }
+  ],
+  "action": { "label": "Book a week", "href": "/book" },
+  "hero": {
+    "title": "Every ridge\nhides *another.*",
+    "lede": "Hut-to-hut walking weeks in the high fells, led by guides who were born under them. Groups of 8, from June to September.",
+    "cta": { "label": "See this summer's routes", "href": "/routes" }
+  },
+  "theme": {
+    "mode": "light",
+    "background": "#efe6d8",
+    "ink": "#17201f",
+    "accent": "#b4532a",
+    "fonts": { "display": "Instrument Serif", "body": "Instrument Sans", "weight": 400, "advance": 0.46 }
+  },
+  "effect": { "scene": "range", "light": 0.7, "mist": 0.6, "rise": 0.8, "seed": 3 },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Harrow & Fell: hut-to-hut walking weeks in the high fells",
+    "description": "Guided hut-to-hut walking weeks in the high fells, in groups of 8, from June to September.",
+    "url": "https://harrowandfell.example/",
+    "lang": "en"
+  }
+}

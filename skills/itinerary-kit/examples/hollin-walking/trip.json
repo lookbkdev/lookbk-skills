@@ -1,0 +1,110 @@
+{
+  "style": "paper",
+  "dates": "dmy",
+  "brand": {
+    "name": "Hollin Walking",
+    "mark": "wave",
+    "links": [
+      { "label": "Itinerary", "href": "#day-1" },
+      { "label": "Included", "href": "#included" },
+      { "label": "Dates", "href": "#dates" },
+      { "label": "Price", "href": "#price" }
+    ],
+    "cta": { "label": "Check dates", "href": "https://hollin.example/book/ennor-coast" }
+  },
+  "trip": {
+    "kicker": ["Guided coastal walk", "7 days, 6 nights", "Bags carried"],
+    "title": "Seven days on the _Ennor coast_",
+    "lede": "Inn to inn along the cliff path from Sennack to Lowender, with your bags carried ahead. Eight harbours, two river crossings, and one long day you can cut short by boat.",
+    "mode": "walk",
+    "group": 12
+  },
+  "map": { "route": "route.geojson", "geo": "geo.geojson" },
+  "days": [
+    {
+      "from": "Sennack", "to": "Merrow Bay", "km": 13.4,
+      "text": "Meet at Sennack station at 09:30. Low cliffs and the old pilchard cellars, then a long easy descent into a bay with one pub and a lifeboat house.",
+      "sleep": { "name": "The Pilot House, Merrow Bay", "detail": "inn, en-suite rooms" },
+      "meals": { "breakfast": false, "lunch": true, "dinner": true },
+      "mealNote": "Breakfast before you travel, on your own",
+      "optional": [{ "label": "Cut the last 4 km by the lane from Tolver Farm", "price": "free" }]
+    },
+    {
+      "from": "Merrow Bay", "to": "Ostrel", "km": 15.8, "terrain": "exposed",
+      "text": "The best day of the week: three headlands, each higher than the last, and the seal ledges under Halse Point. Lunch is carried; there is nowhere to buy food until Ostrel.",
+      "sleep": { "name": "Harbour Row, Ostrel", "detail": "cottages for two, shared kitchen" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true },
+      "optional": [{ "label": "Boat out to the Halse ledges and back, mornings only", "price": "+£18" }],
+      "note": { "label": "Exposed", "text": "The path runs close to the edge above Halse Point for 2 km. A field path inland avoids it." }
+    },
+    {
+      "from": "Ostrel", "to": "Vennick Cove", "km": 14.9,
+      "text": "Wooded valleys, the Ostrel river by the foot ferry, then an early finish on the cove with time to swim.",
+      "sleep": { "name": "The Net Loft, Vennick Cove", "detail": "guesthouse, en-suite rooms" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": false },
+      "mealNote": "Dinner on your own: two places on the quay",
+      "optional": [{ "label": "Guided sea swim, wetsuits provided", "price": "free" }, { "label": "Kayak hire on the cove", "price": "+£25" }],
+      "note": { "label": "Ferry", "text": "Runs on request from 09:00 to 17:00. The guide calls ahead." }
+    },
+    {
+      "from": "Vennick Cove", "to": "Saltings", "km": 17,
+      "text": "The longest day: out along the estuary and across the sands at low water. The guides set the start by the tide; if it turns against us we take the inland path, 3 km longer.",
+      "sleep": { "name": "Saltings Mill", "detail": "converted mill, en-suite rooms" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true },
+      "optional": [{ "label": "Skip the day: boat to Saltings with the bags", "price": "+£24" }],
+      "note": { "label": "Tide", "text": "On most departures the crossing is open until about 11:40." }
+    },
+    {
+      "from": "Saltings", "to": "Carrow", "km": 12.6,
+      "text": "Farm tracks and the dunes, with the afternoon free in Carrow and its small museum of wrecks.",
+      "sleep": { "name": "The Ship, Carrow", "detail": "inn, en-suite rooms" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": false },
+      "mealNote": "Dinner on your own: the Ship serves until 21:00",
+      "optional": [{ "label": "Museum of wrecks", "price": "£6" }]
+    },
+    {
+      "from": "Carrow", "to": "Mennow Quay", "km": 14.7,
+      "text": "Back up on the high cliff for the last full day, then down the old packhorse steps to the quay for dinner together.",
+      "sleep": { "name": "Quay House, Mennow", "detail": "guesthouse, en-suite rooms" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": true }
+    },
+    {
+      "from": "Mennow Quay", "to": "Lowender", "km": 7.3,
+      "text": "A short morning to the lighthouse at Lowender, lunch on the green, and the 14:10 minibus back to Sennack station.",
+      "sleep": { "none": true, "detail": "we can book a night in Lowender for you" },
+      "meals": { "breakfast": true, "lunch": true, "dinner": false }
+    }
+  ],
+  "included": [
+    "Bags moved each morning, one bag up to 15 kg",
+    "Two walking leaders with every group",
+    "The foot ferry on day 3 and the minibus on day 7"
+  ],
+  "notIncluded": [
+    "Getting to Sennack, and home from there",
+    "Dinners on nights 3 and 5",
+    "Drinks, and the optional boats and fees listed by day",
+    "Travel insurance, which you need to have"
+  ],
+  "departures": {
+    "asOf": "2026-11-03",
+    "capacity": 12,
+    "list": [
+      { "start": "2027-04-18", "end": "2027-04-24", "left": 0, "price": 1890 },
+      { "start": "2027-05-09", "end": "2027-05-15", "left": 3, "price": 1890 },
+      { "start": "2027-06-06", "end": "2027-06-12", "left": 7, "price": 1890 },
+      { "start": "2027-09-12", "end": "2027-09-18", "left": 10, "price": 1790 }
+    ]
+  },
+  "price": {
+    "currency": "£",
+    "amount": 1890,
+    "per": "per person, sharing a twin or double room",
+    "covers": ["All 6 nights", "Every meal marked on the days above", "Two leaders for the whole walk", "Bags moved, ferry and minibus", "Route notes and maps to keep"],
+    "terms": [
+      { "label": "Single room", "text": "+£340, two per departure" },
+      { "label": "Deposit", "text": "£300 to hold a place" },
+      { "label": "Balance", "text": "Due 8 weeks before" }
+    ]
+  }
+}

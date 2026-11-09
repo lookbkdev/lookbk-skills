@@ -1,0 +1,103 @@
+{
+  "lang": "en",
+  "layout": "menu",
+  "money": { "currency": "USD", "locale": "en-US" },
+  "theme": { "type": "caslon", "bg": "#f4efe5", "ink": "#1d1a16", "accent": "#7d2a17", "stretch": "#76560e" },
+  "intro": {
+    "kicker": "Marrow Street Studio",
+    "headline": "Services _&_ fees",
+    "lede": "Brand, packaging and launch work for independent food and drink makers. Every price is a real range from the last two years of projects.",
+    "facts": ["7 services, 2 sets", "Prices in USD before tax", "Updated 1 October 2026"]
+  },
+  "chooser": { "title": "Help me choose", "budgets": [10000, 25000, 50000], "weeks": [4, 8, 12] },
+  "courses": [
+    {
+      "code": "I",
+      "title": "To start",
+      "note": "Short, fixed-fee pieces that tell us both whether the bigger work is worth doing.",
+      "services": [
+        {
+          "id": "brand-audit",
+          "name": "Brand audit",
+          "gets": ["a 30-page audit of every place your brand shows up", "12 fixes, ranked by cost", "a 2-hour workshop with your team"],
+          "from": 4500, "typical": 6000, "weeks": [2, 3],
+          "bring": "Your files, last year's sales by product, three people for the workshop.",
+          "skip": "You already know what is wrong and can afford to fix it. Go straight to the identity."
+        },
+        {
+          "id": "naming",
+          "name": "Naming sprint",
+          "gets": ["3 shortlisted names", "trademark screening in 2 classes", "domain and handle checks", "a rationale page for each name"],
+          "from": 7000, "typical": 9500, "weeks": [3, 4],
+          "bring": "A one-page brief and one person who can say yes.",
+          "skip": "The name is not the problem. Renaming a business people already recommend costs more than it earns."
+        }
+      ]
+    },
+    {
+      "code": "II",
+      "title": "The main work",
+      "note": "Where most of our year goes. Each one is led by a partner from first meeting to handover.",
+      "services": [
+        {
+          "id": "identity",
+          "name": "Identity system",
+          "gets": ["a wordmark and every lockup", "a colour and type system", "40-page guidelines", "templates for 6 everyday documents"],
+          "from": 22000, "typical": 28000, "weeks": [8, 10],
+          "bring": "A decision-maker at four reviews, and everything you use today.",
+          "skip": "You need it in under 6 weeks. We would have to skip the research, and you would be paying for a guess."
+        },
+        {
+          "id": "packaging",
+          "name": "Packaging range",
+          "gets": ["structure and graphics for up to 4 products", "print-ready files", "a press check at your printer"],
+          "from": 16000, "typical": 21000, "weeks": [6, 9],
+          "bring": "Dielines or samples, and your printer's specifications.",
+          "skip": "Your identity is still changing. Packaging fixes it in place for at least one print run."
+        },
+        {
+          "id": "website",
+          "name": "Launch website",
+          "gets": ["a 6 to 10 page site in your CMS", "a copy edit on every page", "2 hours of training"],
+          "from": 18000, "typical": 24000, "weeks": [6, 8],
+          "bring": "Final copy or a writer's time, and product photography.",
+          "skip": "You need a shop with more than 50 products. That is a different job, and we will say who to call."
+        }
+      ]
+    },
+    {
+      "code": "III",
+      "title": "Ongoing",
+      "note": "For teams that ship something every week and want the same hands on it.",
+      "services": [
+        {
+          "id": "partner",
+          "name": "Design partner",
+          "gets": ["up to 24 hours of design a month", "a 45-minute review every fortnight", "files the same week"],
+          "from": 4000, "typical": 5500, "monthly": { "minMonths": 3, "startsWithinWeeks": 1 },
+          "bring": "One person who collects the requests, and a shared folder.",
+          "skip": "You have fewer than 3 requests a month. Book single pieces instead."
+        },
+        {
+          "id": "upkeep",
+          "name": "Guidelines upkeep",
+          "gets": ["a guidelines update every quarter", "template fixes", "one review of new work"],
+          "from": 900, "typical": 1200, "monthly": { "minMonths": 6, "startsWithinWeeks": 2 },
+          "bring": "A list of what changed since the last update.",
+          "skip": "Fewer than 10 people touch your brand. A yearly check is enough."
+        }
+      ]
+    }
+  ],
+  "sets": {
+    "kicker": "Booked together",
+    "title": "Set menus",
+    "note": "Totals are the sum of the courses; the time allows for the overlap we plan.",
+    "items": [
+      { "name": "The new company", "parts": ["naming", "identity", "website"], "overlapWeeks": 3, "note": "The site starts in week 7 of the identity." },
+      { "name": "The shelf refresh", "parts": ["brand-audit", "packaging"], "overlapWeeks": 0, "note": "One kickoff, one team." }
+    ]
+  },
+  "foot": { "text": "Fees are fixed once the scope is signed. Travel is billed at cost.", "cta": { "label": "Ask about a project", "href": "https://marrowstreet.example/contact" } },
+  "preview": { "first": { "budget": 25000, "weeks": 8 }, "second": { "budget": 10000, "weeks": 12 } }
+}

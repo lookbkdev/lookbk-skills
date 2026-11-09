@@ -1,0 +1,138 @@
+{
+  "layout": "row",
+  "brand": "Quaywise",
+  "theme": {
+    "preset": "ledger"
+  },
+  "eyebrow": [
+    "In use at",
+    "Eight shippers"
+  ],
+  "statement": "The shippers who stopped paying carrier invoices _unread._",
+  "marks": [
+    {
+      "name": "Merrow Cold Chain",
+      "svg": "logos/merrow.svg",
+      "align": "center",
+      "use": "Checks reefer surcharges against the rate card before anything is paid.",
+      "href": "https://quaywise.example/customers/merrow"
+    },
+    {
+      "name": "Harbour & Lane",
+      "svg": "logos/harbour-lane.svg",
+      "use": "Audits every parcel and LTL invoice across two warehouses.",
+      "href": "https://quaywise.example/customers/harbour-lane"
+    },
+    {
+      "name": "Voke",
+      "svg": "logos/voke.svg",
+      "use": "Disputes dimensional-weight errors on oversize boxes.",
+      "href": "https://quaywise.example/customers/voke"
+    },
+    {
+      "name": "Kilnworth",
+      "svg": "logos/kilnworth.svg",
+      "use": "Matches pallet invoices to proof of delivery, line by line.",
+      "href": "https://quaywise.example/customers/kilnworth"
+    },
+    {
+      "name": "Tesselby",
+      "svg": "logos/tesselby.svg",
+      "use": "Catches duplicate billing on split shipments.",
+      "href": "https://quaywise.example/customers/tesselby"
+    },
+    {
+      "name": "Oxbow",
+      "svg": "logos/oxbow.svg",
+      "use": "Recovers fuel surcharge overcharges every week.",
+      "href": "https://quaywise.example/customers/oxbow"
+    },
+    {
+      "name": "Brightwater Mills",
+      "svg": "logos/brightwater.svg",
+      "use": "Runs accessorial charges past the contract before approval.",
+      "href": "https://quaywise.example/customers/brightwater"
+    },
+    {
+      "name": "Pallas",
+      "svg": "logos/pallas.svg",
+      "use": "Audits ocean and drayage invoices in one queue.",
+      "href": "https://quaywise.example/customers/pallas"
+    }
+  ],
+  "stats": [
+    {
+      "value": "4.1",
+      "unit": "%",
+      "label": "of carrier invoice value disputed and credited back",
+      "note": 1
+    },
+    {
+      "value": "11",
+      "unit": "days",
+      "label": "median from connecting a carrier to the first credit",
+      "note": 2
+    },
+    {
+      "prefix": "$",
+      "value": "38.2",
+      "unit": "M",
+      "label": "credited to customers between January and September 2026",
+      "note": 3
+    }
+  ],
+  "notesHead": "Notes",
+  "notes": [
+    {
+      "basis": "Mean across 214 customer accounts, invoices paid 1 Jan to 30 Sep 2026.",
+      "source": "Quaywise dispute ledger",
+      "asOf": "2026-09-30"
+    },
+    {
+      "basis": "Median across 96 carrier connections made in Q3 2026.",
+      "source": "Quaywise onboarding log",
+      "asOf": "2026-09-30"
+    },
+    {
+      "basis": "Sum of carrier credits issued against disputed lines, reconciled with customer remittances.",
+      "source": "Quaywise dispute ledger",
+      "asOf": "2026-09-30"
+    }
+  ],
+  "balance": {
+    "area": 3300
+  },
+  "preview": {
+    "open": [
+      2,
+      6
+    ]
+  },
+  "demo": {
+    "nav": [
+      {
+        "label": "Product",
+        "href": "https://quaywise.example/product"
+      },
+      {
+        "label": "Customers",
+        "href": "https://quaywise.example/customers"
+      },
+      {
+        "label": "Sign in",
+        "href": "https://quaywise.example/sign-in"
+      }
+    ],
+    "headline": "Every carrier invoice, checked before it is paid.",
+    "lede": "Quaywise reads each freight bill against your rate cards and proof of delivery, disputes the lines that do not match, and tracks the credit until it lands.",
+    "cta": {
+      "label": "Book an audit",
+      "href": "https://quaywise.example/audit"
+    },
+    "footer": "Quaywise is an invented company for this example. Every customer, figure and source on this page is made up."
+  },
+  "runLabel": "Audited with us",
+  "marquee": {
+    "speed": 18
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "layout": "receipt",
+  "type": "terminal",
+  "brand": "Brightquay",
+  "lang": "en",
+  "locale": "en-US",
+  "eyebrow": "Card fees · Paid in USD",
+  "headline": "Know what you _keep_ from every sale.",
+  "lede": "Enter a sale. You see every fee we take, the conversion against the mid-market rate when your customer pays in euros, and the day the money lands.",
+  "receiptTitle": "sale preview",
+  "from": {
+    "code": "EUR",
+    "decimals": 2,
+    "symbol": "€"
+  },
+  "to": {
+    "code": "USD",
+    "decimals": 2,
+    "symbol": "$"
+  },
+  "amount": {
+    "start": "120.00",
+    "min": "0.50",
+    "max": "25000.00"
+  },
+  "rate": {
+    "mid": "1.0842",
+    "margin": "1.00",
+    "decimals": 4,
+    "asOf": "2026-11-12T18:10"
+  },
+  "rounding": "half-even",
+  "receiveRounding": "half-even",
+  "toggles": [
+    {
+      "id": "type",
+      "label": "Card type",
+      "default": "credit",
+      "options": [
+        {
+          "value": "debit",
+          "label": "Debit"
+        },
+        {
+          "value": "credit",
+          "label": "Credit"
+        }
+      ]
+    },
+    {
+      "id": "issued",
+      "label": "Card issued",
+      "default": "abroad",
+      "options": [
+        {
+          "value": "home",
+          "label": "US"
+        },
+        {
+          "value": "abroad",
+          "label": "Abroad"
+        }
+      ]
+    }
+  ],
+  "fees": [
+    {
+      "label": "Processing",
+      "cases": [
+        {
+          "when": {
+            "type": "credit"
+          },
+          "fixed": "0.30",
+          "percent": "2.90"
+        },
+        {
+          "when": {
+            "type": "debit"
+          },
+          "fixed": "0.30",
+          "percent": "1.90"
+        }
+      ]
+    },
+    {
+      "label": "International card",
+      "none": "Not charged on cards issued in the US",
+      "cases": [
+        {
+          "when": {
+            "issued": "abroad"
+          },
+          "percent": "1.50",
+          "detail": "+1.5% on cards issued outside the US"
+        }
+      ]
+    }
+  ],
+  "compare": {
+    "label": "Typical bank",
+    "inText": "a typical bank",
+    "fees": [
+      {
+        "cases": [
+          {
+            "when": {
+              "type": "credit"
+            },
+            "fixed": "0.25",
+            "percent": "3.40"
+          },
+          {
+            "when": {
+              "type": "debit"
+            },
+            "fixed": "0.25",
+            "percent": "2.40"
+          }
+        ]
+      },
+      {
+        "cases": [
+          {
+            "when": {
+              "issued": "abroad"
+            },
+            "percent": "2.00"
+          }
+        ]
+      }
+    ],
+    "margin": "2.50",
+    "source": "Median published card fees of four US bank merchant accounts for a sale paid in euros.",
+    "collected": "2026-11-02",
+    "link": {
+      "label": "Sources",
+      "href": "https://brightquay.example/compare"
+    }
+  },
+  "arrival": {
+    "cutoff": "17:00",
+    "cutoffZone": "America/New_York",
+    "cutoffCity": "New York",
+    "businessDays": 2,
+    "by": "09:00",
+    "zone": "America/New_York",
+    "city": "New York",
+    "where": "in your business bank account",
+    "holidays": [
+      "2026-11-11",
+      "2026-11-26",
+      "2026-12-25"
+    ],
+    "note": "Pay-outs leave two business days after the day the sale settles; sales after the 17:00 New York cut-off settle the next business day."
+  },
+  "notes": [
+    {
+      "title": "Conversion",
+      "text": "When a customer pays in euros we convert to dollars at the mid-market rate shown, less a 1% margin, which appears above as its own line."
+    }
+  ],
+  "legal": [
+    "Brightquay Payments, Inc. Figures in this example are illustrative.",
+    "No rates are fetched; this page uses the rate above."
+  ],
+  "words": {
+    "send": "Customer pays",
+    "receive": "You are paid",
+    "onThis": "On this sale",
+    "arrives": "Pay-out lands",
+    "arrivesShort": "Paid",
+    "per100": "your customer pays",
+    "reach": "Reaches you",
+    "who": "You keep",
+    "unit": "sale"
+  },
+  "preview": {
+    "now": "2026-11-12T18:30",
+    "type": "350",
+    "toggle": {
+      "id": "type",
+      "value": "debit"
+    }
+  },
+  "theme": {
+    "page": "#0b0e11",
+    "sheet": "#0f1316",
+    "paper": "#161b1f",
+    "ink": "#e9ece8",
+    "cost": "#ff8f78",
+    "accent": "#c9f25d",
+    "onAccent": "#0b0e11",
+    "result": "#c9f25d"
+  }
+}

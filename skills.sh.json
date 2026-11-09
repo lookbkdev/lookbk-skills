@@ -28,10 +28,52 @@
       ]
     },
     {
-      "title": "Interactive heroes",
-      "description": "Hero sections visitors can touch, with a paste-in embed and a 1080p video.",
+      "title": "Page Kits: sections",
+      "description": "Website sections built from one JSON file, as a page and a paste-in embed, checked in Chrome at phone and desktop widths.",
       "skills": [
-        "washing-line-hero"
+        "phone-screen-showcase",
+        "proof-band-kit",
+        "feature-tabs-kit",
+        "process-steps-kit",
+        "integrations-kit",
+        "spec-sheet-kit",
+        "testimonial-wall",
+        "compare-table-kit",
+        "pricing-kit",
+        "fee-calculator-kit",
+        "services-menu-kit",
+        "booking-slots-kit",
+        "story-rail-kit",
+        "faq-kit",
+        "newsletter-kit",
+        "contact-kit",
+        "closing-cta-kit",
+        "footer-kit"
+      ]
+    },
+    {
+      "title": "Page Kits: pages",
+      "description": "Whole pages: an About page, a work index, a shop collection, a journal, an event page and a trip itinerary.",
+      "skills": [
+        "about-story-kit",
+        "portfolio-index-kit",
+        "shop-collection-kit",
+        "journal-index-kit",
+        "event-page-kit",
+        "itinerary-kit"
+      ]
+    },
+    {
+      "title": "Motion heroes",
+      "description": "Hero sections that move and answer the pointer, drawn live with WebGL, each with a paste-in embed and a 1080p video.",
+      "skills": [
+        "washing-line-hero",
+        "parallax-depth-hero",
+        "signal-glitch-hero",
+        "falling-leaves-hero",
+        "aperture-reveal-hero",
+        "laser-etch-hero",
+        "snow-globe-hero"
       ]
     }
   ]

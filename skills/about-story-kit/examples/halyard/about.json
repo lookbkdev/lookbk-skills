@@ -1,0 +1,90 @@
+{
+  "brand": "Halyard",
+  "lang": "en",
+  "nav": [
+    { "label": "Work", "href": "https://halyard.example/work" },
+    { "label": "Services", "href": "https://halyard.example/services" },
+    { "label": "Writing", "href": "https://halyard.example/writing" },
+    { "label": "About", "href": "#top", "current": true },
+    { "label": "Careers", "href": "https://halyard.example/careers" }
+  ],
+  "theme": {
+    "bg": "#0e1012", "surface": "#16191c", "ink": "#e9e7e1", "accent": "#ff7a45", "onAccent": "#160904",
+    "type": "grotesk", "fallback": "hatch",
+    "tones": [
+      { "name": "graphite", "tile": "#1c2024", "line": "#323a41", "ink": "#e3e0d9" },
+      { "name": "slate", "tile": "#23282d", "line": "#3a434b", "ink": "#ece9e2" },
+      { "name": "signal", "tile": "#2a1d16", "line": "#4a2e20", "ink": "#ffb08e" }
+    ]
+  },
+  "titles": { "people": "The people", "practices": "How we work" },
+  "founding": {
+    "eyebrow": "About Halyard",
+    "sentence": "Three of us left a bank’s platform team in 2017 to build software that _its owners could still run after we left._",
+    "signedBy": "**Ruth Okafor, Mats de Vries and Leila Haddad**, founders",
+    "place": "Rotterdam and Lisbon",
+    "founded": "2017-01-09",
+    "headcount": { "count": 40, "asOf": "2026-10-01" },
+    "written": { "date": "2026-10", "by": "Ruth" }
+  },
+  "timeline": {
+    "layout": "rail",
+    "entries": [
+      { "date": "2017-01", "title": "Three engineers, one port", "body": "The first client moved containers through Rotterdam on a scheduler nobody could restart. We rebuilt it in five months.", "before": "3 people · 1 client", "after": "Scheduler handed over, still running", "evidence": "Handover doc, 14 Jun 2017. Their team has run it alone since.", "key": true },
+      { "date": "2018-10", "title": "Our first fixed-scope contract", "body": "We stopped billing by the hour for new builds. Scope and price fit on one page, and we carry the overrun.", "before": "Time and materials", "after": "Fixed scope, fixed price", "evidence": "Overrun cost us 6% of revenue in 2019, 0.6% in 2025." },
+      { "date": "2020-03", "title": "Two offices, one way of working", "body": "Lisbon opened the week everything closed. We wrote down how we work so nobody had to be in the room.", "before": "Rotterdam only", "after": "Rotterdam + Lisbon · a written handbook", "evidence": "The handbook is public: 41 pages." },
+      { "date": "2022-05", "title": "We stopped renting out engineers", "body": "Staff augmentation was 30% of revenue. It also meant our people sat in other teams with no say in the outcome.", "before": "30% of revenue from augmentation", "after": "0% · whole projects only", "evidence": "Revenue fell 18% that year and recovered in 2024.", "key": true },
+      { "date": "2024-02", "title": "Open-sourced our deploy tooling", "body": "Clients kept asking to keep the scripts we used. Now they can, along with anyone else.", "before": "Internal scripts", "after": "Public repo · 2,300 stars", "evidence": "Stars counted 1 Oct 2026." },
+      { "date": "2026-10", "title": "Forty people", "body": "Thirty-one write production code every week, including all three founders. Nobody only manages.", "evidence": "Headcount from payroll, 1 Oct 2026." }
+    ]
+  },
+  "people": {
+    "layout": "index",
+    "hover": 2,
+    "featured": [
+      { "name": "Ruth Okafor", "role": "Co-founder", "since": 2017, "does": "Leads new projects from first call to signed scope. Still on call one week in six.", "decided": { "year": 2018, "line": "Fixed price for every new build.", "before": "Billed by the hour", "after": "One-page scope, our overrun" }, "tone": 0 },
+      { "name": "Mats de Vries", "role": "Co-founder", "since": 2017, "does": "Infrastructure. Wrote most of the deploy tooling we later gave away.", "decided": { "year": 2024, "line": "Open-source the deploy tooling.", "before": "Scripts kept in-house", "after": "Public repo, 2,300 stars" }, "tone": 1 },
+      { "name": "Leila Haddad", "role": "Co-founder", "since": 2017, "does": "Runs delivery. Reviews every handover document before it goes out.", "decided": { "year": 2022, "line": "Stop renting out engineers.", "before": "30% of revenue", "after": "0%, whole projects only" }, "tone": 2 },
+      { "name": "Joaquim Reis", "role": "Lisbon lead", "since": 2020, "does": "Opened Lisbon. Data pipelines for logistics and energy clients.", "decided": { "year": 2020, "line": "Write the handbook before hiring.", "before": "How we work, said aloud", "after": "41 public pages" }, "tone": 0 },
+      { "name": "Sanne Bakker", "role": "Design lead", "since": 2019, "does": "Designs operator tools: screens people use eight hours a day.", "decided": { "year": 2021, "line": "Test with real operators, on shift.", "before": "Lab sessions", "after": "Shadowing night shifts" }, "tone": 1 },
+      { "name": "Tomás Ferreira", "role": "Engineering", "since": 2019, "does": "Leads the payments practice. Has migrated four ledgers without downtime.", "decided": { "year": 2023, "line": "No migration without a rollback rehearsal.", "before": "Rollback on paper", "after": "Rehearsed, timed, signed off" }, "tone": 0 },
+      { "name": "Imani Clarke", "role": "Engineering", "since": 2021, "does": "Security reviews and incident drills for every client system.", "decided": { "year": 2022, "line": "Every project gets a game day.", "before": "Drills when asked", "after": "One per project, before launch" }, "tone": 2 },
+      { "name": "Noor Aziz", "role": "Operations", "since": 2018, "does": "Contracts, hiring and payroll. The reason invoices go out on time.", "decided": { "year": 2019, "line": "Publish salary bands inside the company.", "before": "Pay set case by case", "after": "6 bands, visible to all" }, "tone": 1 }
+    ],
+    "others": [
+      { "name": "Ana Matos", "role": "Engineer" }, { "name": "Ben Visser", "role": "Engineer" }, { "name": "Carla Nunes", "role": "Designer" }, { "name": "Daan Smit", "role": "Engineer" },
+      { "name": "Eva Kowal", "role": "Data" }, { "name": "Femi Adeyemi", "role": "Engineer" }, { "name": "Gil Santos", "role": "Engineer" }, { "name": "Hugo Peters", "role": "Infrastructure" },
+      { "name": "Inês Lopes", "role": "Designer" }, { "name": "Jan Mulder", "role": "Engineer" }, { "name": "Kai Jensen", "role": "Security" }, { "name": "Lena Hoek", "role": "Engineer" },
+      { "name": "Marta Rocha", "role": "Data" }, { "name": "Nils Berg", "role": "Engineer" }, { "name": "Olu Bello", "role": "Engineer" }, { "name": "Pia Lund", "role": "Research" },
+      { "name": "Quinn Hart", "role": "Engineer" }, { "name": "Rui Costa", "role": "Infrastructure" }, { "name": "Sara Dijk", "role": "Engineer" }, { "name": "Teun Kok", "role": "Engineer" },
+      { "name": "Uma Patel", "role": "Data" }, { "name": "Vera Pinto", "role": "Designer" }, { "name": "Wout Bos", "role": "Engineer" }, { "name": "Xana Reis", "role": "Operations" },
+      { "name": "Yara Mendes", "role": "Engineer" }, { "name": "Zeno Vos", "role": "Engineer" }, { "name": "Aart Meijer", "role": "Infrastructure" }, { "name": "Bia Sousa", "role": "Engineer" },
+      { "name": "Cas Prins", "role": "Apprentice" }, { "name": "Dina Graça", "role": "Finance" }, { "name": "Elif Kaya", "role": "Engineer" }, { "name": "Femke Vos", "role": "Apprentice" }
+    ]
+  },
+  "practices": [
+    { "rule": "Scope and price fit on one page", "detail": "If we cannot describe the work in one page, we are not ready to price it. Overruns are ours to absorb.", "since": 2018, "check": "64 one-page scopes signed" },
+    { "rule": "The people who sell it build it", "detail": "No handoff from a sales team. The engineer on your first call is on your project.", "since": 2017, "check": "Ask who will write the code" },
+    { "rule": "A demo every Friday, never slides", "detail": "Working software in a shared environment, every week, from week one.", "since": 2017, "check": "412 demos recorded" },
+    { "rule": "We write the runbook, then leave", "detail": "Every handover includes a runbook your own team has used to restore the system once.", "since": 2019, "check": "37 restores rehearsed" }
+  ],
+  "numbers": {
+    "asOf": "2026-10-01",
+    "items": [
+      { "value": "64", "label": "systems shipped to production since 2017", "source": "Delivery register, Jan 2017 to Oct 2026. A system counts once, at its first production release." },
+      { "value": "4.1", "unit": "yrs", "label": "median length of a client relationship", "source": "37 clients with at least one shipped system. Current clients counted to 1 Oct 2026." },
+      { "value": "0.6", "unit": "%", "label": "of billed hours went to rework in 2025", "source": "Time tracking for 2025: hours tagged rework under the fixed-scope warranty, over all billed hours." },
+      { "value": "31", "unit": "/40", "label": "people write production code every week", "source": "Commit log for September 2026: merged to a production branch in at least 3 of 4 weeks." }
+    ]
+  },
+  "contact": {
+    "title": "Talk to someone who will be on the project",
+    "lede": "Every address reaches one named person, not a shared inbox.",
+    "people": [
+      { "for": "A new project", "name": "Ruth Okafor", "role": "Co-founder", "email": "ruth@halyard.example", "reply": "Replies within 1 working day" },
+      { "for": "Joining us", "name": "Noor Aziz", "role": "Operations", "email": "noor@halyard.example", "reply": "Every application gets an answer" },
+      { "for": "Writing about us", "name": "Leila Haddad", "role": "Co-founder", "email": "press@halyard.example", "reply": "Replies within 3 working days" }
+    ],
+    "visit": ["Van Nelleweg 12, Rotterdam · Rua da Prata 80, Lisbon", "Visitors welcome on Thursdays. Bring a laptop and we will show you a real repo."]
+  }
+}

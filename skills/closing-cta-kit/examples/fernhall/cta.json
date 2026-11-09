@@ -1,0 +1,41 @@
+{
+  "layout": "poster",
+  "brand": "Fernhall Audio",
+  "theme": {
+    "band": "#0d0e10",
+    "ink": "#ecebe6",
+    "accent": "#ffb23e",
+    "onAccent": "#1a1206",
+    "turn": "#a3a29b",
+    "display": "archivo",
+    "buttons": "pill"
+  },
+  "eyebrow": "Drift 2 · Launch price",
+  "serial": "Tape delay for AU, VST3, AAX",
+  "headline": "The delay that _wanders like tape._",
+  "lede": "Wow, flutter and a worn head you can dial in, not a preset of them. One licence, two computers, every update.",
+  "primary": { "label": "Buy Drift 2", "href": "https://fernhall.example/drift/buy", "price": "€49" },
+  "secondary": { "label": "Try it free for 21 days", "href": "https://fernhall.example/drift/trial" },
+  "fact": { "kind": "price", "label": "Launch price", "value": 49, "was": 89, "currency": "€", "window": "Today · {days} day{s} left at €49" },
+  "opened": "2026-11-01",
+  "openedLabel": "Opened Sun 1 Nov",
+  "closes": { "at": "2027-01-01T00:00", "tz": "Europe/Berlin", "label": "Back to €89 on Fri 1 Jan" },
+  "proof": { "score": "4.9", "label": "from 612 reviews", "quote": "“It put the air back into a vocal I had overcooked for a week.”", "cite": "Ruth Okafor, mix engineer" },
+  "afterClose": {
+    "eyebrow": "Drift 2",
+    "headline": "The delay that _wanders like tape._",
+    "lede": "The launch price ended on 31 Dec. Drift 2 is €89, with the same 21-day trial and every update included.",
+    "primary": { "label": "Buy Drift 2", "href": "https://fernhall.example/drift/buy", "price": "€89" },
+    "fact": { "label": "Price", "value": "89", "note": "One licence, two computers" },
+    "window": "The launch price has ended"
+  },
+  "preview": { "now": "2026-11-09" },
+  "demo": {
+    "above": [
+      ["Which hosts are supported?", "AU · VST3 · AAX"],
+      ["Is there a trial?", "21 days"],
+      ["Do updates cost extra?", "Never"]
+    ],
+    "footer": "© 2026 Fernhall Audio"
+  }
+}

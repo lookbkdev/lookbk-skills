@@ -1,0 +1,111 @@
+{
+  "layout": "statement",
+  "type": "ledger",
+  "brand": "Kittiwake",
+  "lang": "en",
+  "locale": "de-DE",
+  "eyebrow": "Transfers · EUR to VND",
+  "headline": "See every cent _before_ you send it.",
+  "lede": "Type an amount. You see what arrives, what it costs and when, with our rate set against the mid-market rate and a typical bank beside us.",
+  "from": {
+    "code": "EUR",
+    "decimals": 2,
+    "symbol": "€"
+  },
+  "to": {
+    "code": "VND",
+    "decimals": 0,
+    "symbol": "₫",
+    "unit": "dong"
+  },
+  "amount": {
+    "start": "1250.00",
+    "min": "10.00",
+    "max": "50000.00"
+  },
+  "rate": {
+    "mid": "30412.80",
+    "margin": "0.45",
+    "decimals": 2,
+    "asOf": "2026-11-10T12:05"
+  },
+  "rounding": "half-up",
+  "receiveRounding": "down",
+  "fees": [
+    {
+      "label": "Our fee",
+      "cases": [
+        {
+          "fixed": "2.10",
+          "percent": "0.35"
+        }
+      ]
+    }
+  ],
+  "compare": {
+    "label": "Typical bank",
+    "inText": "a typical bank",
+    "fees": [
+      {
+        "cases": [
+          {
+            "fixed": "15.00"
+          }
+        ]
+      }
+    ],
+    "margin": "3.20",
+    "source": "Average published fee and exchange rate of five retail banks for a transfer from Germany to Vietnam.",
+    "collected": "2026-11-03",
+    "link": {
+      "label": "How we compare",
+      "href": "https://kittiwake.example/compare"
+    }
+  },
+  "arrival": {
+    "cutoff": "15:00",
+    "cutoffZone": "Europe/Berlin",
+    "cutoffCity": "Berlin",
+    "businessDays": 1,
+    "by": "09:00",
+    "zone": "Asia/Ho_Chi_Minh",
+    "city": "Ho Chi Minh City",
+    "where": "in their bank account in Vietnam",
+    "holidays": [
+      "2026-12-25",
+      "2026-12-26"
+    ],
+    "note": "Arrival assumes the payment clears our checks before the cut-off on a business day."
+  },
+  "notes": [
+    {
+      "title": "Mid-market rate",
+      "text": "The midpoint between the buy and sell rates on global currency markets at the time shown. Our 0,45 % margin is built into the rate you get and is shown above as a cost in euros."
+    }
+  ],
+  "legal": [
+    "Kittiwake Money GmbH is an authorised payment institution. Figures in this example are illustrative.",
+    "Rates are fixed for this page; ask us for a live quote."
+  ],
+  "words": {
+    "onThis": "On this transfer",
+    "per100": "you send",
+    "reach": "Arrives",
+    "who": "They get",
+    "unit": "transfer"
+  },
+  "preview": {
+    "now": "2026-11-10T12:20",
+    "type": "4800",
+    "paste": "12,500.50"
+  },
+  "theme": {
+    "page": "#f3efe6",
+    "sheet": "#fffdf8",
+    "ink": "#17201c",
+    "cost": "#a8321f",
+    "accent": "#a8321f",
+    "onAccent": "#fffdf8",
+    "mark": "#f4dfc0"
+  }
+}

@@ -1,0 +1,813 @@
+{
+  "brand": {
+    "name": "SORNE",
+    "url": "https://sorne.example",
+    "nav": [
+      {
+        "label": "Rings",
+        "href": "https://sorne.example/rings",
+        "current": true
+      },
+      {
+        "label": "Earrings",
+        "href": "https://sorne.example/earrings"
+      },
+      {
+        "label": "Necklaces",
+        "href": "https://sorne.example/necklaces"
+      },
+      {
+        "label": "Workshop",
+        "href": "https://sorne.example/workshop"
+      }
+    ],
+    "bagHref": "https://sorne.example/bag",
+    "checkoutHref": "https://sorne.example/checkout"
+  },
+  "money": {
+    "currency": "EUR",
+    "symbol": "€",
+    "decimals": 0
+  },
+  "look": "dark",
+  "type": "didone",
+  "collection": {
+    "crumb": [
+      "Shop",
+      "Rings and earrings"
+    ],
+    "label": "Stock list · November",
+    "title": "Rings & _earrings_",
+    "pov": "Small things cast in recycled 9 carat gold and sterling silver at our bench in Ghent. Most pieces are made to order, so the dates below are real dates.",
+    "facts": [
+      {
+        "label": "Pieces",
+        "value": "8 in this list"
+      },
+      {
+        "label": "Metal",
+        "value": "Recycled 9ct gold, 925 silver"
+      },
+      {
+        "label": "Making",
+        "value": "Cast and finished by hand"
+      },
+      {
+        "label": "Sizing",
+        "value": "Find your ring size",
+        "href": "https://sorne.example/sizing"
+      }
+    ],
+    "short": "8 pieces · Recycled 9ct gold and 925 silver"
+  },
+  "filters": {
+    "categories": [
+      {
+        "id": "rings",
+        "label": "Rings"
+      },
+      {
+        "id": "earrings",
+        "label": "Earrings"
+      },
+      {
+        "id": "necklaces",
+        "label": "Necklaces"
+      }
+    ],
+    "optionLabel": "Metal",
+    "options": {
+      "gold": {
+        "label": "9ct gold",
+        "swatch": "#d9b77c"
+      },
+      "silver": {
+        "label": "Silver",
+        "swatch": "#cfcdc8"
+      }
+    },
+    "sort": [
+      {
+        "id": "list",
+        "label": "Newest first"
+      },
+      {
+        "id": "price-low",
+        "label": "Price, low to high"
+      },
+      {
+        "id": "price-high",
+        "label": "Price, high to low"
+      }
+    ]
+  },
+  "photos": {
+    "dir": "photos",
+    "rule": {
+      "mm": 10,
+      "label": "1 cm"
+    }
+  },
+  "turnWord": "Turned over",
+  "tour": {
+    "turn": "band"
+  },
+  "products": [
+    {
+      "id": "band",
+      "name": "Everyday band, 3 mm",
+      "category": "rings",
+      "price": 240,
+      "size": "Comfort fit, EU 48 to 60",
+      "options": [
+        "gold",
+        "silver"
+      ],
+      "optionPrices": {
+        "silver": 120
+      },
+      "stock": {
+        "state": "in"
+      },
+      "turn": {
+        "label": "Inside",
+        "caption": "Stamped 375 and signed inside",
+        "captionByOption": {
+          "silver": "Stamped 925 and signed inside"
+        }
+      },
+      "description": "A plain band with a domed outside and a rounded inside, so it slides over the knuckle. Stamped inside with its metal (375 or 925) and signed.",
+      "choices": {
+        "label": "Size (EU)",
+        "note": "Size guide",
+        "noteHref": "https://sorne.example/sizing",
+        "items": [
+          {
+            "label": "48"
+          },
+          {
+            "label": "50"
+          },
+          {
+            "label": "52",
+            "note": "Last one"
+          },
+          {
+            "label": "54"
+          },
+          {
+            "label": "56",
+            "soldOut": true
+          },
+          {
+            "label": "58"
+          },
+          {
+            "label": "60"
+          }
+        ],
+        "default": 3
+      },
+      "still": {
+        "items": [
+          {
+            "shape": "ring",
+            "width": 3,
+            "size": 54
+          }
+        ],
+        "elevation": 12,
+        "turnDeg": 34,
+        "turn": {
+          "elevation": 52,
+          "items": [
+            {
+              "shape": "ring",
+              "width": 3,
+              "size": 54,
+              "hallmark": "$hallmark",
+              "lie": true,
+              "spin": 0.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "stack",
+      "name": "Stacking trio, 1.4 mm",
+      "category": "rings",
+      "price": 310,
+      "size": "Two polished, one satin",
+      "options": [
+        "gold"
+      ],
+      "stock": {
+        "state": "low",
+        "note": "3 sets left"
+      },
+      "turn": {
+        "label": "Laid flat",
+        "caption": "Three bands, worn together"
+      },
+      "description": "Three fine bands: two polished, one with a satin finish between them. Sold as a set of three in one size.",
+      "still": {
+        "items": [
+          {
+            "shape": "ring",
+            "width": 1.4,
+            "thick": 1.3,
+            "spin": 0.6,
+            "offset": [
+              -0.55,
+              0,
+              -0.5
+            ]
+          },
+          {
+            "shape": "ring",
+            "width": 1.4,
+            "thick": 1.3,
+            "metal": "gold-satin",
+            "spin": 0.5
+          },
+          {
+            "shape": "ring",
+            "width": 1.4,
+            "thick": 1.3,
+            "spin": 0.4,
+            "offset": [
+              0.55,
+              0,
+              0.5
+            ]
+          }
+        ],
+        "elevation": 12,
+        "turn": {
+          "elevation": 40,
+          "items": [
+            {
+              "shape": "ring",
+              "width": 1.4,
+              "thick": 1.3,
+              "lie": true
+            },
+            {
+              "shape": "ring",
+              "width": 1.4,
+              "thick": 1.3,
+              "metal": "gold-satin",
+              "lie": true,
+              "offset": [
+                0,
+                0.14,
+                0
+              ]
+            },
+            {
+              "shape": "ring",
+              "width": 1.4,
+              "thick": 1.3,
+              "lie": true,
+              "offset": [
+                0,
+                0.28,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "moonstone",
+      "name": "Moonstone cabochon ring",
+      "category": "rings",
+      "price": 390,
+      "size": "7 mm stone, bezel set",
+      "options": [
+        "gold"
+      ],
+      "stock": {
+        "state": "low",
+        "note": "Sizes 52 and 54 only"
+      },
+      "turn": {
+        "label": "From above",
+        "caption": "7 mm moonstone in a closed bezel"
+      },
+      "description": "A milky moonstone held in a closed bezel on a 2 mm band. Each stone is a little different.",
+      "still": {
+        "items": [
+          {
+            "shape": "ring",
+            "width": 2,
+            "stone": {
+              "size": 7,
+              "dome": 0.75,
+              "mat": "@moonstone"
+            }
+          }
+        ],
+        "elevation": 14,
+        "turnDeg": 30,
+        "turn": {
+          "elevation": 40,
+          "turnDeg": 14
+        }
+      }
+    },
+    {
+      "id": "onyx",
+      "name": "Onyx bezel ring",
+      "category": "rings",
+      "price": 180,
+      "size": "8 mm stone, sterling silver",
+      "options": [
+        "silver"
+      ],
+      "stock": {
+        "state": "out",
+        "note": "Sold out",
+        "action": "Notify me"
+      },
+      "turn": {
+        "label": "From above",
+        "caption": "8 mm onyx in a closed bezel"
+      },
+      "description": "Black onyx in a closed silver bezel. The next casting is not booked yet.",
+      "still": {
+        "items": [
+          {
+            "shape": "ring",
+            "width": 2.4,
+            "stone": {
+              "size": 8,
+              "dome": 0.5,
+              "mat": "@onyx"
+            }
+          }
+        ],
+        "elevation": 14,
+        "turnDeg": 28,
+        "turn": {
+          "elevation": 40,
+          "turnDeg": 14
+        }
+      }
+    },
+    {
+      "id": "small-hoops",
+      "name": "Small hoops, 14 mm",
+      "category": "earrings",
+      "price": 180,
+      "size": "1.6 mm wire, hinged",
+      "options": [
+        "gold",
+        "silver"
+      ],
+      "optionPrices": {
+        "silver": 95
+      },
+      "stock": {
+        "state": "in"
+      },
+      "turn": {
+        "label": "Laid flat",
+        "caption": "The hinge and post that close it"
+      },
+      "description": "Small enough to sleep in. The post is hinged and clicks shut into the other end.",
+      "still": {
+        "items": [
+          {
+            "shape": "hoop",
+            "diameter": 14,
+            "wire": 1.6,
+            "spin": 0.5,
+            "offset": [
+              -0.85,
+              0,
+              -0.3
+            ]
+          },
+          {
+            "shape": "hoop",
+            "diameter": 14,
+            "wire": 1.6,
+            "spin": 0.9,
+            "offset": [
+              0.85,
+              0,
+              0.3
+            ]
+          }
+        ],
+        "elevation": 12,
+        "turn": {
+          "elevation": 58,
+          "items": [
+            {
+              "shape": "hoop",
+              "diameter": 14,
+              "wire": 1.6,
+              "lie": true,
+              "spin": 0.2,
+              "offset": [
+                -0.85,
+                0,
+                0
+              ]
+            },
+            {
+              "shape": "hoop",
+              "diameter": 14,
+              "wire": 1.6,
+              "lie": true,
+              "spin": -0.3,
+              "offset": [
+                0.85,
+                0,
+                0.2
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wide-hoops",
+      "name": "Wide hoops, 26 mm",
+      "category": "earrings",
+      "price": 260,
+      "size": "2.2 mm wire, hinged",
+      "options": [
+        "gold"
+      ],
+      "stock": {
+        "state": "soon",
+        "note": "Cast to order, ships 3 December"
+      },
+      "turn": {
+        "label": "Laid flat",
+        "caption": "The hinge and post that close it"
+      },
+      "description": "The same hinge as the small hoops on a wider, heavier wire. Cast to order in two weeks.",
+      "still": {
+        "items": [
+          {
+            "shape": "hoop",
+            "diameter": 26,
+            "wire": 2.2,
+            "spin": 0.45,
+            "offset": [
+              -1.15,
+              0,
+              -0.9
+            ]
+          },
+          {
+            "shape": "hoop",
+            "diameter": 26,
+            "wire": 2.2,
+            "spin": 0.85,
+            "offset": [
+              1.15,
+              0,
+              0.9
+            ]
+          }
+        ],
+        "elevation": 12,
+        "turn": {
+          "elevation": 58,
+          "items": [
+            {
+              "shape": "hoop",
+              "diameter": 26,
+              "wire": 2.2,
+              "lie": true,
+              "spin": 0.2,
+              "offset": [
+                -1.2,
+                0,
+                -0.3
+              ]
+            },
+            {
+              "shape": "hoop",
+              "diameter": 26,
+              "wire": 2.2,
+              "lie": true,
+              "spin": -0.3,
+              "offset": [
+                1.25,
+                0,
+                0.6
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "pearl-studs",
+      "name": "Seed pearl studs, 4 mm",
+      "category": "earrings",
+      "price": 120,
+      "size": "Seed pearls, gold posts",
+      "options": [
+        "gold"
+      ],
+      "stock": {
+        "state": "in"
+      },
+      "turn": {
+        "label": "From behind",
+        "caption": "Gold post and butterfly back"
+      },
+      "description": "Round freshwater pearls on 9ct gold posts, with butterfly backs that hold firmly.",
+      "still": {
+        "items": [
+          {
+            "shape": "stud",
+            "size": 4,
+            "mat": "@pearl",
+            "spin": 0.95,
+            "offset": [
+              -0.3,
+              0,
+              0
+            ],
+            "post": 0.7
+          },
+          {
+            "shape": "stud",
+            "size": 4,
+            "mat": "@pearl",
+            "spin": 0.75,
+            "offset": [
+              0.32,
+              0,
+              0.3
+            ],
+            "post": 0.7
+          }
+        ],
+        "elevation": 16,
+        "turn": {
+          "elevation": 18,
+          "items": [
+            {
+              "shape": "stud",
+              "size": 4,
+              "mat": "@pearl",
+              "spin": 2.7,
+              "offset": [
+                -0.3,
+                0,
+                0
+              ],
+              "post": 0.7
+            },
+            {
+              "shape": "stud",
+              "size": 4,
+              "mat": "@pearl",
+              "spin": 2.95,
+              "offset": [
+                0.34,
+                0,
+                0.25
+              ],
+              "post": 0.7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "disc-pendant",
+      "name": "Domed disc pendant",
+      "category": "necklaces",
+      "price": 280,
+      "size": "18 mm, 45 cm chain",
+      "options": [
+        "gold"
+      ],
+      "stock": {
+        "state": "in"
+      },
+      "turn": {
+        "label": "The back",
+        "caption": "One engraved letter, free"
+      },
+      "description": "A domed disc on a fine cable chain. We engrave one letter on the back for free; tell us which at checkout.",
+      "still": {
+        "items": [
+          {
+            "shape": "pendant",
+            "diameter": 18,
+            "metal": "gold-satin"
+          }
+        ],
+        "elevation": 40,
+        "turn": {
+          "elevation": 50,
+          "items": [
+            {
+              "shape": "pendant",
+              "diameter": 18,
+              "metal": "gold-satin",
+              "mark": "S",
+              "spin": 0.4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "editorial": {
+    "after": 4,
+    "label": "Why 375",
+    "quote": "Nothing here is plated. Every band is _stamped 375_: 37.5 parts gold in a hundred. Turn any ring over to see it.",
+    "by": "Mira Sorne, goldsmith",
+    "link": {
+      "label": "How we cast",
+      "href": "https://sorne.example/journal/casting",
+      "note": "3 min read"
+    },
+    "photo": "ed-375.webp",
+    "photoAlt": "Two gold bands, one lying flat to show 375 SORNE engraved inside",
+    "caption": "No. 01, stamped inside"
+  },
+  "bag": {
+    "items": 1,
+    "total": 180,
+    "delivery": "Insured EU delivery, free"
+  },
+  "promises": [
+    "Insured delivery in the EU",
+    "Resized free within a year",
+    "Gift box included"
+  ],
+  "stills": {
+    "backdrop": "#2a2520",
+    "light": "dramatic",
+    "frameMm": 66,
+    "minFill": 0.26,
+    "aim": 0.14,
+    "focal": 100,
+    "look": {
+      "exposure": 1.1,
+      "wall": 0.12,
+      "floor": 0.5,
+      "pool": 0.3,
+      "fall": 0.5,
+      "contact": 0.95,
+      "boxes": [
+        {
+          "az": -62,
+          "el": 18,
+          "size": [
+            2.2,
+            14
+          ],
+          "power": 11
+        },
+        {
+          "az": 58,
+          "el": 14,
+          "size": [
+            1.6,
+            14
+          ],
+          "power": 7
+        },
+        {
+          "az": 0,
+          "el": 78,
+          "size": [
+            6,
+            6
+          ],
+          "power": 6
+        },
+        {
+          "az": 0,
+          "el": 8,
+          "size": [
+            10,
+            3
+          ],
+          "power": 1.4
+        },
+        {
+          "az": 180,
+          "el": 25,
+          "size": [
+            12,
+            4
+          ],
+          "power": 4
+        },
+        {
+          "az": -140,
+          "el": 5,
+          "size": [
+            1.2,
+            12
+          ],
+          "power": 6,
+          "warm": true
+        }
+      ],
+      "key": {
+        "dir": [
+          -0.4,
+          1.4,
+          0.5
+        ],
+        "power": 1.6,
+        "shadow": 0.6,
+        "soft": 16
+      }
+    },
+    "materials": {
+      "gold": {
+        "metal": "gold",
+        "hallmark": "375  SORNE"
+      },
+      "silver": {
+        "metal": "silver",
+        "hallmark": "925  SORNE"
+      },
+      "moonstone": {
+        "color": "#e6ecf3",
+        "roughness": 0.1,
+        "transmission": 0.5,
+        "thickness": 0.3,
+        "ior": 1.52,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.03,
+        "attenuationColor": "#b7c6dc",
+        "attenuationDistance": 0.5,
+        "sheen": 0.6,
+        "sheenColor": "#bfd2ff",
+        "envMapIntensity": 1.2
+      },
+      "onyx": {
+        "color": "#0b0b0c",
+        "roughness": 0.05,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.02,
+        "envMapIntensity": 1.4
+      },
+      "pearl": {
+        "color": "#efe7da",
+        "roughness": 0.3,
+        "iridescence": 0.6,
+        "iridescenceIOR": 1.45,
+        "sheen": 0.5,
+        "sheenColor": "#ffe6d0",
+        "clearcoat": 0.7,
+        "clearcoatRoughness": 0.15,
+        "envMapIntensity": 1.1
+      }
+    },
+    "extra": [
+      {
+        "name": "ed-375",
+        "width": 1600,
+        "height": 1100,
+        "elevation": 34,
+        "frameMm": 72,
+        "option": "gold",
+        "items": [
+          {
+            "shape": "ring",
+            "width": 3,
+            "hallmark": "375  SORNE",
+            "lie": true,
+            "spin": 0.25,
+            "offset": [
+              -1.3,
+              0,
+              0
+            ]
+          },
+          {
+            "shape": "ring",
+            "width": 3,
+            "offset": [
+              1.5,
+              0,
+              -0.4
+            ],
+            "spin": 0.7
+          }
+        ]
+      }
+    ]
+  }
+}

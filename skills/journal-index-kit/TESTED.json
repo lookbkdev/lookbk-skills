@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/coldframe out/coldframe",
+    "node scripts/check.mjs out/coldframe/index.html",
+    "node scripts/build.mjs examples/tarnline out/tarnline",
+    "node scripts/check.mjs out/tarnline/index.html",
+    "node scripts/record.mjs out/coldframe/index.html --moments",
+    "node scripts/record.mjs out/coldframe/index.html --seconds 10",
+    "node scripts/record.mjs out/tarnline/index.html --seconds 10"
+  ],
+  "agents": []
+}

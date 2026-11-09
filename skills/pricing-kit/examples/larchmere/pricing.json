@@ -1,0 +1,79 @@
+{
+  "theme": "light",
+  "type": "editorial",
+  "lang": "en",
+  "title": "Pricing · Larchmere",
+  "description": "Invoicing and books for small studios. Three plans, billed monthly or yearly with two months free.",
+  "eyebrow": "Pricing · Larchmere",
+  "headline": "Pay for the studio you run, _not the one you might._",
+  "promises": ["Prices in USD, before tax", "Change plan or cancel from settings, no call", "Your invoices and files export any time"],
+  "currency": "$",
+  "unit": "/ month",
+  "billing": { "monthly": "Monthly", "yearly": "Yearly", "saving": "2 months free", "start": "monthly" },
+  "scale": { "max": 60, "step": 10 },
+  "included": {
+    "title": "Every plan",
+    "items": ["Unlimited invoices", "Card and bank payments", "Receipts by photo", "Your own domain on invoices"],
+    "note": "Card fees are the processor's, passed through at cost."
+  },
+  "plans": [
+    {
+      "name": "Solo", "for": "One person, a handful of steady clients.", "monthly": 12, "yearly": 10,
+      "cta": { "label": "Start with Solo", "href": "/signup?plan=solo" },
+      "adds_title": "The basics, kept simple", "adds": ["1 seat", "Up to 15 active clients", "Monthly profit and loss"]
+    },
+    {
+      "name": "Studio", "for": "A small team billing by project and by hour.", "monthly": 30, "yearly": 25,
+      "cta": { "label": "Start a 30-day trial", "href": "/signup?plan=studio" },
+      "adds_title": "Everything in Solo, plus", "adds": ["3 seats, then $6 a seat", "Time tracking to invoice", "Project budgets with alerts", "Quarterly tax set-aside"],
+      "recommended": { "label": "Our pick for 2 to 8 people", "reason": "Where most teams land after Solo" }
+    },
+    {
+      "name": "Practice", "for": "Several partners, an accountant and audits.", "monthly": 60, "yearly": 50,
+      "cta": { "label": "Start with Practice", "href": "/signup?plan=practice" },
+      "adds_title": "Everything in Studio, plus", "adds": ["10 seats, then $5 a seat", "Accountant access, free", "Approval steps on spend", "Audit log kept 7 years"]
+    }
+  ],
+  "compare": {
+    "title": "All features",
+    "groups": [
+      { "label": "Billing", "rows": [
+        { "label": "Active clients", "values": ["15", "Unlimited", "Unlimited"] },
+        { "label": "Recurring invoices", "values": [true, true, true] },
+        { "label": "Deposits and part payments", "values": [false, true, true] },
+        { "label": "Multi-currency invoices", "values": [false, true, true] }
+      ]},
+      { "label": "Team", "rows": [
+        { "label": "Seats included", "values": ["1", "3", "10"] },
+        { "label": "Time tracking", "values": [false, true, true] },
+        { "label": "Accountant access", "values": [false, false, true] },
+        { "label": "Approval steps on spend", "values": [false, false, true] }
+      ]},
+      { "label": "Records", "rows": [
+        { "label": "Profit and loss", "values": ["Monthly", "Monthly", "Weekly"] },
+        { "label": "Receipts by photo", "values": [true, true, true] },
+        { "label": "Audit log kept", "values": ["1 year", "1 year", "7 years"] }
+      ]}
+    ]
+  },
+  "calculator": {
+    "title": "What would you pay?",
+    "intro": "Slide to the size of your team. The plan that costs least lights up.",
+    "one": "person", "many": "people", "suffix": "on your team",
+    "min": 1, "max": 20, "step": 1, "value": 6,
+    "plans": [
+      { "limit": 1 },
+      { "includes": 3, "each": 6, "each_yearly": 5 },
+      { "includes": 10, "each": 5, "each_yearly": 4 }
+    ]
+  },
+  "faq": {
+    "title": "Before you choose",
+    "items": [
+      { "q": "Can I switch plans halfway through a year?", "a": "Yes. Moving up is charged for the days left; moving down is credited to your next bill." },
+      { "q": "What happens to my invoices if I leave?", "a": "You keep read access for 90 days and can export everything as PDF and CSV." },
+      { "q": "Do you charge per invoice?", "a": "No. Every plan sends unlimited invoices." },
+      { "q": "Is there a discount for charities?", "a": "Yes, 30% off any plan with a registered charity number." }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "bars",
+  "describe": "Read errors per minute on 19 October from 14:02 to 14:40 UTC: near zero, then 300 to 1,000 a minute for 27 minutes, then falling away after the flag was turned off.",
+  "unit": "/min",
+  "max": 1200,
+  "ticks": 4,
+  "values": [
+    46,
+    27,
+    31,
+    817,
+    559,
+    724,
+    551,
+    893,
+    771,
+    849,
+    466,
+    750,
+    424,
+    663,
+    454,
+    447,
+    247,
+    199,
+    175,
+    305,
+    119,
+    415,
+    424,
+    474,
+    445,
+    325,
+    411,
+    773,
+    521,
+    771,
+    936,
+    547,
+    366,
+    235,
+    162,
+    112,
+    75,
+    44
+  ],
+  "highlight": [
+    3,
+    29
+  ],
+  "x": [
+    [
+      0,
+      "14:02"
+    ],
+    [
+      10,
+      "14:12"
+    ],
+    [
+      20,
+      "14:22"
+    ],
+    [
+      29,
+      "14:31"
+    ],
+    [
+      37,
+      "14:40"
+    ]
+  ],
+  "marker": {
+    "at": 29,
+    "label": "flag off · 14:31"
+  }
+}

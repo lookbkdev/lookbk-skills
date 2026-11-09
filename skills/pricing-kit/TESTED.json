@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/larchmere/pricing.json out/larchmere",
+    "node scripts/check.mjs out/larchmere/index.html",
+    "node scripts/build.mjs examples/northvane/pricing.json out/northvane",
+    "node scripts/check.mjs out/northvane/index.html",
+    "node scripts/record.mjs out/larchmere/index.html",
+    "node scripts/record.mjs out/northvane/index.html"
+  ],
+  "agents": []
+}

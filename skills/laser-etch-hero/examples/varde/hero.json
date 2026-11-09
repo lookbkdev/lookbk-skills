@@ -1,0 +1,42 @@
+{
+  "composition": "type-effect",
+  "brand": { "name": "Varde", "href": "/" },
+  "nav": [
+    { "label": "Squares", "href": "/squares" },
+    { "label": "Rules", "href": "/rules" },
+    { "label": "Gauges", "href": "/gauges" }
+  ],
+  "action": { "label": "Buy direct", "href": "/shop" },
+  "hero": {
+    "title": "MARKED\nTRUE.",
+    "subtitle": "Burned through the anodise, not printed on it.",
+    "lede": "Machinist squares and rules in 6061 aluminium, black anodised, every graduation laser-marked into the metal. Nothing to rub off.",
+    "cta": { "label": "See the 150 mm square", "href": "/squares/150" }
+  },
+  "theme": {
+    "mode": "dark",
+    "background": "#121316",
+    "ink": "#e9ebee",
+    "accent": "#c9a45c",
+    "fonts": { "display": "Space Grotesk", "body": "Inter", "weight": 700, "advance": 0.64 }
+  },
+  "effect": {
+    "material": "anodised",
+    "machine": "galvo",
+    "layout": "full",
+    "lamp": "#f6f8ff",
+    "scale": true,
+    "depth": 1,
+    "sparks": 0.8,
+    "cycle": 16,
+    "follow": true,
+    "grain": 0.5
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Varde: machinist squares and rules, laser-marked",
+    "description": "Squares and rules in black anodised 6061 aluminium with every graduation laser-marked through the coating.",
+    "url": "https://varde.example/",
+    "lang": "en"
+  }
+}

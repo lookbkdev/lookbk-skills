@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/fernwork/faq.json out/fernwork",
+    "node scripts/check.mjs out/fernwork/index.html",
+    "node scripts/build.mjs examples/orrery/faq.json out/orrery",
+    "node scripts/check.mjs out/orrery/index.html",
+    "node scripts/record.mjs out/fernwork/index.html",
+    "node scripts/record.mjs out/orrery/index.html"
+  ],
+  "agents": []
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/fennick/spec.json out/fennick",
+    "node scripts/check.mjs out/fennick/index.html",
+    "node scripts/build.mjs examples/ampwright/spec.json out/ampwright",
+    "node scripts/check.mjs out/ampwright/index.html",
+    "node scripts/record.mjs out/fennick/index.html --moments",
+    "node scripts/record.mjs out/fennick/index.html",
+    "node scripts/record.mjs out/fennick/index.html --print --png out/fennick/sheet.png",
+    "node scripts/record.mjs out/ampwright/index.html --print --png out/ampwright/sheet.png"
+  ],
+  "agents": []
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/wrenmoor/wall.json out/wrenmoor",
+    "node scripts/check.mjs out/wrenmoor/index.html",
+    "node scripts/build.mjs examples/tallyport/wall.json out/tallyport",
+    "node scripts/check.mjs out/tallyport/index.html",
+    "node scripts/record.mjs out/wrenmoor/index.html",
+    "node scripts/record.mjs out/tallyport/index.html"
+  ],
+  "agents": []
+}

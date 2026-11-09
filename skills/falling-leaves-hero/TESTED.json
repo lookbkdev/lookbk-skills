@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-08",
+  "kit": "motion-heroes-v2",
+  "checks": [
+    "node scripts/build.mjs examples/aldermoor/hero.json out/aldermoor",
+    "node scripts/effect/still.mjs out/aldermoor/index.html",
+    "node scripts/check.mjs out/aldermoor/index.html",
+    "node scripts/effect/coverage.mjs out/aldermoor/index.html --at 1,2.5,7.5,16.25",
+    "node scripts/build.mjs examples/lantern-row/hero.json out/lantern-row",
+    "node scripts/effect/still.mjs out/lantern-row/index.html",
+    "node scripts/check.mjs out/lantern-row/index.html",
+    "node scripts/effect/coverage.mjs out/lantern-row/index.html --at 1,2.5,7.5,16.25",
+    "node scripts/record.mjs out/aldermoor/index.html --seconds 20 --size 1920x1080 --fps 30 --poster 1",
+    "node scripts/record.mjs out/lantern-row/index.html --still 1 --size 1920x1080 --png out/second.png",
+    "node scripts/record.mjs out/aldermoor/index.html --still 1 --size 390x844 --scale 2 --png out/phone.png"
+  ],
+  "agents": []
+}

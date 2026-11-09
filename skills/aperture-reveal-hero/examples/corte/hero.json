@@ -1,0 +1,43 @@
+{
+  "composition": "editorial",
+  "brand": { "name": "Corte Lenta", "logo": "logo.svg", "href": "/" },
+  "nav": [
+    { "label": "Menu", "href": "/menu" },
+    { "label": "The cloister", "href": "/cloister" },
+    { "label": "Bakery", "href": "/bakery" }
+  ],
+  "action": { "label": "Book a table", "href": "/book" },
+  "hero": {
+    "title": "NOON IN\nTHE COOL\nCOURT.",
+    "lede": "Espresso, almond cake and the sound of the fountain, in the cloister behind the bakery. Tables from 8 am.",
+    "cta": { "label": "Book a table", "href": "/book" },
+    "link": { "label": "See the menu", "href": "/menu" }
+  },
+  "theme": {
+    "mode": "light",
+    "background": "#efe8dc",
+    "ink": "#1d1a16",
+    "accent": "#a8442a",
+    "plate": "#efe8dc",
+    "rules": "off",
+    "fonts": { "display": "Fraunces", "body": "Instrument Sans", "mono": "IBM Plex Mono", "weight": 400, "advance": 0.68 }
+  },
+  "effect": {
+    "scene": "court",
+    "word": "COOL",
+    "loop": "1.2 22 2.8",
+    "widest": "1.2",
+    "bladeInk": "#efe8dc",
+    "exposure": 1,
+    "scale": true,
+    "follow": true,
+    "grain": 0.5
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Corte Lenta: noon in the cool court",
+    "description": "Espresso, almond cake and the sound of the fountain, in the cloister behind the bakery. Tables from 8 am.",
+    "url": "https://corte-lenta.example/",
+    "lang": "en"
+  }
+}

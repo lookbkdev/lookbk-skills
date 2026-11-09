@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "kit": "motion-heroes-v2",
+  "checks": [
+    "node scripts/build.mjs examples/late-reel/hero.json out/late-reel",
+    "node scripts/check.mjs out/late-reel/index.html",
+    "node scripts/build.mjs examples/halde/hero.json out/halde",
+    "node scripts/check.mjs out/halde/index.html",
+    "node scripts/record.mjs out/late-reel/index.html --seconds 12 --size 1920x1080 --fps 30 --poster 6",
+    "node scripts/record.mjs out/halde/index.html --still 6 --size 1920x1080 --png out/second.png",
+    "node scripts/record.mjs out/late-reel/index.html --still 6 --size 390x844 --scale 2 --png out/phone.png"
+  ],
+  "agents": []
+}

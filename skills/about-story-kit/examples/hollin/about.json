@@ -1,0 +1,85 @@
+{
+  "brand": "Hollin Workshop",
+  "lang": "en-GB",
+  "nav": [
+    { "label": "Furniture", "href": "https://hollin.example/furniture" },
+    { "label": "Commissions", "href": "https://hollin.example/commissions" },
+    { "label": "Repairs", "href": "https://hollin.example/repairs" },
+    { "label": "About", "href": "#top", "current": true },
+    { "label": "Visit", "href": "https://hollin.example/visit" }
+  ],
+  "theme": {
+    "bg": "#f3eee5", "surface": "#ebe4d7", "ink": "#1e1a16", "accent": "#8c2f17", "onAccent": "#f7f2e9",
+    "type": "serif", "fallback": "rings",
+    "tones": [
+      { "name": "oak", "tile": "#e4d8c4", "line": "#cdb898", "ink": "#3b2b1c" },
+      { "name": "ash", "tile": "#ece7dd", "line": "#d6ccba", "ink": "#3a3128" },
+      { "name": "walnut", "tile": "#5b4131", "line": "#71533f", "ink": "#f1e7d8" },
+      { "name": "cherry", "tile": "#c79b7b", "line": "#b4835f", "ink": "#3a1f12" }
+    ]
+  },
+  "founding": {
+    "eyebrow": "About the workshop",
+    "sentence": "We started in a rented shed in 2014 because nobody in the valley would make a chair _meant to outlast its owner._",
+    "signedBy": "**Ines Hollin and Tom Achebe**, who still build the chairs",
+    "place": "Heptonstall, W. Yorks",
+    "founded": "2014-03-03",
+    "headcount": { "count": 12, "asOf": "2026-09-30" },
+    "written": { "date": "2026-10", "by": "Ines" }
+  },
+  "timeline": {
+    "layout": "spine",
+    "entries": [
+      { "date": "2014-03", "title": "Two people, one bench, a rented shed", "body": "Tom left a kitchen fitter, Ines left a boatyard. The first order was six ladder-back chairs for a café in Todmorden.", "before": "Two jobs elsewhere", "after": "2 makers · 1 bench · 40 m²", "evidence": "Lease signed 3 Mar 2014. The café still uses five of the six chairs.", "key": true },
+      { "date": "2015-11", "title": "We started drawing before taking money", "body": "A dining table went back because it was not what the client pictured. Since then every commission gets a full-size drawing first.", "before": "Deposit on order", "after": "Drawing first, deposit after sign-off", "evidence": "0 commissions returned for a design mismatch since." },
+      { "date": "2017-06", "title": "Moved into the old mill at Mytholm", "body": "Room for a timber store, so we could buy whole boards from one tree and keep the grain matched across a piece.", "before": "40 m² · 2 benches", "after": "410 m² · 6 benches · kiln", "evidence": "Rent went from £310 to £1,450 a month." },
+      { "date": "2019-02", "title": "Stopped selling anything veneered", "body": "If it says solid oak, it is solid oak all the way through. It cost us the cheapest third of the catalogue.", "before": "31 designs", "after": "21 designs · prices up 9%", "evidence": "Sales dipped 14% that year, and were back by 2021.", "key": true },
+      { "date": "2021-09", "title": "First two apprentices", "body": "Three years, paid from day one, taught by whoever made the thing they are learning.", "before": "No training route", "after": "2 apprentices a year", "evidence": "4 of 5 apprentices so far are still here." },
+      { "date": "2024-04", "title": "A bench just for repairs", "body": "The fifty-year guarantee was eating Friday afternoons. Now one person does nothing but mend.", "before": "Repairs fitted in", "after": "1 repair bench · 3 week turnaround", "evidence": "Repairs ledger, April 2024 onward." },
+      { "date": "2026-09", "title": "Twelve people", "body": "Nine makers, a finisher, Ines on drawings and Ruth in the office. We do not plan to grow past fifteen.", "evidence": "Headcount from payroll, 30 Sep 2026." }
+    ]
+  },
+  "people": {
+    "layout": "sheet",
+    "hover": 1,
+    "featured": [
+      { "name": "Ines Hollin", "role": "Co-founder", "since": 2014, "does": "Draws every commission and talks to every client before a cut is made.", "decided": { "year": 2015, "line": "No deposit until the drawing is signed." }, "tone": 0 },
+      { "name": "Tom Achebe", "role": "Co-founder", "since": 2014, "does": "Builds chairs. Has made 618 of them, counted from his notebook.", "decided": { "year": 2019, "line": "No more veneer, whatever it costs." }, "tone": 1 },
+      { "name": "Ruth Sandoval", "role": "Office", "since": 2016, "does": "Runs orders, delivery and the waiting list. Answers the phone.", "decided": { "year": 2022, "line": "Publish lead times on the site, weekly." }, "tone": 2 },
+      { "name": "Callum Reid", "role": "Maker", "since": 2016, "does": "Tables and the dining range. Cuts every dovetail by hand.", "decided": { "year": 2020, "line": "Switch to hide glue, so joints can be undone." }, "tone": 3 },
+      { "name": "Priya Nair", "role": "Finisher", "since": 2018, "does": "Oils and waxes everything that leaves the mill. Mixes her own oil.", "decided": { "year": 2018, "line": "No polyurethane on anything we sell." }, "tone": 2 },
+      { "name": "Jonah Pike", "role": "Maker", "since": 2018, "does": "Cabinets and doors. Fits drawers so they close on a cushion of air.", "decided": { "year": 2023, "line": "Every drawer gets a solid bottom." }, "tone": 0 },
+      { "name": "Aiko Brandt", "role": "Maker", "since": 2019, "does": "Steam-bending for chair backs and arms.", "decided": { "year": 2021, "line": "Bend green ash only, never kiln dried." }, "tone": 1 },
+      { "name": "Sol Okoye", "role": "Repairs", "since": 2020, "does": "Runs the repair bench. Fixes anything we made, for any owner.", "decided": { "year": 2024, "line": "Repairs travel with the piece, not the buyer." }, "tone": 0 },
+      { "name": "Maud Lister", "role": "Maker", "since": 2021, "does": "Started as an apprentice. Now teaches joint layout.", "decided": { "year": 2025, "line": "Apprentices sign their first piece." }, "tone": 3 },
+      { "name": "Dev Sharma", "role": "Timber", "since": 2022, "does": "Buys boards, runs the kiln, keeps the store dry.", "decided": { "year": 2022, "line": "Buy from within 60 miles where we can." }, "tone": 2 },
+      { "name": "Hana Wole", "role": "Apprentice", "since": 2024, "does": "Second year. Building the stools.", "decided": { "year": 2025, "line": "Sharpen by hand for the whole first year." }, "tone": 0 },
+      { "name": "Finn Carey", "role": "Apprentice", "since": 2025, "does": "First year. Sweeping, sharpening, learning.", "decided": { "year": 2025, "line": "Keep a notebook of every mistake." }, "tone": 1 }
+    ]
+  },
+  "practices": [
+    { "rule": "We draw it before we take a penny", "detail": "A full-size drawing of your piece comes by post. You sign it, then you pay a deposit.", "since": 2015, "check": "212 drawings sent in 2025" },
+    { "rule": "One maker, start to finish", "detail": "The person who cuts the first joint fits the last drawer, and signs it under the top.", "since": 2014, "check": "Look for the name under the drawer" },
+    { "rule": "We show you the boards first", "detail": "Before cutting, we send photos of the actual boards, knots and all, so you choose.", "since": 2017, "check": "Photos kept for 10 years" },
+    { "rule": "Repairs for fifty years", "detail": "Bring anything we made back for repair, whoever owns it now. You pay for the wood, not the time.", "since": 2014, "check": "11 repairs, 0 replacements" }
+  ],
+  "numbers": {
+    "asOf": "2026-09-30",
+    "items": [
+      { "value": "1,486", "label": "pieces delivered since the first six chairs", "source": "Order book, 3 Mar 2014 to 30 Sep 2026, counting each chair as one piece." },
+      { "value": "9.4", "unit": "wks", "label": "median time from signed drawing to delivery", "source": "2025 orders, 212 commissions. Lead times are published weekly on the commissions page." },
+      { "value": "83", "unit": "%", "label": "of our oak was grown within 60 miles", "source": "Timber invoices for 2025, by volume. The rest is English walnut from Herefordshire." },
+      { "value": "11", "label": "pieces back for repair. None replaced.", "source": "Repairs ledger since 2014. Ten were loose joints, one was a dog." }
+    ]
+  },
+  "contact": {
+    "title": "Talk to the person who will actually do it",
+    "lede": "No form, no sales team. Each address below goes straight to one person.",
+    "people": [
+      { "for": "A commission or a one-off", "name": "Ines Hollin", "role": "Drawings and commissions", "email": "ines@hollin.example", "reply": "Replies within 2 working days" },
+      { "for": "Something we made needs fixing", "name": "Sol Okoye", "role": "Repair bench", "email": "repairs@hollin.example", "reply": "Replies within 2 working days" },
+      { "for": "An order you have placed", "name": "Ruth Sandoval", "role": "Office", "email": "ruth@hollin.example", "reply": "Phone 9 to 4, weekdays" }
+    ],
+    "visit": ["Mytholm Mill, Hebden Bridge, West Yorkshire", "Open to visitors Saturdays 10 to 1. Tea is free."]
+  }
+}

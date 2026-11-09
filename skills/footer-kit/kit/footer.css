@@ -1,0 +1,248 @@
+/* Footer Kit: the end of the page as a sheet lying on a coloured board.
+   Everything is scoped to .fk; the build sets the theme tokens on the
+   footer element itself. The demo page (.fk-page) uses the same tokens. */
+.fk, .fk *, .fk *::before, .fk *::after, .fk-page, .fk-page * { box-sizing: border-box; margin: 0; padding: 0 }
+.fk, .fk-page {
+  --gut: clamp(16px, 3.4vw, 48px);
+  --measure: 1344px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+.fk {
+  position: relative;
+  color: var(--ink);
+  font: 400 16px/1.55 var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.fk a { color: inherit; text-decoration: none }
+.fk :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 2px }
+.fk-board :focus-visible { outline-color: var(--board-ring) }
+.fk-in { max-width: var(--measure); margin: 0 auto; padding: 0 var(--gut) }
+.fk-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+
+/* ------------------------------------------------ the sheet (the page's end) */
+.fk-upper, .fk-page { position: relative; z-index: 2; background: var(--sheet); color: var(--ink) }
+/* the sheet bows up off the board as it lifts: its last inches turn from the light */
+.fk-upper::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 72px; pointer-events: none;
+  background: linear-gradient(rgba(var(--bow), 0), rgba(var(--bow), calc(var(--bow-a) * var(--lift, 0))));
+}
+/* the cut edge: a lit lip and the stock's thickness, which shows more as it lifts */
+.fk-upper::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; pointer-events: none;
+  height: calc(2px + 3px * var(--lift, 0));
+  background: linear-gradient(var(--lip) 0 1px, var(--edge) 1px 100%);
+  box-shadow: 0 1px 0 rgba(var(--shade), .35);
+}
+
+/* ------------------------------------------------ the board beneath */
+.fk-board { position: relative; z-index: 1; background: var(--board); color: var(--board-ink); overflow: clip }
+.fk-lift .fk-board { position: sticky; bottom: 0 }
+.fk-floor { padding-bottom: calc(clamp(14px, 2.2vw, 32px) + env(safe-area-inset-bottom, 0px)); will-change: transform }
+/* the sheet's shadow on the board: a contact line and a penumbra that widens as the edge lifts;
+   multiplied, so the name darkens where it passes */
+.fk-shade {
+  position: absolute; left: 0; right: 0; z-index: 3; pointer-events: none; mix-blend-mode: multiply;
+  top: var(--edge-y, 0px);
+  height: calc(18px + 220px * var(--lift, 0));
+  background:
+    linear-gradient(rgba(var(--shade), .55), rgba(var(--shade), 0) 4px),
+    linear-gradient(rgba(var(--shade), calc(.62 - .26 * var(--lift, 0))), rgba(var(--shade), calc(.22 - .1 * var(--lift, 0))) 35%, rgba(var(--shade), 0));
+  opacity: var(--shade-on, 1);
+  transition: opacity .32s var(--ease);
+}
+.fk-done .fk-shade { --shade-on: 0 }
+.fk:not(.fk-lift) .fk-shade { display: none }
+
+/* ------------------------------------------------ shared parts */
+.fk-label { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mute) }
+.fk-eyebrow { display: flex; gap: 12px; align-items: center; margin-bottom: 20px }
+.fk-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--turn); flex: none }
+.fk-h { font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--display-track); line-height: .98; font-synthesis: none; text-wrap: balance }
+.fk-h em { font-style: var(--em); color: var(--turn) }
+.fk-btns { display: flex; gap: 12px; flex-wrap: wrap }
+.fk-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px;
+  font: 600 15px/1 var(--text); border-radius: var(--radius); transition: transform .24s var(--ease), background-color .24s var(--ease);
+}
+.fk-btn.fk-primary { background: var(--accent); color: var(--on-accent) }
+.fk-btn.fk-ghost { box-shadow: inset 0 0 0 1px var(--rule-strong) }
+.fk-btn:active { transform: translateY(1px) }
+.fk-btn .fk-ar { transition: transform .24s var(--ease) }
+.fk-btn:hover .fk-ar, .fk-btn:focus-visible .fk-ar { transform: translateX(3px) }
+.fk-rule { height: 1px; background: var(--rule) }
+.fk-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s var(--ease) }
+.fk-u:hover, .fk-u:focus-visible { background-size: 100% 1px }
+
+/* the closing call */
+.fk-cta { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; align-items: end; padding: clamp(56px, 7vw, 104px) 0 clamp(36px, 4.4vw, 64px) }
+.fk-cta .fk-eyebrow { grid-column: 1 / -1; margin: 0 }
+.fk-cta .fk-h { grid-column: 1 / 9; font-size: clamp(40px, 5.6vw, 84px) }
+.fk-side { grid-column: 9 / 13; display: flex; flex-direction: column; gap: 22px }
+.fk-side p { font-size: 17px; line-height: 1.5; color: var(--mute); max-width: 34ch }
+
+/* link columns */
+.fk-cols { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: clamp(32px, 3.6vw, 52px) 0 clamp(40px, 4.4vw, 64px) }
+.fk-col { grid-column: span 2 }
+.fk-col.fk-wide { grid-column: span 3 }
+.fk-col h3 { margin-bottom: 16px }
+.fk-col ul { list-style: none; display: grid; gap: 6px }
+.fk-col li a { font: 500 15px/1.45 var(--text); display: inline-block; padding: 2px 0 }
+.fk-col .fk-note { font: 400 12px/1 var(--mono); color: var(--mute); margin-left: 8px; letter-spacing: .04em }
+.fk-info p { font-size: 15px; line-height: 1.5; margin-bottom: 14px }
+.fk-info b { font-weight: 600 }
+.fk-info span { color: var(--mute) }
+.fk-meta { display: flex; flex-direction: column; gap: 16px; align-items: flex-end; text-align: right; grid-column: -4 / -1 }
+.fk-socials { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: flex-end; list-style: none }
+.fk-socials a { font: 500 15px/1.4 var(--text); display: inline-block; padding: 4px 0 }
+.fk-socials a span { font-size: .8em; color: var(--mute); margin-left: 3px }
+.fk-top { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font: 500 15px/1 var(--text); cursor: pointer; background: none; border: 0; color: inherit }
+.fk-top svg { width: 36px; height: 36px; flex: none }
+.fk-top .fk-trk { stroke: var(--rule-strong) }
+.fk-top .fk-bar { stroke: var(--turn); stroke-dasharray: 100; stroke-dashoffset: calc(100 - 100 * var(--read, 0)) }
+.fk-top:hover path { transform: translateY(-2px); transition: transform .24s var(--ease) }
+
+/* the floor: legal row + the name */
+.fk-legal { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: center; padding-top: clamp(22px, 2.6vw, 36px); font: 400 14px/1.45 var(--text); color: var(--board-mute) }
+.fk-legal ul { display: flex; flex-wrap: wrap; gap: 4px 22px; list-style: none }
+.fk-legal a { display: inline-block; padding: 4px 0 }
+.fk-legal a:hover { color: var(--board-ink) }
+.fk-wm { position: relative; width: 100%; margin-top: clamp(8px, 1.2vw, 18px); overflow: clip; overflow-clip-margin: 2px; height: 22vw }
+.fk-wl { position: absolute; left: 0; top: 0; white-space: pre; line-height: 1; font-family: var(--display); font-weight: var(--display-w); font-kerning: normal; font-synthesis: none; color: var(--board-ink); visibility: hidden }
+.fk-wl i { font-style: normal; color: var(--wm-mark, inherit) }
+.fk-wm[data-lines="1"] .fk-wl[data-set="1"], .fk-wm[data-lines="2"] .fk-wl[data-set="2"] { visibility: visible }
+
+/* ------------------------------------------------ layout: index */
+.fk-ix { columns: 3; column-gap: 48px; padding: clamp(40px, 4.4vw, 64px) 0 clamp(24px, 2.6vw, 36px) }
+.fk-grp { break-inside: avoid; display: grid; grid-template-columns: 48px 1fr; padding-bottom: 22px }
+.fk-grp .fk-letter { font: var(--display-w) 34px/1.1 var(--display); color: var(--turn); font-synthesis: none }
+.fk-grp ul { list-style: none; display: grid }
+.fk-grp a { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: baseline; font: 500 15px/2 var(--text) }
+.fk-lead { height: 2px; align-self: end; margin-bottom: .55em; background: radial-gradient(circle, var(--mute) 1px, transparent 1.3px) 0 0 / 6px 2px repeat-x; transform-origin: 0 50%; transform: scaleX(var(--dots, 1)) }
+.fk-pg { font: 400 12px/1 var(--mono); color: var(--mute); letter-spacing: .04em }
+.fk-ixbar { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; align-items: center; padding: 20px 0 clamp(36px, 4vw, 56px); border-top: 1px solid var(--rule) }
+.fk-ixbar .fk-socials { grid-column: 1 / 5; justify-content: flex-start }
+.fk-ixbar .fk-visitline { grid-column: 5 / 10; font-size: 15px; color: var(--mute) }
+.fk-ixbar .fk-visitline b { color: var(--ink); font-weight: 600 }
+.fk-ixbar .fk-top { grid-column: 10 / 13; justify-self: end }
+
+/* ------------------------------------------------ layout: dispatch */
+.fk-dp { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: clamp(56px, 7vw, 104px) 0 clamp(36px, 4.4vw, 60px) }
+.fk-dp .fk-lead-in { grid-column: 1 / 7 }
+.fk-dp .fk-h { font-size: clamp(38px, 4.6vw, 68px); line-height: 1.02 }
+.fk-form { margin-top: 32px; max-width: 560px }
+.fk-field { position: relative; display: flex; align-items: center }
+.fk-field::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--rule-strong); transform-origin: 0 50%; transform: scaleX(var(--field, 1)); transition: height .2s var(--ease), background-color .2s var(--ease) }
+.fk-form[data-state="typing"] .fk-field::after { height: 2px; background: var(--ink) }
+.fk-form[data-state="error"] .fk-field::after { height: 2px; background: var(--error) }
+.fk-field input { flex: 1; min-width: 0; min-height: 60px; background: none; border: 0; color: var(--ink); font: 400 19px/1 var(--text); outline: none; caret-color: var(--turn) }
+.fk-field input:focus-visible { outline: none } /* the field's focus is its rule, drawn 2px in ink */
+.fk-field input::placeholder { color: var(--mute); opacity: 1 }
+.fk-field button { border: 0; background: none; color: var(--turn); font: 600 16px/1 var(--text); padding: 12px 4px; cursor: pointer; min-height: 44px }
+.fk-form .fk-fine { margin-top: 12px; font-size: 14px; color: var(--mute); min-height: 21px }
+.fk-form[data-state="error"] .fk-fine { color: var(--error) }
+.fk-form .fk-sent { display: none; min-height: 60px; align-items: center; gap: 14px; font: 500 19px/1.3 var(--text); border-bottom: 1px solid var(--rule-strong) }
+.fk-form .fk-sent::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--turn); flex: none }
+.fk-form[data-state="sent"] .fk-field { display: none }
+.fk-form[data-state="sent"] .fk-sent { display: flex }
+.fk-form[data-state="sending"] button { opacity: .6 }
+.fk-issues { grid-column: 8 / 13; list-style: none }
+.fk-issues h3 { padding-bottom: 12px; border-bottom: 1px solid var(--rule) }
+.fk-issues a { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); font: 500 16px/1.35 var(--text); align-items: baseline }
+.fk-issues .fk-no { font: 400 13px/1 var(--mono); color: var(--turn) }
+.fk-issues .fk-d { font: 400 13px/1 var(--mono); color: var(--mute) }
+
+/* ------------------------------------------------ layout: place */
+.fk-pl { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: clamp(56px, 7vw, 104px) 0 clamp(32px, 3.6vw, 52px); align-items: start }
+.fk-pl .fk-say { grid-column: 1 / 6 }
+.fk-pl .fk-h { font-size: clamp(40px, 5vw, 76px); line-height: .96 }
+.fk-pl address { font-style: normal; margin-top: 24px; font-size: 17px; line-height: 1.5 }
+.fk-pl address a { display: inline-block; padding: 2px 0 }
+.fk-pl .fk-btns { margin-top: 24px }
+.fk-map { grid-column: 6 / 10; position: relative; aspect-ratio: 1 / 1; background: var(--block); box-shadow: inset 0 0 0 1px var(--rule) }
+.fk-map svg { position: absolute; inset: 0; width: 100%; height: 100% }
+.fk-map .fk-st { stroke: var(--sheet); fill: none; stroke-linecap: butt; stroke-linejoin: round }
+.fk-map .fk-park { fill: var(--park) }
+.fk-map .fk-water { fill: var(--water) }
+.fk-map .fk-rt { stroke: var(--accent); fill: none; stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--route, 1)) }
+.fk-map .fk-pin { fill: var(--accent) }
+.fk-map .fk-ring { fill: none; stroke: var(--accent); stroke-width: .4; opacity: var(--route, 1) }
+.fk-mapl { position: absolute; transform-origin: 0 100%; font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--map-label); white-space: nowrap; pointer-events: none }
+.fk-mapl.fk-here { color: var(--ink); font-size: 13px }
+.fk-mapl.fk-from { color: var(--turn) }
+.fk-mapl.fk-n { right: 10px; top: 10px }
+.fk-hours { grid-column: 10 / 13 }
+.fk-hours h3 { padding-bottom: 12px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px }
+.fk-hours h3 b { font-weight: 500; color: var(--turn) }
+.fk-hours table { width: 100%; border-collapse: collapse; font: 400 15px/1 var(--text) }
+.fk-hours td { padding: 12px 0; border-bottom: 1px solid var(--rule); color: var(--mute) }
+.fk-hours td + td { text-align: right; font-family: var(--mono); font-size: 14px }
+.fk-hours tr.fk-today td { color: var(--ink); font-weight: 600 }
+.fk-hours tr.fk-today td:first-child::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--turn); margin-right: 10px; vertical-align: 1px }
+
+/* ------------------------------------------------ the demo page above the footer */
+.fk-page { font: 400 17px/1.55 var(--text); -webkit-font-smoothing: antialiased }
+.fk-page .fk-in { padding-top: clamp(64px, 9vw, 140px); padding-bottom: clamp(32px, 4vw, 56px) }
+.fk-page .fk-above { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: clamp(40px, 6vw, 88px) 0; border-top: 1px solid var(--rule) }
+.fk-page .fk-above:first-child { border-top: 0; padding-top: 0 }
+.fk-page .fk-above .fk-label { grid-column: 1 / 4; padding-top: .6em }
+.fk-page .fk-above .fk-h { grid-column: 4 / 12; font-size: clamp(30px, 3.6vw, 52px); line-height: 1.08 }
+.fk-page .fk-above p:not(.fk-label) { grid-column: 4 / 11; color: var(--mute); max-width: 60ch }
+.fk-page .fk-above:first-child .fk-h { font-size: clamp(48px, 7vw, 108px); line-height: .96; grid-column: 1 / 12 }
+.fk-page .fk-above:first-child .fk-label { grid-column: 1 / -1 }
+.fk-page .fk-above:first-child p:not(.fk-label) { grid-column: 1 / 7; font-size: 19px }
+
+/* ------------------------------------------------ tablet */
+@media (max-width: 1100px) {
+  .fk-cta .fk-h { grid-column: 1 / -1 }
+  .fk-side { grid-column: 1 / -1; flex-direction: row; align-items: end; justify-content: space-between; flex-wrap: wrap }
+  .fk-col, .fk-col.fk-wide { grid-column: span 3 }
+  .fk-cols .fk-meta { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; text-align: left; padding-top: 16px; border-top: 1px solid var(--rule) }
+  .fk-socials { justify-content: flex-start }
+  .fk-ix { columns: 2 }
+  .fk-pl .fk-say { grid-column: 1 / 7 }
+  .fk-map { grid-column: 7 / 13 }
+  .fk-hours { grid-column: 1 / -1 }
+  .fk-dp .fk-lead-in, .fk-issues { grid-column: 1 / -1 }
+}
+/* ------------------------------------------------ phone */
+@media (max-width: 760px) {
+  .fk { font-size: 16px }
+  .fk-cta, .fk-cols, .fk-dp, .fk-pl { grid-template-columns: repeat(2, 1fr); gap: 20px 16px }
+  .fk-cta .fk-h { font-size: clamp(40px, 11.4vw, 54px) }
+  .fk-side { flex-direction: column; align-items: stretch }
+  .fk-side p { font-size: 16px }
+  .fk-btn { font-size: 16px; flex: 1 1 auto }
+  .fk-col, .fk-col.fk-wide { grid-column: span 1 }
+  .fk-col.fk-info { grid-column: 1 / -1 }
+  .fk-form .fk-fine, .fk-col li a, .fk-socials a, .fk-top, .fk-info p, .fk-grp a, .fk-issues a, .fk-hours table, .fk-ixbar .fk-visitline { font-size: 16px }
+  .fk-col li a { padding: 8px 0 }
+  .fk-col ul { gap: 0 }
+  .fk-cols .fk-meta { flex-wrap: wrap; gap: 8px 16px }
+  .fk-legal { font-size: 16px; flex-direction: column; align-items: flex-start; padding-top: 28px }
+  .fk-legal a { padding: 8px 0 }
+  .fk-wm { margin-top: 24px }
+  .fk-ix { columns: 1 }
+  .fk-grp a { line-height: 2.6 }
+  .fk-ixbar { grid-template-columns: 1fr; gap: 12px }
+  .fk-ixbar > * { grid-column: 1 / -1 !important; justify-self: start !important }
+  .fk-dp .fk-lead-in, .fk-issues, .fk-pl .fk-say, .fk-map, .fk-hours { grid-column: 1 / -1 }
+  .fk-dp .fk-h { font-size: clamp(36px, 10vw, 48px) }
+  .fk-issues a { grid-template-columns: 56px 1fr }
+  .fk-issues .fk-d { display: none }
+  .fk-hours td + td { font-size: 16px }
+  .fk-page { font-size: 16px }
+  .fk-page .fk-above { grid-template-columns: 1fr; gap: 14px }
+  .fk-page .fk-above > * { grid-column: 1 / -1 !important }
+  .fk-page .fk-above:first-child p:not(.fk-label) { font-size: 17px }
+}
+
+/* ------------------------------------------------ reduced motion: the finished state, the sheet already off */
+.fk.fk-still .fk-board { position: relative }
+.fk.fk-still .fk-shade { display: none }
+.fk.fk-still .fk-floor { transform: none !important }
+.fk.fk-still { --lift: 0 !important; --dots: 1 !important; --route: 1 !important; --field: 1 !important }
+.fk-rec *, .fk-rec *::before, .fk-rec *::after { transition: none !important }
+@media (prefers-reduced-motion: reduce) {
+  .fk *, .fk *::before, .fk *::after { transition: none !important }
+}

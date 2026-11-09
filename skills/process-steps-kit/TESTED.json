@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/ashby/process.json out/ashby",
+    "node scripts/check.mjs out/ashby/index.html",
+    "node scripts/build.mjs examples/northfold/process.json out/northfold",
+    "node scripts/check.mjs out/northfold/index.html",
+    "node scripts/record.mjs out/ashby/index.html --moments",
+    "node scripts/record.mjs out/ashby/index.html --seconds 15.7 --poster 8.95",
+    "node scripts/record.mjs out/northfold/index.html --still 8.95 --size 390x844 --scale 2"
+  ],
+  "agents": []
+}

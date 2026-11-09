@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-09",
+  "checks": [
+    "node scripts/build.mjs examples/margin-27/event.json out/margin-27",
+    "node scripts/check.mjs out/margin-27/index.html",
+    "node scripts/build.mjs examples/low-light/event.json out/low-light",
+    "node scripts/check.mjs out/low-light/index.html",
+    "node scripts/record.mjs out/margin-27/index.html",
+    "node scripts/record.mjs out/low-light/index.html"
+  ],
+  "agents": []
+}

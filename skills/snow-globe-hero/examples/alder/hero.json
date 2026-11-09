@@ -1,0 +1,51 @@
+{
+  "composition": "editorial",
+  "brand": { "name": "Alder & Thaw", "href": "/" },
+  "nav": [
+    { "label": "Menu", "href": "/menu" },
+    { "label": "The room", "href": "/room" },
+    { "label": "Hours", "href": "/hours" }
+  ],
+  "action": { "label": "Find us", "href": "/find-us" },
+  "hero": {
+    "title": "Stay until\nit settles.",
+    "lede": "A winter café on the harbour steps. Rye buns from seven, cocoa thick enough to stand a spoon in, and the window seat for as long as you like.",
+    "cta": { "label": "See the winter menu", "href": "/menu/winter" }
+  },
+  "theme": {
+    "mode": "light",
+    "rules": "off",
+    "background": "#9fa0a1",
+    "plate": "#ece6da",
+    "ink": "#1f1c19",
+    "accent": "#a9432c",
+    "fonts": { "display": "Fraunces", "body": "Inter", "mono": "IBM Plex Mono", "weight": 560, "advance": 0.52 }
+  },
+  "effect": {
+    "scene": "cafe",
+    "flakeKind": "snow",
+    "flakes": 260,
+    "wall": "#929599",
+    "stone": "#9fa0a1",
+    "ledge": "#a6a6a3",
+    "paint": "#211d1a",
+    "sun": "#ffe1b8",
+    "sunStrength": 1.55,
+    "fill": "#c6cdd8",
+    "base": "walnut",
+    "lipLight": 0,
+    "polish": 0,
+    "cycle": 14,
+    "shakeAt": 2.2,
+    "shake": 1,
+    "follow": true,
+    "grain": 0.5
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Alder & Thaw: a winter café on the harbour steps",
+    "description": "Rye buns from seven, thick cocoa and the window seat for as long as you like. A winter café on the harbour steps.",
+    "url": "https://alder-thaw.example/",
+    "lang": "en"
+  }
+}

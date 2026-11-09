@@ -1,0 +1,82 @@
+{
+  "composition": "editorial",
+  "brand": {
+    "name": "Halde Audio",
+    "href": "/"
+  },
+  "nav": [
+    {
+      "label": "H2 headphones",
+      "href": "/h2"
+    },
+    {
+      "label": "Sound",
+      "href": "/sound"
+    },
+    {
+      "label": "Journal",
+      "href": "/journal"
+    }
+  ],
+  "action": {
+    "label": "Order the H2",
+    "href": "/order"
+  },
+  "hero": {
+    "title": "Every word\narrives *intact.*",
+    "lede": "The H2 is a wireless headphone built around one lossless link: 24-bit sound that locks in under a second and holds.",
+    "cta": {
+      "label": "Hear the H2",
+      "href": "/h2"
+    },
+    "link": {
+      "label": "Compare codecs",
+      "href": "/codecs"
+    }
+  },
+  "theme": {
+    "mode": "light",
+    "background": "#efebe4",
+    "ink": "#171513",
+    "accent": "#c8361f",
+    "fonts": {
+      "display": "Instrument Serif",
+      "body": "Inter",
+      "mono": "IBM Plex Mono",
+      "weight": 400,
+      "advance": 0.46
+    },
+    "rules": "off"
+  },
+  "effect": {
+    "picture": "halde.jpg",
+    "focusX": 0.7,
+    "focusY": 0.5,
+    "phoneFocusX": 0.8,
+    "cycle": 12,
+    "acquire": 2.4,
+    "fade": 1.1,
+    "refresh": "rows",
+    "block": 16,
+    "mosh": 0.7,
+    "tear": 0.6,
+    "roll": true,
+    "chroma": 0.8,
+    "burst": true,
+    "buffer": "#e4dfd6",
+    "blanking": "#d6ccbc",
+    "grade": 3.6,
+    "follow": true,
+    "grain": 0.35
+  },
+  "motion": {
+    "speed": 1,
+    "pointer": true
+  },
+  "meta": {
+    "title": "Halde Audio H2: wireless headphones with a lossless link",
+    "description": "24-bit wireless sound that locks in under a second.",
+    "url": "https://halde-audio.example/",
+    "lang": "en"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-09",
+  "checks": [
+    "node scripts/build.mjs examples/kestle/rail.json out/kestle",
+    "node scripts/check.mjs out/kestle/index.html",
+    "node scripts/build.mjs examples/larder/rail.json out/larder",
+    "node scripts/check.mjs out/larder/index.html",
+    "node scripts/record.mjs out/kestle/index.html",
+    "node scripts/record.mjs out/larder/index.html"
+  ],
+  "agents": []
+}

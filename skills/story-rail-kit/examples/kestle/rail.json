@@ -1,0 +1,44 @@
+{
+  "site": "https://kestle.example",
+  "page": { "brand": "Kestle Varga Architects", "nav": ["Practice", "Work", "Writing", "Contact"] },
+  "theme": {
+    "mode": "light",
+    "bg": "#f1efe9", "surface": "#e9e6de", "ink": "#191a17", "mute": "#55574f", "rule": "#cfccc1",
+    "accent": "#2b44c4", "onAccent": "#f4f3ee",
+    "display": "geist", "mono": "plex", "radius": 2
+  },
+  "head": {
+    "eyebrow": "Selected work · 2019–2026",
+    "title": "Buildings we went back to _measure_.",
+    "dek": "{Count} buildings, each with one thing we checked after the keys were handed over."
+  },
+  "link": "See the project",
+  "cards": [
+    { "kind": "wide", "name": "Saltmarsh House", "meta": "Residential · 2025",
+      "claim": "Sits a metre below the sea wall, so every room borrows the horizon.",
+      "href": "/work/saltmarsh-house",
+      "media": { "drawn": "saltmarsh", "alt": "A long, low timber house in front of a concrete sea wall, with marsh grass and a strip of standing water in front." } },
+    { "kind": "tall", "name": "Kiln Lane", "meta": "Housing · 2024",
+      "claim": "One stair, cast in a single pour, carries four floors of flats.",
+      "href": "/work/kiln-lane",
+      "media": { "drawn": "stair", "alt": "A pale concrete stair climbing a board-marked wall in light from a rooflight." } },
+    { "kind": "quote", "label": "Client · 2023",
+      "text": "They drew the light in our classrooms before they drew a single wall.",
+      "by": "Ruth Okafor", "role": "Head, Ferrier Primary", "href": "/writing/ferrier-light", "link": "Read the story" },
+    { "kind": "wide", "name": "Ferrier Library", "meta": "Civic · 2023",
+      "claim": "Reading rooms face north, and nobody has drawn a blind since opening day.",
+      "href": "/work/ferrier-library",
+      "media": { "drawn": "library", "alt": "A terracotta facade of deep vertical fins whose shadows move across the windows as the sun moves." } },
+    { "kind": "number", "figure": "41", "unit": "%",
+      "label": "less embodied carbon than our 2019 baseline.",
+      "source": "Measured at completion, 6 projects, 2021–2025",
+      "compare": [["2019", 100], ["2025", 59]],
+      "href": "/practice/carbon", "link": "See the method" },
+    { "kind": "tall", "name": "Orchard Court", "meta": "Housing · 2022",
+      "claim": "Twelve homes around six apple trees that were there first.",
+      "href": "/work/orchard-court",
+      "media": { "drawn": "orchard", "alt": "A plan of a paved courtyard ringed by homes, with six round tree canopies kept in place." } }
+  ],
+  "end": { "title": "All 32 projects", "note": "Index by year and type", "href": "/work" },
+  "behaviour": { "autoplay": false, "hint": "Drag, swipe or use ← →" }
+}

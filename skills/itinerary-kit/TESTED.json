@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-09",
+  "checks": [
+    "node scripts/build.mjs examples/hollin-walking/trip.json out/hollin-walking",
+    "node scripts/check.mjs out/hollin-walking/index.html",
+    "node scripts/build.mjs examples/drywash-expeditions/trip.json out/drywash-expeditions",
+    "node scripts/check.mjs out/drywash-expeditions/index.html",
+    "node scripts/record.mjs out/hollin-walking/index.html",
+    "node scripts/record.mjs out/drywash-expeditions/index.html"
+  ],
+  "agents": []
+}

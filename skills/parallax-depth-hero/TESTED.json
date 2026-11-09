@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-08",
+  "kit": "motion-heroes-v2",
+  "checks": [
+    "node scripts/build.mjs examples/harrow-fell/hero.json out/harrow-fell",
+    "node scripts/still.mjs out/harrow-fell/index.html",
+    "node scripts/check.mjs out/harrow-fell/index.html",
+    "node scripts/coverage.mjs out/harrow-fell/index.html",
+    "node scripts/build.mjs examples/kestel-roof/hero.json out/kestel-roof",
+    "node scripts/still.mjs out/kestel-roof/index.html",
+    "node scripts/check.mjs out/kestel-roof/index.html",
+    "node scripts/coverage.mjs out/kestel-roof/index.html",
+    "node scripts/record.mjs out/harrow-fell/index.html --seconds 9 --size 1920x1080 --fps 30 --poster 0",
+    "node scripts/record.mjs out/kestel-roof/index.html --still 0 --size 1920x1080 --png out/second.png",
+    "node scripts/record.mjs out/harrow-fell/index.html --still 0 --size 390x844 --scale 2 --png out/phone.png"
+  ],
+  "agents": []
+}

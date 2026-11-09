@@ -1,0 +1,319 @@
+{
+  "brand": "Linnet Physio",
+  "title": "Book a session · Linnet Physio, Edinburgh",
+  "lang": "en",
+  "description": "Book a physiotherapy session at Linnet Physio on Dundas Street: real free times for each physio, in Edinburgh time.",
+  "theme": {
+    "page": "#f1efe9",
+    "surface": "#fbfaf6",
+    "ink": "#17201d",
+    "accent": "#235a4c",
+    "onAccent": "#f6fbf8",
+    "hold": "#b0461f",
+    "voice": "serif",
+    "corners": "soft"
+  },
+  "eyebrow": "Book a session · Linnet Physio",
+  "headline": "Every time below is _actually free._",
+  "shop": {
+    "name": "Linnet Physio",
+    "address": "14 Dundas Street, Edinburgh",
+    "where": "14 Dundas Street, room 2",
+    "city": "Edinburgh",
+    "tz": "Europe/London",
+    "phone": "0131 496 0732"
+  },
+  "hours": {
+    "mon-thu": "08:00-19:00",
+    "fri": "08:00-18:00",
+    "sat": "09:00-13:00"
+  },
+  "closed": [
+    {
+      "from": "2026-11-30",
+      "label": "St Andrew's Day"
+    },
+    {
+      "from": "2026-12-25",
+      "to": "2026-12-26",
+      "label": "Christmas"
+    }
+  ],
+  "labels": {
+    "service": "Treatment"
+  },
+  "peopleLabel": "Physio",
+  "people": [
+    {
+      "id": "mairi",
+      "name": "Mairi Doyle",
+      "role": "MSK physio",
+      "shifts": {
+        "mon": "08:00-16:00",
+        "tue": "08:00-16:00",
+        "thu": "08:00-16:00",
+        "fri": "08:00-13:00"
+      }
+    },
+    {
+      "id": "tom",
+      "name": "Tom Achebe",
+      "role": "Sports physio",
+      "shifts": {
+        "mon": "11:00-19:00",
+        "wed": "11:00-19:00",
+        "fri": "10:00-18:00",
+        "sat": "09:00-13:00"
+      }
+    },
+    {
+      "id": "priya",
+      "name": "Priya Nair",
+      "role": "Pelvic health",
+      "shifts": {
+        "tue-thu": "09:00-17:00"
+      },
+      "away": [
+        [
+          "2026-12-14",
+          "2026-12-18"
+        ]
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "first",
+      "name": "First assessment",
+      "desc": "History, tests and a plan you take home.",
+      "minutes": 60,
+      "buffer": 15,
+      "price": 68,
+      "who": [
+        "mairi",
+        "tom"
+      ]
+    },
+    {
+      "id": "follow",
+      "name": "Follow-up",
+      "desc": "Treatment and progressing your exercises.",
+      "minutes": 40,
+      "buffer": 10,
+      "price": 52,
+      "who": [
+        "mairi",
+        "tom",
+        "priya"
+      ]
+    },
+    {
+      "id": "massage",
+      "name": "Sports massage",
+      "desc": "Deep tissue work, no assessment.",
+      "minutes": 30,
+      "buffer": 5,
+      "price": 40,
+      "who": [
+        "tom"
+      ]
+    },
+    {
+      "id": "pelvic",
+      "name": "Pelvic health assessment",
+      "desc": "A private room and an hour, with Priya.",
+      "minutes": 60,
+      "buffer": 15,
+      "price": 75,
+      "who": [
+        "priya"
+      ]
+    }
+  ],
+  "rules": {
+    "step": 30,
+    "notice": 120,
+    "horizon": 28,
+    "hold": 10,
+    "weekStart": "mon"
+  },
+  "money": {
+    "currency": "GBP",
+    "locale": "en-GB"
+  },
+  "bookings": [
+    { "person": "mairi", "start": "2026-11-09T08:00", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-09T09:15", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-09T11:05", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-09T11:55", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-09T12:45", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-09T13:35", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-09T14:25", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-09T11:00", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-09T12:15", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-09T15:00", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-09T15:50", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-09T17:05", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-09T17:40", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-10T08:00", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-10T10:20", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-10T11:10", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-10T13:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-10T09:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-10T10:15", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-10T11:30", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-10T12:45", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-10T14:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-10T15:15", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-11T11:00", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-11T16:50", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-11T09:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-11T10:15", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-11T11:30", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-11T12:45", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-11T14:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-11T15:15", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-12T09:00", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-12T09:50", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-12T12:05", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-12T12:55", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-12T14:40", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-12T09:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-12T10:15", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-12T11:30", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-12T12:45", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-12T14:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-12T15:15", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-13T12:00", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-13T12:50", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-13T14:05", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-13T15:20", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-14T09:00", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-14T09:50", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-14T10:25", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-16T08:00", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-16T08:50", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-16T10:05", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-16T10:55", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-16T12:15", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-16T13:05", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-16T14:20", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-16T15:10", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-16T11:00", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-16T11:50", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-16T13:40", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-16T14:15", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-16T14:50", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-16T15:25", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-16T16:00", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-16T16:35", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-17T10:30", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-17T12:45", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-17T10:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-17T11:15", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-17T14:05", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-18T12:30", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-18T13:05", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-18T15:20", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-18T17:40", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-18T10:30", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-18T13:15", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-18T16:00", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-19T10:30", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-19T11:20", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-19T09:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-19T11:45", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-19T13:00", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-19T13:50", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-19T15:05", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-19T15:55", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-20T08:00", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-20T08:50", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-20T09:40", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-20T10:55", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-20T11:45", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-20T10:00", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-20T10:35", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-20T11:50", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-20T15:35", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-20T16:50", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-21T09:00", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-21T09:35", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-21T10:50", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-21T11:25", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-23T09:00", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-23T12:45", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-23T14:30", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-23T12:30", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-23T15:20", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-23T16:35", "minutes": 30, "buffer": 5 },
+    { "person": "mairi", "start": "2026-11-24T09:30", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-24T10:20", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-24T11:35", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-24T09:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-24T13:15", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-24T14:05", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-24T15:20", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-24T16:10", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-25T13:00", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-25T16:45", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-25T17:35", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-25T09:00", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-25T11:20", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-25T12:10", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-25T14:25", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-25T15:15", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-26T08:00", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-26T09:00", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-26T09:50", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-26T10:40", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-26T11:30", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-26T13:50", "minutes": 60, "buffer": 15 },
+    { "person": "priya", "start": "2026-11-26T15:05", "minutes": 40, "buffer": 10 },
+    { "person": "priya", "start": "2026-11-26T15:55", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-27T08:00", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-27T09:15", "minutes": 60, "buffer": 15 },
+    { "person": "mairi", "start": "2026-11-27T11:00", "minutes": 40, "buffer": 10 },
+    { "person": "mairi", "start": "2026-11-27T11:50", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-27T10:00", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-27T10:35", "minutes": 40, "buffer": 10 },
+    { "person": "tom", "start": "2026-11-27T11:25", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-27T12:00", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-27T14:15", "minutes": 60, "buffer": 15 },
+    { "person": "tom", "start": "2026-11-27T15:30", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-28T09:00", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-28T09:35", "minutes": 30, "buffer": 5 },
+    { "person": "tom", "start": "2026-11-28T12:10", "minutes": 40, "buffer": 10 }
+  ],
+  "endpoint": {
+    "url": "https://linnet.example/api/bookings",
+    "adapter": "json",
+    "hold": "https://linnet.example/api/holds"
+  },
+  "email": "desk@linnet.example",
+  "card": {
+    "title": "Your appointment",
+    "cta": "Confirm booking",
+    "policy": "Free to move or cancel up to 24 h before. No card needed.",
+    "ref": "LP"
+  },
+  "cancelList": true,
+  "preview": {
+    "now": "2026-11-09T13:05:00Z",
+    "tz": "Europe/London",
+    "pin": true,
+    "script": {
+      "service": "follow",
+      "person": "mairi",
+      "day": "2026-11-10",
+      "times": [
+        "09:00",
+        "12:00"
+      ],
+      "draft": {
+        "name": "Callum Reid",
+        "contact": "07700 900431"
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "brand": "Northfold",
+  "studio": "Northfold",
+  "eyebrow": "Process · Northfold Studio",
+  "headline": "An identity in _eight weeks,_ built in the open.",
+  "lede": "You see the thinking before the logo and the logo before the system. Every phase ends in a file you keep, whatever happens next.",
+  "theme": {
+    "page": "#101110", "ink": "#ece9e1", "accent": "#ff5b38", "onAccent": "#160803",
+    "you": "#b9a9ff", "stage": "#181917", "paper": "#ece9e1", "paperInk": "#141412", "paperDark": "#20211e",
+    "display": "bricolage"
+  },
+  "calendar": { "total": 40, "week": 5 },
+  "price": { "kind": "fixed", "label": "Fixed fee", "value": 21000, "currency": "£" },
+  "yourTime": { "hours": 9 },
+  "steps": [
+    {
+      "title": "Intro call", "who": "Ines Okafor, founder", "start": 0, "length": 1,
+      "summary": "We ask what is broken, who it is for, and what would make this a waste of money.",
+      "give": "45 minutes and an honest version of the brief",
+      "get": "A one-page scope and a fixed fee within 48 hours",
+      "pay": { "label": "Call", "free": true },
+      "you": [{ "day": 0, "minutes": 45 }],
+      "artifact": {
+        "kind": "invite", "alt": "A calendar invite for a 45-minute video call with three people and a three-point agenda",
+        "label": "Video call", "duration": "45 min", "title": "Intro: Kettle & Pike rebrand", "when": "Tue 4 Feb · 10:00–10:45",
+        "people": ["IO", "RP", "SK"], "agenda": [["10:00", "What is broken today"], ["10:15", "Who has to believe it"], ["10:30", "Budget, dates, who decides"]],
+        "accept": "Accept"
+      }
+    },
+    {
+      "title": "Strategy workshop", "who": "Ines and a strategist", "start": 1, "length": 7,
+      "summary": "One room, one wall, three hours. We leave with the sentence the whole identity has to prove.",
+      "give": "A half-day with your founders and one customer-facing person",
+      "get": "Positioning on one page, signed off before design starts",
+      "pay": { "label": "Phase 1", "amount": 3200 },
+      "you": [{ "day": 3, "minutes": 240 }, { "day": 7, "minutes": 30 }],
+      "artifact": {
+        "kind": "sheet", "style": "pairs", "alt": "A one-page positioning sheet: who it is for, what it stands against, the proof, the voice and what it must never be",
+        "meta": "Positioning · v3 · signed 11 Feb", "title": "The kettle that outlasts the kitchen.",
+        "rows": [["For", "People who buy one good thing, and keep it"], ["Against", "Appliances built to be replaced"], ["Proof", "Rebuildable base, 25-year parts"], ["Voice", "Plain, dry, a little proud"], ["Never", "Retro for its own sake"]]
+      }
+    },
+    {
+      "title": "Two routes", "who": "Two designers, working apart", "start": 8, "length": 12,
+      "summary": "Two distinct answers, never three near-twins. You choose one, or we combine them with a reason.",
+      "give": "One feedback session, then a choice",
+      "get": "Two identity routes on 24 slides, each tried on your real materials",
+      "pay": { "label": "Phase 2", "amount": 7800 },
+      "you": [{ "day": 19, "minutes": 90 }],
+      "artifact": {
+        "kind": "slides", "alt": "Two presentation slides: route A, a serif wordmark with green and brass, and route B, a bold monogram with vermilion",
+        "slides": [
+          { "meta": "Route A · Heirloom", "mark": "Kettle & Pike", "style": "serif", "swatches": ["#3d6b4f", "#c9a15a", "#141412"] },
+          { "meta": "Route B · Workshop", "mark": "K&P", "style": "sans", "dark": true, "swatches": ["#ff5b38", "#ece9e1", "#5f5c55"] }
+        ]
+      }
+    },
+    {
+      "title": "Refine and apply", "who": "The lead designer on your route", "start": 20, "length": 10,
+      "summary": "The route meets the real world: small sizes, dark mode, a crowded shelf.",
+      "give": "Two short reviews",
+      "get": "Logo suite, type and colour, applied to site, deck and packaging",
+      "pay": { "label": "Phase 3", "amount": 4600 },
+      "you": [{ "day": 24, "minutes": 45 }, { "day": 29, "minutes": 45 }],
+      "artifact": {
+        "kind": "screen", "alt": "The new identity applied to the home page of the shop, with the headline Built to be rebuilt",
+        "url": "https://kettleandpike.example", "headline": "Built to be rebuilt.", "button": "Shop the K1",
+        "tile": { "color": "#3d6b4f", "letter": "K" }
+      }
+    },
+    {
+      "title": "Guidelines and files", "who": "A designer and a producer", "start": 30, "length": 10,
+      "summary": "Everything a new hire needs to use the brand without calling us.",
+      "give": "A handover call with whoever runs the brand next",
+      "get": "48-page guidelines and an organised file kit",
+      "pay": { "label": "Phase 4", "amount": 5400 },
+      "you": [{ "day": 39, "minutes": 60 }],
+      "artifact": {
+        "kind": "spread", "alt": "A spread from the guidelines, pages 31 and 32, on colour: moss leads and brass marks the hand",
+        "meta": "3.2 Colour", "title": "Moss leads. Brass only marks the hand.", "body": "Use moss for anything the customer touches first.",
+        "swatches": [["Moss", "#3d6b4f"], ["Brass", "#c9a15a"], ["Iron", "#141412"], ["Steam", "#d9d5cb"]], "pages": [31, 32]
+      }
+    }
+  ],
+  "demo": { "title": "Process", "nav": ["Work", "Start a project"], "footer": "Northfold Studio · Identity and brand systems · Invented for this example" }
+}

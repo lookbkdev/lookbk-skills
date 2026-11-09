@@ -1,0 +1,173 @@
+{
+  "layout": "dispatch",
+  "theme": {
+    "sheet": "#f5f1e8",
+    "ink": "#1c1a16",
+    "board": "#23392b",
+    "boardInk": "#efe8da",
+    "accent": "#23392b",
+    "onAccent": "#f5f1e8",
+    "turn": "#7c2c1c",
+    "display": "gloock",
+    "buttons": "square"
+  },
+  "brand": {
+    "name": "Ferrow",
+    "break": "Fer|row",
+    "legal": "Ferrow Outdoor Ltd · Registered in England 11840275",
+    "year": 2026
+  },
+  "columns": [
+    {
+      "title": "Collections",
+      "links": [
+        {
+          "label": "Lounge",
+          "href": "/lounge"
+        },
+        {
+          "label": "Dining",
+          "href": "/dining"
+        },
+        {
+          "label": "Shade",
+          "href": "/shade"
+        },
+        {
+          "label": "Planters",
+          "href": "/planters"
+        },
+        {
+          "label": "Accessories",
+          "href": "/accessories"
+        }
+      ]
+    },
+    {
+      "title": "Studio",
+      "links": [
+        {
+          "label": "About Ferrow",
+          "href": "/about"
+        },
+        {
+          "label": "Materials",
+          "href": "/materials"
+        },
+        {
+          "label": "Journal",
+          "href": "/journal"
+        },
+        {
+          "label": "Trade programme",
+          "href": "/trade"
+        }
+      ]
+    },
+    {
+      "title": "Help",
+      "links": [
+        {
+          "label": "Delivery",
+          "href": "/delivery"
+        },
+        {
+          "label": "Care guide",
+          "href": "/care"
+        },
+        {
+          "label": "25-year warranty",
+          "href": "/warranty"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "label": "Instagram",
+      "href": "https://instagram.com/"
+    },
+    {
+      "label": "Pinterest",
+      "href": "https://ferrow.example/pinterest"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://youtube.com/"
+    }
+  ],
+  "legalLinks": [
+    {
+      "label": "Privacy",
+      "href": "/privacy"
+    },
+    {
+      "label": "Terms",
+      "href": "/terms"
+    },
+    {
+      "label": "Cookies",
+      "href": "/cookies"
+    },
+    {
+      "label": "Accessibility",
+      "href": "/accessibility"
+    }
+  ],
+  "backToTop": {
+    "label": "Back to top"
+  },
+  "demo": {
+    "title": "Ferrow · Outdoor furniture in cast aluminium and teak",
+    "above": [
+      {
+        "label": "Ferrow · Outdoor furniture",
+        "heading": "Furniture that _stays out._",
+        "text": "Cast aluminium frames, plantation teak, powder coats tested through four winters on a Bristol roof. Every piece is made to be left outside."
+      },
+      {
+        "label": "From the trade",
+        "heading": "“We put forty of them on a hotel roof in Lisbon. Three summers in, the teak has gone silver and not one weld has moved.”",
+        "text": "Inês Carvalhal, head of interiors at a Lisbon hotel group"
+      },
+      {
+        "label": "The warranty",
+        "heading": "Twenty-five years on every frame, and a care guide for every season.",
+        "text": "Teak is oiled or left to silver; aluminium needs a rinse in spring. That is all."
+      }
+    ]
+  },
+  "dispatch": {
+    "eyebrow": "The Ferrow letter · monthly",
+    "headline": "One letter a month\n_from the workshop._",
+    "fine": "New pieces before they launch, care notes for the season. No offers.",
+    "placeholder": "you@example.com",
+    "button": "Subscribe",
+    "sent": "You are on the list. Letter No. 42 arrives on 1 December.",
+    "action": "#",
+    "issues": [
+      {
+        "no": "No. 41",
+        "title": "Why we let the teak go grey",
+        "date": "Oct",
+        "href": "/journal/41"
+      },
+      {
+        "no": "No. 40",
+        "title": "Forty chairs on a Lisbon roof",
+        "date": "Sep",
+        "href": "/journal/40"
+      },
+      {
+        "no": "No. 39",
+        "title": "The welder’s notebook",
+        "date": "Aug",
+        "href": "/journal/39"
+      }
+    ]
+  }
+}

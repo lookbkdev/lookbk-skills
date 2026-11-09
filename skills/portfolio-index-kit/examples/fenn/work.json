@@ -1,0 +1,116 @@
+{
+  "style": "ledger",
+  "site": {
+    "name": "Fenn Type Office",
+    "nav": [
+      { "label": "Work", "href": "#work" },
+      { "label": "Typefaces", "href": "https://fenn-type.example/typefaces" },
+      { "label": "Info", "href": "https://fenn-type.example/info" },
+      { "label": "Contact", "href": "mailto:studio@fenn-type.example" }
+    ],
+    "availability": "Taking projects from March 2027",
+    "statement": "Typefaces, and the things _they’re set in._",
+    "lede": "**Ilse Fenn and Joaquim Ruo**, a two-person studio drawing type and designing what it is used for: identities, posters, books and signs. Since 2014.",
+    "email": "studio@fenn-type.example",
+    "place": "Rotterdam"
+  },
+  "theme": { "mode": "light", "ground": "#f1ede4", "ink": "#16140f", "accent": "#b8361a", "display": "bricolage" },
+  "disciplines": ["Type design", "Posters", "Signage", "Books", "Identity"],
+  "preview": { "hover": [1, 3], "filter": "Type design", "open": 1 },
+  "projects": [
+    {
+      "slug": "gannet-sans", "title": "Gannet Sans", "client": "Fenn Type Office", "discipline": "Type design", "year": "2026",
+      "outcome": "A grotesk in 9 weights, licensed by 140 studios in year one",
+      "image": { "src": "media/gannet-sans.webp", "alt": "A specimen poster: a huge condensed Gg over four lines of Gannet Sans from thin to heavy." },
+      "case": {
+        "intro": "A condensed grotesk drawn for headlines that have to fit, in 9 weights from Thin to Heavy.",
+        "body": ["Gannet started as the lettering for a festival poster and grew into a family when three clients asked for the poster type by name. The narrow widths keep their counters open at small sizes, so the same family sets a 40-metre banner and a 9-point caption.", "The specimen poster is printed in one black on uncoated stock; the waterfall runs through four of the nine weights."],
+        "credits": [{ "role": "Type design", "name": "Ilse Fenn" }, { "role": "Engineering", "name": "Joaquim Ruo" }, { "role": "Specimen", "name": "Fenn Type Office" }, { "role": "Print", "name": "Drukkerij Velde" }],
+        "links": [{ "label": "Try Gannet Sans", "href": "https://fenn-type.example/typefaces/gannet" }]
+      }
+    },
+    {
+      "slug": "haverland-season", "title": "Haverland season 25/26", "client": "Haverland Philharmonic", "discipline": "Posters", "year": "2025",
+      "outcome": "38 concerts, one numeral system across every poster",
+      "image": { "src": "media/haverland-season.webp", "alt": "A season poster: the numbers 25 in red and 26 in blue overprinting on cream paper." },
+      "case": {
+        "intro": "One numeral system for a whole season: every poster is built from the date, overprinted in two inks.",
+        "body": ["The orchestra plays 38 concerts between September and June. Each poster sets the concert’s date as two overprinted numerals, so the season reads as one family on a wall of other posters."],
+        "credits": [{ "role": "Design", "name": "Ilse Fenn, Joaquim Ruo" }, { "role": "Type", "name": "Gannet Sans Heavy" }, { "role": "Print", "name": "Two-colour offset, Drukkerij Velde" }]
+      }
+    },
+    {
+      "slug": "kestrel-rail", "title": "Kestrel Rail wayfinding", "client": "Kestrel Rail", "discipline": "Signage", "year": "2025",
+      "outcome": "One sign family for 31 stations, drawn to read at 40 m",
+      "image": { "src": "media/kestrel-rail.webp", "alt": "A green platform sign reading Perron 4, Platform 4, on a white tiled station wall." },
+      "case": {
+        "intro": "A sign family for 31 stations, set in a version of Gannet Sans opened up to read at 40 metres.",
+        "body": ["We tested every sign at full size on the platforms before fabrication. The arrow, the pictograms and the type were drawn together, so a sign with no text still has the same rhythm as one with two languages."],
+        "credits": [{ "role": "Design", "name": "Ilse Fenn, Joaquim Ruo" }, { "role": "Client", "name": "Kestrel Rail" }, { "role": "Fabrication", "name": "Merel Signworks" }, { "role": "Photography", "name": "Teodor Halm" }, { "role": "Scope", "name": "31 stations, 1,900 signs" }]
+      }
+    },
+    {
+      "slug": "field-notes", "title": "Field Notes covers", "client": "Muro Press", "discipline": "Books", "year": "2024",
+      "outcome": "Twelve covers built on a single five-bar grid",
+      "image": { "src": "media/field-notes.webp", "alt": "Three book covers fanned on a table, green, cream and red, each with five bars." },
+      "case": {
+        "intro": "A series of twelve essays, each cover built from the same five bars set to the length of its chapters.",
+        "credits": [{ "role": "Design", "name": "Joaquim Ruo" }, { "role": "Publisher", "name": "Muro Press" }, { "role": "Type", "name": "Gannet Sans, Ostrava Serif" }]
+      }
+    },
+    {
+      "slug": "ostrava-serif", "title": "Ostrava Serif", "client": "Fenn Type Office", "discipline": "Type design", "year": "2024",
+      "outcome": "A text face drawn for 8 point on newsprint",
+      "image": { "src": "media/ostrava-serif.webp", "alt": "A specimen poster: a large italic ampersand on red baseline rules." },
+      "case": {
+        "intro": "A text serif with ink traps and short descenders, drawn for 8 point on newsprint.",
+        "credits": [{ "role": "Type design", "name": "Ilse Fenn" }, { "role": "Italic", "name": "Ilse Fenn, Mara Vos" }, { "role": "Engineering", "name": "Joaquim Ruo" }]
+      }
+    },
+    {
+      "slug": "orrin-biennale", "title": "Orrin Biennale", "client": "Orrin Foundation", "discipline": "Identity", "year": "2024",
+      "outcome": "A logo that gains weight every week of the show",
+      "image": { "src": "media/orrin-biennale.webp", "alt": "An orange poster with the word Orrin set five times, from thin to heavy, one weight for each week." },
+      "case": {
+        "intro": "An identity that grows with the show: the name gains one weight for each of its 5 weeks.",
+        "credits": [{ "role": "Design", "name": "Ilse Fenn, Joaquim Ruo" }, { "role": "Client", "name": "Orrin Foundation" }, { "role": "Type", "name": "Gannet Sans, 5 weights" }]
+      }
+    },
+    {
+      "slug": "tide-tables", "title": "Tide Tables LP", "client": "Saltmarsh Records", "discipline": "Posters", "year": "2023",
+      "outcome": "A sleeve printed in one ink, the dots set by hand",
+      "image": { "src": "media/tide-tables.webp", "alt": "A black record sleeve with cream halftone dots in rings, like ripples, over the word Saltmarsh." },
+      "case": {
+        "intro": "A record sleeve printed in a single cream ink on black board.",
+        "credits": [{ "role": "Design", "name": "Joaquim Ruo" }, { "role": "Label", "name": "Saltmarsh Records" }, { "role": "Print", "name": "Screen print, one colour" }]
+      }
+    },
+    {
+      "slug": "lumen-hall", "title": "Lumen Hall", "client": "Lumen Hall", "discipline": "Type design", "year": "2023",
+      "outcome": "A display face for a concert hall’s new name",
+      "image": { "src": "media/lumen-hall.webp", "alt": "A black specimen poster: Lum in outline above Hall set solid in cream." },
+      "case": {
+        "intro": "A display face cut for a concert hall’s new name, with an outline cut for its building.",
+        "credits": [{ "role": "Type design", "name": "Ilse Fenn" }, { "role": "Client", "name": "Lumen Hall" }, { "role": "Signage", "name": "Merel Signworks" }]
+      }
+    },
+    {
+      "slug": "kettle-hill", "title": "Kettle Hill Library", "client": "Kettle Hill Council", "discipline": "Signage", "year": "2022",
+      "outcome": "Twelve pictograms the children drew first",
+      "image": { "src": "media/kettle-hill.webp", "alt": "A grid of twelve green pictogram tiles, one in red, for a library." },
+      "case": {
+        "intro": "Twelve pictograms for a children’s library, each one drawn first by a reader aged 6 to 11.",
+        "credits": [{ "role": "Design", "name": "Ilse Fenn" }, { "role": "Workshops", "name": "Kettle Hill Library" }, { "role": "Client", "name": "Kettle Hill Council" }]
+      }
+    },
+    {
+      "slug": "paper-weight", "title": "Paper Weight", "client": "Muro Press", "discipline": "Books", "year": "2022",
+      "outcome": "A 240-page catalogue for a paper museum",
+      "image": { "src": "media/paper-weight.webp", "alt": "An open catalogue on a table: Paper Weight set large on the left page, text on the right." },
+      "case": {
+        "intro": "A 240-page catalogue for a museum of paper, printed on 6 stocks from its own collection.",
+        "credits": [{ "role": "Design", "name": "Joaquim Ruo" }, { "role": "Publisher", "name": "Muro Press" }, { "role": "Type", "name": "Ostrava Serif" }]
+      }
+    }
+  ]
+}

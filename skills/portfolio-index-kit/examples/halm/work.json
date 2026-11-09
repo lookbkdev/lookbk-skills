@@ -1,0 +1,106 @@
+{
+  "style": "caption",
+  "site": {
+    "name": "Teodor Halm",
+    "nav": [
+      { "label": "Work", "href": "#work" },
+      { "label": "Books", "href": "https://teodorhalm.example/books" },
+      { "label": "About", "href": "https://teodorhalm.example/about" },
+      { "label": "Contact", "href": "mailto:studio@teodorhalm.example" }
+    ],
+    "availability": "Booking winter light, Jan–Feb 2027",
+    "statement": "Buildings, at the _one hour_ they were drawn for.",
+    "lede": "**Architectural photographer** for practices, magazines and publishers. Large format and digital, based on the coast, working anywhere a building is finished.",
+    "email": "studio@teodorhalm.example",
+    "place": "On the coast",
+    "note": "9 projects · 2022–2026"
+  },
+  "theme": { "mode": "dark", "ground": "#0f0f0e", "ink": "#ebe7de", "accent": "#d8b878", "display": "instrument" },
+  "disciplines": ["Commission", "Editorial", "Personal", "Book"],
+  "preview": { "hover": [1, 3], "filter": "Commission", "open": 1 },
+  "projects": [
+    {
+      "slug": "reixa-house", "title": "Reixa House", "client": "Vell Arquitectos", "place": "Coastal plateau", "discipline": "Commission", "year": "2026",
+      "outcome": "Four winter mornings for the practice’s monograph",
+      "image": { "src": "media/reixa-house.webp", "alt": "A long low house at blue hour, its glass wall lit warm under a thin white roof, the sea behind." },
+      "case": {
+        "intro": "A house on a coastal plateau, photographed over four winter mornings for its architects’ monograph.",
+        "body": ["The house faces the sea along one long glass wall. The pictures were made in the twenty minutes before sunrise, when the room inside is as bright as the sky outside and the glass stops reflecting."],
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Architect", "name": "Vell Arquitectos" }, { "role": "Assistant", "name": "Mara Quill" }, { "role": "Retouching", "name": "Ines Rook" }, { "role": "Format", "name": "4×5 film and 100 MP digital" }]
+      }
+    },
+    {
+      "slug": "salt-archive", "title": "The Salt Archive", "client": "Brandt Okafor", "place": "Harbour quarter", "discipline": "Commission", "year": "2025",
+      "outcome": "A concrete archive at its one bright hour, shot as a 12 s loop",
+      "loop": { "src": "media/salt-archive.mp4", "poster": "media/salt-archive.webp", "alt": "A board-marked concrete archive in sun; the shadow of the building opposite slides across its windows.", "seconds": 12 },
+      "case": {
+        "intro": "A concrete archive photographed at the one hour its street lets the sun onto it, as stills and a 12 s loop.",
+        "body": ["The building opposite shades the facade for most of the day. For about an hour in the morning the shadow slides back across the windows; the loop is that hour, compressed."],
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Architect", "name": "Brandt Okafor" }, { "role": "Assistant", "name": "Mara Quill" }, { "role": "Format", "name": "Digital, locked off" }]
+      }
+    },
+    {
+      "slug": "quarry-chapel", "title": "Quarry Chapel", "client": "Plinth magazine", "place": "Upland quarry", "discipline": "Editorial", "year": "2025",
+      "outcome": "Twelve-page feature and the cover of issue 31",
+      "image": { "src": "media/quarry-chapel.webp", "alt": "A dark stone room lit by one vertical slot of daylight that falls on a small block." },
+      "case": {
+        "intro": "A stone chapel cut into a disused quarry, lit only by one slot in its roof.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Commissioned by", "name": "Plinth magazine" }, { "role": "Published", "name": "Issue 31, cover and 12 pages" }]
+      }
+    },
+    {
+      "slug": "pier-9-terminal", "title": "Pier 9 Terminal", "client": "Aldmouth Harbour Board", "place": "Aldmouth", "discipline": "Commission", "year": "2024",
+      "outcome": "Ferry terminal, opening campaign and press set",
+      "image": { "src": "media/pier-9-terminal.webp", "alt": "A thin white canopy on slender columns over a wet quay, the sea grey beyond." },
+      "case": {
+        "intro": "A ferry terminal under one thin canopy, photographed in rain for its opening.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Client", "name": "Aldmouth Harbour Board" }, { "role": "Architect", "name": "Studio Ness" }]
+      }
+    },
+    {
+      "slug": "low-walls", "title": "Low Walls", "client": "Personal", "place": "One valley", "discipline": "Personal", "year": "2024",
+      "outcome": "Dry-stone walls of one valley, 60 frames, ongoing",
+      "image": { "src": "media/low-walls.webp", "alt": "A dry-stone wall running away across a green valley under an overcast sky." },
+      "case": {
+        "intro": "The dry-stone walls of one valley, photographed under the same flat sky: 60 frames so far.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Format", "name": "4×5 film" }]
+      }
+    },
+    {
+      "slug": "tidal-pool", "title": "Tidal Pool", "client": "Aldmouth Council", "place": "Aldmouth", "discipline": "Commission", "year": "2023",
+      "outcome": "A restored sea pool, shot on the lowest tide of the year",
+      "image": { "src": "media/tidal-pool.webp", "alt": "A concrete sea pool full of green water between rocks, the sea and a low sun behind." },
+      "case": {
+        "intro": "A restored sea pool, photographed on the lowest tide of the year so its whole rim showed.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Client", "name": "Aldmouth Council" }, { "role": "Engineer", "name": "Rook & Vale" }]
+      }
+    },
+    {
+      "slug": "concrete-hours", "title": "Concrete Hours", "client": "Quire Editions", "place": "Monograph", "discipline": "Book", "year": "2023",
+      "outcome": "128 pages; the first printing sold out in 9 weeks",
+      "image": { "src": "media/concrete-hours.webp", "alt": "A wide concrete stair rising between two walls toward a dark doorway, a diagonal shadow across it." },
+      "case": {
+        "intro": "A book of concrete buildings, each photographed at the hour its architect drew the light for.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Publisher", "name": "Quire Editions" }, { "role": "Design", "name": "Fenn Type Office" }, { "role": "Pages", "name": "128" }]
+      }
+    },
+    {
+      "slug": "white-curve", "title": "White Curve", "client": "Studio Ness", "place": "Gallery district", "discipline": "Commission", "year": "2022",
+      "outcome": "One wall, one figure, for a gallery’s reopening",
+      "image": { "src": "media/white-curve.webp", "alt": "A tall curved white wall against a deep blue sky, one small figure and a door at its foot." },
+      "case": {
+        "intro": "A gallery’s new curved wall, photographed with one figure for scale for its reopening.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Architect", "name": "Studio Ness" }]
+      }
+    },
+    {
+      "slug": "timber-school", "title": "Timber School", "client": "Ruo Bauwerk", "place": "Forest edge", "discipline": "Commission", "year": "2022",
+      "outcome": "A school in larch, photographed in fog",
+      "image": { "src": "media/timber-school.webp", "alt": "A larch-clad school building at the edge of a spruce forest, half lost in fog." },
+      "case": {
+        "intro": "A primary school clad in larch at the edge of a forest, photographed on a morning of fog.",
+        "credits": [{ "role": "Photography", "name": "Teodor Halm" }, { "role": "Architect", "name": "Ruo Bauwerk" }]
+      }
+    }
+  ]
+}

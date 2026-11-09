@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/morrow/cta.json out/morrow",
+    "node scripts/check.mjs out/morrow/index.html",
+    "node scripts/build.mjs examples/fernhall/cta.json out/fernhall",
+    "node scripts/check.mjs out/fernhall/index.html",
+    "node scripts/build.mjs examples/morrow/cta.sentence.json out/morrow-sentence",
+    "node scripts/check.mjs out/morrow-sentence/index.html",
+    "node scripts/record.mjs out/morrow/index.html",
+    "node scripts/record.mjs out/fernhall/index.html"
+  ],
+  "agents": []
+}

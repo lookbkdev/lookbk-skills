@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/hearthbook/compare.json out/hearthbook",
+    "node scripts/check.mjs out/hearthbook/index.html",
+    "node scripts/build.mjs examples/brakewater/compare.json out/brakewater",
+    "node scripts/check.mjs out/brakewater/index.html",
+    "node scripts/record.mjs out/hearthbook/index.html --moments",
+    "node scripts/record.mjs out/hearthbook/index.html",
+    "node scripts/record.mjs out/hearthbook/index.html --print --png out/hearthbook/page.png",
+    "node scripts/record.mjs out/brakewater/index.html --print --png out/brakewater/page.png"
+  ],
+  "agents": []
+}

@@ -1,0 +1,113 @@
+{
+  "title": "Latecomer: lights down in three taps",
+  "description": "Late shows at 41 independent cinemas. Pick a time, pick your seats, walk in with the ticket on your phone.",
+  "lang": "en",
+  "fonts": {
+    "href": "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;600&display=swap",
+    "display": "'Big Shoulders Display', Impact, sans-serif",
+    "body": "'Geist', system-ui, sans-serif",
+    "mono": "'Geist Mono', ui-monospace, monospace"
+  },
+  "type": { "h1Size": 104, "h1Phone": 60, "h1Weight": 800, "h1Line": 0.92, "h1Tracking": 0, "chapterSize": 40, "chapterWeight": 800, "brandWeight": 800, "brandCase": "uppercase", "brandTracking": 0.02, "buttonRadius": 10 },
+  "colors": {
+    "bg": "#0d0c10", "ink": "#f3ede3", "ink2": "#d9d2c6", "muted": "#a39d93", "line": "#f3ede329",
+    "accent": "#f2b33d", "accentInk": "#f2b33d", "onAccent": "#17120a", "shadow": "#000000"
+  },
+  "light": { "kind": "beam", "color": "#ffe2b0", "strength": 1, "grain": 0.09 },
+  "phone": { "finish": "graphite" },
+  "brand": { "name": "Latecomer", "icon": "film", "href": "#" },
+  "nav": [
+    { "label": "Cinemas", "href": "#cinemas" },
+    { "label": "Members", "href": "#members" },
+    { "label": "Gift cards", "href": "#gifts" }
+  ],
+  "cta": { "label": "Open the app", "href": "#get" },
+  "eyebrow": "Independent cinemas, one app",
+  "headline": "Lights down in _three taps._",
+  "lede": "Late shows at 41 independent screens. Pick a time, pick your seats, walk in with the ticket on your phone.",
+  "buttons": [
+    { "label": "Get Latecomer", "href": "#get" },
+    { "label": "Find a cinema", "href": "#cinemas" }
+  ],
+  "play": "scroll",
+  "stepSeconds": 4,
+  "app": {
+    "colors": {
+      "bg": "#100f13", "surface": "#1c1a20", "sheet": "#18171c", "ink": "#f3ede3", "muted": "#a39d93", "line": "#2e2b33",
+      "tint": "#2a2318", "accent": "#f2b33d", "onAccent": "#17120a", "accent2": "#e0503a", "onAccent2": "#ffffff", "paper": "#f1ebdf"
+    },
+    "statusBar": "light",
+    "titleWeight": 800,
+    "titleCase": "uppercase",
+    "time": "21:12",
+    "tabs": [
+      { "icon": "film", "label": "Tonight" },
+      { "icon": "search", "label": "Search" },
+      { "icon": "ticket", "label": "Tickets" },
+      { "icon": "user", "label": "You" }
+    ]
+  },
+  "steps": [
+    {
+      "title": "Pick a time",
+      "body": "Tonight's films at the screens near you, posters first and times underneath. No account needed to look.",
+      "alt": "Tonight at The Roxy: three posters, Salt Flats at 19:10, 21:40 and 23:15",
+      "tap": "t2140",
+      "screen": {
+        "tab": 0,
+        "blocks": [
+          { "type": "nav", "location": "The Roxy, Leith", "icons": ["search"] },
+          { "type": "title", "size": "xl", "over": "Tuesday · after 21:00", "text": "Tonight" },
+          { "type": "cards", "items": [
+            { "title": "Salt Flats", "line": "Dir. Ines Moreau · 1h 52", "colors": ["#f2b33d", "#5b1f17"], "pattern": "glow" },
+            { "title": "The Long Quiet", "line": "Dir. A. Okafor · 2h 08", "colors": ["#14324a", "#0a1520"], "pattern": "fade" },
+            { "title": "Nova Nine", "line": "Restored · 1h 37", "colors": ["#e0503a", "#25110d"], "pattern": "stripes" }
+          ] },
+          { "type": "head", "text": "Salt Flats", "meta": "15 · Screen 2" },
+          { "type": "chips", "style": "mono", "on": 1, "items": ["19:10", { "label": "21:40", "id": "t2140" }, "23:15"] },
+          { "type": "rows", "items": [
+            { "icon": "film", "title": "Late Club, Thursdays", "line": "Members see one free", "pill": "New" },
+            { "icon": "user", "title": "Q&A with Ines Moreau", "line": "Friday after the 19:10", "pill": "4 left" }
+          ] }
+        ]
+      }
+    },
+    {
+      "title": "Choose your seats",
+      "body": "The real room, row by row. Taken seats are outlined, yours light up, the price updates as you go.",
+      "via": "sheet",
+      "alt": "Seat map for Screen 2 at 21:40, seats F7 and F8 chosen, pay 19 pounds",
+      "tap": "pay",
+      "tapLabel": "Pay £19.00",
+      "screen": {
+        "blocks": [
+          { "type": "nav", "left": "Screen 2 · 21:40", "icons": ["close"] },
+          { "type": "title", "text": "Salt Flats" },
+          { "type": "seats", "rows": 8, "cols": 10, "aisles": [5], "taken": ["A3", "A4", "B4", "B5", "C3", "C4", "C5", "D2", "D9", "E4", "E5", "F1", "F2", "G3", "G6", "G7", "H5", "H8"], "mine": ["F7", "F8"] },
+          { "type": "rows", "items": [
+            { "title": "2 × Standard", "line": "F7, F8 · aisle on the left", "value": "£19.00" },
+            { "title": "Members price", "line": "Join and save £3 tonight", "pill": "Join" }
+          ] },
+          { "type": "button", "id": "pay", "label": "2 seats", "right": "Pay £19.00", "dock": true }
+        ]
+      }
+    },
+    {
+      "title": "Walk straight in",
+      "body": "The ticket waits on your lock screen. Doors open twenty minutes before the film.",
+      "via": "push",
+      "alt": "Ticket: Salt Flats, Screen 2, row F, seats 7 and 8, doors 21:20",
+      "note": { "label": "Screen 2", "value": "Row F, seats 7, 8" },
+      "screen": {
+        "tab": 2,
+        "blocks": [
+          { "type": "nav", "back": "Tonight", "icons": ["more"] },
+          { "type": "ticket", "over": "The Roxy, Leith · Tue 14 May", "title": "Salt Flats", "colors": ["#f2b33d", "#5b1f17"], "fields": [["Screen", "2"], ["Row", "F"], ["Seats", "7, 8"], ["Doors", "21:20"], ["Film", "21:40"], ["Paid", "£19.00"]], "code": "LC 2140 F07 F08" },
+          { "type": "rows", "items": [
+            { "icon": "pin", "title": "12 min walk", "line": "Leave by 21:05", "pill": "Map" }
+          ] }
+        ]
+      }
+    }
+  ]
+}

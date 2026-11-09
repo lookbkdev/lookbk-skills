@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/stills.mjs examples/wrenfold/page.json",
+    "node scripts/stills.mjs examples/sorne/page.json",
+    "node scripts/build.mjs examples/wrenfold/page.json out/wrenfold",
+    "node scripts/check.mjs out/wrenfold/index.html",
+    "node scripts/build.mjs examples/sorne/page.json out/sorne",
+    "node scripts/check.mjs out/sorne/index.html",
+    "node scripts/record.mjs out/wrenfold/index.html",
+    "node scripts/record.mjs out/sorne/index.html"
+  ],
+  "agents": []
+}

@@ -1,0 +1,273 @@
+/* Newsletter Kit: a signup that shows the letter itself. Tokens are set on
+   .nk by the build; nothing here names a colour of its own. */
+.nk, .nk *, .nk *::before, .nk *::after { box-sizing: border-box; margin: 0; padding: 0 }
+.nk { background: var(--page); color: var(--ink); font-family: var(--text); font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility }
+.nk a { color: inherit }
+.nk :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px }
+.nk-l { font-family: var(--mono); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; line-height: 1.4; font-weight: 400 }
+.nk-turn { color: var(--turn) }
+.nk-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+.nk-wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px }
+
+/* ---------- standalone page: masthead ---------- */
+.nk-mast { max-width: 1280px; margin: 0 auto; padding: 26px 40px 0; display: flex; align-items: baseline; justify-content: space-between; gap: 24px }
+.nk-mast .nk-name { font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--track); font-size: 30px; line-height: 1.1; text-decoration: none }
+.nk-mast nav ul { display: flex; gap: 28px; list-style: none; font-size: 16px }
+.nk-mast nav a { text-decoration: none; border-bottom: 1px solid var(--rule-strong); padding-bottom: 1px }
+.nk-mast nav a:hover { border-color: var(--accent) }
+.nk-rule2 { max-width: 1200px; margin: 18px auto 0; height: 5px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink) }
+.nk-dateline { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; padding-top: 9px; color: var(--mute) }
+
+/* ---------- the two columns ---------- */
+.nk-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start }
+.nk-page .nk-grid { padding: 64px 0 88px }
+.nk-inline { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule) }
+.nk-inline .nk-grid { padding: 76px 0 84px; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 64px; max-width: 1200px; margin: 0 auto }
+
+/* ---------- pitch ---------- */
+.nk-eyebrow { color: var(--mute); display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px }
+.nk-eyebrow::before { content: ""; flex: none; width: 28px; height: 1px; background: currentColor; transform: translateY(-4px) }
+.nk-h { font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--track); font-size: var(--h-size, var(--h-desk, 64px)); line-height: 1.02; margin-bottom: 22px; text-wrap: balance }
+.nk-dek { font-size: 19px; line-height: 1.5; max-width: 31em; margin-bottom: 34px }
+.nk-peek { display: none }
+
+.nk-facts { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 18px 0; margin-bottom: 30px; display: grid; gap: 14px }
+.nk-fact { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap }
+.nk-fact b { font-weight: 600; font-size: 17px }
+.nk-fact .nk-src { color: var(--mute); font-size: 15px }
+.nk-fact .nk-l { color: var(--mute) }
+.nk-yours { color: var(--mute); font-weight: 400; font-size: 15px; white-space: nowrap }
+.nk-yours:empty { display: none }
+.nk-cal { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 6px; align-items: end; list-style: none }
+.nk-cal li { height: 22px; border-radius: 2px; background: rgba(var(--ink-rgb), .22); transform-origin: 50% 100% }
+.nk-cal li.nk-latest { background: var(--accent) }
+.nk-cal li.nk-skipped { background: repeating-linear-gradient(135deg, transparent 0 4px, rgba(var(--ink-rgb), .3) 4px 5px); box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), .22) }
+.nk-cal li.nk-next { background: transparent; outline: 1.5px dashed var(--accent); outline-offset: -1.5px }
+.nk-calkey.nk-l { text-transform: none; letter-spacing: .03em; font-size: 12px }
+.nk-calkey { display: flex; justify-content: space-between; gap: 12px; margin-top: 9px; font-family: var(--mono); font-size: 12px; letter-spacing: .03em; color: var(--mute) }
+.nk-calkey b { font-weight: 500; color: var(--ink) }
+.nk-calkey .nk-nx { color: var(--accent-text) }
+.nk-calkey .nk-sep { padding: 0 4px }
+.nk-count { border-top: 1px solid var(--rule2); padding-top: 14px }
+
+/* ---------- the form and its states (stacked in one cell: no jump) ---------- */
+.nk-zone { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start }
+.nk-zone > * { grid-area: 1 / 1; transition: opacity .2s ease, visibility 0s linear 0s }
+.nk-label { display: block; color: var(--mute); margin-bottom: 10px }
+.nk-field { display: flex; align-items: stretch; border: 1.5px solid var(--field-line); border-radius: var(--r); background: var(--client); transition: border-color .2s, box-shadow .2s }
+.nk-field input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: 400 18px/1.2 var(--text); padding: 0 18px; height: 60px; outline: 0; border-radius: var(--r) }
+.nk-field input::placeholder { color: var(--mute); opacity: 1 }
+.nk-field button { margin: 5px; border: 0; background: var(--accent); color: var(--on-accent); font: 600 17px/1 var(--text); padding: 0 22px; border-radius: var(--r-in); display: flex; align-items: center; justify-content: center; gap: 10px; white-space: nowrap; cursor: pointer; min-width: 9.5em }
+.nk-field button:focus-visible { outline-offset: 3px }
+.nk-ar { display: inline-block; transition: transform .24s cubic-bezier(.2, .7, .2, 1) }
+.nk-field button:hover .nk-ar { transform: translateX(3px) }
+.nk-field:focus-within { border-color: var(--accent-line); box-shadow: 0 0 0 3px rgba(var(--accent-rgb), .2) }
+.nk-field input:focus-visible { outline: none }
+.nk[data-state="invalid"] .nk-field, .nk[data-state="error"] .nk-field { border-color: var(--error); box-shadow: 0 0 0 3px rgba(var(--error-rgb), .14) }
+.nk-dots { display: none; gap: 5px; align-items: center; height: 17px }
+.nk-dots i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: .3 }
+.nk[data-state="sending"] .nk-dots { display: inline-flex }
+.nk[data-state="sending"] .nk-btxt { display: none }
+.nk[data-state="sending"] .nk-field { opacity: .78 }
+.nk-msg { margin-top: 10px; font-size: 15px; line-height: 1.45; color: var(--mute) }
+.nk[data-state="invalid"] .nk-msg, .nk[data-state="error"] .nk-msg { color: var(--error) }
+.nk-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0 }
+
+.nk-done { visibility: hidden; opacity: 0; border: 1.5px solid var(--ok); border-radius: var(--r); padding: 16px 20px; display: grid; gap: 4px; align-content: start; background: var(--done-bg) }
+.nk-done.nk-already { border-color: var(--accent2); background: var(--already-bg) }
+.nk-done .nk-l { color: var(--mute) }
+.nk-done strong { font-size: 18px; font-weight: 600; line-height: 1.35 }
+.nk-done .nk-addr { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink) }
+.nk-done p { font-size: 16px; line-height: 1.45 }
+.nk-done:focus-visible { outline-offset: 4px }
+.nk[data-state="confirm"] .nk-form, .nk[data-state="already"] .nk-form, .nk[data-state="done"] .nk-form { visibility: hidden; opacity: 0 }
+.nk[data-state="confirm"] .nk-confirm, .nk[data-state="already"] .nk-already, .nk[data-state="done"] .nk-subd { visibility: visible; opacity: 1 }
+
+.nk-privacy { margin-top: 18px; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; line-height: 1.5; color: var(--mute) }
+.nk-privacy dt { color: var(--ink); padding-top: 3px; white-space: nowrap }
+
+/* ---------- the specimen: the latest issue in a neutral inbox ---------- */
+.nk-cap { display: flex; justify-content: space-between; gap: 16px; color: var(--mute); margin-bottom: 12px }
+.nk-client { background: var(--client); color: var(--cink); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; box-shadow: var(--lift) }
+.nk-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; background: var(--client-bar); border-bottom: 1px solid var(--rule); color: var(--cmute) }
+.nk-bar .nk-box { display: flex; gap: 16px; align-items: baseline }
+.nk-bar b { color: var(--cink); font: 600 15px/1.2 var(--text); letter-spacing: 0; text-transform: none }
+.nk-rowbox { --row-h: 50px; height: calc(2 * var(--row-h) + 1px); overflow: hidden; border-bottom: 1px solid var(--rule) }
+.nk-rows { list-style: none }
+.nk-row { height: var(--row-h); display: grid; grid-template-columns: 14px minmax(0, 170px) minmax(0, 1fr) auto; gap: 14px; align-items: baseline; padding: 13px 18px; font-size: 15px; border-top: 1px solid var(--rule2) }
+.nk-row:first-child { border-top: 0 }
+.nk-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); align-self: center }
+.nk-from { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.nk-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.nk-sub b { font-weight: 600 }
+.nk-sub span { color: var(--cmute) }
+.nk-row .nk-l { color: var(--cmute); letter-spacing: .03em; text-transform: none }
+.nk-row.nk-sel { background: var(--row) }
+.nk-row.nk-sel .nk-sub span { color: var(--rmute) }
+.nk-row.nk-sel .nk-l { color: var(--rmute) }
+.nk-row.nk-old { color: var(--cmute) }
+.nk-row.nk-old .nk-from { font-weight: 500 }
+.nk-row.nk-old .nk-dot { visibility: hidden }
+.nk-confirmrow { display: none }
+.nk[data-state="confirm"] .nk-confirmrow { display: grid }
+
+.nk-head { padding: 20px 26px 16px; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 4px 14px; align-items: center; border-bottom: 1px solid var(--rule2) }
+.nk-av { grid-row: 1 / span 2; width: 44px; height: 44px; border-radius: var(--av-r); background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font: var(--display-w) 17px/1 var(--display); letter-spacing: 0 }
+.nk-who { font-size: 15px; overflow-wrap: anywhere }
+.nk-who b { font-weight: 600 }
+.nk-who span { color: var(--cmute) }
+.nk-to { font-size: 15px; color: var(--cmute); overflow-wrap: anywhere }
+.nk-to output { color: var(--cink); border-bottom: 1px dashed var(--cmute) }
+.nk[data-state="typing"] .nk-to output, .nk-to output.nk-live { color: var(--accent-text-c); border-bottom-color: var(--accent-text-c) }
+.nk-when { grid-row: 1 / span 2; grid-column: 3; color: var(--cmute); text-align: right; letter-spacing: .03em; text-transform: none }
+.nk-head h3 { grid-column: 1 / -1; font: 600 22px/1.25 var(--text); margin-top: 14px; letter-spacing: -.005em; text-wrap: balance }
+
+.nk-mail { background: var(--mail); color: var(--mink); padding: 30px 0 34px }
+.nk-mail-in { max-width: 560px; margin: 0 auto; padding: 0 28px }
+.nk-mhead { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap; border-bottom: 2px solid var(--mink); padding-bottom: 10px; margin-bottom: 22px }
+.nk-mhead .nk-mn { font-family: var(--display); font-weight: var(--display-w); font-size: 24px; letter-spacing: var(--track); line-height: 1.15 }
+.nk-mhead .nk-l, .nk-mail .nk-l { color: var(--mmute) }
+.nk-mail h4 { font-family: var(--display); font-weight: var(--display-w); font-size: 32px; line-height: 1.12; letter-spacing: var(--track); margin-bottom: 14px; text-wrap: balance }
+.nk-mail .nk-p { font-size: 17px; line-height: 1.62; margin-bottom: 14px }
+.nk-drop .nk-p:first-of-type::first-letter { font-family: var(--display); float: left; font-size: 58px; line-height: .9; padding: 5px 6px 0 0; color: var(--accent-text-m) }
+.nk-list { margin-top: 20px }
+.nk-list ol { list-style: none; border-top: 1px solid var(--rule); margin-top: 10px }
+.nk-list li .nk-l { text-transform: none; letter-spacing: .03em }
+.nk-list li { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: baseline; padding: 8px 0; font-size: 16px; border-bottom: 1px dotted var(--rule-strong) }
+.nk-quote { margin: 6px 0 4px; padding-left: 18px; border-left: 3px solid var(--accent) }
+.nk-quote p { font-family: var(--display); font-size: 22px; line-height: 1.3 }
+.nk-quote cite { display: block; margin-top: 8px; font-style: normal; color: var(--mmute); font-size: 15px }
+
+.nk-chart { margin: 6px 0 4px; border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px 12px }
+.nk-chart .nk-ct { display: flex; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; margin-bottom: 12px }
+.nk-plotwrap { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px }
+.nk-yax { position: relative; width: 50px }
+.nk-chart .nk-yax .nk-l, .nk-chart .nk-xax .nk-l, .nk-cl { text-transform: none; letter-spacing: .02em }
+.nk-yax span, .nk-cl { position: absolute; white-space: nowrap }
+.nk-yax span { right: 0; transform: translateY(-50%) }
+.nk-plot { position: relative; height: 150px }
+.nk-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible }
+.nk-grid-l { stroke: var(--rule); stroke-width: 1 }
+.nk-line { fill: none; stroke: var(--series); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round }
+.nk-line.nk-acc { stroke: var(--accent); stroke-width: 2.5 }
+.nk-pt { position: absolute; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; border-radius: 50%; background: var(--accent) }
+.nk-cl { transform: translate(-50%, calc(-100% - 8px)); color: var(--accent-text-m) }
+.nk-cl.nk-below { transform: translate(-50%, 8px); color: var(--mmute) }
+.nk-xax { grid-column: 2; display: flex; justify-content: space-between; margin-top: 8px }
+.nk-xax span { flex: 0 0 0; display: flex; justify-content: center; white-space: nowrap }
+.nk-legend { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 10px; font-size: 15px; color: var(--mmute); list-style: none }
+.nk-legend i { display: inline-block; width: 14px; height: 2px; vertical-align: middle; margin-right: 7px; background: var(--series) }
+.nk-legend i.nk-acc { background: var(--accent); height: 3px }
+
+.nk-fold { position: relative; padding: 16px 26px 18px; display: flex; justify-content: space-between; align-items: center; gap: 10px 16px; border-top: 1.5px dashed var(--cmute); background: var(--client); color: var(--cmute) }
+.nk-fold::before { content: ""; position: absolute; left: 0; right: 0; top: -50px; height: 48px; background: linear-gradient(rgba(var(--mail-rgb), 0), var(--mail)); pointer-events: none }
+.nk-fold a { font-size: 16px; color: var(--cink); text-decoration: none; border-bottom: 1.5px solid var(--accent); padding-bottom: 1px; white-space: nowrap }
+.nk-fold a:hover .nk-ar { transform: translateX(3px) }
+
+/* ---------- archive and colophon ---------- */
+.nk-arch h2 { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; font-weight: 400 }
+.nk-arch h2 .nk-t { font-family: var(--display); font-weight: var(--display-w); font-size: 30px; line-height: 1.1; letter-spacing: var(--track) }
+.nk-arch h2 .nk-l { color: var(--mute) }
+.nk-arch ol { list-style: none }
+.nk-arch a { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto auto; gap: 22px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--rule); text-decoration: none; font-size: 18px }
+.nk-arch .nk-no { white-space: nowrap }
+.nk-arch li .nk-l { color: var(--mute); letter-spacing: .03em; text-transform: none; font-size: 13px }
+.nk-arch .nk-tt { text-wrap: balance }
+.nk-arch a:hover .nk-tt { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px }
+.nk-mini { margin-top: 34px }
+.nk-mini h2 { border-bottom-width: 1px; border-color: var(--rule) }
+.nk-mini h2 .nk-t { font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: .07em; text-transform: uppercase; color: var(--mute) }
+.nk-mini a { grid-template-columns: 68px minmax(0, 1fr) auto; font-size: 16px; padding: 11px 0; gap: 14px }
+.nk-mini .nk-rt { display: none }
+.nk-lower { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 72px; padding: 0 0 96px }
+.nk-colo { border-top: 2px solid var(--ink); padding-top: 12px }
+.nk-colo h2 { font-family: var(--display); font-weight: var(--display-w); font-size: 30px; line-height: 1.1; letter-spacing: var(--track); margin-bottom: 18px }
+.nk-colo dl { display: grid; gap: 16px }
+.nk-colo dt { color: var(--mute); margin-bottom: 4px }
+.nk-colo dd { font-size: 17px; line-height: 1.5 }
+.nk-foot { border-top: 1px solid var(--rule); max-width: 1280px; margin: 0 auto; padding: 22px 40px; display: flex; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; color: var(--mute); font-size: 15px }
+
+/* ---------- the demo page around an inline section ---------- */
+.nk-ctx { max-width: 1200px; margin: 0 auto; padding: 56px 40px 64px; color: var(--mute) }
+.nk-ctx p { font-size: 17px; max-width: 40em; line-height: 1.6; margin-top: 10px }
+
+/* ---------- 1024 and below ---------- */
+@media (max-width: 1180px) {
+  .nk-grid, .nk-inline .nk-grid { gap: 48px }
+  .nk-h { --h-size: 54px }
+  .nk-row { grid-template-columns: 14px minmax(0, 130px) minmax(0, 1fr) auto }
+}
+@media (max-width: 959px) {
+  .nk-grid, .nk-inline .nk-grid, .nk-lower { grid-template-columns: minmax(0, 1fr); gap: 48px }
+  .nk-pitch { max-width: 620px }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 759px) {
+  .nk { font-size: 16px }
+  .nk-wrap { padding: 0 20px }
+  .nk-mast { padding: 18px 20px 0; align-items: center }
+  .nk-mast .nk-name { font-size: 24px }
+  .nk-mast nav ul { gap: 16px; font-size: 16px }
+  .nk-mast nav li:nth-child(n + 3) { display: none }
+  .nk-rule2, .nk-dateline { margin-left: 20px; margin-right: 20px }
+  .nk-dateline > :first-child { display: none }
+  .nk-grid, .nk-inline .nk-grid, .nk-lower { gap: 44px }
+  .nk-page .nk-grid { padding: 30px 0 56px }
+  .nk-inline .nk-grid { padding: 44px 0 56px }
+  .nk-h { --h-size: 42px; margin-bottom: 16px }
+  .nk-eyebrow { margin-bottom: 14px }
+  .nk-dek { font-size: 17px; margin-bottom: 20px }
+  .nk-peek { display: grid; gap: 4px; text-decoration: none; background: var(--client); color: var(--cink); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 4px; padding: 14px 16px; margin-bottom: 24px }
+  .nk-peek .nk-l { color: var(--cmute) }
+  .nk-peek b { font-size: 18px; line-height: 1.3; font-weight: 600 }
+  .nk-peek .nk-pre { font-size: 16px; color: var(--cmute); line-height: 1.4 }
+  .nk-peek .nk-go { font-size: 16px; margin-top: 4px; color: var(--accent-text-c); font-weight: 500 }
+  .nk-fact { flex-direction: column; gap: 2px }
+  .nk-fact b { font-size: 17px }
+  .nk-fact .nk-src, .nk-yours { font-size: 16px }
+  .nk-yours { display: block }
+  .nk-sep2 { display: none }
+  .nk-cal { gap: 4px }
+  .nk-calkey > :first-child { display: none }
+  .nk-field { flex-direction: column }
+  .nk-field input { height: 56px; flex: none; font-size: 17px }
+  .nk-field button { height: 52px; font-size: 17px }
+  .nk-msg { font-size: 16px }
+  .nk-done p { font-size: 16px }
+  .nk-privacy { font-size: 16px }
+  .nk-cap > :last-child { display: none }
+  .nk-rowbox { --row-h: 98px }
+  .nk-row { grid-template-columns: 12px minmax(0, 1fr) auto; grid-template-rows: auto 1fr; align-content: start; gap: 2px 10px; padding: 12px 14px; font-size: 16px }
+  .nk-row .nk-from { grid-column: 2 }
+  .nk-row .nk-l { grid-column: 3; grid-row: 1 }
+  .nk-row .nk-sub { grid-column: 2 / -1; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical }
+  .nk-head { padding: 16px; grid-template-columns: 36px minmax(0, 1fr) }
+  .nk-av { width: 36px; height: 36px; font-size: 14px; grid-row: 1 / span 2 }
+  .nk-who, .nk-to, .nk-when { grid-column: 2; font-size: 16px }
+  .nk-when { grid-row: auto; text-align: left; font-size: 12px }
+  .nk-head h3 { font-size: 20px }
+  .nk-mail { padding-top: 24px }
+  .nk-mail-in { padding: 0 18px }
+  .nk-mhead { flex-direction: column; gap: 4px }
+  .nk-mail h4 { font-size: 27px }
+  .nk-mail .nk-p { font-size: 16px }
+  .nk-list li .nk-l { text-transform: none; letter-spacing: .03em }
+.nk-list li { font-size: 16px }
+  .nk-chart { padding: 12px 12px 10px }
+  .nk-yax { width: 44px }
+  .nk-plot { height: 140px }
+  .nk-legend { font-size: 16px }
+  .nk-fold { flex-direction: column; align-items: flex-start; padding: 14px 16px }
+  .nk-arch a { grid-template-columns: 64px minmax(0, 1fr); gap: 2px 12px; font-size: 17px }
+  .nk-arch .nk-dt { grid-column: 2 }
+  .nk-arch .nk-rt { display: none }
+  .nk-arch h2 { flex-direction: column; gap: 4px }
+  .nk-foot { padding: 20px; flex-direction: column; font-size: 16px }
+  .nk-ctx { padding: 40px 20px }
+  .nk-colo dd { font-size: 16px }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nk-zone > *, .nk-field, .nk-ar { transition: none !important }
+}

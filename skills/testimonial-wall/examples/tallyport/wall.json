@@ -1,0 +1,60 @@
+{
+  "theme": "ledger",
+  "pageTitle": "Tallyport: what customs brokers say",
+  "brand": "Tallyport",
+  "kicker": "From licensed customs brokers",
+  "title": "Said _on the record._",
+  "order": ["press", "spread", "cases"],
+  "rating": { "score": 4.7, "count": 318, "source": "reviews from licensed brokers", "distribution": [78, 15, 5, 1, 1] },
+  "lead": {
+    "label": "Statement",
+    "items": [
+      { "quote": "We used to hold trucks at Dover for the paperwork. Last quarter we held none, and my team went home on time.", "name": "Hannah Osei", "role": "Head of customs, Brannock Freight", "tab": "Brannock Freight", "result": { "value": "0", "label": "*trucks held at the border* last quarter, down from 41." } },
+      { "quote": "The tariff codes are right the first time. Our audit took a day instead of a fortnight.", "name": "Luis Ferreira", "role": "Compliance lead, Marisco Imports", "tab": "Marisco Imports", "result": { "value": "1 day", "label": "*for the annual audit,* down from 10 working days." } },
+      { "quote": "I trust it because it shows its working. Every code links to the ruling it came from.", "name": "Aiko Brandt", "role": "Licensed broker", "place": "Hamburg", "tab": "Brandt Zoll", "result": { "value": "2,300", "label": "*declarations a month,* with one person reviewing." } }
+    ]
+  },
+  "wall": {
+    "label": "Reviews from brokers and importers",
+    "layout": "below",
+    "columns": 4,
+    "notes": [
+      { "stars": 5, "quote": "Classification suggestions come with the ruling attached. _That’s the feature._", "name": "Mehmet Kaya", "about": "Broker, Felixstowe", "date": "Mar 2026" },
+      { "stars": 4, "quote": "Setup took us three weeks, not one. _Worth it by week five._", "name": "Joanna Wilk", "about": "Ops, Kestrel Haulage", "date": "Mar 2026" },
+      { "stars": 5, "quote": "We stopped re-keying the same commercial invoice _into three systems._", "name": "Rafael Sousa", "about": "Import desk, Lisbon", "date": "Feb 2026" },
+      { "stars": 5, "quote": "The audit trail answered an HMRC query _in an afternoon._", "name": "Grace Holm", "about": "Compliance, Nordvik", "date": "Feb 2026" },
+      { "stars": 5, "quote": "Duty estimates now land _within a few pounds_ of the final bill.", "name": "Kwame Asante", "about": "Finance, Oduro Foods", "date": "Jan 2026" },
+      { "stars": 4, "quote": "Wish the mobile view did more. _The desktop is excellent._", "name": "Tomás Ruiz", "about": "Broker, Valencia", "date": "Jan 2026" },
+      { "stars": 5, "quote": "New starters are filing on day two. _It used to take a month._", "name": "Elif Demir", "about": "Team lead, Portgate", "date": "Dec 2025" },
+      { "stars": 5, "quote": "It flags the missing certificate _before the truck leaves._", "name": "Niall Byrne", "about": "Dispatch, Shannon Line", "date": "Dec 2025" },
+      { "stars": 5, "quote": "Our broker fees went down because _the broker stopped retyping our data._", "name": "Priti Shah", "about": "Buyer, Larkspur Home", "date": "Dec 2025" },
+      { "stars": 3, "quote": "Strong on imports. _Exports still need a second tool_ for us.", "name": "Jens Aaberg", "about": "Logistics, Fjordkast", "date": "Nov 2025" },
+      { "stars": 5, "quote": "Every override is logged with who and why. _Our auditors noticed._", "name": "Claire Dubois", "about": "Compliance, Vantor", "date": "Nov 2025" },
+      { "stars": 5, "quote": "We clear perishables the same morning now, _not the next day._", "name": "Samir Haddad", "about": "Imports, Cedar Fresh", "date": "Oct 2025" },
+      { "stars": 4, "quote": "Support is quick and _knows customs, not just software._", "name": "Ola Nordin", "about": "Broker, Gothenburg", "date": "Oct 2025" },
+      { "stars": 5, "quote": "The ruling links settled an argument _with a supplier in one email._", "name": "Daniel Moss", "about": "Sourcing, Halberd Tools", "date": "Sep 2025" },
+      { "stars": 5, "quote": "One screen per declaration, _everything it needs on it._", "name": "Agnieszka Nowak", "about": "Broker, Gdańsk", "date": "Sep 2025" },
+      { "stars": 5, "quote": "We doubled volume this year _without hiring for the desk._", "name": "Ruairi Walsh", "about": "MD, Walsh Forwarding", "date": "Aug 2025" }
+    ]
+  },
+  "cases": {
+    "label": "Cases",
+    "title": "Four desks, measured.",
+    "items": [
+      { "segment": "Freight forwarder", "value": "41→0", "label": "trucks held at the border a quarter", "quote": "The paperwork is ready before the driver is.", "name": "Brannock Freight", "place": "Dover, 60 trucks", "link": { "label": "Read the case", "href": "/cases/brannock-freight" } },
+      { "segment": "Importer", "value": "10→1", "label": "working days for the annual audit", "quote": "Our auditor asked what we’d changed.", "name": "Marisco Imports", "place": "Southampton", "link": { "label": "Read the case", "href": "/cases/marisco-imports" } },
+      { "segment": "Brokerage", "value": "2,300", "label": "declarations a month, one reviewer", "quote": "I check the reasoning, not the typing.", "name": "Brandt Zoll", "place": "Hamburg", "link": { "label": "Read the case", "href": "/cases/brandt-zoll" } },
+      { "segment": "Food importer", "value": "±3%", "label": "duty estimate against the final bill", "quote": "Finance stopped padding the forecast.", "name": "Oduro Foods", "place": "London", "link": { "label": "Read the case", "href": "/cases/oduro-foods" } }
+    ]
+  },
+  "press": {
+    "label": "In the trade press",
+    "items": [
+      { "name": "FREIGHT/LEDGER", "style": "sans-bold", "line": "“The broker tool that shows its working.”" },
+      { "name": "The Port Weekly", "style": "caps", "line": "“A quiet fix for a loud problem.”" },
+      { "name": "Cargo Desk", "style": "serif-italic", "line": "“One to watch, 2026.”" },
+      { "name": "Trade Systems Review", "style": "sans", "line": "“Best classification engine we tested.”" },
+      { "name": "haulage_today", "style": "mono", "line": "“Dover queues, shortened.”" }
+    ]
+  }
+}

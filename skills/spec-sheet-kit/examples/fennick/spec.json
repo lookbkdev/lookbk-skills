@@ -1,0 +1,1272 @@
+{
+  "lang": "en",
+  "theme": {
+    "mode": "light",
+    "paper": "#f1eee6",
+    "sheet": "#f8f6f0",
+    "ink": "#1b1f22",
+    "accent": "#b5341a",
+    "onAccent": "#fff8f2",
+    "turn": "#b5341a",
+    "display": "newsreader",
+    "text": "ibm-plex-sans",
+    "mono": "ibm-plex-mono",
+    "radius": 2
+  },
+  "brand": "Fennick Works",
+  "head": {
+    "eyebrow": [
+      "04",
+      "Specifications",
+      "Sheet 1 of 1"
+    ],
+    "headline": "The F-2,\n_drawn to scale._",
+    "lede": "Every figure here is measured from a production lamp. Point at a line to find it on the drawing, or at a part to find its line."
+  },
+  "models": [
+    {
+      "id": "F-2",
+      "name": "F-2",
+      "sub": "300 mm arm"
+    },
+    {
+      "id": "F-2L",
+      "name": "F-2 Long",
+      "sub": "380 mm arm"
+    }
+  ],
+  "drawn": "F-2",
+  "start": {
+    "model": "F-2",
+    "compare": false
+  },
+  "units": {
+    "length": {
+      "primary": "mm",
+      "step": {
+        "mm": 1,
+        "in": 0.01
+      }
+    },
+    "mass": {
+      "primary": "kg",
+      "step": {
+        "kg": 0.1,
+        "lb": 0.1
+      }
+    }
+  },
+  "drawing": {
+    "number": "FW-F2-001",
+    "rev": "C",
+    "scale": "1:3",
+    "projection": "third",
+    "tolerance": 1,
+    "toleranceNote": "Overall sizes ±1 mm.",
+    "notes_at": [
+      292,
+      188
+    ],
+    "title_block": [
+      282,
+      236,
+      128,
+      51,
+      [
+        42,
+        72,
+        100
+      ]
+    ],
+    "tab": [
+      216,
+      14
+    ],
+    "parts": [
+      {
+        "id": "base",
+        "no": 1,
+        "name": "Base"
+      },
+      {
+        "id": "post",
+        "no": 2,
+        "name": "Post"
+      },
+      {
+        "id": "knuckle",
+        "no": 3,
+        "name": "Knuckle"
+      },
+      {
+        "id": "arm",
+        "no": 4,
+        "name": "Arm"
+      },
+      {
+        "id": "shade",
+        "no": 5,
+        "name": "Head and shade"
+      },
+      {
+        "id": "dimmer",
+        "no": 6,
+        "name": "Touch dimmer"
+      },
+      {
+        "id": "cable",
+        "no": 7,
+        "name": "Cable"
+      }
+    ],
+    "views": [
+      {
+        "id": "plan",
+        "label": "Plan",
+        "short": "Plan",
+        "origin": [
+          95,
+          58
+        ],
+        "scale": 0.3333,
+        "axes": [
+          "x",
+          "z"
+        ],
+        "label_at": [
+          20,
+          36,
+          "start"
+        ],
+        "crop": [
+          36,
+          8,
+          224,
+          96
+        ],
+        "shapes": [
+          {
+            "part": "base",
+            "circle": [
+              0,
+              0,
+              90
+            ]
+          },
+          {
+            "part": "cable",
+            "d": "M-90 -16C-104 -18 -112 -26 -126 -30L-150 -34",
+            "open": true
+          },
+          {
+            "part": "dimmer",
+            "circle": [
+              50,
+              -50,
+              8
+            ]
+          },
+          {
+            "part": "post",
+            "circle": [
+              -60,
+              0,
+              8
+            ]
+          },
+          {
+            "part": "knuckle",
+            "rect": [
+              -74,
+              -9,
+              28,
+              18
+            ]
+          },
+          {
+            "part": "arm",
+            "rect": [
+              -61.56,
+              -6,
+              292.82,
+              12
+            ]
+          },
+          {
+            "part": "shade",
+            "circle": [
+              229.7,
+              0,
+              65
+            ]
+          },
+          {
+            "part": "shade",
+            "circle": [
+              229.7,
+              0,
+              17
+            ]
+          },
+          {
+            "part": "shade",
+            "rect": [
+              219.7,
+              -10,
+              20,
+              20
+            ]
+          }
+        ],
+        "centers": [
+          [
+            0,
+            0,
+            90
+          ],
+          [
+            229.7,
+            0,
+            65
+          ]
+        ],
+        "balloons": [
+          {
+            "part": "shade",
+            "at": [
+              275.7,
+              46
+            ],
+            "offset": [
+              16,
+              -8
+            ]
+          },
+          {
+            "part": "dimmer",
+            "at": [
+              50,
+              -50
+            ],
+            "offset": [
+              12,
+              12
+            ]
+          }
+        ],
+        "models": {
+          "F-2L": {
+            "shapes": [
+              {
+                "part": "base",
+                "circle": [
+                  0,
+                  0,
+                  90
+                ]
+              },
+              {
+                "part": "cable",
+                "d": "M-90 -16C-104 -18 -112 -26 -126 -30L-150 -34",
+                "open": true
+              },
+              {
+                "part": "dimmer",
+                "circle": [
+                  50,
+                  -50,
+                  8
+                ]
+              },
+              {
+                "part": "post",
+                "circle": [
+                  -60,
+                  0,
+                  8
+                ]
+              },
+              {
+                "part": "knuckle",
+                "rect": [
+                  -74,
+                  -9,
+                  28,
+                  18
+                ]
+              },
+              {
+                "part": "arm",
+                "rect": [
+                  -61.56,
+                  -6,
+                  370.08,
+                  12
+                ]
+              },
+              {
+                "part": "shade",
+                "circle": [
+                  306.96,
+                  0,
+                  65
+                ]
+              },
+              {
+                "part": "shade",
+                "circle": [
+                  306.96,
+                  0,
+                  17
+                ]
+              },
+              {
+                "part": "shade",
+                "rect": [
+                  296.96,
+                  -10,
+                  20,
+                  20
+                ]
+              }
+            ],
+            "centers": [
+              [
+                0,
+                0,
+                90
+              ],
+              [
+                306.96,
+                0,
+                65
+              ]
+            ],
+            "balloons": [
+              {
+                "part": "shade",
+                "at": [
+                  353,
+                  46
+                ],
+                "offset": [
+                  16,
+                  -8
+                ]
+              },
+              {
+                "part": "dimmer",
+                "at": [
+                  50,
+                  -50
+                ],
+                "offset": [
+                  12,
+                  12
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "front",
+        "label": "Front elevation",
+        "short": "Front",
+        "origin": [
+          95,
+          272
+        ],
+        "scale": 0.3333,
+        "axes": [
+          "x",
+          "y"
+        ],
+        "label_at": [
+          150,
+          282,
+          "middle"
+        ],
+        "crop": [
+          30,
+          92,
+          226,
+          280
+        ],
+        "detail": {
+          "at": [
+            -60,
+            392
+          ],
+          "r": 7.5,
+          "letter": "A"
+        },
+        "shapes": [
+          {
+            "part": "cable",
+            "d": "M-90 7C-104 7 -108 2 -122 1L-150 0.5",
+            "open": true
+          },
+          {
+            "part": "base",
+            "d": "M-90 0H90V18L84 24H-84L-90 18Z"
+          },
+          {
+            "part": "dimmer",
+            "rect": [
+              42,
+              24,
+              16,
+              4
+            ]
+          },
+          {
+            "part": "post",
+            "rect": [
+              -68,
+              24,
+              16,
+              356
+            ]
+          },
+          {
+            "part": "arm",
+            "poly": [
+              [
+                -61.56,
+                397.79
+              ],
+              [
+                228.15,
+                475.71
+              ],
+              [
+                231.26,
+                464.13
+              ],
+              [
+                -58.44,
+                386.21
+              ]
+            ]
+          },
+          {
+            "part": "knuckle",
+            "circle": [
+              -60,
+              392,
+              14
+            ]
+          },
+          {
+            "part": "shade",
+            "poly": [
+              [
+                212.7,
+                461.92
+              ],
+              [
+                246.7,
+                461.92
+              ],
+              [
+                294.7,
+                391.92
+              ],
+              [
+                164.7,
+                391.92
+              ]
+            ]
+          },
+          {
+            "part": "shade",
+            "circle": [
+              229.7,
+              469.92,
+              10
+            ]
+          }
+        ],
+        "balloons": [
+          {
+            "part": "post",
+            "at": [
+              -60,
+              200
+            ],
+            "offset": [
+              -20,
+              0
+            ]
+          },
+          {
+            "part": "arm",
+            "at": [
+              60,
+              424.3
+            ],
+            "offset": [
+              -4,
+              -14
+            ]
+          },
+          {
+            "part": "base",
+            "at": [
+              70,
+              12
+            ],
+            "offset": [
+              22,
+              -14
+            ]
+          },
+          {
+            "part": "cable",
+            "at": [
+              -140,
+              0.7
+            ],
+            "offset": [
+              0,
+              -14
+            ]
+          }
+        ],
+        "models": {
+          "F-2L": {
+            "shapes": [
+              {
+                "part": "cable",
+                "d": "M-90 7C-104 7 -108 2 -122 1L-150 0.5",
+                "open": true
+              },
+              {
+                "part": "base",
+                "d": "M-90 0H90V18L84 24H-84L-90 18Z"
+              },
+              {
+                "part": "dimmer",
+                "rect": [
+                  42,
+                  24,
+                  16,
+                  4
+                ]
+              },
+              {
+                "part": "post",
+                "rect": [
+                  -68,
+                  24,
+                  16,
+                  356
+                ]
+              },
+              {
+                "part": "arm",
+                "poly": [
+                  [
+                    -61.56,
+                    397.79
+                  ],
+                  [
+                    305.4,
+                    496.49
+                  ],
+                  [
+                    308.52,
+                    484.91
+                  ],
+                  [
+                    -58.44,
+                    386.21
+                  ]
+                ]
+              },
+              {
+                "part": "knuckle",
+                "circle": [
+                  -60,
+                  392,
+                  14
+                ]
+              },
+              {
+                "part": "shade",
+                "poly": [
+                  [
+                    289.96,
+                    482.7
+                  ],
+                  [
+                    323.96,
+                    482.7
+                  ],
+                  [
+                    371.96,
+                    412.7
+                  ],
+                  [
+                    241.96,
+                    412.7
+                  ]
+                ]
+              },
+              {
+                "part": "shade",
+                "circle": [
+                  306.96,
+                  490.7,
+                  10
+                ]
+              }
+            ],
+            "balloons": [
+              {
+                "part": "post",
+                "at": [
+                  -60,
+                  200
+                ],
+                "offset": [
+                  -20,
+                  0
+                ]
+              },
+              {
+                "part": "arm",
+                "at": [
+                  60,
+                  424.3
+                ],
+                "offset": [
+                  -4,
+                  -14
+                ]
+              },
+              {
+                "part": "base",
+                "at": [
+                  70,
+                  12
+                ],
+                "offset": [
+                  22,
+                  -14
+                ]
+              },
+              {
+                "part": "cable",
+                "at": [
+                  -140,
+                  0.7
+                ],
+                "offset": [
+                  0,
+                  -14
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "side",
+        "label": "Right side",
+        "short": "Side",
+        "origin": [
+          250,
+          272
+        ],
+        "scale": 0.3333,
+        "axes": [
+          "z",
+          "y"
+        ],
+        "label_at": [
+          250,
+          282,
+          "middle"
+        ],
+        "crop": [
+          212,
+          92,
+          288,
+          280
+        ],
+        "shapes": [
+          {
+            "part": "base",
+            "d": "M-90 0H90V18L84 24H-84L-90 18Z"
+          },
+          {
+            "part": "dimmer",
+            "rect": [
+              -58,
+              24,
+              16,
+              4
+            ]
+          },
+          {
+            "part": "post",
+            "rect": [
+              -8,
+              24,
+              16,
+              356
+            ]
+          },
+          {
+            "part": "knuckle",
+            "rect": [
+              -9,
+              378,
+              18,
+              28
+            ]
+          },
+          {
+            "part": "arm",
+            "rect": [
+              -6,
+              386.21,
+              12,
+              89.5
+            ]
+          },
+          {
+            "part": "shade",
+            "poly": [
+              [
+                -17,
+                461.92
+              ],
+              [
+                17,
+                461.92
+              ],
+              [
+                65,
+                391.92
+              ],
+              [
+                -65,
+                391.92
+              ]
+            ]
+          },
+          {
+            "part": "shade",
+            "rect": [
+              -10,
+              459.92,
+              20,
+              20
+            ]
+          }
+        ],
+        "models": {
+          "F-2L": {
+            "shapes": [
+              {
+                "part": "base",
+                "d": "M-90 0H90V18L84 24H-84L-90 18Z"
+              },
+              {
+                "part": "dimmer",
+                "rect": [
+                  -58,
+                  24,
+                  16,
+                  4
+                ]
+              },
+              {
+                "part": "post",
+                "rect": [
+                  -8,
+                  24,
+                  16,
+                  356
+                ]
+              },
+              {
+                "part": "knuckle",
+                "rect": [
+                  -9,
+                  378,
+                  18,
+                  28
+                ]
+              },
+              {
+                "part": "arm",
+                "rect": [
+                  -6,
+                  386.21,
+                  12,
+                  110.28
+                ]
+              },
+              {
+                "part": "shade",
+                "poly": [
+                  [
+                    -17,
+                    482.7
+                  ],
+                  [
+                    17,
+                    482.7
+                  ],
+                  [
+                    65,
+                    412.7
+                  ],
+                  [
+                    -65,
+                    412.7
+                  ]
+                ]
+              },
+              {
+                "part": "shade",
+                "rect": [
+                  -10,
+                  480.7,
+                  20,
+                  20
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "detail",
+        "label": "Detail A",
+        "sub": "Scale 2:1",
+        "short": "Detail A",
+        "origin": [
+          350,
+          92
+        ],
+        "scale": 2,
+        "ring": 46,
+        "partial": true,
+        "axes": [
+          "x",
+          "y"
+        ],
+        "label_at": [
+          350,
+          154,
+          "middle"
+        ],
+        "crop": [
+          298,
+          30,
+          402,
+          142
+        ],
+        "shapes": [
+          {
+            "part": "post",
+            "rect": [
+              -8,
+              -60,
+              16,
+              48
+            ]
+          },
+          {
+            "part": "arm",
+            "poly": [
+              [
+                9.28,
+                -3.72
+              ],
+              [
+                59.5,
+                9.79
+              ],
+              [
+                56.38,
+                21.38
+              ],
+              [
+                6.17,
+                7.87
+              ]
+            ]
+          },
+          {
+            "part": "knuckle",
+            "circle": [
+              0,
+              0,
+              14
+            ]
+          },
+          {
+            "part": "knuckle",
+            "circle": [
+              0,
+              0,
+              9
+            ],
+            "line": "hidden"
+          },
+          {
+            "part": "knuckle",
+            "circle": [
+              0,
+              0,
+              4.5
+            ]
+          }
+        ],
+        "centers": [
+          [
+            0,
+            0,
+            14
+          ]
+        ],
+        "balloons": [
+          {
+            "part": "knuckle",
+            "at": [
+              10,
+              -10
+            ],
+            "offset": [
+              16,
+              16
+            ]
+          }
+        ]
+      }
+    ],
+    "dims": [
+      {
+        "view": "front",
+        "row": "height",
+        "kind": "v",
+        "a": [
+          -150,
+          0
+        ],
+        "b": [
+          -150,
+          479.92
+        ],
+        "offset": -7,
+        "models": {
+          "F-2L": {
+            "b": [
+              -150,
+              500.7
+            ]
+          }
+        }
+      },
+      {
+        "view": "front",
+        "row": "reach",
+        "kind": "h",
+        "a": [
+          -90,
+          479.92
+        ],
+        "b": [
+          294.7,
+          479.92
+        ],
+        "offset": -9,
+        "symbol": "R",
+        "models": {
+          "F-2L": {
+            "a": [
+              -90,
+              500.7
+            ],
+            "b": [
+              371.96,
+              500.7
+            ]
+          }
+        }
+      },
+      {
+        "view": "plan",
+        "row": "base",
+        "kind": "h",
+        "a": [
+          -90,
+          0
+        ],
+        "b": [
+          90,
+          0
+        ],
+        "offset": -38,
+        "dia": true
+      },
+      {
+        "view": "plan",
+        "row": "shade",
+        "kind": "h",
+        "a": [
+          164.7,
+          0
+        ],
+        "b": [
+          294.7,
+          0
+        ],
+        "offset": -38,
+        "dia": true,
+        "models": {
+          "F-2L": {
+            "a": [
+              241.96,
+              0
+            ],
+            "b": [
+              371.96,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "view": "detail",
+        "row": "hinge",
+        "kind": "h",
+        "a": [
+          -14,
+          0
+        ],
+        "b": [
+          14,
+          0
+        ],
+        "offset": -36,
+        "dia": true
+      }
+    ]
+  },
+  "groups": [
+    {
+      "title": "Dimensions",
+      "rows": [
+        {
+          "key": "height",
+          "label": "Overall height",
+          "note": "Arm raised to its stop",
+          "length": {
+            "F-2": 480,
+            "F-2L": 501
+          }
+        },
+        {
+          "key": "reach",
+          "label": "Maximum reach",
+          "note": "Base edge to shade rim",
+          "length": {
+            "F-2": 385,
+            "F-2L": 462
+          }
+        },
+        {
+          "key": "base",
+          "label": "Base diameter",
+          "length": 180,
+          "parts": [
+            "base"
+          ]
+        },
+        {
+          "key": "hinge",
+          "label": "Hinge knuckle",
+          "note": "Friction hinge, no springs",
+          "length": 28,
+          "parts": [
+            "knuckle"
+          ]
+        },
+        {
+          "key": "shade",
+          "label": "Shade diameter",
+          "length": 130,
+          "parts": [
+            "shade"
+          ]
+        },
+        {
+          "key": "mass",
+          "label": "Weight",
+          "note": "Without adapter",
+          "mass": {
+            "F-2": 2.4,
+            "F-2L": 2.6
+          }
+        }
+      ]
+    },
+    {
+      "title": "Light and power",
+      "rows": [
+        {
+          "key": "src",
+          "label": "Light source",
+          "note": "Replaceable module",
+          "text": "LED, 9 W",
+          "parts": [
+            "shade"
+          ]
+        },
+        {
+          "key": "flux",
+          "label": "Luminous flux",
+          "number": 720,
+          "unit": "lm"
+        },
+        {
+          "key": "cct",
+          "label": "Colour temperature",
+          "number": 2700,
+          "unit": "K",
+          "extra": "CRI 95"
+        },
+        {
+          "key": "dim",
+          "label": "Dimming",
+          "note": "Touch, remembers last level",
+          "text": "5 steps",
+          "parts": [
+            "dimmer"
+          ]
+        },
+        {
+          "key": "in",
+          "label": "Input",
+          "note": "100 to 240 V AC adapter",
+          "text": "12 V DC, 1 A",
+          "parts": [
+            "cable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Parts and materials",
+      "rows": [
+        {
+          "key": "m1",
+          "label": "Base",
+          "text": "Cast iron, powder coat",
+          "parts": [
+            "base"
+          ]
+        },
+        {
+          "key": "m2",
+          "label": "Post",
+          "text": "Aluminium 6063, anodised",
+          "parts": [
+            "post"
+          ]
+        },
+        {
+          "key": "m3",
+          "label": "Knuckle",
+          "text": "Solid brass",
+          "parts": [
+            "knuckle"
+          ]
+        },
+        {
+          "key": "m4",
+          "label": "Arm",
+          "text": "Aluminium 6063, anodised",
+          "parts": [
+            "arm"
+          ]
+        },
+        {
+          "key": "m5",
+          "label": "Head and shade",
+          "text": "Spun aluminium",
+          "parts": [
+            "shade"
+          ]
+        },
+        {
+          "key": "m6",
+          "label": "Touch dimmer",
+          "text": "Brass disc",
+          "parts": [
+            "dimmer"
+          ]
+        },
+        {
+          "key": "m7",
+          "label": "Cable",
+          "text": "Textile braid, 1.8 m",
+          "parts": [
+            "cable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "In the box",
+      "list": [
+        "F-2 lamp, assembled",
+        "12 V adapter, 1.8 m cable",
+        "Two spare friction washers",
+        "Printed guide"
+      ]
+    },
+    {
+      "title": "Compliance",
+      "marks": [
+        "IEC 60598-1",
+        "IEC 62471 exempt",
+        "RoHS",
+        "IP20",
+        "5-year warranty"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "row": "height"
+    },
+    {
+      "row": "hinge"
+    },
+    {
+      "part": "shade"
+    },
+    {
+      "set": {
+        "len": "in",
+        "mass": "lb"
+      }
+    },
+    {
+      "set": {
+        "model": "F-2L"
+      }
+    }
+  ],
+  "print": {
+    "paper": "A4"
+  }
+}

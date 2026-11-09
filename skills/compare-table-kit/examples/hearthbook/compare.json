@@ -1,0 +1,106 @@
+{
+  "lang": "en",
+  "brand": "Hearthbook",
+  "theme": {
+    "mode": "light",
+    "paper": "#f3f0e9",
+    "column": "#e8e2d4",
+    "ink": "#1c1b18",
+    "us": "#22407a",
+    "onUs": "#f6f3ec",
+    "them": "#8a520c",
+    "themWash": "#efe3cc",
+    "display": "instrument-serif",
+    "text": "source-sans-3",
+    "mono": "ibm-plex-mono"
+  },
+  "head": {
+    "eyebrow": ["Hearthbook compared", "8 questions", "Facts as of 1 Oct 2026"],
+    "headline": "Hearthbook, or the _diary on the front desk?_",
+    "lede": "The eight questions clinics ask us before they switch. Every answer has a source and a date. **Where something else does it better, we say so.**"
+  },
+  "product": { "id": "hb", "name": "Hearthbook", "desc": "Online booking and reminders for small clinics" },
+  "alternatives": [
+    { "id": "diary", "name": "Paper diary and phone", "short": "Paper diary", "called": "the paper diary", "desc": "Where most clinics start", "kind": "diy", "invented": true },
+    { "id": "sheet", "name": "A shared spreadsheet", "short": "Spreadsheet", "called": "the spreadsheet", "desc": "On the office plan you already pay for", "kind": "diy", "invented": true },
+    { "id": "cc", "name": "Clinicore", "short": "Clinicore", "called": "Clinicore", "desc": "All-in-one practice suite", "kind": "software", "invented": true }
+  ],
+  "sources": [
+    { "id": "price", "kind": "public", "text": "Hearthbook price list, Standard plan", "asOf": "2026-10-01", "url": "https://hearthbook.example/pricing" },
+    { "id": "clinicore", "kind": "public", "text": "Clinicore public price page and onboarding guide", "asOf": "2026-10-01", "url": "https://clinicore.example/pricing" },
+    { "id": "study", "kind": "own", "text": "Hearthbook study of 212 clinics over 12 weeks, method on request", "asOf": "2026-08-31", "period": "Jun to Aug 2026" },
+    { "id": "diary", "kind": "public", "text": "Retail price of an A4 appointment diary and pens at three stationers", "asOf": "2026-09-28" },
+    { "id": "drive", "kind": "public", "text": "Office suite help pages on the bin and version history", "asOf": "2026-10-01" },
+    { "id": "help", "kind": "public", "text": "Hearthbook help centre: Setup, Offline mode, Data export", "asOf": "2026-10-01", "url": "https://hearthbook.example/help" },
+    { "id": "est", "kind": "own", "estimate": true, "text": "Our estimate, explained under How we compared", "asOf": "2026-10-01" }
+  ],
+  "groups": [
+    {
+      "question": "What will it cost over a year?",
+      "assumes": "One clinic, three practitioners, about 120 bookings a week.",
+      "rows": [
+        { "label": "What you pay", "verdict": "sheet", "cells": {
+          "hb": { "fact": "$588", "note": "$49 a month, all practitioners", "source": "price" },
+          "diary": { "fact": "$40", "note": "A diary and pens. A second phone line not counted", "source": "diary" },
+          "sheet": { "fact": "$0", "note": "No extra cost on the plan you have", "source": "est" },
+          "cc": { "fact": "$2,268", "note": "$63 per practitioner a month", "source": "clinicore" } } },
+        { "label": "Front-desk time on bookings", "verdict": "hb", "cells": {
+          "hb": { "fact": "2.5 h a week", "note": "61% of bookings made online", "source": "study" },
+          "diary": { "fact": "9 h a week", "note": "Calls, call-backs, rewriting", "source": "study" },
+          "sheet": { "fact": "7 h a week", "note": "Calls, then typing it in", "source": "study" },
+          "cc": { "fact": "3 h a week", "note": "Online booking is an add-on module", "source": "study" } } },
+        { "label": "Appointments missed", "verdict": "hb", "cells": {
+          "hb": { "fact": "4.1%", "note": "Text the day before, reply to move", "source": "study" },
+          "diary": { "fact": "11.8%", "note": "Reminder calls when there is time", "source": "study" },
+          "sheet": { "fact": "10.9%", "source": "study" },
+          "cc": { "fact": "4.4%", "note": "Email reminders only", "source": "study" } } },
+        { "label": "Booked outside opening hours", "verdict": "hb", "cells": {
+          "hb": { "fact": "38%", "note": "of bookings, mostly 8 to 11 pm", "source": "study" },
+          "diary": { "fact": "None", "note": "Nobody answers the phone", "source": "est" },
+          "sheet": { "fact": "None", "note": "Patients cannot reach it", "source": "est" },
+          "cc": { "fact": "35%", "source": "study" } } }
+      ]
+    },
+    {
+      "question": "How long until it is working?",
+      "assumes": "From signing up to the first patient booking themselves in.",
+      "rows": [
+        { "label": "Time to set up", "verdict": "diary", "cells": {
+          "hb": { "fact": "1 afternoon", "note": "Import your list, we check it with you", "source": "help" },
+          "diary": { "fact": "Already working", "note": "Nothing to set up", "source": "est" },
+          "sheet": { "fact": "1 hour", "note": "Make the columns, share the link", "source": "est" },
+          "cc": { "fact": "3 to 6 weeks", "note": "Onboarding calls and data migration", "source": "clinicore" } } },
+        { "label": "When the internet is down", "verdict": "diary", "cells": {
+          "hb": { "fact": "Read-only", "note": "Last 14 days kept on the desk computer", "source": "help" },
+          "diary": { "fact": "Works as normal", "source": "est" },
+          "sheet": { "fact": "Only if downloaded", "source": "drive" },
+          "cc": { "fact": "Unavailable", "note": "Browser only", "source": "clinicore" } } }
+      ]
+    },
+    {
+      "question": "What happens to my data if I leave?",
+      "assumes": "Patient names, bookings and the notes attached to them.",
+      "rows": [
+        { "label": "Taking everything with you", "verdict": { "level": ["hb", "sheet"] }, "cells": {
+          "hb": { "fact": "Any time, in full", "note": "CSV for bookings, PDF for notes", "source": "help" },
+          "diary": { "fact": "It is your book", "note": "But it cannot be searched", "source": "est" },
+          "sheet": { "fact": "It is already your file", "source": "est" },
+          "cc": { "fact": "On request", "note": "Within 30 days, CSV only", "source": "clinicore" } } },
+        { "label": "Proof it was deleted", "verdict": "hb", "cells": {
+          "hb": { "fact": "Certificate in 7 days", "note": "Deleted 90 days after you cancel", "source": "help" },
+          "diary": { "fact": "Shredding is on you", "source": "est" },
+          "sheet": { "fact": "Depends on your drive", "note": "Bin empties after 30 days", "source": "drive" },
+          "cc": { "fact": "No certificate", "note": "Deleted after 30 days", "source": "clinicore" } } }
+      ]
+    }
+  ],
+  "picks": {
+    "hb": "You take 60 or more bookings a week, lose hours to call-backs, and want it working this week.",
+    "diary": "You see fewer than 30 patients a week and one person answers the phone. It costs almost nothing and never goes offline.",
+    "sheet": "Lowest cost matters most and call-backs do not bother you. Kept tidy, it carries a clinic to about 60 bookings a week.",
+    "cc": "You need billing, insurance claims and five or more practitioners in one system, and can give it six weeks."
+  },
+  "cta": { "label": "Try it free for 30 days", "href": "#start" },
+  "method": "How we compared: a clinic with three practitioners and about 120 bookings a week. Facts about Clinicore come from its public pages on the date shown. Our study figures come from clinics that use each method, measured the same way.",
+  "corrections": "corrections@hearthbook.example"
+}

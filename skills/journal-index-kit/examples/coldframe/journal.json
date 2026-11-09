@@ -1,0 +1,54 @@
+{
+  "brand": "Coldframe",
+  "masthead": "Coldframe _Journal_",
+  "strap": "Notes on making, materials and the slow parts of design, from a furniture and interiors studio in a converted glasshouse.",
+  "since": "Published irregularly since 2019",
+  "publisher": "Coldframe Studio",
+  "language": "en-GB",
+  "site": {
+    "url": "https://coldframe.example/journal/",
+    "home": "https://coldframe.example/",
+    "nav": [
+      { "label": "Studio", "href": "https://coldframe.example/studio/" },
+      { "label": "Work", "href": "https://coldframe.example/work/" },
+      { "label": "Journal", "href": "https://coldframe.example/journal/", "current": true },
+      { "label": "Contact", "href": "https://coldframe.example/contact/" }
+    ]
+  },
+  "theme": {
+    "preset": "paper",
+    "fonts": "newsreader",
+    "leadSide": "left",
+    "dropCap": true
+  },
+  "issueLabel": "Nº",
+  "sections": ["Essays", "Process", "Materials", "Interviews", "Notes"],
+  "series": [
+    {
+      "name": "On Edges",
+      "description": "Corners, radii and thresholds: the parts of an object your hand finds first.",
+      "parts": ["The radius is a promise", "Thresholds", "How we light a stair we cannot see yet", "What the bench taught us about edges", "Hems", "The edge of the room"]
+    },
+    {
+      "name": "The Material Library",
+      "description": "One sample from the library on our back wall per piece, and what we learned using it.",
+      "parts": ["Lime plaster", "Felt", "Glaze", "Cork", "Bog oak", "Linoleum", "Horsehair", "Rush", "Copper"]
+    }
+  ],
+  "volumes": { "2026": "Volume 8", "2025": "Volume 7" },
+  "indexLimit": 24,
+  "labels": {
+    "lead": "Lead story",
+    "index": "The _Index_",
+    "series": "In _series_",
+    "seriesIntro": "Some subjects take more than one sitting. These run in parts, in order, and each part stands on its own.",
+    "read": "Read the essay",
+    "plate": "Plate"
+  },
+  "footer": {
+    "email": "https://coldframe.example/letter/",
+    "emailLabel": "a letter once a season",
+    "colophon": "Set in Newsreader and Schibsted Grotesk"
+  },
+  "feed": { "items": 20 }
+}

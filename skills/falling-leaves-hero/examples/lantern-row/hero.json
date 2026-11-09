@@ -1,0 +1,73 @@
+{
+  "composition": "editorial",
+  "brand": {
+    "name": "Lantern Row Books",
+    "href": "/"
+  },
+  "nav": [
+    {
+      "label": "Shelves",
+      "href": "/shelves"
+    },
+    {
+      "label": "Readings",
+      "href": "/readings"
+    },
+    {
+      "label": "Reading room",
+      "href": "/reading-room"
+    }
+  ],
+  "action": {
+    "label": "Find the shop",
+    "href": "/find-us"
+  },
+  "hero": {
+    "title": "READ LATE,\nWALK HOME\nSLOWLY.",
+    "lede": "A bookshop on a ginkgo avenue, open until two in the morning. Tea on the stove, a reading room upstairs, readings every Thursday.",
+    "cta": {
+      "label": "This week's readings",
+      "href": "/readings/this-week"
+    }
+  },
+  "theme": {
+    "mode": "dark",
+    "background": "#080b11",
+    "ink": "#efe6cf",
+    "accent": "#e3c24a",
+    "plate": "#090c12",
+    "rules": "off",
+    "fonts": {
+      "display": "Big Shoulders Display",
+      "body": "Inter",
+      "mono": "IBM Plex Mono",
+      "weight": 800,
+      "advance": 0.5
+    }
+  },
+  "effect": {
+    "scene": "lamp-night",
+    "leaf": "ginkgo",
+    "sign": "painted",
+    "letters": "#e6dcc2",
+    "light": 0.68,
+    "crown": "#d9b83a",
+    "density": 1,
+    "landings": 3,
+    "gust": 1,
+    "cycle": 20,
+    "follow": true,
+    "grain": 0.5,
+    "seed": 21
+  },
+  "motion": {
+    "speed": 1,
+    "pointer": true
+  },
+  "meta": {
+    "title": "Lantern Row Books: read late, walk home slowly",
+    "description": "A bookshop on a ginkgo avenue, open until two in the morning, with readings every Thursday.",
+    "url": "https://lanternrow.example/",
+    "lang": "en"
+  }
+}

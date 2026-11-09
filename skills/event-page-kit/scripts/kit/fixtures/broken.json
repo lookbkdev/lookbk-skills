@@ -1,0 +1,179 @@
+{
+ "brand": "Fixture",
+ "lang": "en-GB",
+ "title": {
+  "lines": [
+   "Fixture"
+  ]
+ },
+ "kicker": "A test event for the checks.",
+ "theme": {
+  "type": "grotesk",
+  "bg": "#f2efe8",
+  "surface": "#e8e3d8",
+  "past": "#e9e5dc",
+  "ink": "#141412",
+  "accent": "#c4311a",
+  "onAccent": "#fff8f0"
+ },
+ "venue": {
+  "name": "Test Hall",
+  "short": "Test Hall, London",
+  "note": "A fixture",
+  "city": "London",
+  "zone": "Europe/London",
+  "rows": [
+   [
+    "Address",
+    "1 Test Street, London"
+   ],
+   [
+    "Doors",
+    "08:00"
+   ]
+  ]
+ },
+ "rooms": [
+  {
+   "id": "A",
+   "name": "Hall"
+  },
+  {
+   "id": "B",
+   "name": "Studio"
+  }
+ ],
+ "tracks": [
+  {
+   "id": "t",
+   "name": "Talks",
+   "mark": "solid"
+  }
+ ],
+ "people": [
+  {
+   "id": "ann",
+   "name": "Ann Test",
+   "role": "Speaker",
+   "says": "A sentence.",
+   "talk": "Z9",
+   "featured": true
+  },
+  {
+   "id": "bo",
+   "name": "Bo Test",
+   "role": "Speaker"
+  }
+ ],
+ "online": {
+  "rooms": [
+   "A"
+  ],
+  "what": "Hall, live"
+ },
+ "days": [
+  {
+   "id": "sat",
+   "date": "2027-03-27",
+   "opens": "09:00",
+   "closes": "18:00"
+  },
+  {
+   "id": "sun",
+   "date": "2027-03-28",
+   "opens": "00:30",
+   "closes": "18:00"
+  }
+ ],
+ "sessions": [
+  {
+   "code": "A1",
+   "day": "sat",
+   "room": "A",
+   "start": "09:30",
+   "end": "10:30",
+   "track": "t",
+   "title": "One",
+   "people": [
+    "ann"
+   ]
+  },
+  {
+   "code": "A2",
+   "day": "sat",
+   "room": "A",
+   "start": "10:00",
+   "end": "11:00",
+   "track": "t",
+   "title": "Two, same room",
+   "people": [
+    "bo"
+   ]
+  },
+  {
+   "code": "B1",
+   "day": "sat",
+   "room": "B",
+   "start": "10:00",
+   "end": "10:45",
+   "track": "t",
+   "title": "Ann again",
+   "people": [
+    "ann"
+   ]
+  },
+  {
+   "code": "B2",
+   "day": "sat",
+   "room": "B",
+   "start": "17:30",
+   "end": "18:30",
+   "track": "t",
+   "title": "Too late",
+   "people": [
+    "bo"
+   ]
+  },
+  {
+   "code": "B3",
+   "day": "sun",
+   "room": "B",
+   "start": "01:15",
+   "end": "02:00",
+   "track": "t",
+   "title": "In the hour that never happens",
+   "people": [
+    "bo"
+   ]
+  }
+ ],
+ "tickets": [
+  {
+   "name": "Pass",
+   "includes": "Everything",
+   "price": "£10",
+   "salesEnd": "2027-03-27T09:00",
+   "url": "https://fixture.example/pass"
+  },
+  {
+   "name": "Late",
+   "includes": "Sunday",
+   "price": "£5",
+   "salesEnd": "2027-03-28T12:00",
+   "url": "https://fixture.example/late"
+  }
+ ],
+ "preview": {
+  "clock": "2027-03-27T10:15",
+  "before": "2027-03-01T09:00",
+  "after": "2027-03-29T09:00"
+ },
+ "expect": [
+  "room A is double-booked on sat: A1 (09:30–10:30) and A2 (10:00–11:00)",
+  "Ann Test is in two places at once on sat: A1 in A (09:30–10:30) and B1 in B (10:00–10:45)",
+  "sessions[3] (B2) (17:30–18:30) is outside sat's opening hours (09:00–18:00)",
+  "sessions[4] (B3): 01:15 on 2027-03-28 does not exist in Europe/London",
+  "tickets[0] (Pass).salesEnd (2027-03-27T09:00) is not after the preview clock",
+  "people (Ann Test).talk: \"Z9\" is not a session code"
+ ]
+}

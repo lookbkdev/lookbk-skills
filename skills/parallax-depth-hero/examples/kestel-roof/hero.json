@@ -1,0 +1,62 @@
+{
+  "composition": "lockup",
+  "brand": {
+    "name": "Kestel Roof",
+    "href": "/"
+  },
+  "nav": [
+    {
+      "label": "Kitchen",
+      "href": "/kitchen"
+    },
+    {
+      "label": "Bar",
+      "href": "/bar"
+    },
+    {
+      "label": "Rooms",
+      "href": "/rooms"
+    }
+  ],
+  "action": {
+    "label": "Reserve",
+    "href": "/reserve"
+  },
+  "hero": {
+    "title": "Supper on the\neleventh floor.",
+    "lede": "A kitchen and bar above the east bank, open until 2 in the morning, with the whole river below the terrace.",
+    "cta": {
+      "label": "Book a table tonight",
+      "href": "/reserve"
+    }
+  },
+  "theme": {
+    "mode": "dark",
+    "background": "#0b101c",
+    "ink": "#f2ebdf",
+    "accent": "#f2a54a",
+    "fonts": {
+      "display": "Big Shoulders Display",
+      "body": "DM Sans",
+      "weight": 800,
+      "advance": 0.42
+    }
+  },
+  "effect": {
+    "scene": "city",
+    "light": 0.78,
+    "mist": 0.5,
+    "rise": 0.8,
+    "seed": 11
+  },
+  "motion": {
+    "speed": 1,
+    "pointer": true
+  },
+  "meta": {
+    "title": "Kestel Roof: supper on the eleventh floor",
+    "description": "A kitchen and bar on the eleventh floor, open until 2 in the morning, above the east side of the river.",
+    "url": "https://kestelroof.example/",
+    "lang": "en"
+  }
+}

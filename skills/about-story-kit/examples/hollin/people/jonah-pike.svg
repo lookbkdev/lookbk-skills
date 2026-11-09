@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="800" height="1000">
+<!-- A cut-paper stand-in made in code for the About Story Kit demo. Not a photo of anyone. -->
+<defs>
+<filter id="lift" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#2a1d10" flood-opacity=".32"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="11"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .09 0"/></filter>
+</defs>
+<rect width="400" height="500" fill="#cfc6a6"/>
+<rect x="167.42048325948417" y="0" width="117.52665517386049" height="500" fill="#000" opacity=".05"/>
+<g transform="rotate(-2.0 200 400)">
+<g filter="url(#lift)"></g>
+<g filter="url(#lift)"><path d="M13.862769881263375 520 C 13.862769881263375 406.40742275863886, 53.862769881263375 366.40742275863886, 145.05369798652828 362.40742275863886 L 237.05369798652828 362.40742275863886 C 328.2446260917932 366.40742275863886, 368.2446260917932 406.40742275863886, 368.2446260917932 520 Z" fill="#7a3b22"/></g>
+<g filter="url(#lift)"><rect x="161.05369798652828" y="290.7599290246144" width="60" height="91.64749373402447" rx="12" fill="#f0d2b6"/><ellipse cx="191.05369798652828" cy="370.40742275863886" rx="46" ry="20" fill="#f0d2b6"/></g>
+<g filter="url(#lift)"><ellipse cx="191.05369798652828" cy="240.7599290246144" rx="78.00182067789137" ry="105.95946038141847" fill="#f0d2b6"/></g>
+<g filter="url(#lift)"><path d="M111.0518773086369 230.7599290246144 C 109.0518773086369 108.80046864319593, 273.05551866441965 108.80046864319593, 271.05551866441965 230.7599290246144 C 255.05551866441965 182.7599290246144, 127.0518773086369 182.7599290246144, 111.0518773086369 230.7599290246144 Z" fill="#1c1c1c"/></g>
+</g>
+<rect width="400" height="500" filter="url(#grain)"/>
+</svg>

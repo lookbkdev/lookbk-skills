@@ -1,0 +1,40 @@
+{
+  "composition": "lockup",
+  "brand": { "name": "Thale Optical", "logo": "logo.svg", "href": "/" },
+  "nav": [
+    { "label": "Lenses", "href": "/lenses" },
+    { "label": "Mounts", "href": "/mounts" },
+    { "label": "Journal", "href": "/journal" }
+  ],
+  "action": { "label": "Find a dealer", "href": "/dealers" },
+  "hero": {
+    "title": "MADE FOR\nLOW\nLIGHT.",
+    "lede": "The Nocta 50 is a hand-assembled f/1.4 prime with a 9-blade iris: round wide open, sharp-starred at f/22.",
+    "cta": { "label": "Reserve a Nocta 50", "href": "/nocta-50" }
+  },
+  "theme": {
+    "mode": "dark",
+    "background": "#121213",
+    "ink": "#efe9dc",
+    "accent": "#d9a35c",
+    "plate": "#121213",
+    "fonts": { "display": "Jost", "body": "IBM Plex Sans", "weight": 500, "advance": 0.64 }
+  },
+  "effect": {
+    "scene": "pier",
+    "word": "LOW",
+    "loop": "22 1.4 4",
+    "widest": "1.4",
+    "exposure": 1,
+    "scale": true,
+    "follow": true,
+    "grain": 0.5
+  },
+  "motion": { "speed": 1, "pointer": true },
+  "meta": {
+    "title": "Thale Optical: the Nocta 50, made for low light",
+    "description": "A hand-assembled f/1.4 prime with a 9-blade iris: round wide open, sharp-starred at f/22.",
+    "url": "https://thale-optical.example/",
+    "lang": "en"
+  }
+}

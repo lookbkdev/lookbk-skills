@@ -1,0 +1,247 @@
+/* Itinerary Kit: one stylesheet for both styles (paper, night); the colours
+   and fonts arrive as custom properties on .it and .it-bar. */
+.it, .it *, .it-bar, .it-bar * { box-sizing: border-box; margin: 0; padding: 0 }
+.it-page { margin: 0; background: #f1ede3; overflow-x: hidden }
+.it-page--night { background: #12110f }
+.it { --top: 88px; --gut: 40px; background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--text); -webkit-font-smoothing: antialiased; text-size-adjust: 100% }
+.it--embed { --top: 16px }
+.it a { color: inherit }
+.it :focus-visible, .it-bar :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px }
+.it-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+.it-lab { font: 500 12px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted) }
+.it strong { font-weight: 600 }
+
+/* bar (page only) */
+.it-bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 28px; height: 72px; padding: 0 40px; background: var(--bg); color: var(--ink); border-bottom: 1px solid var(--rule); font: 400 15px/1 var(--text) }
+.it-brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: var(--dw) 21px/1 var(--display); font-variation-settings: var(--dwide); text-transform: var(--dcase); letter-spacing: -.005em; white-space: nowrap }
+.it-bar.it--night .it-brand { font-size: 19px; letter-spacing: .02em }
+.it-brand svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.6; flex: none }
+.it-bar nav { display: flex; gap: 24px; margin-left: auto }
+.it-bar nav a { color: var(--muted); text-decoration: none; padding: 14px 0 }
+.it-bar nav a:hover { color: var(--ink) }
+.it-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 2px; background: var(--btn); color: var(--on-btn) !important; font: 600 15px/1 var(--text); text-decoration: none; white-space: nowrap }
+.it-bar > .it-btn { margin-left: auto }
+.it-bar nav + .it-btn { margin-left: 0 }
+
+/* itinerary grid: hero and days on the left, one sticky chart panel on the right */
+.it-itin { display: grid; grid-template-columns: minmax(0, 600px) minmax(0, 1fr); grid-template-areas: "hero map" "days map"; column-gap: 56px; padding: 0 var(--gut); max-width: 1600px; margin: 0 auto }
+.it-hero { grid-area: hero; padding: 64px 0 40px }
+.it-ledger { grid-area: days; padding-bottom: 24vh }
+.it-mapcol { grid-area: map; position: relative }
+.it-panel { position: sticky; top: var(--top); height: calc(100vh - var(--top) - 16px); max-height: 960px; min-height: 520px; margin: 16px 0; display: flex; flex-direction: column; border: 1px solid var(--rule); background: var(--panel) }
+
+.it-kick { display: flex; flex-wrap: wrap; gap: 4px 0 }
+.it-kick span + span::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--rule2); margin: 0 14px 2px }
+.it-h1 { font: var(--dw) 78px/.98 var(--display); font-variation-settings: var(--dwide); text-transform: var(--dcase); letter-spacing: -.025em; margin: 22px 0 26px; text-wrap: balance }
+.it--night .it-h1 { font-size: 90px; line-height: .92; letter-spacing: -.01em }
+.it-h1 em { font-style: var(--turn); font-weight: var(--turnw); color: var(--accent) }
+.it-lede { font-size: 19px; max-width: 34em }
+.it-facts { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 40px; border-top: 1px solid var(--ink) }
+.it-fact { padding: 14px 14px 16px 0; border-bottom: 1px solid var(--rule) }
+.it-fact + .it-fact { padding-left: 14px; border-left: 1px solid var(--rule) }
+.it-fact b { display: block; font: var(--dw) 26px/1.12 var(--display); font-variation-settings: var(--dwide); letter-spacing: -.01em; margin-top: 6px; font-variant-numeric: lining-nums tabular-nums }
+.it--night .it-fact b { font-weight: 640; font-variation-settings: 'wdth' 82 }
+.it-fact small { display: block; font-size: 14px; line-height: 1.35; color: var(--muted); margin-top: 4px }
+
+/* the day ledger */
+.it-days { list-style: none }
+.it-day { padding: 44px 0 46px; border-top: 1px solid var(--rule); position: relative; scroll-margin-top: calc(var(--top) + 16px) }
+.it-day::before { content: ''; position: absolute; left: -22px; top: 44px; bottom: 46px; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform .5s cubic-bezier(.2, .7, .2, 1) }
+.it-day.is-on::before { transform: none }
+.it-dhead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px }
+.it-day.is-on .it-dnum { color: var(--accent) }
+.it-eff { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; color: var(--ink) }
+.it-cells { display: inline-flex; gap: 3px }
+.it-cells b { width: 14px; height: 8px; border: 1px solid var(--rule2) }
+.it-cells b.f { background: var(--ink); border-color: var(--ink) }
+.it-dt { font: var(--dw) 38px/1.08 var(--display); font-variation-settings: var(--dwide); text-transform: var(--dcase); letter-spacing: -.015em; margin: 14px 0 8px }
+.it--night .it-dt { font-size: 40px; line-height: 1; letter-spacing: 0 }
+.it-to { font-style: var(--turn); font-weight: 400; color: var(--muted) }
+.it-why { font-size: 15px; color: var(--muted); margin-bottom: 14px }
+.it-dp { max-width: 34em }
+.it-stats { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; column-gap: 30px; margin: 24px 0 8px }
+.it-stats dd { font: var(--dw) 22px/1.2 var(--display); font-variation-settings: var(--dwide); font-variant-numeric: lining-nums tabular-nums; margin-top: 4px }
+.it--night .it-stats dd { font-weight: 600; font-variation-settings: 'wdth' 85 }
+.it-prof { margin: 8px 0 22px; position: relative; padding-top: 18px }
+.it-scale { position: absolute; top: 0; right: 0; line-height: 1 }
+.it-grid { stroke: var(--rule2); stroke-dasharray: 2 4 }
+.it-mini { display: block; width: 100%; height: 72px; overflow: visible }
+.it-base { stroke: var(--rule2) }
+.it-ma { fill: color-mix(in srgb, var(--accent) 12%, transparent) }
+.it-ml { fill: none; stroke: var(--ink); stroke-width: 1.5 }
+.it-pcap { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px }
+.it-dl { display: grid; grid-template-columns: 96px 1fr; row-gap: 12px; column-gap: 16px; font-size: 16px }
+.it-dl dt { line-height: 2 }
+.it-meals { display: flex; gap: 6px 16px; flex-wrap: wrap }
+.it-meal { display: inline-flex; align-items: center; gap: 7px }
+.it-meal i { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink) }
+.it-meal.y i { background: var(--ink) }
+.it-meal.n { color: var(--muted) }
+.it-meal.n i { border-color: var(--rule2) }
+.it-mnote { display: block; font-size: 15px; color: var(--muted); margin-top: 4px }
+.it-opt { list-style: none }
+.it-opt li { padding-left: 20px; position: relative }
+.it-opt li + li { margin-top: 4px }
+.it-opt li::before { content: ''; position: absolute; left: 0; top: .78em; width: 10px; border-top: 1.5px dashed var(--muted) }
+.it-op { font: 500 14px/1 var(--mono); margin-left: 10px; color: var(--muted); white-space: nowrap }
+.it-note { margin-top: 18px; padding: 12px 14px; border-left: 2px solid var(--accent2); font-size: 15px; background: color-mix(in srgb, var(--accent2) 8%, var(--bg)) }
+.it-rule { font-size: 14px; color: var(--muted); max-width: 40em; padding-top: 28px; border-top: 1px solid var(--rule) }
+.it-rule strong { color: var(--ink) }
+
+/* the chart panel */
+.it-phead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--rule) }
+.it-where { font: var(--dw) 19px/1.25 var(--display); font-variation-settings: var(--dwide); text-transform: var(--dcase) }
+.it--night .it-where { letter-spacing: .01em; font-size: 18px }
+.it-mapwrap { position: relative; flex: 1; min-height: 0; overflow: hidden }
+.it-map { position: absolute; inset: 0; width: 100%; height: 100%; display: block }
+.it-ground { fill: var(--land) }
+.it-ground.is-sea { fill: var(--sea) }
+.it-hatchl { stroke: var(--hatch); stroke-width: 1 }
+.it-land { fill: var(--land) }
+.it-coast { fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linejoin: round }
+.it-c1 { fill: none; stroke: var(--cont); stroke-width: .8 }
+.it-c2 { fill: none; stroke: var(--cont2); stroke-width: 1 }
+.it-river { fill: none; stroke: var(--river); stroke-width: 1.2 }
+.it-wash { fill: none; stroke: var(--river); stroke-width: 1; stroke-dasharray: 5 3 }
+.it-lake { fill: color-mix(in srgb, var(--accent2) 14%, transparent); stroke: var(--river); stroke-width: 1 }
+.it-lake.is-dry { stroke-dasharray: 3 3 }
+.it-cas { fill: none; stroke: var(--land); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round }
+.it-line { fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round }
+.it-leg.is-done .it-line { stroke: var(--done); stroke-width: 1.6 }
+.it-leg.is-done .it-cas, .it-leg.is-todo .it-cas { stroke-width: 0 }
+.it-leg.is-todo .it-line { stroke: var(--todo); stroke-width: 1.6; stroke-dasharray: 2 5 }
+.it-leg.is-on .it-line { stroke-width: 3.6 }
+.it-leg.is-on .it-cas { stroke-width: 8.5 }
+.it-stop { fill: none; stroke: none }
+.it-over .it-mk { fill: var(--land); stroke: var(--ink); stroke-width: 1.5 }
+.it-over .it-mk.is-end { fill: var(--accent); stroke: var(--land); stroke-width: 2.5 }
+.it-over .it-lbl { font-family: var(--labelfont); font-style: var(--labelstyle); font-size: var(--labelsize); letter-spacing: var(--labeltrack); text-transform: var(--labelcase); fill: var(--ink); paint-order: stroke; stroke: var(--land); stroke-width: 4px; stroke-linejoin: round }
+.it-over .it-lbl.is-end { font-weight: 600 }
+.it-over .it-lbl.is-dim { fill: var(--muted) }
+.it-over .it-leader { stroke: var(--ink); stroke-width: 1 }
+.it-over .it-plate { fill: var(--panel); opacity: .92 }
+.it-over .it-sc { fill: none; stroke: var(--ink); stroke-width: 1.2 }
+.it-over .it-sct { font: 500 12px var(--mono); letter-spacing: .05em; fill: var(--ink) }
+.it-over .it-north { fill: var(--ink) }
+
+.it-strip { position: relative; border-top: 1px solid var(--rule); padding: 22px 18px 0; height: 108px }
+.it-strip > .it-scale { top: 6px; right: 18px }
+.it-strip-svg { display: block; width: 100%; height: 60px; overflow: visible }
+.it-sa { fill: color-mix(in srgb, var(--ink) 9%, transparent) }
+.it-sl { fill: none; stroke: var(--muted); stroke-width: 1 }
+.it-sd.is-done .it-sa { fill: color-mix(in srgb, var(--ink) 20%, transparent) }
+.it-sd.is-on .it-sa { fill: var(--accent) }
+.it-sd.is-on .it-sl { stroke: var(--accent); stroke-width: 1.5 }
+.it-sgap { stroke: var(--panel); stroke-width: 2 }
+.it-bands { position: absolute; left: 18px; right: 18px; top: 4px; bottom: 0 }
+.it-band { position: absolute; top: 0; bottom: 0; background: none; border: 0; cursor: pointer; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px; font: 500 12px/1 var(--mono); color: var(--muted) }
+.it-band:hover { background: color-mix(in srgb, var(--ink) 5%, transparent) }
+.it-band.is-on { color: var(--accent); font-weight: 600 }
+
+/* after the itinerary */
+.it-sec { display: grid; grid-template-columns: 300px 1fr; column-gap: 56px; padding: 56px 0; border-top: 1px solid var(--ink); max-width: calc(1600px - 2 * var(--gut)); margin: 0 var(--gut) }
+@media (min-width: 1680px) { .it-sec { margin: 0 auto } }
+.it-sec h2 { font: var(--dw) 40px/1.05 var(--display); font-variation-settings: var(--dwide); text-transform: var(--dcase); letter-spacing: -.015em }
+.it-sh p { color: var(--muted); margin-top: 12px; font-size: 16px; max-width: 19em; text-wrap: pretty }
+.it-inc { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px }
+.it-inc h3 { padding-bottom: 12px; border-bottom: 1px solid var(--rule) }
+.it-inc ul { list-style: none }
+.it-inc li { padding: 13px 0 13px 28px; border-bottom: 1px solid var(--rule); position: relative }
+.it-inc li::before { position: absolute; left: 2px; top: 13px; font: 500 16px/1.55 var(--mono) }
+.it-yes li::before { content: '+'; color: var(--accent2) }
+.it-no li::before { content: '\2212'; color: var(--muted) }
+.it-deps { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums }
+.it-deps thead th { text-align: left; font: 500 12px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding: 0 16px 12px 0; border-bottom: 1px solid var(--rule) }
+.it-deps td, .it-deps tbody th { padding: 16px 16px 16px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; text-align: left; font-weight: 400 }
+.it-deps tbody th.it-date { font: var(--dw) 22px/1.2 var(--display); font-variation-settings: var(--dwide); white-space: nowrap }
+.it--night .it-deps tbody th.it-date { font-weight: 600; font-variation-settings: 'wdth' 85 }
+.it-seats { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 14px }
+.it-seats i { width: 9px; height: 16px; border: 1px solid var(--ink) }
+.it-seats i.b { background: var(--rule2); border-color: var(--rule2) }
+.it-left { font-size: 16px; white-space: nowrap }
+tr[data-left="0"] .it-left { color: var(--muted) }
+.it-deps td.it-go { text-align: right; padding-right: 0 }
+.it-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; font-size: 15px; text-underline-offset: 4px; white-space: nowrap }
+.it-asof { margin-top: 14px; font-size: 14px; color: var(--muted) }
+.it-price { display: grid; grid-template-columns: auto 1fr; column-gap: 56px; align-items: start }
+.it-amount { font: var(--dw) 96px/.9 var(--display); font-variation-settings: var(--dwide); letter-spacing: -.03em; font-variant-numeric: lining-nums }
+.it-amount span { display: block; font: 400 16px/1.4 var(--text); letter-spacing: 0; color: var(--muted); margin-top: 14px; max-width: 16em }
+.it-covers { columns: 2; column-gap: 40px; list-style: none }
+.it-covers li { break-inside: avoid; padding: 0 0 10px 18px; position: relative }
+.it-covers li::before { content: '+'; position: absolute; left: 0; font-family: var(--mono); color: var(--accent2) }
+.it-terms { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 15px }
+.it-terms dd { margin-top: 2px }
+.it-cta { margin-top: 28px }
+
+/* tablet: the panel narrows */
+@media (max-width: 1180px) and (min-width: 861px) {
+  .it-itin { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 36px }
+  .it-h1 { font-size: 60px } .it--night .it-h1 { font-size: 66px }
+  .it-facts { grid-template-columns: repeat(2, 1fr) } .it-fact:nth-child(3) { border-left: 0; padding-left: 0 }
+  .it-stats { grid-template-columns: repeat(2, auto); row-gap: 12px }
+  .it-sec { grid-template-columns: 1fr; row-gap: 22px }
+  .it-bar nav { display: none } .it-bar .it-btn { margin-left: auto }
+  .it-deps .it-seats { display: none }
+}
+
+/* phone: the chart becomes a sticky strip above the ledger */
+@media (max-width: 860px) {
+  .it { --gut: 16px; font-size: 16px; --top: 0px }
+  .it-bar { position: relative; height: 60px; padding: 0 16px; gap: 12px }
+  .it-bar nav { display: none }
+  .it-brand { font-size: 18px; gap: 8px } .it-bar.it--night .it-brand { font-size: 16px }
+  .it-brand svg { width: 22px; height: 22px }
+  .it-bar .it-btn, .it-bar nav + .it-btn { margin-left: auto; padding: 0 16px }
+  .it-itin { grid-template-columns: minmax(0, 1fr); grid-template-areas: "hero" "map" "days"; padding: 0 }
+  .it-hero { padding: 32px var(--gut) 28px }
+  .it-kick span:nth-child(3) { display: none }
+  .it-h1 { font-size: 46px; margin: 14px 0 18px } .it--night .it-h1 { font-size: 54px }
+  .it-lede { font-size: 17px }
+  .it-facts { grid-template-columns: 1fr 1fr; margin-top: 28px }
+  .it-fact:nth-child(3) { border-left: 0; padding-left: 0 }
+  .it-fact b { font-size: 22px }
+  .it-mapcol { position: sticky; top: 0; z-index: 5; align-self: start }
+  .it-panel { position: relative; top: 0; margin: 0; height: auto; min-height: 0; max-height: none; border-width: 1px 0; box-shadow: 0 10px 18px -14px rgba(0, 0, 0, .35) }
+  .it-phead { padding: 10px var(--gut) }
+  .it-where { font-size: 17px } .it--night .it-where { font-size: 16px }
+  .it-sum { display: none }
+  .it-mapwrap { flex: none; height: 178px }
+  .it-strip { height: 56px; padding: 6px var(--gut) 0 }
+  .it-strip > .it-scale { display: none }
+  .it-strip-svg { height: 40px }
+  .it-bands { left: var(--gut); right: var(--gut); top: 0 }
+  .it-band span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0) }
+  .it-ledger { padding: 0 var(--gut) 40vh }
+  .it-day { padding: 32px 0 36px; scroll-margin-top: 310px }
+  .it-day::before { left: -16px; top: 32px; bottom: 36px }
+  .it-dt { font-size: 30px } .it--night .it-dt { font-size: 32px }
+  .it-stats { grid-template-columns: repeat(2, auto); row-gap: 14px }
+  .it-dl { grid-template-columns: 78px 1fr }
+  .it-pn { display: none }
+  .it-sec { grid-template-columns: 1fr; padding: 40px 0; row-gap: 20px; margin: 0 var(--gut) }
+  .it-sec h2 { font-size: 34px }
+  .it-sh p { max-width: none }
+  .it-inc { grid-template-columns: 1fr; row-gap: 28px }
+  .it-deps thead { display: none }
+  .it-deps, .it-deps tbody { display: block; width: 100% }
+  .it-deps tr { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--rule) }
+  .it-deps td, .it-deps tbody th { display: block; border: 0; padding: 0 }
+  .it-deps tbody th.it-date { grid-column: 1 / -1; margin-bottom: 8px; white-space: normal }
+  .it-deps td:nth-of-type(1) { grid-column: 1 / -1; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px }
+  .it-seats { margin-right: 0 }
+  .it-deps td.it-dpr { align-self: center; font-size: 16px; margin-top: 6px }
+  .it-deps td.it-go { margin-top: 6px }
+  .it-price { grid-template-columns: 1fr; row-gap: 24px }
+  .it-amount { font-size: 68px }
+  .it-covers { columns: 1 }
+  .it-terms { gap: 14px 28px; font-size: 16px }
+  .it-bar .it-btn, .it-btn, .it-link { font-size: 16px }
+  .it-fact small, .it-eff, .it-why, .it-mnote, .it-note, .it-rule, .it-asof { font-size: 16px }
+}
+@media (prefers-reduced-motion: reduce) {
+  .it-day::before { transition: none }
+}
+.it.is-rec .it-day::before { transition: none }
+@media print {
+  .it-mapcol { display: none } .it-itin { display: block } .it-bar { position: static }
+}

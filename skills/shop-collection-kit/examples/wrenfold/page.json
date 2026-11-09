@@ -1,0 +1,219 @@
+{
+  "brand": {
+    "name": "Wrenfold",
+    "url": "https://wrenfold.example",
+    "nav": [
+      { "label": "Tableware", "href": "https://wrenfold.example/tableware", "current": true },
+      { "label": "Vessels", "href": "https://wrenfold.example/vessels" },
+      { "label": "Studio", "href": "https://wrenfold.example/studio" },
+      { "label": "Journal", "href": "https://wrenfold.example/journal" }
+    ],
+    "bagHref": "https://wrenfold.example/bag",
+    "checkoutHref": "https://wrenfold.example/checkout"
+  },
+  "money": { "currency": "GBP", "symbol": "£", "decimals": 2 },
+  "look": "light",
+  "type": "editorial",
+  "collection": {
+    "crumb": ["Shop", "Tableware"],
+    "label": "Collection 04 · Autumn firing",
+    "title": "Table_ware_",
+    "pov": "Plates and bowls for every day, thrown in pairs and fired on Thursdays. Made to go from oven to table to dishwasher without a second thought.",
+    "facts": [
+      { "label": "Pieces", "value": "8, all thrown by hand" },
+      { "label": "Clay", "value": "Stoneware, fired to 1,280 °C" },
+      { "label": "Care", "value": "Oven, microwave and dishwasher safe" },
+      { "label": "Notes", "value": "How our glazes break", "href": "https://wrenfold.example/journal/glazes" }
+    ],
+    "short": "8 pieces · Stoneware · Dishwasher safe"
+  },
+  "filters": {
+    "categories": [
+      { "id": "bowls", "label": "Bowls" },
+      { "id": "plates", "label": "Plates" },
+      { "id": "cups", "label": "Cups" },
+      { "id": "vessels", "label": "Vessels" }
+    ],
+    "optionLabel": "Glaze",
+    "options": {
+      "oat": { "label": "Oat", "swatch": "#d6cbb8" },
+      "celadon": { "label": "Celadon", "swatch": "#98a696" },
+      "iron": { "label": "Iron", "swatch": "#3b2217" },
+      "ash": { "label": "Ash", "swatch": "#b8b296" },
+      "chalk": { "label": "Chalk", "swatch": "#ebe5d8" },
+      "mixed": { "label": "Celadon and Oat", "swatch": "linear-gradient(90deg, #98a696 50%, #d6cbb8 50%)", "filter": false }
+    },
+    "sort": [
+      { "id": "kiln", "label": "Kiln order" },
+      { "id": "price-low", "label": "Price, low to high" },
+      { "id": "price-high", "label": "Price, high to low" }
+    ]
+  },
+  "photos": { "dir": "photos", "rule": { "mm": 50, "label": "5 cm" } },
+  "turnWord": "Turned over",
+  "products": [
+    {
+      "id": "breakfast-bowl",
+      "name": "Breakfast bowl",
+      "category": "bowls",
+      "price": 34,
+      "size": "Ø 15 cm, 450 ml",
+      "options": ["oat", "celadon", "iron"],
+      "stock": { "state": "in" },
+      "turn": { "label": "Turned over", "caption": "Unglazed foot, stamped W" },
+      "description": "Deep enough for porridge with milk, low enough to stack six high. The foot is left raw so you can feel the clay.",
+      "choices": {
+        "label": "Quantity",
+        "note": "Sets are priced lower",
+        "items": [
+          { "label": "Single", "price": 34 },
+          { "label": "Set of 2", "price": 66 },
+          { "label": "Set of 4", "price": 128, "note": "1 left" }
+        ],
+        "default": 1
+      },
+      "still": { "items": [{ "shape": "bowl", "stamp": "W" }], "elevation": 20, "turn": { "pose": "flip", "elevation": 34 } }
+    },
+    {
+      "id": "pasta-plate",
+      "name": "Pasta plate",
+      "category": "plates",
+      "price": 42,
+      "size": "Ø 24 cm, deep rim",
+      "options": ["oat", "iron"],
+      "stock": { "state": "low", "note": "2 left in Iron" },
+      "optionStock": { "iron": { "state": "low", "note": "2 left" } },
+      "turn": { "label": "Turned over", "caption": "Wide foot ring, stamped W" },
+      "description": "A wide plate with a rim deep enough to hold a sauce. Glazed inside and out, raw on the foot ring.",
+      "choices": {
+        "label": "Quantity",
+        "items": [
+          { "label": "Single", "price": 42 },
+          { "label": "Set of 2", "price": 82 }
+        ]
+      },
+      "still": { "items": [{ "shape": "plate", "stamp": "W" }], "elevation": 30, "turn": { "pose": "flip", "elevation": 40 } }
+    },
+    {
+      "id": "tea-bowl",
+      "name": "Tea bowl",
+      "category": "cups",
+      "price": 26,
+      "size": "250 ml, no handle",
+      "options": ["celadon", "ash"],
+      "stock": { "state": "in" },
+      "turn": { "label": "Turned over", "caption": "Trimmed foot, stamped W" },
+      "description": "Thrown tall and trimmed thin at the foot, so it sits warm in two hands.",
+      "still": { "items": [{ "shape": "cup", "stamp": "W" }], "elevation": 12, "turn": { "pose": "flip", "elevation": 30 } }
+    },
+    {
+      "id": "serving-bowl",
+      "name": "Deep serving bowl",
+      "category": "bowls",
+      "price": 96,
+      "size": "Ø 22 cm, 1.8 litres",
+      "options": ["iron"],
+      "stock": { "state": "soon", "note": "Back 14 March" },
+      "turn": { "label": "Turned over", "caption": "Rust shows where the glaze thins" },
+      "description": "Our largest bowl, in the iron glaze only. The next kiln with room for it fires in March.",
+      "still": { "items": [{ "shape": "bowl", "scale": 1.47, "h": 6.2, "stamp": "W", "rimW": 0.05 }], "elevation": 20, "turn": { "pose": "flip", "elevation": 34 } }
+    },
+    {
+      "id": "bud-vase",
+      "name": "Bud vase",
+      "category": "vessels",
+      "price": 38,
+      "size": "16 cm tall",
+      "options": ["ash", "celadon"],
+      "stock": { "state": "in" },
+      "optionStock": { "celadon": { "state": "out", "note": "Sold out", "action": "Notify me" } },
+      "turn": { "label": "On its side", "caption": "Raw foot, stamped W" },
+      "description": "A narrow neck for one stem or three. Glazed inside so it holds water.",
+      "still": { "items": [{ "shape": "vase", "stamp": "W" }], "elevation": 10, "turn": { "pose": "lay", "elevation": 22 } }
+    },
+    {
+      "id": "carafe",
+      "name": "Water carafe",
+      "category": "vessels",
+      "price": 64,
+      "size": "1 litre",
+      "options": ["oat"],
+      "stock": { "state": "low", "note": "1 left" },
+      "turn": { "label": "On its side", "caption": "Raw foot, stamped W" },
+      "description": "Pours without dripping and fits a fridge door. One left from this firing.",
+      "still": { "items": [{ "shape": "carafe", "stamp": "W" }], "elevation": 8, "turn": { "pose": "lay", "elevation": 22 } }
+    },
+    {
+      "id": "side-plate",
+      "name": "Side plate",
+      "category": "plates",
+      "price": 24,
+      "size": "Ø 18 cm",
+      "options": ["chalk"],
+      "stock": { "state": "in" },
+      "turn": { "label": "Turned over", "caption": "Wide foot ring, stamped W" },
+      "description": "For bread, cake or a small lunch. Stacks inside the pasta plate.",
+      "still": { "items": [{ "shape": "plate", "scale": 0.75, "stamp": "W" }], "elevation": 30, "turn": { "pose": "flip", "elevation": 40 } }
+    },
+    {
+      "id": "tumblers",
+      "name": "Tumblers, a pair",
+      "category": "cups",
+      "price": 44,
+      "size": "220 ml each",
+      "options": ["mixed"],
+      "stock": { "state": "in" },
+      "turn": { "label": "Turned over", "caption": "Both stamped W underneath" },
+      "description": "One celadon, one oat, so nobody mixes up whose is whose.",
+      "still": {
+        "items": [
+          { "shape": "cup", "h": 8, "scale": 0.92, "use": "celadon", "stamp": "W", "offset": [-4.6, 0, -1.5] },
+          { "shape": "cup", "h": 8, "scale": 0.92, "use": "oat", "seed": 21, "stamp": "W", "offset": [4.4, 0, 1.2] }
+        ],
+        "elevation": 14,
+        "turn": { "pose": "flip", "elevation": 30 }
+      }
+    }
+  ],
+  "editorial": {
+    "after": 4,
+    "label": "From the studio",
+    "quote": "We fire on Thursdays. Everything here came out of the _same kiln_, so no two iron glazes break the same way.",
+    "by": "Ines Garrow and Tom Wrenfold, potters",
+    "link": { "label": "How our glazes break", "href": "https://wrenfold.example/journal/glazes", "note": "4 min read" },
+    "photo": "ed-kiln.webp",
+    "photoAlt": "Two iron-glazed bowls, one turned over to show its raw foot",
+    "caption": "No. 04, both ways up"
+  },
+  "bag": { "items": 1, "total": 26, "delivery": "Free UK delivery over £60" },
+  "promises": ["Free UK delivery over £60", "Posted on Tuesdays", "30 days to return"],
+  "stills": {
+    "backdrop": "#e3dcd0",
+    "light": "soft",
+    "frameMm": 320,
+    "aim": 0.14,
+    "minFill": 0.2,
+    "focal": 85,
+    "materials": {
+      "oat": { "glaze": "#dcd2c1", "rim": "#b98d66", "pool": "#c8b79c", "clay": "#b9a490", "satin": true, "speck": 1400, "speckColor": "74,48,30", "seed": 3 },
+      "celadon": { "glaze": "#96a092", "rim": "#d2d8cb", "pool": "#71877a", "clay": "#c2b2a0", "speck": 260, "speckColor": "70,60,40", "seed": 5, "env": 1 },
+      "iron": { "glaze": "#3b2217", "rim": "#a8602f", "pool": "#1b100b", "clay": "#b2967b", "speck": 200, "speckColor": "150,95,50", "seed": 9, "mottle": 0.08, "rimW": 0.045 },
+      "ash": { "glaze": "#c7c1a8", "rim": "#8d8a5f", "pool": "#8f946c", "clay": "#bda68c", "satin": true, "speck": 700, "mottle": 0.09, "seed": 11 },
+      "chalk": { "glaze": "#ebe5d8", "rim": "#cdb89b", "pool": "#ddd2bf", "clay": "#b9a083", "satin": true, "speck": 600, "speckColor": "90,70,50", "seed": 13 },
+      "mixed": {}
+    },
+    "extra": [
+      {
+        "name": "ed-kiln",
+        "width": 1600,
+        "height": 1100,
+        "elevation": 22,
+        "frameMm": 420,
+        "items": [
+          { "shape": "bowl", "h": 9, "use": "iron", "offset": [-8.6, 0, -1] },
+          { "shape": "bowl", "h": 9, "use": "iron", "seed": 31, "rimW": 0.06, "stamp": "W", "flip": true, "offset": [8.4, 0, 1.5] }
+        ]
+      }
+    ]
+  }
+}

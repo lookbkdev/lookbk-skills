@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    "node scripts/build.mjs examples/fenn/work.json out/fenn",
+    "node scripts/check.mjs out/fenn/index.html",
+    "node scripts/build.mjs examples/halm/work.json out/halm",
+    "node scripts/check.mjs out/halm/index.html",
+    "node scripts/record.mjs out/fenn/index.html",
+    "node scripts/record.mjs out/halm/index.html"
+  ],
+  "agents": []
+}
